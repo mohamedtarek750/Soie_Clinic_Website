@@ -10,7 +10,7 @@ No build step — open `index.html` or serve the folder with any static server.
 |---|---|
 | Home (landing) | `index.html` |
 | About | `about.html` |
-| Doctors | `doctors.html` → `doctor-ghada.html`, `doctor-ghada-metwally.html`, `doctor-nada-salama.html` |
+| Doctors | `doctors.html` → `doctor-ghada.html`, `doctor-ghada-metwally.html` |
 | Services | `services.html` → `service-<treatment>.html` (11 treatment pages) |
 | Products | `products.html` |
 | Before & After | `before-after.html` |
@@ -32,9 +32,6 @@ Doctor/treatment pages deep-link with `book.html?doctor=<slug>` and
 
 ## Content that still needs owner input
 
-- **Dr. Nada Salama's profile** — her Instagram is not publicly
-  readable, so only verified basics are shown. Add her specialty, bio
-  and treatments in `doctor-nada-salama.html` when confirmed.
 - **Products** — `products.html` lists doctor-curated categories; replace
   with the clinic's actual retail range (brand, product, price) when
   confirmed.
@@ -53,8 +50,7 @@ shows the clinic's WhatsApp feedback screenshots exactly as provided
 - Design tokens (palette, type, shadows, easing) live at the top of
   `style.css`; all pages inherit them.
 - The doctors' public data was compiled from their public Instagram
-  profiles (July 2026): @drghada.health, @dr_ghada_metwally_facials,
-  @dr.nadasalama.
+  profiles (July 2026): @drghada.health, @dr_ghada_metwally_facials.
 - Inner pages were scaffolded from a shared template, so nav / footer /
   modal markup is identical across files — if you change one, mirror the
   change in the others (or ask your developer to regenerate).
