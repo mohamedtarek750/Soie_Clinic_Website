@@ -5,7 +5,7 @@
    animated counters, hero parallax, custom cursor, booking modal,
    gallery filtering, lightbox, testimonials slider, back-to-top,
    footer year, live "open / closed" working-hours status, the FAQ
-   accordion, and the booking page (doctor · service · date · time →
+   accordion, and the booking page (branch · service · date · time →
    pre-filled WhatsApp handoff). Every module guards for its elements,
    so the same file is shared safely across all pages of the site.
    All motion respects the user's prefers-reduced-motion setting.
@@ -693,7 +693,7 @@
   }
 
   /* =====================================================================
-     15. BOOKING PAGE - doctor · service · date · time → WhatsApp handoff.
+     15. BOOKING PAGE - branch · service · date · time → WhatsApp handoff.
      No backend: the summary builds a pre-filled wa.me link per branch and
      the team confirms personally. Slots follow the clinic's working hours
      (Sat–Thu 10:00–23:00, Fri 12:00–22:00), hourly, last start 1h before
@@ -709,7 +709,6 @@
     var submit     = $('#bkSubmit');
     var sum = {
       branch:  $('#sumBranch'),
-      doctor:  $('#sumDoctor'),
       service: $('#sumService'),
       date:    $('#sumDate'),
       time:    $('#sumTime')
@@ -786,16 +785,31 @@
       update();
     }
 
+    // Some treatments run at one branch only (dentistry and veneers are
+    // Mohandseen only). Hide those options when another branch is chosen,
+    // and fall back to Consultation if the picked treatment is not offered
+    // at the newly selected branch.
+    function syncServiceOptions() {
+      if (!serviceSel) return;
+      var branchEl = checked('bkBranch');
+      var branch = branchEl ? branchEl.value : 'New Cairo';
+      var reset = false;
+      $$('option[data-branch]', serviceSel).forEach(function (opt) {
+        var allowed = opt.getAttribute('data-branch') === branch;
+        opt.hidden = !allowed;
+        opt.disabled = !allowed;
+        if (!allowed && opt.selected) reset = true;
+      });
+      if (reset) serviceSel.value = 'Consultation';
+    }
+
     function update() {
       var branchEl = checked('bkBranch');
-      var doctorEl = checked('bkDoctor');
       var branch  = branchEl ? branchEl.value : 'New Cairo';
-      var doctor  = doctorEl ? doctorEl.value : 'No preference';
       var service = serviceSel ? serviceSel.value : 'Consultation';
       var dateVal = dateInput ? dateInput.value : '';
 
       if (sum.branch)  sum.branch.textContent  = branch;
-      if (sum.doctor)  sum.doctor.textContent  = doctor;
       if (sum.service) sum.service.textContent = service;
       if (sum.date)    sum.date.textContent    = prettyDate(dateVal);
       if (sum.time)    sum.time.textContent    = selectedTime || 'Not set';
@@ -807,7 +821,6 @@
         var wa = branchEl ? branchEl.getAttribute('data-wa') : '201000033766';
         var msg = 'Hello Soie Clinic! I would like to book an appointment.\n'
                 + '• Branch: ' + branch + '\n'
-                + '• Doctor: ' + doctor + '\n'
                 + '• Treatment: ' + service + '\n'
                 + '• Date: ' + prettyDate(dateVal) + '\n'
                 + '• Time: ' + selectedTime;
@@ -817,23 +830,28 @@
       }
     }
 
-    // pre-select doctor / service passed from profile & treatment pages
+    // pre-select the service passed from a treatment page. A Mohandseen-only
+    // treatment (e.g. ?service=veneers) also switches the branch to match.
     try {
       var params = new URLSearchParams(window.location.search);
-      var docSlug = params.get('doctor');
       var svcSlug = params.get('service');
-      if (docSlug) {
-        var dr = form.querySelector('input[name="bkDoctor"][data-slug="' + docSlug + '"]');
-        if (dr) dr.checked = true;
-      }
       if (svcSlug && serviceSel) {
         var opt = serviceSel.querySelector('option[data-slug="' + svcSlug + '"]');
-        if (opt) opt.selected = true;
+        if (opt) {
+          var branchOnly = opt.getAttribute('data-branch');
+          if (branchOnly) {
+            var b = form.querySelector('input[name="bkBranch"][value="' + branchOnly + '"]');
+            if (b) b.checked = true;
+          }
+          opt.selected = true;
+        }
       }
     } catch (e) { /* URLSearchParams unsupported - defaults stay */ }
 
-    $$('input[name="bkBranch"], input[name="bkDoctor"]', form).forEach(function (r) {
-      on(r, 'change', update);
+    syncServiceOptions();
+
+    $$('input[name="bkBranch"]', form).forEach(function (r) {
+      on(r, 'change', function () { syncServiceOptions(); update(); });
     });
     on(serviceSel, 'change', update);
     on(dateInput, 'change', buildSlots);

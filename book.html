@@ -7,14 +7,14 @@
   <meta name="theme-color" content="#F7F3EE" />
 
   <title>Book an Appointment | Soie Clinic · New Cairo &amp; Mohandseen</title>
-  <meta name="description" content="Book your Soie Clinic appointment online: choose your branch, doctor, treatment, date and time, confirmed personally on WhatsApp." />
+  <meta name="description" content="Book your Soie Clinic appointment online: choose your branch, treatment, date and time, confirmed personally on WhatsApp." />
   <meta name="author" content="Soie Clinic" />
   <link rel="canonical" href="https://soieclinic.com/book.html" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Soie Clinic" />
   <meta property="og:title" content="Book an Appointment | Soie Clinic · New Cairo &amp; Mohandseen" />
-  <meta property="og:description" content="Book your Soie Clinic appointment online: choose your branch, doctor, treatment, date and time, confirmed personally on WhatsApp." />
+  <meta property="og:description" content="Book your Soie Clinic appointment online: choose your branch, treatment, date and time, confirmed personally on WhatsApp." />
   <meta property="og:url" content="https://soieclinic.com/book.html" />
   <meta property="og:image" content="https://soieclinic.com/assets/images/logo.png" />
   <meta name="twitter:card" content="summary" />
@@ -46,7 +46,6 @@
       <nav class="nav__links" id="navLinks" aria-label="Primary">
         <a href="index.html" class="nav__link">Home</a>
         <a href="about.html" class="nav__link">About</a>
-        <a href="doctors.html" class="nav__link">Doctors</a>
         <a href="services.html" class="nav__link">Services</a>
         <a href="products.html" class="nav__link">Products</a>
         <a href="before-after.html" class="nav__link">Before & After</a>
@@ -68,7 +67,7 @@
         <nav class="crumbs" aria-label="Breadcrumb" data-reveal><a href="index.html">Home</a> <span class="crumbs__sep">·</span> <span>Book Appointment</span></nav>
         <p class="eyebrow" data-reveal style="margin-top:1.6rem"><span class="eyebrow__dot"></span> Reserve your visit</p>
         <h1 class="page-hero__title" data-reveal data-reveal-delay="1">Book your<br /> <em>appointment</em>.</h1>
-        <p class="page-hero__lede" data-reveal data-reveal-delay="2">Choose your branch, doctor, treatment and preferred time, and we will confirm everything personally on WhatsApp. No payment is taken online.</p>
+        <p class="page-hero__lede" data-reveal data-reveal-delay="2">Choose your branch, treatment and preferred time, and we will confirm everything personally on WhatsApp. No payment is taken online.</p>
         <svg class="page-hero__thread" viewBox="0 0 420 20" preserveAspectRatio="none" aria-hidden="true" data-reveal data-reveal-delay="3">
           <path d="M4 12 C 120 -4, 300 22, 416 8" fill="none" stroke="url(#lgph)" stroke-width="1.6" stroke-linecap="round"/>
           <defs><linearGradient id="lgph" x1="0" y1="0" x2="1" y2="0">
@@ -93,7 +92,7 @@
                 <span class="opt__meta">UMC 216, New Cairo</span>
               </label>
               <label class="opt">
-                <input type="radio" name="bkBranch" value="Mohandseen" data-wa="20100057669" />
+                <input type="radio" name="bkBranch" value="Mohandseen" data-wa="201000057669" />
                 <span class="opt__name">Mohandseen</span>
                 <span class="opt__meta">41st Lebanon St, Mohandseen</span>
               </label>
@@ -103,30 +102,6 @@
           <div>
             <div class="bk__step-label">
               <span class="bk__step-num">2</span>
-              <h2 class="bk__step-title">Choose your doctor</h2>
-            </div>
-            <div class="opt-grid">
-              <label class="opt">
-                <input type="radio" name="bkDoctor" value="No preference" checked />
-                <span class="opt__name">No preference</span>
-                <span class="opt__meta">First available specialist</span>
-              </label>
-              <label class="opt">
-                <input type="radio" name="bkDoctor" value="Dr. Ghada" data-slug="dr-ghada" />
-                <span class="opt__name">Dr. Ghada</span>
-                <span class="opt__meta">Health, Nutrition & Body Wellness</span>
-              </label>
-              <label class="opt">
-                <input type="radio" name="bkDoctor" value="Dr. Ghada Metwally" data-slug="dr-ghada-metwally" />
-                <span class="opt__name">Dr. Ghada Metwally</span>
-                <span class="opt__meta">Medical Facials & Skin Treatments</span>
-              </label>
-            </div>
-          </div>
-
-          <div>
-            <div class="bk__step-label">
-              <span class="bk__step-num">3</span>
               <h2 class="bk__step-title">Choose your treatment</h2>
             </div>
             <div class="select-wrap">
@@ -134,7 +109,7 @@
                 <option value="Consultation" selected>Consultation (not sure yet)</option>
                 <option value="Botox" data-slug="botox">Botox</option>
                 <option value="Dermal Filler" data-slug="dermal-filler">Dermal Filler</option>
-                <option value="Dentistry" data-slug="dentistry">Dentistry</option>
+                <option value="Dentistry" data-slug="dentistry" data-branch="Mohandseen">Dentistry</option>
                 <option value="Laser" data-slug="laser">Laser</option>
                 <option value="Medical Facials" data-slug="facial">Medical Facials</option>
                 <option value="Hydrafacial" data-slug="hydrafacial">Hydrafacial</option>
@@ -142,14 +117,14 @@
                 <option value="Chemical Peeling" data-slug="peeling">Chemical Peeling</option>
                 <option value="Exosomes" data-slug="exosomes">Exosomes</option>
                 <option value="Body Contouring" data-slug="body-contouring">Body Contouring</option>
-                <option value="Veneers" data-slug="veneers">Veneers</option>
+                <option value="Veneers" data-slug="veneers" data-branch="Mohandseen">Veneers</option>
               </select>
             </div>
           </div>
 
           <div>
             <div class="bk__step-label">
-              <span class="bk__step-num">4</span>
+              <span class="bk__step-num">3</span>
               <h2 class="bk__step-title">Pick a date</h2>
             </div>
             <input type="date" id="bkDate" aria-label="Appointment date" />
@@ -157,7 +132,7 @@
 
           <div>
             <div class="bk__step-label">
-              <span class="bk__step-num">5</span>
+              <span class="bk__step-num">4</span>
               <h2 class="bk__step-title">Pick a time</h2>
             </div>
             <div class="slots" id="bkSlots" role="group" aria-label="Available times">
@@ -171,7 +146,6 @@
             <h2 class="bk__card-title">Your appointment</h2>
             <dl class="bk__rows">
               <div class="bk__row"><dt>Branch</dt><dd id="sumBranch">New Cairo</dd></div>
-              <div class="bk__row"><dt>Doctor</dt><dd id="sumDoctor">No preference</dd></div>
               <div class="bk__row"><dt>Treatment</dt><dd id="sumService">Consultation</dd></div>
               <div class="bk__row"><dt>Date</dt><dd id="sumDate">Not set</dd></div>
               <div class="bk__row"><dt>Time</dt><dd id="sumTime">Not set</dd></div>
@@ -204,7 +178,6 @@
         <h4>Explore</h4>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <a href="doctors.html">Doctors</a>
         <a href="services.html">Services</a>
         <a href="products.html">Products</a>
         <a href="before-after.html">Before & After</a>
@@ -216,7 +189,7 @@
       <div class="footer__contact">
         <h4>Branches</h4>
         <p><strong>New Cairo</strong><br />UMC 216<br /><a href="https://wa.me/201000033766" target="_blank" rel="noopener noreferrer">WhatsApp →</a></p>
-        <p><strong>Mohandseen</strong><br />41st Lebanon St<br /><a href="https://wa.me/20100057669" target="_blank" rel="noopener noreferrer">WhatsApp →</a></p>
+        <p><strong>Mohandseen</strong><br />41st Lebanon St<br /><a href="https://wa.me/201000057669" target="_blank" rel="noopener noreferrer">WhatsApp →</a></p>
       </div>
     </div>
 
@@ -254,7 +227,7 @@
           </div>
           <svg viewBox="0 0 24 24" class="modal__branch-wa" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 7.8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.2.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4-.3-.2-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.8-.2-.3 0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.4-.4-.4-.6-.4z" fill="currentColor"/></svg>
         </a>
-        <a class="modal__branch" href="https://wa.me/20100057669" target="_blank" rel="noopener noreferrer">
+        <a class="modal__branch" href="https://wa.me/201000057669" target="_blank" rel="noopener noreferrer">
           <div>
             <span class="modal__branch-city">Mohandseen</span>
             <span class="modal__branch-addr">41st Lebanon St</span>
@@ -262,7 +235,7 @@
           <svg viewBox="0 0 24 24" class="modal__branch-wa" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 7.8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.2.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4-.3-.2-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.8-.2-.3 0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.4-.4-.4-.6-.4z" fill="currentColor"/></svg>
         </a>
       </div>
-      <p class="bk__wa-note">Prefer to choose a doctor, date &amp; time? <a href="book.html" style="color:var(--gold-deep);font-weight:600">Use the full booking page →</a></p>
+      <p class="bk__wa-note">Prefer to choose a treatment, date &amp; time? <a href="book.html" style="color:var(--gold-deep);font-weight:600">Use the full booking page →</a></p>
     </div>
   </div>
 
