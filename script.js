@@ -708,10 +708,12 @@
     if (!form) return;
 
     // ── Where Mohandseen bookings are sent ───────────────────────────────
-    // Paste the deployed Google Apps Script Web App URL here (see
-    // SETUP-booking.md). While it is empty, Mohandseen bookings fall back to
-    // the WhatsApp handoff so nothing breaks before the sheet is wired up.
-    var BOOKING_ENDPOINT = '';
+    // The Soie System (Mohandseen) web app. It receives the booking, adds it
+    // to the Requests inbox with the patient's phone, and emails reception.
+    // The system must be redeployed with the saveWebBooking action first (see
+    // booking-backend/README). If this is blank, Mohandseen falls back to the
+    // WhatsApp handoff so nothing is lost.
+    var BOOKING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwOHDi6U6MYSM-YMnZNCIn0Dhrvm3YE724wCuuLGJWxCT57ja01R6ReY7AN6yzKYu81ZQ/exec';
 
     var serviceSel = $('#bkService');
     var dateInput  = $('#bkDate');
@@ -884,6 +886,7 @@
     function sendToReception() {
       if (sent) return;
       var payload = {
+        action:      'saveWebBooking',
         branch:      'Mohandseen',
         name:        nameInput ? nameInput.value.trim() : '',
         phone:       phoneInput ? phoneInput.value.trim() : '',
