@@ -1118,14 +1118,28 @@ body.menu-open .nav--dark-hero:not(.is-scrolled) .nav__burger span { background:
 }
 .opt:has(input:focus-visible) { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-/* selects + date input */
-.bk select, .bk input[type="date"] {
+/* selects + text/date inputs */
+.bk select, .bk input[type="date"], .bk input[type="text"], .bk input[type="tel"] {
   width: 100%; appearance: none; -webkit-appearance: none;
   font-family: var(--f-body); font-size: .95rem; color: var(--char);
   background: var(--ivory); border: 1px solid var(--line); border-radius: var(--radius-sm);
   padding: 1rem 1.15rem; transition: border-color .3s, box-shadow .3s;
 }
-.bk select:focus, .bk input[type="date"]:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,106,.18); }
+.bk select:focus, .bk input[type="date"]:focus, .bk input[type="text"]:focus, .bk input[type="tel"]:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(200,169,106,.18); }
+
+/* name + phone fields */
+.bk__fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: .8rem; }
+.bk__field { display: block; }
+.bk__field-label { display: block; font-size: .82rem; font-weight: 600; color: var(--char-soft); margin-bottom: .5rem; }
+.bk__field input[aria-invalid="true"] { border-color: #c0533b; box-shadow: 0 0 0 3px rgba(192,83,59,.14); }
+
+/* success message after a Mohandseen booking */
+.bk__done { display: flex; gap: .7rem; align-items: flex-start; margin-top: 1rem;
+  padding: 1rem 1.15rem; border-radius: var(--radius-sm);
+  background: linear-gradient(150deg, #FDFAF4, #F3EAD8); border: 1px solid var(--gold-soft); }
+.bk__done svg { flex: none; width: 22px; height: 22px; color: var(--gold-deep); margin-top: .1rem; }
+.bk__done p { font-size: .86rem; line-height: 1.6; color: var(--char); margin: 0; }
+
 .bk .select-wrap { position: relative; }
 .bk .select-wrap::after {
   content: ""; position: absolute; right: 1.1rem; top: 50%; width: 9px; height: 9px; pointer-events: none;

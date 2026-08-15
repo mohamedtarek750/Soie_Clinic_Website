@@ -693,27 +693,45 @@
   }
 
   /* =====================================================================
-     15. BOOKING PAGE - branch · service · date · time → WhatsApp handoff.
-     No backend: the summary builds a pre-filled wa.me link per branch and
-     the team confirms personally. Slots follow the clinic's working hours
-     (Sat–Thu 10:00–23:00, Fri 12:00–22:00), hourly, last start 1h before
-     close; past times are hidden when the chosen date is today.
+     15. BOOKING PAGE - branch · details · service · date · time.
+     New Cairo hands off to WhatsApp (a pre-filled wa.me link). Mohandseen
+     books online: the form posts to a Google Apps Script web app
+     (BOOKING_ENDPOINT) that appends the row to the appointments sheet and
+     emails reception, then the page shows an on-page confirmation. Until
+     that endpoint is set, Mohandseen also falls back to WhatsApp.
+     Slots follow the clinic's working hours (Sat–Thu 10:00–23:00,
+     Fri 12:00–22:00), hourly, last start 1h before close; past times are
+     hidden when the chosen date is today.
      ===================================================================== */
   function initBooking() {
     var form = $('#bkForm');
     if (!form) return;
 
+    // ── Where Mohandseen bookings are sent ───────────────────────────────
+    // Paste the deployed Google Apps Script Web App URL here (see
+    // SETUP-booking.md). While it is empty, Mohandseen bookings fall back to
+    // the WhatsApp handoff so nothing breaks before the sheet is wired up.
+    var BOOKING_ENDPOINT = '';
+
     var serviceSel = $('#bkService');
     var dateInput  = $('#bkDate');
     var slotsWrap  = $('#bkSlots');
+    var nameInput  = $('#bkName');
+    var phoneInput = $('#bkPhone');
     var submit     = $('#bkSubmit');
+    var submitLabel = $('#bkSubmitLabel');
+    var note       = $('#bkNote');
+    var done       = $('#bkDone');
     var sum = {
       branch:  $('#sumBranch'),
+      name:    $('#sumName'),
+      phone:   $('#sumPhone'),
       service: $('#sumService'),
       date:    $('#sumDate'),
       time:    $('#sumTime')
     };
     var selectedTime = '';
+    var sent = false;
 
     function pad(n) { return n < 10 ? '0' + n : String(n); }
     function fmt12(h) {
@@ -803,31 +821,91 @@
       if (reset) serviceSel.value = 'Consultation';
     }
 
+    function digits(s) { return (s || '').replace(/\D/g, ''); }
+    function phoneValid() { return digits(phoneInput ? phoneInput.value : '').length >= 8; }
+    function isMohandseen() {
+      var b = checked('bkBranch');
+      return !!b && b.value === 'Mohandseen';
+    }
+    // Mohandseen books online only once the sheet endpoint is wired up.
+    function useSystem() { return isMohandseen() && !!BOOKING_ENDPOINT; }
+
     function update() {
+      if (sent) return;
       var branchEl = checked('bkBranch');
       var branch  = branchEl ? branchEl.value : 'New Cairo';
       var service = serviceSel ? serviceSel.value : 'Consultation';
       var dateVal = dateInput ? dateInput.value : '';
+      var name    = nameInput ? nameInput.value.trim() : '';
+      var phone   = phoneInput ? phoneInput.value.trim() : '';
+      var online  = useSystem();   // Mohandseen with the sheet endpoint wired
 
       if (sum.branch)  sum.branch.textContent  = branch;
+      if (sum.name)    sum.name.textContent    = name  || 'Not set';
+      if (sum.phone)   sum.phone.textContent   = phone || 'Not set';
       if (sum.service) sum.service.textContent = service;
       if (sum.date)    sum.date.textContent    = prettyDate(dateVal);
       if (sum.time)    sum.time.textContent    = selectedTime || 'Not set';
 
+      // Online (Mohandseen) booking needs a phone so reception can call back;
+      // the WhatsApp handoff keeps phone optional, since the chat carries it.
+      if (submitLabel) submitLabel.textContent = online ? 'Confirm booking' : 'Confirm via WhatsApp';
+      if (note) note.textContent = online
+        ? 'We send your request straight to our Mohandseen reception, who call you back to confirm. Nothing is charged online.'
+        : 'Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.';
+
       if (!submit) return;
-      var ready = !!(dateVal && selectedTime);
+      var ready = !!(dateVal && selectedTime && (!online || phoneValid()));
       submit.setAttribute('aria-disabled', ready ? 'false' : 'true');
-      if (ready) {
+
+      if (ready && !online) {
+        // WhatsApp handoff (New Cairo, or Mohandseen before the sheet is wired)
         var wa = branchEl ? branchEl.getAttribute('data-wa') : '201000033766';
         var msg = 'Hello Soie Clinic! I would like to book an appointment.\n'
                 + '• Branch: ' + branch + '\n'
+                + (name  ? '• Name: '  + name  + '\n' : '')
+                + (phone ? '• Phone: ' + phone + '\n' : '')
                 + '• Treatment: ' + service + '\n'
                 + '• Date: ' + prettyDate(dateVal) + '\n'
                 + '• Time: ' + selectedTime;
         submit.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg);
+        submit.setAttribute('target', '_blank');
       } else {
+        // system submit is handled by the click listener; nothing to navigate to
         submit.removeAttribute('href');
+        submit.removeAttribute('target');
       }
+    }
+
+    // Post a Mohandseen booking to the reception sheet + email. Apps Script
+    // web apps answer without CORS headers, so we send 'no-cors' (opaque
+    // response) and confirm optimistically; the sheet and email are the
+    // record of truth.
+    function sendToReception() {
+      if (sent) return;
+      var payload = {
+        branch:      'Mohandseen',
+        name:        nameInput ? nameInput.value.trim() : '',
+        phone:       phoneInput ? phoneInput.value.trim() : '',
+        service:     serviceSel ? serviceSel.value : 'Consultation',
+        date:        dateInput ? dateInput.value : '',
+        dateText:    prettyDate(dateInput ? dateInput.value : ''),
+        time:        selectedTime,
+        source:      'website',
+        submittedAt: new Date().toISOString()
+      };
+      try {
+        fetch(BOOKING_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload)
+        }).catch(function () {});
+      } catch (e) { /* keep the optimistic confirmation even if the network hiccups */ }
+      sent = true;
+      if (note) note.hidden = true;
+      if (done) done.hidden = false;
+      if (submit) submit.style.display = 'none';
     }
 
     // pre-select the service passed from a treatment page. A Mohandseen-only
@@ -855,9 +933,27 @@
     });
     on(serviceSel, 'change', update);
     on(dateInput, 'change', buildSlots);
-    // block navigation while incomplete
+    on(nameInput, 'input', update);
+    on(phoneInput, 'input', function () {
+      if (phoneInput && phoneValid()) phoneInput.removeAttribute('aria-invalid');
+      update();
+    });
+
     on(submit, 'click', function (e) {
-      if (submit.getAttribute('aria-disabled') === 'true') e.preventDefault();
+      if (submit.getAttribute('aria-disabled') === 'true') {
+        e.preventDefault();
+        // nudge the missing phone on the online (Mohandseen) path
+        if (useSystem() && !phoneValid() && phoneInput) {
+          phoneInput.setAttribute('aria-invalid', 'true');
+          phoneInput.focus();
+        }
+        return;
+      }
+      if (useSystem()) {          // Mohandseen → website booking to the sheet
+        e.preventDefault();
+        sendToReception();
+      }
+      // otherwise the <a href="wa.me/…"> opens WhatsApp as before
     });
 
     update();
