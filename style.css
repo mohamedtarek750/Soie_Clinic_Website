@@ -492,6 +492,42 @@ html.js .hero__thread path { stroke-dasharray: 520; stroke-dashoffset: 520; }
 .services__foot { text-align: center; margin-top: clamp(2.5rem, 5vw, 3.5rem); }
 .services__foot p { font-family: var(--f-display); font-style: italic; font-size: 1.35rem; color: var(--char); margin-bottom: 1.2rem; }
 
+/* category cards — four grouped services, each revealing an image on hover */
+.cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1rem, 2vw, 1.5rem); }
+.cat-card {
+  position: relative; overflow: hidden; isolation: isolate;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--ivory);
+  min-height: 300px; transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s;
+}
+.cat-card__img {
+  position: absolute; inset: 0; z-index: 0; background-size: cover; background-position: center;
+  opacity: 0; transform: scale(1.08); transition: opacity .55s var(--ease), transform .7s var(--ease);
+}
+.cat-card::after { /* legibility veil that fades in with the image */
+  content: ""; position: absolute; inset: 0; z-index: 1; opacity: 0;
+  background: linear-gradient(180deg, rgba(24,20,16,.28), rgba(24,20,16,.66));
+  transition: opacity .55s var(--ease);
+}
+.cat-card__body { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; padding: clamp(1.5rem, 3vw, 2.1rem); }
+.cat-card__ico { width: 48px; height: 48px; color: var(--gold-deep); margin-bottom: .9rem; transition: color .45s var(--ease); }
+.cat-card__ico svg { width: 100%; height: 100%; }
+.cat-card__title { font-family: var(--f-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 1.9rem); line-height: 1.1; letter-spacing: -0.01em; transition: color .45s var(--ease); }
+.cat-card__desc { font-size: .92rem; color: var(--char-soft); line-height: 1.6; margin: .45rem 0 1.15rem; transition: color .45s var(--ease); }
+.cat-chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: auto; }
+.cat-chip { font-size: .8rem; font-weight: 500; padding: .4rem .8rem; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.55); color: var(--char); text-decoration: none; transition: background .3s, color .3s, border-color .3s, transform .3s; }
+a.cat-chip:hover { transform: translateY(-2px); background: var(--gold); border-color: var(--gold); color: #fff; }
+
+.cat-card:hover { transform: translateY(-5px); box-shadow: var(--sh-lg); border-color: transparent; }
+.cat-card:hover .cat-card__img { opacity: 1; transform: scale(1); }
+.cat-card:hover::after { opacity: 1; }
+.cat-card:hover .cat-card__ico { color: #fff; }
+.cat-card:hover .cat-card__title { color: #fff; }
+.cat-card:hover .cat-card__desc { color: rgba(255,255,255,.85); }
+.cat-card:hover .cat-chip { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.45); color: #fff; }
+.cat-card:hover a.cat-chip:hover { background: #fff; border-color: #fff; color: var(--char); }
+
+@media (max-width: 720px) { .cat-grid { grid-template-columns: 1fr; } }
+
 /* ---------------------------------------------------------------
    12 · THREAD DIVIDERS
 --------------------------------------------------------------- */
