@@ -694,11 +694,11 @@
 
   /* =====================================================================
      15. BOOKING PAGE - branch · details · service · date · time.
-     New Cairo hands off to WhatsApp (a pre-filled wa.me link). Mohandseen
-     books online: the form posts to a Google Apps Script web app
-     (BOOKING_ENDPOINT) that appends the row to the appointments sheet and
-     emails reception, then the page shows an on-page confirmation. Until
-     that endpoint is set, Mohandseen also falls back to WhatsApp.
+     Each branch books online: the form posts to that branch's Soie System
+     web app (see BOOKING_ENDPOINTS) which adds it to the reception Requests
+     inbox with the phone and emails reception, then the page shows an
+     on-page confirmation. A branch with no endpoint set falls back to a
+     pre-filled WhatsApp handoff so nothing is lost.
      Slots follow the clinic's working hours (Sat–Thu 10:00–23:00,
      Fri 12:00–22:00), hourly, last start 1h before close; past times are
      hidden when the chosen date is today.
@@ -707,13 +707,15 @@
     var form = $('#bkForm');
     if (!form) return;
 
-    // ── Where Mohandseen bookings are sent ───────────────────────────────
-    // The Soie System (Mohandseen) web app. It receives the booking, adds it
-    // to the Requests inbox with the patient's phone, and emails reception.
-    // The system must be redeployed with the saveWebBooking action first (see
-    // booking-backend/README). If this is blank, Mohandseen falls back to the
-    // WhatsApp handoff so nothing is lost.
-    var BOOKING_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwOHDi6U6MYSM-YMnZNCIn0Dhrvm3YE724wCuuLGJWxCT57ja01R6ReY7AN6yzKYu81ZQ/exec';
+    // ── Where each branch's bookings are sent ────────────────────────────
+    // Each branch posts to its own Soie System web app, which adds the booking
+    // to that branch's Requests inbox (with the patient's phone) and emails
+    // reception. A blank URL makes that branch fall back to the WhatsApp
+    // handoff, so nothing is lost before a system is wired up.
+    var BOOKING_ENDPOINTS = {
+      'New Cairo':  'https://script.google.com/macros/s/AKfycbzhChuuZ4KKdi493yhwvLGYE7c7QkKFE0SsRbFfPNlx6FRNSeAPQVp0MRkbdQhOaTE/exec',
+      'Mohandseen': 'https://script.google.com/macros/s/AKfycbwOHDi6U6MYSM-YMnZNCIn0Dhrvm3YE724wCuuLGJWxCT57ja01R6ReY7AN6yzKYu81ZQ/exec'
+    };
 
     var serviceSel = $('#bkService');
     var dateInput  = $('#bkDate');
@@ -722,6 +724,7 @@
     var phoneInput = $('#bkPhone');
     var submit     = $('#bkSubmit');
     var submitLabel = $('#bkSubmitLabel');
+    var waIcon     = $('#bkWaIcon');
     var note       = $('#bkNote');
     var done       = $('#bkDone');
     var sum = {
@@ -825,12 +828,13 @@
 
     function digits(s) { return (s || '').replace(/\D/g, ''); }
     function phoneValid() { return digits(phoneInput ? phoneInput.value : '').length >= 8; }
-    function isMohandseen() {
+    function currentBranch() {
       var b = checked('bkBranch');
-      return !!b && b.value === 'Mohandseen';
+      return b ? b.value : 'New Cairo';
     }
-    // Mohandseen books online only once the sheet endpoint is wired up.
-    function useSystem() { return isMohandseen() && !!BOOKING_ENDPOINT; }
+    function branchEndpoint() { return BOOKING_ENDPOINTS[currentBranch()] || ''; }
+    // A branch books online once its own system endpoint is wired up.
+    function useSystem() { return !!branchEndpoint(); }
 
     function update() {
       if (sent) return;
@@ -840,7 +844,7 @@
       var dateVal = dateInput ? dateInput.value : '';
       var name    = nameInput ? nameInput.value.trim() : '';
       var phone   = phoneInput ? phoneInput.value.trim() : '';
-      var online  = useSystem();   // Mohandseen with the sheet endpoint wired
+      var online  = useSystem();   // this branch has its system endpoint wired
 
       if (sum.branch)  sum.branch.textContent  = branch;
       if (sum.name)    sum.name.textContent    = name  || 'Not set';
@@ -849,11 +853,12 @@
       if (sum.date)    sum.date.textContent    = prettyDate(dateVal);
       if (sum.time)    sum.time.textContent    = selectedTime || 'Not set';
 
-      // Online (Mohandseen) booking needs a phone so reception can call back;
-      // the WhatsApp handoff keeps phone optional, since the chat carries it.
+      // Online booking needs a phone so reception can call back; the WhatsApp
+      // fallback keeps phone optional, since the chat carries the number.
       if (submitLabel) submitLabel.textContent = online ? 'Confirm booking' : 'Confirm via WhatsApp';
+      if (waIcon) waIcon.style.display = online ? 'none' : '';   // no WhatsApp logo on 'Confirm booking'
       if (note) note.textContent = online
-        ? 'We send your request straight to our Mohandseen reception, who call you back to confirm. Nothing is charged online.'
+        ? 'We send your request straight to our ' + branch + ' reception, who call you back to confirm. Nothing is charged online.'
         : 'Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.';
 
       if (!submit) return;
@@ -887,7 +892,7 @@
       if (sent) return;
       var payload = {
         action:      'saveWebBooking',
-        branch:      'Mohandseen',
+        branch:      currentBranch(),
         name:        nameInput ? nameInput.value.trim() : '',
         phone:       phoneInput ? phoneInput.value.trim() : '',
         service:     serviceSel ? serviceSel.value : 'Consultation',
@@ -898,7 +903,7 @@
         submittedAt: new Date().toISOString()
       };
       try {
-        fetch(BOOKING_ENDPOINT, {
+        fetch(branchEndpoint(), {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
