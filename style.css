@@ -1173,6 +1173,7 @@ body.menu-open .nav--dark-hero:not(.is-scrolled) .nav__burger span { background:
 .bk__done { display: flex; gap: .7rem; align-items: flex-start; margin-top: 1rem;
   padding: 1rem 1.15rem; border-radius: var(--radius-sm);
   background: linear-gradient(150deg, #FDFAF4, #F3EAD8); border: 1px solid var(--gold-soft); }
+.bk__done[hidden] { display: none; }   /* stay hidden until the booking is sent */
 .bk__done svg { flex: none; width: 22px; height: 22px; color: var(--gold-deep); margin-top: .1rem; }
 .bk__done p { font-size: .86rem; line-height: 1.6; color: var(--char); margin: 0; }
 
