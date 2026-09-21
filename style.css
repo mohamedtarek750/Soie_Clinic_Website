@@ -35,6 +35,7 @@
    29  Scroll reveal, image settle, thread draw
    30  Hero video / dark-hero family (inactive, JS can activate)
    31  Responsive
+   31b Films & plates (living photographs: .film, .plate, .why__film, .film-toggle, B&W category images)
    32  Touch
    33  View transitions
    34  Reduced motion (always the LAST block)
@@ -555,7 +556,7 @@ html.js .hero__thread path { stroke-dasharray: 520; stroke-dashoffset: 520; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------------------------------------------------------------
-   11 · ABOUT  (portrait bleeding left, body hangs in cols 7–12,
+   11 · ABOUT  (portrait bleeding left, body hangs in cols 7 to 12,
         stats lattice spans the full container under both)
 --------------------------------------------------------------- */
 .about { background: var(--sand); }
@@ -1661,7 +1662,7 @@ body.menu-open .nav--dark-hero:not(.is-scrolled) .nav__cta { color: var(--linen)
   .lightbox__fig img, #lbImg { max-height: calc(100svh - 8rem); }
 }
 
-/* extra-small phones (320–380px) */
+/* extra-small phones (320 to 380px) */
 @media (max-width: 380px) {
   .hero__title { font-size: clamp(2.9rem, 14vw, 3.4rem); }
   .page-hero__title { font-size: clamp(2.6rem, 12vw, 2.8rem); }
@@ -1670,6 +1671,197 @@ body.menu-open .nav--dark-hero:not(.is-scrolled) .nav__cta { color: var(--linen)
   .btn { padding-inline: 1.25rem; }
   .btn--lg { padding-inline: 1.5rem; }
 }
+
+/* ---------------------------------------------------------------
+   31b · FILMS & PLATES  ("living photographs")
+   Real clinic footage and stills, hung like every other exhibit:
+   rendered black-and-white in the files themselves, matted, square,
+   shadowless. One moving image per page, never in a hero band's
+   ground. Before/after evidence is never touched by anything here.
+   JS contract (initFilms): video[data-film] carries data-src (and
+   optionally data-src-portrait); the src is attached on approach,
+   the film plays only while in view, and its [data-media-toggle]
+   button (always the next sibling of the film, or of .why__film)
+   flips aria-pressed / aria-label. JS adds .is-film-live to a film
+   that is playing and .is-paused to its parent after a user pause.
+   No JS, reduced motion or Save-Data: the poster simply stays.
+--------------------------------------------------------------- */
+
+/* the film element: a silent loop that behaves like a photograph */
+.film {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 50%;
+  background: var(--sand-deep);            /* loading ground (spec §9 law 4) */
+  border: 0; border-radius: 0; box-shadow: none;
+  pointer-events: none;                    /* decorative: no context menu, no native overlays */
+}
+.film::-webkit-media-controls { display: none !important; }
+
+/* PLATE: the exhibit mat (spec §5) around one film or still, 4:5 */
+.plate {
+  position: relative; margin: 0;
+  padding: var(--mat); background: var(--ivory);
+  border: 1px solid var(--line); border-radius: 0; box-shadow: none;
+}
+.plate picture { display: block; }
+.plate .film, .plate img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 4 / 5; object-fit: cover;
+}
+
+/* PLATE IN A PAGE HERO (last child of .page-hero > .container).
+   Base placement needs no :has(): the plate hangs in its own row under
+   the lede, on the right columns, so nothing can ever overlap. */
+.plate--hero {
+  grid-column: 9 / -1; grid-row: 5;
+  justify-self: end; align-self: start;
+  width: 100%; max-width: 440px;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+/* Where :has() exists (every current browser) the hero becomes a spread:
+   title and lede keep the left columns, the plate hangs beside them from
+   the top of the title. Row 5 is the 1fr row, so the plate's extra height
+   collects under the lede instead of stretching the title and lede rows.
+   Page heroes without a plate match none of this and keep their layout. */
+@media (min-width: 981px) {
+  .page-hero .container:has(> .plate--hero) { grid-template-rows: auto auto auto auto 1fr; }
+  .page-hero .container:has(> .plate--hero) > .page-hero__title { grid-column: 1 / 9; }
+  .page-hero .container:has(> .plate--hero) > .page-hero__lede { grid-column: 4 / 9; }
+  .page-hero .container:has(> .plate--hero) > .plate--hero {
+    grid-row: 3 / 6; margin-top: 0;
+    max-width: 440px; max-width: min(440px, 62vh);   /* never taller than a short window */
+  }
+}
+/* ≤980px: single column; the plate follows the lede at a comfortable width,
+   left-aligned like everything else, mat intact (it never bleeds). */
+@media (max-width: 980px) {
+  .plate--hero {
+    grid-column: 1 / -1; grid-row: 5;
+    justify-self: start; max-width: 420px;
+    margin-top: clamp(2rem, 6vw, 2.75rem);
+  }
+}
+
+/* ABOUT SPREAD: a still (<picture>) or a film takes the portrait's place.
+   Same sizing as the old .about__frame img (full width, natural flow), with
+   the 4:5 box reserved before anything loads, and the same settle. */
+.about__frame picture { display: block; }
+.about__frame picture img,
+.about__frame .film {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.about__frame .film { transform: scale(1); transition: transform var(--d-image) var(--ease); }
+html.js .about__media[data-reveal]:not(.is-in) .about__frame .film { transform: scale(1.06); }
+@media (max-width: 980px) {
+  /* stacked + full-bleed: keep a tablet-width portrait inside one screen */
+  .about__frame picture img,
+  .about__frame .film { max-height: 86vh; max-height: 86svh; }
+}
+/* THE SIGN: the wordmark sits low and to the right of this photograph, and a
+   reception jar stands in its lower-left corner. The plaque hangs there instead:
+   it covers the jar, leaves every letter clear at every width, and its text
+   picks up the container's left edge. */
+.about__media--sign .about__badge {
+  left: 0; right: auto; top: 82.5%; bottom: auto;
+  min-width: 36%; min-height: 17.5%;   /* always reaches the frame's corner, however tall the frame gets */
+  align-content: center;
+  padding-inline-start: max(1.5rem, var(--bleed));
+}
+@media (max-width: 600px) {
+  .about__media--sign { margin-bottom: 6.5rem; }   /* room for the plaque's overhang on a short frame */
+}
+
+/* WHY BAND: the film is the air of the dark room, never its subject.
+   Paint order inside .why (position: relative; overflow: hidden):
+   .why__film (z 0) → .why__bg column lines (later in the DOM) →
+   .container (z 1) → band toggle (z 2).
+   Contrast: the film sits at .34 and the ink scrim holds at least .60 wherever
+   small #A3A3A3 copy can sit, so even a pure-white frame composites to no more
+   than #363636 behind it (≥ 4.8:1); #FAFAFA headings clear 4.5:1 anywhere. */
+.why__film { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.why__film .film {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  opacity: .34; background: transparent;   /* no plaster flash on ink */
+}
+.why__film::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(22,22,22,.66) 0%, rgba(22,22,22,.66) 56%, rgba(22,22,22,.2) 100%),
+    linear-gradient(180deg, rgba(22,22,22,0) 0%, rgba(22,22,22,0) 35%, rgba(22,22,22,.6) 100%);
+}
+/* The lattice lets the room breathe through it: cells trade their opaque ink
+   for a .62 ink ground of their own (so their copy never depends on where the
+   scrim happens to be), and the hairlines move from the gap onto the cells. */
+.why__film ~ .container .why__grid {
+  gap: 0; background: none;
+  border: 0; border-top: 1px solid var(--ink-line); border-left: 1px solid var(--ink-line);
+}
+.why__film ~ .container .feat {
+  background: rgba(22,22,22,.62);
+  border-right: 1px solid var(--ink-line); border-bottom: 1px solid var(--ink-line);
+}
+@media (hover: hover) {
+  .why__film ~ .container .feat:hover { background: rgba(22,22,22,.8); }
+}
+@media (max-width: 860px) {
+  /* the head runs full width here, so the scrim is even across the band */
+  .why__film::after { background: linear-gradient(180deg, rgba(22,22,22,.6) 0%, rgba(22,22,22,.72) 100%); }
+}
+
+/* PAUSE / PLAY: a 32px hairline square inside a 44px hit area.
+   ::before draws the square, ::after the icon (pause = one box whose left and
+   right borders are the two 2px bars; play = a border triangle). No text. */
+.film-toggle {
+  position: absolute; z-index: 2;
+  right: calc(var(--mat) + 6px); bottom: calc(var(--mat) + 6px);   /* square sits 12px inside the matted image */
+  width: 44px; height: 44px; padding: 0; margin: 0;
+  background: none; border: 0; border-radius: 0; box-shadow: none;
+  color: #FFFFFF; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.film-toggle::before {
+  content: ""; position: absolute; inset: 6px;
+  background: rgba(22,22,22,.6);             /* worst case over a white frame is about #737373: 4.7:1 against the white icon (WCAG 1.4.11) */
+  border: 1px solid rgba(255,255,255,.8);
+  transition: background-color var(--d) var(--ease), border-color var(--d) var(--ease);
+}
+.film-toggle::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 8px; height: 10px; margin: -5px 0 0 -4px;
+  border: 0 solid currentColor; border-width: 0 2px;
+}
+.film-toggle[aria-pressed="true"]::after {
+  width: 0; height: 0; margin: -5px 0 0 -3px;
+  border-style: solid; border-width: 5px 0 5px 8px;
+  border-color: transparent transparent transparent currentColor;
+}
+/* focus: white hairline / ink hairline / solid ink square, legible on any frame */
+.film-toggle:focus-visible { outline: 1px solid #FFFFFF; outline-offset: -3px; }
+.film-toggle:focus-visible::before {
+  background: var(--ink); border-color: #FFFFFF;
+  outline: 1px solid var(--ink); outline-offset: 0;
+}
+@media (hover: hover) {
+  .film-toggle:hover::before { background: rgba(22,22,22,.72); border-color: #FFFFFF; }
+}
+.film-toggle:active::before { background: rgba(22,22,22,.72); border-color: #FFFFFF; transition-duration: 120ms; }
+/* no mat on the about portrait: 16px in from the frame's corner */
+.about__frame .film-toggle { right: 10px; bottom: 10px; }
+@media (min-width: 981px) {
+  /* about.html: the portrait bleeds to the viewport, the control stays on the container's right edge */
+  .page-hero ~ .about .about__frame .film-toggle { right: calc(var(--bleed) - 6px); }
+}
+/* the band's control lines up with the container's right edge, under the lattice */
+.film-toggle--band { right: calc(var(--bleed) - 6px); bottom: clamp(1.25rem, 3vw, 2.5rem); }
+/* nothing to control without JS (the poster is the photograph) */
+html.no-js .film-toggle, .film-toggle[hidden] { display: none; }
+
+/* CATEGORY IMAGES: all four (real and owner-approved alike) hang in the same
+   monochrome as the films. Supersedes the colour matte in §12; filter and
+   transform are independent, so the settle and the 1.03 hover are untouched. */
+.cat-card__img { filter: grayscale(1) contrast(1.05); }
 
 /* ---------------------------------------------------------------
    32 · TOUCH  (no hover): plaques and markers always visible,
@@ -1703,7 +1895,8 @@ body.menu-open .nav--dark-hero:not(.is-scrolled) .nav__cta { color: var(--linen)
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
-  .cat-card__img, .about__frame img { transform: none !important; }
+  .cat-card__img, .about__frame img, .about__frame .film { transform: none !important; }
+  .film-toggle { display: none !important; }   /* films never load here (initFilms); the poster is the photograph */
   .page-hero ~ .services .cat-card__img { background-size: auto 100% !important; }
   .loader { display: none !important; }
   .marquee__track, .fab-wa__pulse, .hero__scroll-line::after { animation: none !important; }

@@ -699,8 +699,8 @@
      inbox with the phone and emails reception, then the page shows an
      on-page confirmation. A branch with no endpoint set falls back to a
      pre-filled WhatsApp handoff so nothing is lost.
-     Slots follow the clinic's working hours (Sat–Thu 10:00–23:00,
-     Fri 12:00–22:00), hourly, last start 1h before close; past times are
+     Slots follow the clinic's working hours (Sat to Thu 10:00 to 23:00,
+     Fri 12:00 to 22:00), hourly, last start 1h before close; past times are
      hidden when the chosen date is today.
      ===================================================================== */
   function initBooking() {
@@ -968,6 +968,168 @@
   }
 
   /* =====================================================================
+     16. FILMS - "living photographs". video[data-film] is a short, silent,
+     black-and-white loop presented like a photograph. Nothing is fetched
+     until the film is approached (its src lives in data-src; narrow screens
+     may get data-src-portrait), it plays only while it is on screen, and
+     the [data-media-toggle] button that follows it lets anyone pause it.
+     Reduced motion, Save-Data or no IntersectionObserver: the video is
+     never loaded, the poster stays, and the toggles are hidden.
+     ===================================================================== */
+  function initFilms() {
+    var films = $$('video[data-film]');
+    if (!films.length) return;
+
+    var conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var saveData = !!(conn && conn.saveData);
+
+    // narrow screens get the portrait cut, so give them its poster as well:
+    // the still and the first frame then match (also when no film ever loads)
+    if (mq('(max-width: 760px)')) {
+      films.forEach(function (v) {
+        var portrait = v.getAttribute('data-src-portrait');
+        if (portrait) v.poster = portrait.replace('assets/videos/', 'assets/videos/posters/').replace(/\.mp4$/, '.jpg');
+      });
+    }
+
+    if (reduceMotion || saveData || !('IntersectionObserver' in window)) {
+      $$('.film-toggle').forEach(function (t) { t.setAttribute('hidden', ''); });
+      return;
+    }
+
+    // the toggle is the film's next sibling (or, for the #why band, the
+    // next sibling of the film's .why__film wrapper)
+    function toggleFor(v) {
+      var t = v.nextElementSibling;
+      if (t && t.hasAttribute('data-media-toggle')) return t;
+      t = v.parentNode ? v.parentNode.nextElementSibling : null;
+      return (t && t.hasAttribute('data-media-toggle')) ? t : null;
+    }
+
+    var states = films.map(function (v) {
+      // the property (not just the attribute) is what autoplay policies check
+      v.muted = true;
+      v.defaultMuted = true;
+      v.setAttribute('muted', '');
+      v.setAttribute('playsinline', '');
+      v.loop = true;
+      try { v.disablePictureInPicture = true; } catch (e) { /* unsupported - fine */ }
+      return { video: v, toggle: toggleFor(v), loaded: false, failed: false, inView: false, userPaused: false };
+    });
+
+    function stateOf(v) {
+      for (var i = 0; i < states.length; i++) { if (states[i].video === v) return states[i]; }
+      return null;
+    }
+
+    // the name stays "Pause video"; aria-pressed alone says whether it is paused
+    function sync(s) {
+      if (s.toggle) s.toggle.setAttribute('aria-pressed', s.userPaused ? 'true' : 'false');
+      if (s.video.parentNode && s.video.parentNode.classList) {
+        s.video.parentNode.classList.toggle('is-paused', s.userPaused);
+      }
+    }
+
+    // attach the source once, on first approach
+    function load(s) {
+      if (s.loaded) return;
+      s.loaded = true;
+      var v = s.video;
+      var portrait = v.getAttribute('data-src-portrait');
+      var src = (portrait && mq('(max-width: 760px)')) ? portrait : v.getAttribute('data-src');
+      if (!src) { s.failed = true; return; }
+      v.preload = 'auto';   // markup says "none" so nothing is fetched before this moment
+      v.src = src;
+      v.load();
+    }
+
+    function pause(s) {
+      if (!s.video.paused) s.video.pause();
+    }
+
+    function play(s) {
+      if (s.userPaused || s.failed || !s.inView || document.hidden) return;
+      load(s);
+      if (s.failed) return;
+      states.forEach(function (o) { if (o !== s) pause(o); }); // never more than one film playing
+      var p = s.video.play && s.video.play();
+      if (p && p.catch) {
+        p.catch(function (err) {
+          // Autoplay refused (e.g. a low-power mode): keep the poster and offer
+          // "Play", since a tap is allowed to start it. A play() interrupted by
+          // our own pause() (AbortError) is not a refusal and is ignored.
+          if (err && err.name === 'NotAllowedError') { s.userPaused = true; sync(s); }
+        });
+      }
+    }
+
+    states.forEach(function (s) {
+      on(s.video, 'playing', function () { s.video.classList.add('is-film-live'); });
+      on(s.video, 'error', function () {
+        // missing or undecodable file: the poster stays, the control goes
+        s.failed = true;
+        if (s.toggle) s.toggle.setAttribute('hidden', '');
+      });
+      on(s.toggle, 'click', function () {
+        s.userPaused = !s.userPaused;
+        if (s.userPaused) pause(s); else play(s);
+        sync(s);
+      });
+      sync(s);
+    });
+
+    // observer A: fetch just before the film scrolls into view, once
+    var approach = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var s = stateOf(en.target);
+        if (s) load(s);
+        obs.unobserve(en.target);
+      });
+    }, { rootMargin: '400px 0px', threshold: 0 });
+
+    // observer B: play while on screen, pause when not. A band taller than the
+    // viewport can never show 35% of itself, so filling half the screen counts too.
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var s = stateOf(en.target);
+        if (!s) return;
+        var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+        var seen = en.isIntersecting && (en.intersectionRatio >= 0.35 ||
+          (vh > 0 && en.intersectionRect && en.intersectionRect.height >= vh * 0.5));
+        s.inView = !!seen;
+        if (s.inView) play(s); else pause(s);
+      });
+    }, { threshold: [0, 0.1, 0.2, 0.35, 0.5, 0.75] });
+
+    // start watching only once the page itself has loaded, so a film in the
+    // first screen never competes with the fonts, the CSS or its own poster
+    function start() {
+      states.forEach(function (s) {
+        approach.observe(s.video);
+        watch.observe(s.video);
+      });
+    }
+    if (document.readyState === 'complete') start(); else on(window, 'load', start);
+
+    // a hidden tab plays nothing; coming back resumes whatever is on screen
+    on(document, 'visibilitychange', function () {
+      states.forEach(function (s) {
+        if (document.hidden) pause(s); else play(s);
+      });
+    });
+
+    // Reduce Motion switched on mid-visit: stop every film and leave it stopped
+    var motionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+    function onMotionChange(e) {
+      if (!e.matches) return;
+      states.forEach(function (s) { s.userPaused = true; pause(s); sync(s); });
+    }
+    if (motionQuery && motionQuery.addEventListener) motionQuery.addEventListener('change', onMotionChange);
+    else if (motionQuery && motionQuery.addListener) motionQuery.addListener(onMotionChange);
+  }
+
+  /* =====================================================================
      BOOT
      ===================================================================== */
   function safe(fn, name) {
@@ -996,5 +1158,6 @@
     safe(initHours, 'hours');
     safe(initAccordion, 'accordion');
     safe(initBooking, 'booking');
+    safe(initFilms, 'films');
   });
 })();
