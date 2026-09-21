@@ -5,7 +5,6 @@ REAL CLINIC MEDIA (from the clinic's own Drive, used with consent, colour, no re
   about-*      Soie reception: the back-lit Soie sign            (IMG_6409)
   contact-*    Soie reception: welcome drinks and branded cups    (IMG_6410)
   book-*       Soie consultation room                              (frame of IMG_8577)
-  videos/bg-home*             Soie consultation room               (IMG_8577)
   videos/bg-skin-boosters*    preparing a skin booster syringe     (IMG_5601)
   videos/bg-exosomes*         exosome scalp treatment              (IMG_1767)
   videos/bg-body-contouring*  INDIBA body contouring               (IMG_0900)

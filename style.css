@@ -429,8 +429,8 @@ body.cursor-on, body.cursor-on * { cursor: none !important; }
 }
 
 .nav__logo { display: flex; align-items: center; gap: .75rem; position: relative; z-index: 1100; transform: none; }
-.nav__logo img { width: auto; height: 40px; transition: height var(--d) var(--ease); }
-.nav.is-scrolled .nav__logo img { height: 34px; }
+.nav__logo img { width: auto; height: 56px; transition: height var(--d) var(--ease); }
+.nav.is-scrolled .nav__logo img { height: 46px; }
 .nav__logo:hover { transform: none; }
 .nav__logo-tag {
   font: 500 var(--t-label)/16px var(--f-body); letter-spacing: .22em; text-transform: uppercase;
@@ -1618,7 +1618,7 @@ html.no-js .nav::before { opacity: 1; }
 
 @media (max-width: 560px) {
   .nav { height: var(--nav-h-scrolled); }
-  .nav__logo img, .nav.is-scrolled .nav__logo img { height: 32px; }
+  .nav__logo img, .nav.is-scrolled .nav__logo img { height: 44px; }
 
   .hero { min-height: 92svh; }
   .hero__actions { flex-direction: column; }
