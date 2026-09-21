@@ -74,7 +74,7 @@
 
     /* pages with a dark video hero need light nav ink + the cream logo
        while the bar is still transparent */
-    var darkHero = !!$('.hero--video');
+    var darkHero = !!$('.hero--video, .page-hero--media');
     var logoImg = nav ? $('.nav__logo img', nav) : null;
     if (darkHero && nav) nav.classList.add('nav--dark-hero');
 
@@ -968,9 +968,9 @@
   }
 
   /* =====================================================================
-     16. FILMS - "living photographs". video[data-film] is a short, silent,
-     black-and-white loop presented like a photograph. Nothing is fetched
-     until the film is approached (its src lives in data-src; narrow screens
+     16. FILMS - video[data-film] is a short, silent colour loop used as a
+     page header background (its poster is the still it rests on). Nothing is
+     fetched until the film is approached (its src lives in data-src; narrow screens
      may get data-src-portrait), it plays only while it is on screen, and
      the [data-media-toggle] button that follows it lets anyone pause it.
      Reduced motion, Save-Data or no IntersectionObserver: the video is
@@ -997,8 +997,8 @@
       return;
     }
 
-    // the toggle is the film's next sibling (or, for the #why band, the
-    // next sibling of the film's .why__film wrapper)
+    // the toggle is the film's next sibling or, for a header background,
+    // the next sibling of the film's .hero-bg wrapper
     function toggleFor(v) {
       var t = v.nextElementSibling;
       if (t && t.hasAttribute('data-media-toggle')) return t;

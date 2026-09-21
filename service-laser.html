@@ -108,7 +108,14 @@
 
   <main id="main">
 
-    <section class="page-hero">
+    <section class="page-hero page-hero--media">
+      <div class="hero-bg" data-bg="laser" aria-hidden="true">
+        <picture>
+          <source type="image/avif" srcset="assets/images/bg/laser-960.avif 960w, assets/images/bg/laser-1920.avif 1920w" sizes="100vw" />
+          <source type="image/webp" srcset="assets/images/bg/laser-960.webp 960w, assets/images/bg/laser-1920.webp 1920w" sizes="100vw" />
+          <img class="hero-bg__media" src="assets/images/bg/laser-1920.jpg" srcset="assets/images/bg/laser-960.jpg 960w, assets/images/bg/laser-1920.jpg 1920w" sizes="100vw" alt="" width="1920" height="1080" decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
       <div class="container">
         <nav class="crumbs" aria-label="Breadcrumb" data-reveal><a href="index.html">Home</a> <span class="crumbs__sep">·</span> <a href="services.html">Services</a> <span class="crumbs__sep">·</span> <span>Laser</span></nav>
         <p class="eyebrow" data-reveal style="margin-top:1.6rem"><span class="eyebrow__dot"></span> Treatment</p>

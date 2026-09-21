@@ -108,7 +108,11 @@
 
   <main id="main">
 
-    <section class="page-hero">
+    <section class="page-hero page-hero--media">
+      <div class="hero-bg" data-bg="body-contouring" aria-hidden="true">
+        <video class="film hero-bg__media" muted loop playsinline preload="none" poster="assets/videos/posters/bg-body-contouring.jpg" data-film data-src="assets/videos/bg-body-contouring.mp4" data-src-portrait="assets/videos/bg-body-contouring-portrait.mp4" aria-hidden="true" tabindex="-1" width="1600" height="900"></video>
+      </div>
+      <button class="film-toggle film-toggle--hero" type="button" data-media-toggle aria-label="Pause video" aria-pressed="false"></button>
       <div class="container">
         <nav class="crumbs" aria-label="Breadcrumb" data-reveal><a href="index.html">Home</a> <span class="crumbs__sep">·</span> <a href="services.html">Services</a> <span class="crumbs__sep">·</span> <span>Body Contouring</span></nav>
         <p class="eyebrow" data-reveal style="margin-top:1.6rem"><span class="eyebrow__dot"></span> Treatment</p>

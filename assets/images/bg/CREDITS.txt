@@ -1,0 +1,31 @@
+Header background photographs
+=============================
+
+REAL CLINIC MEDIA (from the clinic's own Drive, used with consent, colour, no retouching)
+  about-*      Soie reception: the back-lit Soie sign            (IMG_6409)
+  contact-*    Soie reception: welcome drinks and branded cups    (IMG_6410)
+  book-*       Soie consultation room                              (frame of IMG_8577)
+  videos/bg-home*             Soie consultation room               (IMG_8577)
+  videos/bg-skin-boosters*    preparing a skin booster syringe     (IMG_5601)
+  videos/bg-exosomes*         exosome scalp treatment              (IMG_1767)
+  videos/bg-body-contouring*  INDIBA body contouring               (IMG_0900)
+
+FREE STOCK PHOTOGRAPHS (Unsplash License: free for commercial use, no attribution required)
+Source pattern: https://images.unsplash.com/photo-<id>
+  services-*        photo-1784306749274-3f025c2539e5   white orchids
+  products-*        photo-1748543669178-efd3de4e64e0   skincare serums on glass plates
+  before-after-*    photo-1619043518800-7f14be467dca   ivory silk folds
+  faq-*             photo-1728931710220-45fa008628a9   tea and a notebook
+  botox-*           photo-1746017090180-ebb14a589639   gloved hand holding a syringe
+  dermal-filler-*   photo-1599817878414-43ef36677cf0   neck and collarbone
+  dentistry-*       photo-1728342057908-7f6c4a3262f8   dental unit
+  veneers-*         photo-1677026010083-78ec7f1b84ed   smile close-up
+  laser-*           photo-1598300195951-8667fec6f769   laser handpiece
+  facial-*          photo-1598901986949-f593ff2a31a6   facial massage in warm light
+  hydrafacial-*     photo-1723540634462-528708cc17aa   water drops on skin
+  peeling-*         photo-1748543668641-0ca10d211f8d   cosmetic gel swatches
+
+Stock images show no identifiable person and are decorative only.
+They are never presented as Soie patients or as treatment results.
+To replace one, export a 1920x1080 and a 960x540 version as .avif, .webp and .jpg
+with the same file names. Nothing else needs to change.
