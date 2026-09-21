@@ -114,7 +114,17 @@
     <!-- ============================================================
          HERO
     ============================================================= -->
-    <section class="hero" id="home">
+    <section class="hero hero--video hero--media" id="home">
+      <div class="hero-bg" data-bg="home" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 760px)" type="image/avif" srcset="assets/images/bg/home-portrait-1080.avif" />
+          <source media="(max-width: 760px)" type="image/webp" srcset="assets/images/bg/home-portrait-1080.webp" />
+          <source media="(max-width: 760px)" srcset="assets/images/bg/home-portrait-1080.jpg" />
+          <source type="image/avif" srcset="assets/images/bg/home-960.avif 960w, assets/images/bg/home-1920.avif 1920w, assets/images/bg/home-2560.avif 2560w" sizes="100vw" />
+          <source type="image/webp" srcset="assets/images/bg/home-960.webp 960w, assets/images/bg/home-1920.webp 1920w, assets/images/bg/home-2560.webp 2560w" sizes="100vw" />
+          <img class="hero-bg__media" src="assets/images/bg/home-1920.jpg" srcset="assets/images/bg/home-960.jpg 960w, assets/images/bg/home-1920.jpg 1920w, assets/images/bg/home-2560.jpg 2560w" sizes="100vw" alt="" width="1920" height="1200" decoding="async" fetchpriority="high" />
+        </picture>
+      </div>
       <!-- ambient silk orbs on the brand sand/gold ground -->
       <div class="hero__orb hero__orb--1" data-parallax="0.18" aria-hidden="true"></div>
       <div class="hero__orb hero__orb--2" data-parallax="0.30" aria-hidden="true"></div>

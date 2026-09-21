@@ -1814,7 +1814,7 @@ html.no-js .film-toggle, .film-toggle[hidden] { display: none; }
    object-position values (x y). Everything starts centred because the
    pictures were not in place when this was written: tune a line here once
    its picture is, nothing else needs to change. */
-.hero-bg[data-bg="home"]            { --bg-pos: 50% 50%; --bg-pos-sm: 50% 50%; }   /* film  */
+.hero-bg[data-bg="home"]            { --bg-pos: 50% 50%; --bg-pos-sm: 62% 50%; }
 .hero-bg[data-bg="about"]           { --bg-pos: 50% 50%; --bg-pos-sm: 80% 50%; }
 .hero-bg[data-bg="services"]        { --bg-pos: 60% 45%; --bg-pos-sm: 68% 45%; }
 .hero-bg[data-bg="products"]        { --bg-pos: 60% 40%; --bg-pos-sm: 74% 40%; }
