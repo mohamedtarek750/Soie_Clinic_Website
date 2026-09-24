@@ -107,9 +107,10 @@
   </header>
 
   <main id="main">
+    <div class="rail" aria-hidden="true"><span class="rail__line"></span></div>
 
     <section class="page-hero page-hero--media">
-      <div class="hero-bg" data-bg="botox" aria-hidden="true">
+      <div class="hero-bg" data-silk data-bg="botox" aria-hidden="true">
         <picture>
           <source type="image/avif" srcset="assets/images/bg/botox-960.avif 960w, assets/images/bg/botox-1920.avif 1920w" sizes="100vw" />
           <source type="image/webp" srcset="assets/images/bg/botox-960.webp 960w, assets/images/bg/botox-1920.webp 1920w" sizes="100vw" />
@@ -322,6 +323,10 @@
       <figcaption id="lbCap"></figcaption>
     </figure>
     <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">→</button>
+  </div>
+
+  <div class="bookbar" data-bookbar hidden>
+    <a class="btn btn--gold bookbar__cta" href="book.html">Book this treatment</a>
   </div>
 
   <script src="script.js"></script>

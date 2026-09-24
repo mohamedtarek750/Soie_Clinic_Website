@@ -107,9 +107,10 @@
   </header>
 
   <main id="main">
+    <div class="rail" aria-hidden="true"><span class="rail__line"></span></div>
 
     <section class="page-hero page-hero--media">
-      <div class="hero-bg" data-bg="laser" aria-hidden="true">
+      <div class="hero-bg" data-silk data-bg="laser" aria-hidden="true">
         <picture>
           <source type="image/avif" srcset="assets/images/bg/laser-960.avif 960w, assets/images/bg/laser-1920.avif 1920w" sizes="100vw" />
           <source type="image/webp" srcset="assets/images/bg/laser-960.webp 960w, assets/images/bg/laser-1920.webp 1920w" sizes="100vw" />
@@ -296,6 +297,10 @@
       </div>
       <p class="bk__wa-note">Prefer to choose a treatment, date &amp; time? <a href="book.html" style="color:var(--gold-deep);font-weight:600">Use the full booking page →</a></p>
     </div>
+  </div>
+
+  <div class="bookbar" data-bookbar hidden>
+    <a class="btn btn--gold bookbar__cta" href="book.html">Book this treatment</a>
   </div>
 
   <script src="script.js"></script>

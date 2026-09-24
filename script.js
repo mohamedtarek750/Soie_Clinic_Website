@@ -44,6 +44,9 @@
     function done() {
       loader.classList.add('is-done');
       document.body.classList.remove('is-loading');
+      // hand over to the arrival sequence (section 35): it must not play
+      // behind the curtain, so it starts only once the curtain is going
+      document.documentElement.classList.add('is-arrived');
       // remove from the flow after the fade so it never traps focus
       window.setTimeout(function () {
         if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
@@ -52,8 +55,10 @@
 
     if (reduceMotion) { done(); return; }
 
-    // Give the gold-thread animation a beat, but never hang forever.
-    var minVisible = 1400;
+    // A beat for the thread, then out of the way: the hero's own arrival
+    // sequence is the moment worth watching, and it cannot start until
+    // this lifts. Keeping the curtain longer only delays the site.
+    var minVisible = 620;
     var start = Date.now();
     window.addEventListener('load', function () {
       var wait = Math.max(0, minVisible - (Date.now() - start));
@@ -176,7 +181,9 @@
         var step = el.hasAttribute('data-reveal-delay')
           ? parseInt(el.getAttribute('data-reveal-delay'), 10)
           : parseInt(el.dataset._autodelay || 0, 10);
-        el.style.transitionDelay = (Math.min(step, 8) * 0.09) + 's';
+        // a short cap: a section should read as one thing arriving, not as
+        // eight queueing, so the whole group lands inside about 200ms
+        el.style.transitionDelay = (Math.min(step, 4) * 0.045) + 's';
         el.classList.add('is-in');
         obs.unobserve(el);
       });
@@ -335,6 +342,26 @@
     on(document, 'mouseenter', function () {
       dot.style.opacity = ''; ring.style.opacity = '';
     });
+
+    /* The ring earns its place: where the action is not obvious it says the
+       word. Text goes into the ring itself, so nothing new is created and
+       nothing is laid out. Fine pointers only, which is already the gate
+       this whole module sits behind. */
+    function labelFor(el) {
+      if (!el || !el.closest) return '';
+      if (el.closest('.ba, .rv-shot')) return 'View';
+      if (el.closest('.cmp')) return 'Drag';
+      return '';
+    }
+    function setLabel(word) {
+      if (ring.textContent === word) return;
+      ring.textContent = word;
+      ring.classList.toggle('has-label', !!word);
+    }
+    on(document, 'mouseover', function (e) { setLabel(labelFor(e.target)); });
+    on(document, 'mouseout', function (e) {
+      if (!e.relatedTarget) setLabel('');   // the pointer left the document
+    });
   }
 
   /* =====================================================================
@@ -433,7 +460,46 @@
       img.setAttribute('alt', pic.getAttribute('alt') || '');
       if (cap) cap.textContent = name ? name.textContent : '';
     }
-    function openAt(fig) {
+    /* The morph. It is the same photograph in both places, so instead of a
+       new panel appearing over the page the picture that was clicked grows
+       into the exhibit and shrinks back into the wall. Only one element in
+       the document may carry a view-transition-name at a time, so the name
+       is handed from the thumbnail to the lightbox inside the callback (the
+       old snapshot is taken before it runs, the new one after) and dropped
+       again the moment the transition is over. Without the API, or under
+       reduced motion, every path below falls through to the plain open. */
+    var NAME = 'exhibit';
+    var named = null;
+
+    function dropName() {
+      if (named && named.style) named.style.removeProperty('view-transition-name');
+      named = null;
+    }
+    function takeName(el) {
+      dropName();
+      if (el && el.style) { el.style.setProperty('view-transition-name', NAME); named = el; }
+    }
+    function canMorph() {
+      return !reduceMotion && typeof document.startViewTransition === 'function';
+    }
+    function morph(from, to, change) {
+      if (!canMorph() || !from || !to) { change(); return; }
+      takeName(from);
+      var t;
+      try {
+        t = document.startViewTransition(function () { takeName(to); change(); });
+      } catch (e) { dropName(); change(); return; }
+      if (t && t.finished && t.finished.then) {
+        t.finished.then(function () { dropName(); }, function () { dropName(); });
+      } else { dropName(); }
+    }
+    function currentThumb() {
+      var list = visible();
+      var fig = (current >= 0 && current < list.length) ? list[current] : null;
+      return fig ? $('img', fig) : null;
+    }
+
+    function doOpen(fig) {
       lastFocus = document.activeElement;
       var list = visible();
       current = list.indexOf(fig);
@@ -443,11 +509,17 @@
       document.body.classList.add('modal-open');
       if (closeBtn) closeBtn.focus();
     }
-    function close() {
+    function doClose() {
       box.classList.remove('is-open');
       box.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function openAt(fig) {
+      morph($('img', fig), img, function () { doOpen(fig); });
+    }
+    function close() {
+      morph(img, currentThumb(), doClose);
     }
     function step(dir) {
       var list = visible();
@@ -558,9 +630,43 @@
     $$('.cmp').forEach(function (cmp) {
       var range = $('.cmp__range', cmp);
       if (!range) return;
-      function apply() { cmp.style.setProperty('--pos', range.value + '%'); }
+
+      function value() {
+        var v = parseFloat(range.value);
+        return isNaN(v) ? 50 : v;
+      }
+
+      var target  = value();   // where the pointer has asked the seam to be
+      var pos     = target;    // where the seam is actually drawn right now
+      var running = false;
+      var keyed   = false;     // the last change came from the keyboard
+
+      function paint() { cmp.style.setProperty('--pos', pos.toFixed(2) + '%'); }
+      function land()  { pos = target; running = false; paint(); }
+
+      // Silk, not glass: the seam follows the hand with the same lerp the
+      // cursor ring uses, so it trails a little and then settles instead of
+      // stopping dead on the last pixel.
+      function loop() {
+        pos += (target - pos) * 0.18;
+        if (Math.abs(target - pos) < 0.04) { pos = target; running = false; }
+        paint();
+        if (running) raf(loop);
+      }
+
+      function apply() {
+        target = value();
+        // arrow keys are an exact instruction, not a drag: they land at once
+        if (reduceMotion || keyed) { land(); return; }
+        if (!running) { running = true; raf(loop); }
+      }
+
+      on(range, 'keydown',    function () { keyed = true; });
+      on(range, 'mousedown',  function () { keyed = false; });
+      on(range, 'pointerdown', function () { keyed = false; });
+      on(range, 'touchstart', function () { keyed = false; }, { passive: true });
       on(range, 'input', apply);
-      apply();
+      paint();
     });
   }
 
@@ -737,6 +843,8 @@
     };
     var selectedTime = '';
     var sent = false;
+    var sending = false;      // a post is in flight; do not start a second one
+    var postFailed = false;   // the request never left the device
 
     function pad(n) { return n < 10 ? '0' + n : String(n); }
     function fmt12(h) {
@@ -833,8 +941,11 @@
       return b ? b.value : 'New Cairo';
     }
     function branchEndpoint() { return BOOKING_ENDPOINTS[currentBranch()] || ''; }
-    // A branch books online once its own system endpoint is wired up.
-    function useSystem() { return !!branchEndpoint(); }
+    // A branch books online once its own system endpoint is wired up. If a
+    // post has already failed to leave this device, the online route is not
+    // working for this visitor, so the form falls back to WhatsApp for the
+    // rest of the visit rather than swallowing a second booking.
+    function useSystem() { return !postFailed && !!branchEndpoint(); }
 
     function update() {
       if (sent) return;
@@ -877,10 +988,19 @@
                 + '• Time: ' + selectedTime;
         submit.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg);
         submit.setAttribute('target', '_blank');
+        // a real link again: the browser gives it focus and Enter for free
+        submit.removeAttribute('role');
+        submit.removeAttribute('tabindex');
       } else {
         // system submit is handled by the click listener; nothing to navigate to
         submit.removeAttribute('href');
         submit.removeAttribute('target');
+        // An <a> with no href is neither focusable nor operable by keyboard,
+        // so a patient using the keyboard or a screen reader could fill the
+        // whole form and never reach Confirm. Make it a button in every sense
+        // the markup allows; the keydown listener below supplies Enter and Space.
+        submit.setAttribute('role', 'button');
+        submit.setAttribute('tabindex', '0');
       }
     }
 
@@ -888,8 +1008,38 @@
     // web apps answer without CORS headers, so we send 'no-cors' (opaque
     // response) and confirm optimistically; the sheet and email are the
     // record of truth.
-    function sendToReception() {
+    // We cannot READ an opaque response, but we can still tell whether the
+    // request left the device: fetch rejects when the network never carried
+    // it. So a rejection is never dressed up as a confirmation. Anything
+    // else, including a slow network, keeps the optimistic confirmation the
+    // page has always shown.
+    function confirmSent() {
       if (sent) return;
+      sent = true;
+      sending = false;
+      if (note) note.hidden = true;
+      if (done) done.hidden = false;
+      if (submit) submit.style.display = 'none';
+    }
+
+    function sendFailed() {
+      if (sent) return;
+      sending = false;
+      postFailed = true;             // useSystem() now offers WhatsApp instead
+      if (done) done.hidden = true;  // nothing was confirmed, so nothing is claimed
+      if (submit) submit.style.display = '';
+      update();                      // rebuilds the WhatsApp link, label and note
+      if (note) {
+        note.hidden = false;
+        note.textContent = 'We could not reach our booking system just now, so '
+          + 'nothing has been sent yet. Please check your connection and try '
+          + 'again, or tap the button above to send the same details to our '
+          + 'reception on WhatsApp.';
+      }
+    }
+
+    function sendToReception() {
+      if (sent || sending) return;
       var payload = {
         action:      'saveWebBooking',
         branch:      currentBranch(),
@@ -902,18 +1052,28 @@
         source:      'website',
         submittedAt: new Date().toISOString()
       };
+      sending = true;
+      var settled = false;
+      function ok()   { if (settled) return; settled = true; confirmSent(); }
+      function fail() { if (settled) return; settled = true; sendFailed(); }
+
+      if (note) { note.hidden = false; note.textContent = 'Sending your request...'; }
+
       try {
-        fetch(branchEndpoint(), {
+        var post = fetch(branchEndpoint(), {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(payload)
-        }).catch(function () {});
-      } catch (e) { /* keep the optimistic confirmation even if the network hiccups */ }
-      sent = true;
-      if (note) note.hidden = true;
-      if (done) done.hidden = false;
-      if (submit) submit.style.display = 'none';
+        });
+        if (post && post.then) {
+          post.then(ok, fail);
+          // A slow network is not a failure. If the request is still in the
+          // air after a few seconds it has left the device, and the sheet is
+          // the record of truth, so confirm rather than hold the patient.
+          window.setTimeout(ok, 6000);
+        } else { ok(); }
+      } catch (e) { fail(); }   // no fetch at all, or it threw before sending
     }
 
     // pre-select the service passed from a treatment page. A Mohandseen-only
@@ -947,7 +1107,7 @@
       update();
     });
 
-    on(submit, 'click', function (e) {
+    function activate(e) {
       if (submit.getAttribute('aria-disabled') === 'true') {
         e.preventDefault();
         // nudge the missing phone on the online (Mohandseen) path
@@ -962,6 +1122,17 @@
         sendToReception();
       }
       // otherwise the <a href="wa.me/…"> opens WhatsApp as before
+    }
+
+    on(submit, 'click', activate);
+    on(submit, 'keydown', function (e) {
+      // Only while it is standing in for a button. With a real href the
+      // browser already handles Enter, and Space should scroll as usual.
+      if (!submit || submit.hasAttribute('href')) return;
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();   // Space must not scroll the page out from under it
+        activate(e);
+      }
     });
 
     update();
@@ -1130,6 +1301,70 @@
   }
 
   /* =====================================================================
+     17. SILK - the motion system (its CSS lives in section 35).
+     Three jobs, all of them cheap:
+       A  add html.is-arrived one frame in, which hands the header over to
+          its own arrival sequence instead of the generic reveal.
+       C  on a fine pointer only, write a smoothed -1..1 pointer offset into
+          --px / --py on every [data-silk] element. CSS decides what moves;
+          this never touches layout and stops the moment the pointer rests.
+       G  raise the booking bar once the header has scrolled away.
+     Reduced motion: the arrival still fires (CSS lands it instantly), the
+     lean never starts, and the bar appears without sliding.
+     ===================================================================== */
+  function initSilk() {
+    var root = document.documentElement;
+
+    /* A - the arrival. Pages with a loader are handed over by initLoader
+       when the curtain lifts, so the sequence is never spent behind it. */
+    function arrive() { root.classList.add('is-arrived'); }
+    if (reduceMotion || !$('#loader')) {
+      if (reduceMotion) arrive();
+      else raf(function () { raf(arrive); });
+    }
+
+    /* C - the lean */
+    var leaners = $$('[data-silk]');
+    if (leaners.length && finePointer && !reduceMotion) {
+      root.classList.add('silk-pointer');
+      var tx = 0, ty = 0, cx = 0, cy = 0, running = false;
+
+      function step() {
+        cx += (tx - cx) * 0.08;
+        cy += (ty - cy) * 0.08;
+        for (var i = 0; i < leaners.length; i++) {
+          leaners[i].style.setProperty('--px', cx.toFixed(4));
+          leaners[i].style.setProperty('--py', cy.toFixed(4));
+        }
+        // keep going only while there is still distance to cover
+        if (Math.abs(tx - cx) > 0.0015 || Math.abs(ty - cy) > 0.0015) raf(step);
+        else running = false;
+      }
+
+      on(window, 'mousemove', function (e) {
+        var w = window.innerWidth || 1, h = window.innerHeight || 1;
+        tx = (e.clientX / w) * 2 - 1;
+        ty = (e.clientY / h) * 2 - 1;
+        if (!running) { running = true; raf(step); }
+      }, { passive: true });
+    }
+
+    /* G - the booking bar */
+    var bar = $('[data-bookbar]');
+    if (bar) {
+      bar.hidden = false;
+      var hero = $('.page-hero');
+      if (hero && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          bar.classList.toggle('is-up', !entries[0].isIntersecting);
+        }, { threshold: 0 }).observe(hero);
+      } else {
+        bar.classList.add('is-up');
+      }
+    }
+  }
+
+  /* =====================================================================
      BOOT
      ===================================================================== */
   function safe(fn, name) {
@@ -1140,6 +1375,14 @@
   }
 
   safe(initLoader, 'loader'); // start immediately so the fade feels responsive
+
+  // Pages without a curtain start their arrival the moment this file runs.
+  // This file sits at the end of <body>, so the header already exists, and
+  // waiting for DOMContentLoaded would leave it blank for longer than it has
+  // to be on a slow connection. Pages with a loader are handed over by it.
+  if (!$('#loader')) {
+    safe(function () { document.documentElement.classList.add('is-arrived'); }, 'arrival');
+  }
   ready(function () {
     safe(initNav, 'nav');
     safe(initReveals, 'reveals');
@@ -1159,5 +1402,6 @@
     safe(initAccordion, 'accordion');
     safe(initBooking, 'booking');
     safe(initFilms, 'films');
+    safe(initSilk, 'silk');
   });
 })();

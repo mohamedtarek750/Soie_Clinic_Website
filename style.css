@@ -129,6 +129,11 @@
   --d-reveal: 1100ms;  /* reveal translate */
   --d-image:  1600ms;  /* image settle 1.06 -> 1 */
   --d-draw:   2200ms;  /* SVG thread draw */
+
+  /* silk (section 35): a longer tail than --ease for the big moves, and
+     how far a photograph is allowed to lean toward the pointer */
+  --silk-glide: cubic-bezier(0.16, 1, 0.3, 1);
+  --silk-reach: 14px;
 }
 
 /* ---------------------------------------------------------------
@@ -367,7 +372,9 @@ p, li, .hero__lede, .page-hero__lede, .section__sub, .cta-band__sub, .acc__a { t
   position: fixed; inset: 0; z-index: 6000;
   background: var(--linen);
   display: grid; place-items: center;
-  transition: opacity 800ms var(--ease-2);
+  /* it clears quickly on purpose: the arrival in section 35 starts as this
+     lifts, and the two are one moment, not two queued ones */
+  transition: opacity 420ms var(--ease-2);
   transform: none;
 }
 .loader.is-done { opacity: 0; transform: none; pointer-events: none; }
@@ -1384,10 +1391,13 @@ ul.ticks li:last-child:nth-child(odd) { grid-column: 1 / -1; }
    motion) and an inline transition-delay. CSS never sets that delay.
    The hidden state exists only under html.js so no-JS renders fully.
 --------------------------------------------------------------- */
+/* Retimed for section 35: a shorter travel on the silk curve, with opacity
+   leading, so a section reads as one thing arriving rather than eight things
+   queueing. initReveals caps the stagger to match. */
 html.js [data-reveal] {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity var(--d-slow) var(--ease), transform var(--d-reveal) var(--ease);
+  transform: translateY(10px);
+  transition: opacity 620ms var(--ease), transform 900ms var(--silk-glide);
 }
 html.js [data-reveal].is-in, [data-reveal].is-in { opacity: 1; transform: none; }
 
@@ -1987,6 +1997,147 @@ body.cursor-on:not(.menu-open):has(.hero--media:hover, .page-hero--media:hover, 
 @keyframes vtIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* ---------------------------------------------------------------
+   35 · SILK  (the motion system)
+   "Soie" is French for silk, so the physics is silk: nothing snaps,
+   nothing bounces, everything has weight and settles. Two ideas
+   carry it and the rest answers something the visitor did.
+     A · THE ARRIVAL. The header photograph is uncovered, never
+         faded, and the words follow it in one short cascade. Once
+         per page, then the page is calm and [data-reveal] takes
+         over below the fold exactly as before.
+     B · THE RAIL. The brand's hairline measures how far you have
+         read. Pure CSS on a scroll timeline, so it costs no main
+         thread at all; where scroll timelines are missing the
+         track simply stays empty.
+     C · THE LEAN. On a fine pointer the photograph leans a few
+         pixels toward the hand. script.js writes --px and --py
+         already smoothed, and CSS only reads them.
+   Only transform, opacity and clip-path animate here. The img
+   inside keeps its own bgDrift, so the lean and the uncover are
+   applied to the wrapper around it and never fight it.
+--------------------------------------------------------------- */
+
+/* A · THE ARRIVAL --------------------------------------------- */
+@keyframes silkUncover { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes silkRise    { from { opacity: 0; transform: translate3d(0, 24px, 0); } to { opacity: 1; transform: none; } }
+/* the headline is not faded in: it is uncovered, top line first, the way it
+   is read. The -14% keeps descenders and the italic's overhang out of the clip. */
+@keyframes silkUnmask  { from { clip-path: inset(-14% 0 104% 0); } to { clip-path: inset(-14% 0 -14% 0); } }
+
+html.is-arrived .hero-bg picture,
+html.is-arrived .hero-bg video.hero-bg__media {
+  animation: silkUncover 1150ms var(--silk-glide) both;
+}
+/* the copy: one cascade, done inside 1.5s */
+html.is-arrived .hero__inner > [data-reveal],
+html.is-arrived .page-hero--media > .container > [data-reveal] {
+  opacity: 1; transform: none; transition: none;
+  animation: silkRise 820ms var(--silk-glide) both;
+}
+/* the headline overrides the cascade above, so it has to out-specify it */
+html.is-arrived .hero__inner > .hero__title,
+html.is-arrived .page-hero--media > .container > .page-hero__title {
+  animation: silkUnmask 1000ms var(--silk-glide) 150ms both;
+}
+html.is-arrived .hero__eyebrow,
+html.is-arrived .page-hero--media .crumbs              { animation-delay: 60ms; }
+html.is-arrived .page-hero--media .eyebrow             { animation-delay: 240ms; }
+html.is-arrived .hero__lede,
+html.is-arrived .page-hero--media .page-hero__lede     { animation-delay: 400ms; }
+html.is-arrived .hero__thread,
+html.is-arrived .page-hero--media .page-hero__thread   { animation-delay: 520ms; }
+html.is-arrived .hero__actions                         { animation-delay: 560ms; }
+html.is-arrived .hero__scroll {
+  animation: silkRise 820ms var(--silk-glide) 700ms both;
+}
+
+/* B · THE RAIL ------------------------------------------------- */
+.rail {
+  position: fixed; z-index: 3; pointer-events: none;
+  top: calc(var(--nav-h-scrolled) + 1.5rem); bottom: 1.5rem;
+  left: max(calc(var(--gutter) / 2), calc((100vw - var(--maxw)) / 4));
+  width: 1px; background: var(--line);
+}
+.rail__line {
+  display: block; width: 100%; height: 100%;
+  background: var(--gold); transform-origin: 50% 0; transform: scaleY(0);
+}
+@supports (animation-timeline: scroll()) {
+  @keyframes silkRail { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  .rail__line { animation: silkRail linear both; animation-timeline: scroll(root block); }
+}
+@media (max-width: 1180px) { .rail { display: none; } }
+
+/* C · THE LEAN  (desktop pointer only; script.js gates the class) */
+html.silk-pointer .hero-bg[data-silk] picture,
+html.silk-pointer .hero-bg[data-silk] video.hero-bg__media {
+  transform: translate3d(calc(var(--px, 0) * var(--silk-reach)), calc(var(--py, 0) * var(--silk-reach)), 0);
+}
+
+/* D · THE MORPH  (cross-document and lightbox)
+   Every page holds exactly one header picture and one page title, so giving
+   them the same name on every page makes the browser carry them from page to
+   page instead of cutting. script.js hands the name "exhibit" from a gallery
+   thumbnail to the lightbox picture for the length of that transition only.
+   Browsers without view transitions keep the plain opacity fade in section 33. */
+.hero-bg__media                     { view-transition-name: page-media; }
+.hero__title, .page-hero__title     { view-transition-name: page-title; }
+::view-transition-group(page-media),
+::view-transition-group(page-title),
+::view-transition-group(exhibit)    { animation-duration: 520ms; animation-timing-function: var(--silk-glide); }
+/* the picture cross-fades while its box travels, so neither side is squashed */
+::view-transition-old(page-media),
+::view-transition-new(page-media),
+::view-transition-old(exhibit),
+::view-transition-new(exhibit)      { animation-duration: 520ms; height: 100%; object-fit: cover; }
+
+/* E · MOTION THAT ANSWERS AN ACTION --------------------------- */
+/* the accordion opens instead of appearing: 0fr to 1fr is the only way to
+   animate to an unknown height without touching layout properties */
+.acc details .acc__a {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows var(--d) var(--silk-glide);
+}
+.acc details .acc__a > * { min-height: 0; }
+.acc details[open] .acc__a { grid-template-rows: 1fr; }
+/* a press answers the finger before the browser has decided it was a tap */
+.filter:active, .slot:active, .cat-chip:active, .film-toggle:active { transition-duration: 120ms; }
+/* the mobile menu deals its links out rather than showing a finished list */
+@media (max-width: 980px) {
+  body.menu-open .nav__links .nav__link,
+  body.menu-open .nav__links .nav__cta { animation: silkRise 520ms var(--silk-glide) both; }
+  body.menu-open .nav__links > :nth-child(1) { animation-delay: 60ms; }
+  body.menu-open .nav__links > :nth-child(2) { animation-delay: 105ms; }
+  body.menu-open .nav__links > :nth-child(3) { animation-delay: 150ms; }
+  body.menu-open .nav__links > :nth-child(4) { animation-delay: 195ms; }
+  body.menu-open .nav__links > :nth-child(5) { animation-delay: 240ms; }
+  body.menu-open .nav__links > :nth-child(6) { animation-delay: 285ms; }
+  body.menu-open .nav__links > :nth-child(7) { animation-delay: 330ms; }
+  body.menu-open .nav__links > :nth-child(8) { animation-delay: 375ms; }
+}
+
+/* F · THE CURSOR SAYS THE WORD  (script.js writes the text and the class) */
+.cursor-ring.has-label {
+  width: 64px; height: 64px; margin: -32px 0 0 -32px;
+  display: grid; place-items: center;
+  background: rgba(22,22,22,.72); border-color: transparent;
+  font: 500 .58rem/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--linen);
+}
+body.cursor-on:not(.menu-open):has(.hero--media:hover, .page-hero--media:hover) .cursor-ring.has-label { border-color: transparent; }
+
+/* G · THE BOOKING BAR  (phones, treatment pages: the one page kind
+   where a visitor already has intent). It clears the WhatsApp disc. */
+.bookbar {
+  position: fixed; z-index: 60; left: 0; right: 0; bottom: 0;
+  padding: .6rem var(--gutter) calc(.6rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(22, 22, 22, .93); border-top: 1px solid var(--ink-line);
+  transform: translate3d(0, 110%, 0); transition: transform var(--d) var(--silk-glide);
+}
+.bookbar.is-up { transform: none; }
+.bookbar__cta { width: calc(100% - 4.5rem); justify-content: center; }
+@media (min-width: 761px) { .bookbar { display: none; } }
+
+/* ---------------------------------------------------------------
    34 · REDUCED MOTION  (always the LAST block in the file)
    JS already short-circuits reveals, parallax, cursor and loader.
 --------------------------------------------------------------- */
@@ -1996,6 +2147,18 @@ body.cursor-on:not(.menu-open):has(.hero--media:hover, .page-hero--media:hover, 
   .cat-card__img, .about__frame img { transform: none !important; }
   .hero-bg__media { animation: none !important; transform: none !important; will-change: auto !important; }   /* no drift: the header picture holds still */
   .film-toggle { display: none !important; }   /* films never load here (initFilms); the poster is the photograph */
+  /* section 35: the arrival lands instantly, the rail and the lean do not run at all */
+  html.is-arrived .hero-bg picture, html.is-arrived .hero-bg video.hero-bg__media,
+  html.is-arrived .hero__inner > [data-reveal], html.is-arrived .page-hero--media > .container > [data-reveal],
+  html.is-arrived .hero__title, html.is-arrived .page-hero--media .page-hero__title, html.is-arrived .hero__scroll {
+    animation: none !important; clip-path: none !important; opacity: 1 !important; transform: none !important;
+  }
+  .rail { display: none !important; }
+  .bookbar { transition: none !important; }
+  .acc details .acc__a { transition: none !important; }
+  body.menu-open .nav__links .nav__link, body.menu-open .nav__links .nav__cta { animation: none !important; }
+  .cursor-ring.has-label { display: none !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
   .page-hero ~ .services .cat-card__img { background-size: auto 100% !important; }
   .loader { display: none !important; }
   .marquee__track, .fab-wa__pulse, .hero__scroll-line::after { animation: none !important; }
