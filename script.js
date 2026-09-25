@@ -808,6 +808,9 @@
      Slots follow the clinic's working hours (Sat to Thu 10:00 to 23:00,
      Fri 12:00 to 22:00), hourly, last start 1h before close; past times are
      hidden when the chosen date is today.
+     Validation checks a field when the patient leaves it, and a blocked
+     Confirm raises a summary at the top of the form that takes focus and
+     links to each control still to fill.
      ===================================================================== */
   function initBooking() {
     var form = $('#bkForm');
@@ -833,6 +836,10 @@
     var waIcon     = $('#bkWaIcon');
     var note       = $('#bkNote');
     var done       = $('#bkDone');
+    var summary     = $('#bkSummary');
+    var summaryList = $('#bkSummaryList');
+    var nameErr     = $('#bkNameErr');
+    var phoneErr    = $('#bkPhoneErr');
     var sum = {
       branch:  $('#sumBranch'),
       name:    $('#sumName'),
@@ -947,6 +954,141 @@
     // rest of the visit rather than swallowing a second booking.
     function useSystem() { return !postFailed && !!branchEndpoint(); }
 
+    /* ── What is missing, and how we say so ───────────────────────────────
+       One validator per field. Each returns '' when the field is fine, or
+       the one short line the patient reads. The two text fields show their
+       line under the input; date and time have no text field, so their
+       lines appear only in the summary at the top of the form. Nothing
+       here touches the submit gating, the payload or the endpoints.
+       ------------------------------------------------------------------ */
+    function todayStr() {
+      var n = new Date();
+      return n.getFullYear() + '-' + pad(n.getMonth() + 1) + '-' + pad(n.getDate());
+    }
+
+    // the first time a patient can still pick on the chosen date
+    function firstSlot() {
+      return slotsWrap ? slotsWrap.querySelector('button.slot:not([disabled])') : null;
+    }
+
+    function nameProblem() {
+      var v = nameInput ? nameInput.value.trim() : '';
+      if (!v) return 'Enter your full name.';
+      if (v.length < 2) return 'Enter your full name, at least two characters.';
+      return '';
+    }
+
+    // Only the online route needs a number typed in; the WhatsApp handoff
+    // carries the patient's number in the chat itself.
+    function phoneProblem() {
+      if (!useSystem()) return '';
+      var v = phoneInput ? phoneInput.value.trim() : '';
+      if (!v) return 'Enter the phone number we should call you on.';
+      if (!phoneValid()) return 'Enter at least eight digits of your phone number.';
+      return '';
+    }
+
+    function dateProblem() {
+      var v = dateInput ? dateInput.value : '';
+      if (!v) return 'Choose the date you would like to visit.';
+      if (v < todayStr()) return 'Choose today or a later date.';
+      if (!firstSlot()) return 'No times are left on that date. Choose another day.';
+      return '';
+    }
+
+    function timeProblem() {
+      if (selectedTime) return '';
+      if (dateProblem()) return '';   // the date is what to fix first
+      return 'Choose one of the times shown.';
+    }
+
+    // an inline line under one input, tied to it by the aria-describedby
+    // already in the markup; aria-invalid says the same thing to software
+    function setFieldError(input, errEl, message) {
+      if (errEl) {
+        errEl.textContent = message || '';
+        if (message) errEl.removeAttribute('hidden');
+        else errEl.setAttribute('hidden', '');
+      }
+      if (input) {
+        if (message) input.setAttribute('aria-invalid', 'true');
+        else input.removeAttribute('aria-invalid');
+      }
+    }
+
+    // A shown line must never outlive its problem, so clear any that the
+    // patient has just fixed. This only ever removes a line: a half typed
+    // name is not scolded mid word.
+    function easeErrors() {
+      if (nameInput && nameInput.getAttribute('aria-invalid') === 'true' && !nameProblem()) {
+        setFieldError(nameInput, nameErr, '');
+      }
+      if (phoneInput && phoneInput.getAttribute('aria-invalid') === 'true' && !phoneProblem()) {
+        setFieldError(phoneInput, phoneErr, '');
+      }
+    }
+
+    // every problem the form currently has, in the order the fields appear
+    function problems() {
+      var list = [];
+      var m = nameProblem();
+      if (m) list.push({ href: '#bkName', message: m, target: function () { return nameInput; } });
+      m = phoneProblem();
+      if (m) list.push({ href: '#bkPhone', message: m, target: function () { return phoneInput; } });
+      m = dateProblem();
+      if (m) list.push({ href: '#bkDate', message: m, target: function () { return dateInput; } });
+      m = timeProblem();
+      if (m) list.push({ href: '#bkSlots', message: m, target: firstSlot });
+      return list;
+    }
+
+    function fillSummary(list) {
+      if (!summaryList) return;
+      summaryList.innerHTML = '';
+      list.forEach(function (p) {
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = p.href;
+        a.textContent = p.message;
+        on(a, 'click', function (e) {
+          e.preventDefault();
+          var el = p.target();
+          if (el) { try { el.focus(); } catch (err) { /* nothing focusable */ } }
+        });
+        li.appendChild(a);
+        summaryList.appendChild(li);
+      });
+    }
+
+    function hideSummary() {
+      if (summary) summary.setAttribute('hidden', '');
+      if (summaryList) summaryList.innerHTML = '';
+    }
+
+    // While the summary is up it has to keep telling the truth, so rebuild
+    // it from what is missing now and take it away once nothing is.
+    function refreshSummary() {
+      if (!summary || summary.hasAttribute('hidden')) return;
+      var list = problems();
+      if (!list.length) { hideSummary(); return; }
+      var held = summary.contains(document.activeElement);
+      fillSummary(list);
+      if (held) { try { summary.focus(); } catch (e) { /* older browser */ } }
+    }
+
+    // A blocked Confirm is the one moment the patient needs the whole
+    // picture: the inline lines and a summary that takes focus, with a link
+    // per problem straight to the control that fixes it.
+    function reportBlocked() {
+      setFieldError(nameInput, nameErr, nameProblem());
+      setFieldError(phoneInput, phoneErr, phoneProblem());
+      var list = problems();
+      if (!summary || !list.length) return;
+      fillSummary(list);
+      summary.removeAttribute('hidden');
+      try { summary.focus(); } catch (e) { /* older browser */ }
+    }
+
     function update() {
       if (sent) return;
       var branchEl = checked('bkBranch');
@@ -972,8 +1114,15 @@
         ? 'We send your request straight to our ' + branch + ' reception, who call you back to confirm. Nothing is charged online.'
         : 'Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.';
 
+      // whatever just changed, no shown message may still be lying
+      easeErrors();
+      refreshSummary();
+
       if (!submit) return;
-      var ready = !!(dateVal && selectedTime && (!online || phoneValid()));
+      // The form marks the name Required and the summary asks for it, so the
+      // gate has to agree: a booking with no name is not one reception can act
+      // on, and promising a rule we do not enforce is worse than not asking.
+      var ready = !!(dateVal && selectedTime && !nameProblem() && (!online || phoneValid()));
       submit.setAttribute('aria-disabled', ready ? 'false' : 'true');
 
       if (ready && !online) {
@@ -1017,9 +1166,18 @@
       if (sent) return;
       sent = true;
       sending = false;
+      hideSummary();
+      setFieldError(nameInput, nameErr, '');
+      setFieldError(phoneInput, phoneErr, '');
       if (note) note.hidden = true;
       if (done) done.hidden = false;
       if (submit) submit.style.display = 'none';
+      // Confirm is now display:none, so focus would fall to the top of the
+      // page and the confirmation would pass in silence. Put focus on it.
+      if (done) {
+        if (!done.hasAttribute('tabindex')) done.setAttribute('tabindex', '-1');
+        try { done.focus(); } catch (e) { /* older browser */ }
+      }
     }
 
     function sendFailed() {
@@ -1035,6 +1193,10 @@
           + 'nothing has been sent yet. Please check your connection and try '
           + 'again, or tap the button above to send the same details to our '
           + 'reception on WhatsApp.';
+        // the request state changed and nothing moved, so say so where the
+        // patient is looking rather than repainting a paragraph in silence
+        if (!note.hasAttribute('tabindex')) note.setAttribute('tabindex', '-1');
+        try { note.focus(); } catch (e) { /* older browser */ }
       }
     }
 
@@ -1102,19 +1264,24 @@
     on(serviceSel, 'change', update);
     on(dateInput, 'change', buildSlots);
     on(nameInput, 'input', update);
-    on(phoneInput, 'input', function () {
-      if (phoneInput && phoneValid()) phoneInput.removeAttribute('aria-invalid');
-      update();
+    on(phoneInput, 'input', update);
+
+    // Checked when the patient leaves the field, not on every keystroke and
+    // not only at the end. Focus never moves on blur: they are on their way
+    // to the next field and we do not pull them back.
+    on(nameInput, 'blur', function () {
+      setFieldError(nameInput, nameErr, nameProblem());
+      refreshSummary();
+    });
+    on(phoneInput, 'blur', function () {
+      setFieldError(phoneInput, phoneErr, phoneProblem());
+      refreshSummary();
     });
 
     function activate(e) {
       if (submit.getAttribute('aria-disabled') === 'true') {
         e.preventDefault();
-        // nudge the missing phone on the online (Mohandseen) path
-        if (useSystem() && !phoneValid() && phoneInput) {
-          phoneInput.setAttribute('aria-invalid', 'true');
-          phoneInput.focus();
-        }
+        reportBlocked();
         return;
       }
       if (useSystem()) {          // Mohandseen → website booking to the sheet

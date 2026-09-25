@@ -193,6 +193,7 @@ p, li, .hero__lede, .page-hero__lede, .section__sub, .cta-band__sub, .acc__a { t
 .cta-band :focus-visible,
 .footer :focus-visible,
 .svc__aside .info-card:last-child :focus-visible,
+.bookbar :focus-visible,
 .lightbox :focus-visible { outline-color: var(--linen); }
 
 .skip-link {
@@ -316,6 +317,10 @@ p, li, .hero__lede, .page-hero__lede, .section__sub, .cta-band__sub, .acc__a { t
 .footer__contact a, .bk__wa-note a, .svc__body p a {
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em;
   text-decoration-color: var(--line-strong);
+  /* a line of text is 19 to 20px tall, which is not a thumb. Vertical padding on
+     an inline box grows the hit area without touching the line box, so the copy
+     sets exactly as before and the negative margin keeps the paragraph flow. */
+  padding-block: .8rem; margin-block: -.8rem;
   transition: text-decoration-color var(--d) var(--ease), color var(--d-micro);
 }
 .footer__contact a:hover, .bk__wa-note a:hover, .svc__body p a:hover { text-decoration-color: currentColor; }
@@ -338,7 +343,7 @@ p, li, .hero__lede, .page-hero__lede, .section__sub, .cta-band__sub, .acc__a { t
 }
 .filters::-webkit-scrollbar { display: none; }
 .filter {
-  flex: none;
+  flex: none; position: relative;
   font: 500 var(--t-eyebrow)/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase;
   color: var(--char-soft); background: none;
   border: 0; border-bottom: 1px solid transparent; border-radius: 0;
@@ -346,6 +351,10 @@ p, li, .hero__lede, .page-hero__lede, .section__sub, .cta-band__sub, .acc__a { t
   transform: none; white-space: nowrap;
   transition: color var(--d) var(--ease), border-color var(--d) var(--ease);
 }
+/* invisible hit area: the short words ("All", "Lips") are only 35 to 39px wide,
+   so each filter reaches 44px across without the underline growing with it.
+   The 2rem right margin absorbs it and still leaves 11px between two filters. */
+.filter::after { content: ""; position: absolute; inset: 0 -4.5px; }
 .filter:hover { color: var(--char); transform: none; }
 .filter.is-active, .filter[aria-pressed="true"] { color: var(--char); border-bottom-color: var(--char); background: none; }
 
@@ -480,11 +489,14 @@ body.menu-open, body.modal-open { overflow: hidden; }
 /* breadcrumbs */
 .crumbs { font: 500 var(--t-label)/1.4 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--char-soft); }
 .crumbs a {
-  color: var(--char-soft);
+  position: relative; color: var(--char-soft);
   text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: transparent; text-underline-offset: .3em;
-  padding-block: .6rem; margin-block: -.6rem;   /* inline: no layout change, taller hit area */
+  padding-block: .95rem; margin-block: -.95rem;   /* inline: no layout change, 44px hit area */
   transition: text-decoration-color var(--d-micro), color var(--d-micro);
 }
+/* "Home" is only 41px wide, so the last 3px come from an invisible hit area.
+   The separator beside it keeps .5rem of its own padding, so nothing collides. */
+.crumbs a::after { content: ""; position: absolute; inset: 0 -1.5px; }
 .crumbs a:hover { color: var(--char); text-decoration-color: var(--char); }
 .crumbs > span:last-child { color: var(--char); }
 .crumbs__sep { color: var(--line-strong); padding: 0 .5rem; }
@@ -1042,7 +1054,13 @@ html.js .thread-divider path { stroke-dasharray: 2600; stroke-dashoffset: 2600; 
 .footer__nav a {
   font-size: var(--t-small); line-height: 1.4; color: var(--linen); opacity: .85; width: fit-content;
   text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em; text-decoration-color: transparent;
-  padding: .6rem 0; margin-block: -.6rem;   /* ~40px hit area; the negative margin keeps the .6rem row rhythm */
+  /* The hit box fills half the .6rem row gap on each side and no more, so the
+     eight boxes tile the list instead of overlapping: before this, each link's
+     box ran 9.6px into the next one's, and because the later sibling wins the
+     hit test, the 9.6px directly under "Home" opened About. 30.2px unambiguous
+     beats 40.2px with a wrong-link band in it. Going to a true 44px needs the
+     row rhythm to grow, which is the owner's call, not a CSS one. */
+  padding: .3rem 0; margin-block: -.3rem;
   transition: text-decoration-color var(--d) var(--ease), opacity var(--d-micro);
 }
 .footer__nav a:hover { text-decoration-color: var(--linen); opacity: 1; padding-left: 0; color: var(--linen); }
@@ -1302,7 +1320,10 @@ ul.ticks li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 --------------------------------------------------------------- */
 .bk { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 var(--gap); align-items: start; }
 .bk__form { grid-column: 1 / 8; display: block; gap: 0; }
-.bk__summary { grid-column: 9 / -1; position: sticky; top: var(--sticky-top); }
+/* the sticky ticket rail. Scoped to the element, because the error summary the
+   form now opens with carries the same class name (see the block at the end of
+   this section) and must never inherit the rail's column or its sticky. */
+aside.bk__summary { grid-column: 9 / -1; position: sticky; top: var(--sticky-top); }
 
 .bk__form > div { border-top: 1px solid var(--line-strong); padding: 2.75rem 0; }
 .bk__form > div:first-child { border-top: 0; padding-top: 0; }
@@ -1341,7 +1362,13 @@ ul.ticks li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .bk select { padding-right: 1.5rem; }
 .bk input::placeholder { color: var(--char-mute); opacity: 1; }
 .bk input[type="text"]:focus, .bk input[type="tel"]:focus, .bk input[type="date"]:focus, .bk select:focus { outline: none; border-bottom-color: var(--char); box-shadow: inset 0 -1px 0 var(--char); }
-#bkPhone[aria-invalid="true"] { border-bottom-color: var(--bad); box-shadow: inset 0 -1px 0 var(--bad); }
+/* an invalid field trades its hairline for the same hairline in --bad, and keeps
+   it while focused, so the field never looks repaired before it is. Because the
+   red rule then reads the same focused as unfocused, focus is said a second way:
+   the house hairline ring, in the error colour. */
+.bk input[aria-invalid="true"],
+.bk input[aria-invalid="true"]:focus { border-bottom-color: var(--bad); box-shadow: inset 0 -1px 0 var(--bad); }
+.bk input[aria-invalid="true"]:focus-visible { outline: 1px solid var(--bad); outline-offset: 4px; }
 .bk__field:has(input[aria-invalid="true"]) .bk__field-label { color: var(--bad); }
 .select-wrap, .bk .select-wrap { position: relative; }
 .select-wrap::after, .bk .select-wrap::after {
@@ -1384,6 +1411,63 @@ ul.ticks li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .bk__done svg { flex: none; width: 20px; height: 20px; color: var(--ok); margin-top: .1rem; }
 .bk__done p { font-size: var(--t-small); line-height: 1.6; color: var(--char); margin: 0; }
 .bk__done strong { font-weight: 600; }
+
+/* form usability: the required marker, the inline error, the error summary.
+   House vocabulary only: radius 0, no shadow, hairline rules, --bad for the
+   error voice and --char-soft for the quiet marker. No new token anywhere.
+
+   The summary is #bkForm's first child and carries the same class as the ticket
+   rail, so every rule here is scoped by #bkForm and cannot reach the aside. */
+#bkForm > .bk__summary {
+  border: 1px solid var(--bad);
+  padding: 1.5rem 1.5rem .8rem;
+  margin-bottom: 2.75rem;
+  background: var(--linen);
+}
+#bkForm > .bk__summary[hidden] { display: none; }
+/* it takes focus after a failed submit, so it needs a ring of its own: the ink
+   hairline would read as decoration on a block that is already ruled in --bad */
+#bkForm > .bk__summary:focus-visible { outline: 1px solid var(--bad); outline-offset: 3px; }
+
+.bk__summary-title {
+  font: 500 var(--t-label)/1.4 var(--f-body); letter-spacing: .16em; text-transform: uppercase;
+  color: var(--bad); margin: 0 0 .5rem;
+}
+.bk__summary-list { list-style: none; margin: 0; padding: 0; display: block; }
+/* each item is a block link, so the rows tile at 44px with nothing between them
+   to mis-tap into. Text stays inline-sized: the box ends where the words end. */
+.bk__summary-list a {
+  display: block; width: fit-content; padding: .7rem 0;
+  font-size: var(--t-small); line-height: 1.5; color: var(--bad);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .25em;
+  text-decoration-color: var(--bad);
+  transition: text-decoration-thickness var(--d-micro) var(--ease);
+}
+/* the underline stays: these are the only links inside a block of red text, so
+   it is how they read as links. Hover thickens it rather than removing it. */
+@media (hover: hover) {
+  .bk__summary-list a:hover { text-decoration-thickness: 2px; }
+}
+
+/* the marker beside a required label. Quiet by colour, not by shrinking below
+   the one micro size in the system: it is the only word that says the field
+   cannot be skipped, so it has to stay readable. */
+.bk__req {
+  display: inline; margin-left: .55rem;
+  font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--char-soft);
+}
+
+/* the inline error. The field's grid declares three rows: label, input and one
+   error line, and an explicit track exists whether or not anything sits in it.
+   So the line is reserved from the first paint and nothing below the field
+   moves when a message appears. (The reset's [hidden] display:none !important
+   stays untouched: this reserves the room without un-hiding anything.) */
+.bk__field { grid-template-rows: auto auto calc(var(--t-ui) * 1.35); }   /* exactly one error line */
+.bk__err {
+  display: block; align-self: start;
+  font-size: var(--t-ui); line-height: 1.35; color: var(--bad);
+}
 
 /* ---------------------------------------------------------------
    29 · SCROLL REVEAL, IMAGE SETTLE, THREAD DRAW
@@ -1580,7 +1664,7 @@ html.no-js .nav::before { opacity: 1; }
   /* booking */
   .bk { grid-template-columns: 1fr; }
   .bk__form { grid-column: 1 / -1; }
-  .bk__summary { grid-column: 1 / -1; position: static; margin-top: 2.5rem; }
+  aside.bk__summary { grid-column: 1 / -1; position: static; margin-top: 2.5rem; }
 }
 
 @media (max-width: 899px) {

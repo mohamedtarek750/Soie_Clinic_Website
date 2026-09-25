@@ -87,6 +87,11 @@
     <section class="section" style="padding-top:clamp(2.5rem,5vw,4rem)">
       <div class="container bk">
         <form class="bk__form" id="bkForm" novalidate autocomplete="off">
+          <div class="bk__summary" id="bkSummary" tabindex="-1" hidden>
+            <h3 class="bk__summary-title">Please complete these before we can book</h3>
+            <ul class="bk__summary-list" id="bkSummaryList"></ul>
+          </div>
+
           <div>
             <div class="bk__step-label">
               <span class="bk__step-num">1</span>
@@ -113,12 +118,14 @@
             </div>
             <div class="bk__fields">
               <label class="bk__field">
-                <span class="bk__field-label">Full name</span>
-                <input type="text" id="bkName" name="bkName" autocomplete="name" placeholder="Your name" />
+                <span class="bk__field-label">Full name <span class="bk__req">Required</span></span>
+                <input type="text" id="bkName" name="bkName" autocomplete="name" placeholder="Your name" aria-describedby="bkNameErr" />
+                <span class="bk__err" id="bkNameErr" hidden></span>
               </label>
               <label class="bk__field">
-                <span class="bk__field-label">Phone number</span>
-                <input type="tel" id="bkPhone" name="bkPhone" autocomplete="tel" inputmode="tel" placeholder="e.g. 0100 000 0000" />
+                <span class="bk__field-label">Phone number <span class="bk__req">Required</span></span>
+                <input type="tel" id="bkPhone" name="bkPhone" autocomplete="tel" inputmode="tel" placeholder="e.g. 0100 000 0000" aria-describedby="bkPhoneErr" />
+                <span class="bk__err" id="bkPhoneErr" hidden></span>
               </label>
             </div>
           </div>
@@ -181,7 +188,7 @@
             </a>
             <p class="bk__wa-note" id="bkNote">Your request opens in WhatsApp with every detail already filled in. Our team
             replies personally to confirm your slot; nothing is booked or charged automatically.</p>
-            <div class="bk__done" id="bkDone" hidden>
+            <div class="bk__done" id="bkDone" tabindex="-1" hidden>
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <p><strong>Thank you!</strong> Your request has reached our reception. We will call you shortly to confirm your appointment.</p>
             </div>
