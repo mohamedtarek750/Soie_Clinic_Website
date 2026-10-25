@@ -1,10 +1,17 @@
 /* Devices: shared editorial styling, scoped to the new pages. */
 .device-section { padding-top: 1rem; }
 .device-section[id], #cutera-video { scroll-margin-top: calc(var(--nav-h) + 2rem); }
-.device-section--next { padding-top: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--line-strong); }
-.device-directory { grid-column: 7 / -1; grid-row: 5; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.5rem; }
-.device-directory a { display: inline-flex; align-items: center; min-height: 44px; border-bottom: 1px solid var(--line-strong); font-size: .9rem; }
-.device-directory a:hover { border-color: var(--char); }
+.device-directory { grid-column: 7 / -1; grid-row: 5; display: flex; gap: .5rem; margin-top: 1.5rem; }
+.device-directory [role="tab"] { flex: 1; min-width: 0; min-height: 48px; padding: .85rem 1rem; border: 1px solid var(--line-strong); background: transparent; color: var(--char); font: 500 .9rem/1.5 var(--f-body); cursor: pointer; }
+.device-directory [role="tab"]:hover { border-color: var(--char); }
+.device-directory [role="tab"][aria-selected="true"] { background: var(--char); border-color: var(--char); color: var(--linen); }
+.device-directory [role="tab"]:focus-visible { outline: 2px solid var(--char); outline-offset: 3px; }
+.device-panel { overflow-anchor: none; }
+.device-panel .device-feature { align-items: start; }
+.device-panel > .device-section { padding-top: clamp(1.75rem, 4vw, 3rem); }
+.device-panel[hidden] { display: none; }
+.no-js .device-directory { display: none; }
+.no-js .device-panel[hidden] { display: block !important; }
 .device-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
 .device-feature__image { display: block; margin: 0; background: #e9e8e5; }
 .device-feature__image img { display: block; width: 100%; height: auto; }
@@ -41,7 +48,7 @@
 }
 @media (max-width: 800px) {
  .device-feature, .device-topics, .device-video { grid-template-columns: 1fr; }
- .device-feature--film .device-feature__body { order: -1; }
+ .device-feature--film .device-feature__body, .device-panel .device-feature__body { order: -1; }
  .device-feature__image { max-width: 600px; }
  .device-topics { margin: 3rem 0; gap: 2rem; }
 }

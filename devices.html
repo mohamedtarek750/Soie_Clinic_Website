@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="i18n.css" />
   <link rel="stylesheet" href="devices.css" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Devices at Soie Clinic", "url": "https://soieclinic.com/devices.html", "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "INDIBA Deep Care at Soie Clinic", "url": "https://soieclinic.com/device-indiba.html"}, {"@type": "ListItem", "position": 2, "name": "Cutera excel HR at Soie Clinic", "url": "https://soieclinic.com/device-cutera.html"}]}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "CollectionPage", "name": "Devices at Soie Clinic", "url": "https://soieclinic.com/devices.html", "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "INDIBA Deep Care at Soie Clinic", "url": "https://soieclinic.com/device-indiba.html"}, {"@type": "ListItem", "position": 2, "name": "Cutera excel HR at Soie Clinic", "url": "https://soieclinic.com/device-cutera.html"}]}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Soie Clinic have an INDIBA device?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. INDIBA Deep Care is available at Soie Clinic in Cairo, Egypt. Contact our team to confirm the branch and appointment availability before visiting."}}, {"@type": "Question", "name": "What is INDIBA Deep Care?", "acceptedAnswer": {"@type": "Answer", "text": "INDIBA Deep Care is a radiofrequency technology operating at 448 kHz using the manufacturer’s CRET system. The manufacturer describes applications in aesthetic medicine and tissue recovery."}}, {"@type": "Question", "name": "What can INDIBA be used for?", "acceptedAnswer": {"@type": "Answer", "text": "The manufacturer’s catalogue describes face and body aesthetic applications and support for tissue recovery. Your clinician will assess your concern and decide whether a suitable protocol is available for you."}}, {"@type": "Question", "name": "How many sessions will I need?", "acceptedAnswer": {"@type": "Answer", "text": "The number and timing of sessions depend on your assessment, treatment area and goals. Results vary; a consultation is needed before recommending a plan."}}, {"@type": "Question", "name": "Is INDIBA suitable for everyone?", "acceptedAnswer": {"@type": "Answer", "text": "No. A clinician must review your medical history and contraindications, including pregnancy and implanted electronic devices such as pacemakers. Tell the team about any implants, medicines or recent procedures before treatment."}}, {"@type": "Question", "name": "Does Soie Clinic have a Cutera device?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Cutera excel HR is available at Soie Clinic in Cairo, Egypt. Contact our team to confirm the branch and appointment availability before visiting."}}, {"@type": "Question", "name": "Which Cutera device is featured here?", "acceptedAnswer": {"@type": "Answer", "text": "The device shown is Cutera excel HR, with 755 nm and 1064 nm wavelength options. The videos show the device at Soie Clinic."}}, {"@type": "Question", "name": "How many Cutera sessions will I need?", "acceptedAnswer": {"@type": "Answer", "text": "The number and timing of sessions depend on your treatment area, skin and hair characteristics, and goals. Our medical team will recommend a plan after assessment; individual results vary."}}, {"@type": "Question", "name": "How do I book a Cutera consultation?", "acceptedAnswer": {"@type": "Answer", "text": "Contact the Soie Clinic team to discuss your concern, confirm the branch offering your treatment and arrange a consultation."}}]}]}</script>
 </head>
 <body>
 
@@ -71,7 +71,13 @@
   </header>
 
   <main id="main">
-<section class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> · <span>Devices</span></nav><p class="eyebrow">The technology behind your care</p><h1 class="page-hero__title">Considered care.<br /><em>Exceptional technology.</em></h1><p class="page-hero__lede">Explore INDIBA Deep Care and Cutera excel HR at Soie Clinic. Discover the technology, then find the right approach with our medical team.</p><nav class="device-directory" aria-label="Explore our devices"><a href="device-indiba.html">INDIBA Deep Care</a><a href="device-cutera.html">Cutera excel HR</a></nav></div></section><section class="section device-section" id="indiba"><div class="container"><article class="device-feature"><a class="device-feature__image" href="device-indiba.html" aria-label="Discover INDIBA Deep Care"><img src="assets/images/indiba-deep-care.webp" width="1801" height="1683" alt="INDIBA Deep Care radiofrequency device shown in the manufacturer’s catalogue" fetchpriority="high" /></a><div class="device-feature__body"><p class="eyebrow">01 / Available at Soie Clinic</p><h2>INDIBA<br /><em>Deep Care.</em></h2><p class="device-intro">Precision radiofrequency. A personalised approach.</p><p>A 448 kHz radiofrequency platform with face and body applications described by the manufacturer. At Soie Clinic in Cairo, every treatment starts with a clinical assessment.</p><div class="device-tags"><span>448 kHz</span><span>Face &amp; body</span><span>Non-invasive technology</span></div><a class="btn btn--gold" href="device-indiba.html">Discover INDIBA <span aria-hidden="true">↗</span></a><p class="device-note">Catalogue image. Contact our team to confirm branch availability.</p></div></article>
+<section class="page-hero"><div class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> · <span>Devices</span></nav><p class="eyebrow">The technology behind your care</p><h1 class="page-hero__title">Considered care.<br /><em>Exceptional technology.</em></h1><p class="page-hero__lede">Explore INDIBA Deep Care and Cutera excel HR at Soie Clinic. Discover the technology, then find the right approach with our medical team.</p><div class="device-directory" role="tablist" aria-label="Explore our devices" data-device-tabs>
+          <button type="button" role="tab" id="tab-indiba" aria-controls="indiba" aria-selected="true" tabindex="0" data-device-tab>INDIBA Deep Care</button>
+          <button type="button" role="tab" id="tab-cutera" aria-controls="cutera" aria-selected="false" tabindex="-1" data-device-tab>Cutera excel HR</button>
+        </div></div></section>
+    <div class="device-panel" id="indiba" role="tabpanel" aria-labelledby="tab-indiba" tabindex="0" data-device-panel>
+      <section class="section device-section"><div class="container"><div class="device-feature"><figure class="device-feature__image"><img src="assets/images/indiba-deep-care.webp" width="1801" height="1683" alt="INDIBA Deep Care device and treatment electrodes, from the manufacturer’s catalogue" fetchpriority="high" /></figure><div class="device-feature__body"><p class="eyebrow">Available at Soie Clinic</p><h2>INDIBA<br /><em>Deep Care.</em></h2><p>Soie Clinic offers INDIBA Deep Care in Cairo, Egypt. Ask our team about branch availability and a consultation for your treatment goals.</p><p>According to the manufacturer’s catalogue, INDIBA uses its CRET system at <strong>448 kHz</strong>. The catalogue describes effects on tissue circulation and cellular activity, with applications in aesthetic medicine and recovery care.</p><p>Your clinician will explain what is appropriate for you. The technology’s applications do not mean every treatment is suitable for every patient.</p><div class="device-tags"><span>448 kHz radiofrequency</span><span>CRET system</span><span>Clinician-guided care</span></div><button class="btn btn--gold" data-open-booking>Ask about INDIBA</button></div></div>
+
         <section class="device-video" id="indiba-video" aria-labelledby="indiba-video-title">
           <div class="device-video__intro">
             <p class="eyebrow">Discover the technology</p>
@@ -89,10 +95,14 @@
             <noscript><p><a href="assets/videos/indiba-session.mp4">Watch the INDIBA video</a></p></noscript>
           </div>
         </section>
-<div class="device-callout"><h2>INDIBA at Soie Clinic</h2><p>INDIBA Deep Care is available at Soie Clinic in Cairo. This 448 kHz radiofrequency technology is offered with a personalised session plan following a medical assessment. Contact our team to confirm branch availability and book your consultation.</p><a href="device-indiba.html">Learn more about INDIBA →</a></div></div></section>
-    <section class="section device-section device-section--next" id="cutera" aria-labelledby="cutera-title">
+<div class="device-topics"><article><span class="eyebrow">01 / Face</span><h2>Skin quality &amp; care</h2><p>The catalogue describes facial aesthetic applications. Discuss your skin concerns, treatment goals and any recent procedures with your clinician before choosing a plan.</p></article><article><span class="eyebrow">02 / Body</span><h2>Beyond the face</h2><p>The manufacturer also describes body applications. The treatment area, settings and session plan are selected after a personal assessment.</p></article><article><span class="eyebrow">03 / Recovery</span><h2>Support, when appropriate</h2><p>The catalogue describes use in tissue recovery and in reducing swelling and bruising. Use alongside other procedures requires your treating clinician’s guidance.</p></article></div>
+<div class="device-callout"><p class="eyebrow">INDIBA in Cairo</p><h2>INDIBA at Soie Clinic</h2><p>Soie Clinic has an INDIBA Deep Care device, which uses radiofrequency technology at 448 kHz. The manufacturer’s catalogue describes its aesthetic applications for the face and body, and support for tissue recovery. Our medical team assesses whether treatment is suitable for you; results and the number of sessions vary from person to person.</p><p>Contact our clinic team before your visit to confirm branch availability and book your appointment.</p><button class="btn btn--gold" data-open-booking>Ask about INDIBA sessions</button></div>
+<section class="device-faq" aria-labelledby="device-faq-title"><p class="eyebrow">Before your visit</p><h2 id="device-faq-title">INDIBA, <em>explained.</em></h2><details><summary>Does Soie Clinic have an INDIBA device?</summary><p>Yes. INDIBA Deep Care is available at Soie Clinic in Cairo, Egypt. Contact our team to confirm the branch and appointment availability before visiting.</p></details><details><summary>What is INDIBA Deep Care?</summary><p>INDIBA Deep Care is a radiofrequency technology operating at 448 kHz using the manufacturer’s CRET system. The manufacturer describes applications in aesthetic medicine and tissue recovery.</p></details><details><summary>What can INDIBA be used for?</summary><p>The manufacturer’s catalogue describes face and body aesthetic applications and support for tissue recovery. Your clinician will assess your concern and decide whether a suitable protocol is available for you.</p></details><details><summary>How many sessions will I need?</summary><p>The number and timing of sessions depend on your assessment, treatment area and goals. Results vary; a consultation is needed before recommending a plan.</p></details><details><summary>Is INDIBA suitable for everyone?</summary><p>No. A clinician must review your medical history and contraindications, including pregnancy and implanted electronic devices such as pacemakers. Tell the team about any implants, medicines or recent procedures before treatment.</p></details></section><aside class="device-source"><h2>Explore the technology</h2><p>Source: INDIBA Deep Care general English catalogue, document IDC_CAT-MKT1494v3_1219_ENPRINT (2019), especially pages 6–12. Manufacturer descriptions are provided for information; they do not guarantee individual outcomes or replace a consultation.</p><a href="assets/documents/indiba-deep-care-catalogue-en.pdf" target="_blank" rel="noopener">Read the manufacturer’s catalogue (PDF, 7 MB) ↗</a></aside></div></section><section class="section cta-band"><div class="container"><h2 class="cta-band__title">Your care.<br /><em>Your consultation.</em></h2><p class="cta-band__sub">Ask our team about INDIBA at Soie Clinic and confirm the right branch before your visit.</p><div class="cta-band__actions"><button class="btn btn--gold btn--lg" data-open-booking>Ask about INDIBA</button></div></div></section>
+    </div>
+    <div class="device-panel" id="cutera" role="tabpanel" aria-labelledby="tab-cutera" tabindex="0" data-device-panel hidden>
+      <section class="section device-section">
       <div class="container">
-        <article class="device-feature device-feature--film">
+        <div class="device-feature device-feature--film">
           <div class="device-video__player" id="cutera-video">
             <video class="film device-video__media"
               muted loop playsinline preload="none"
@@ -104,16 +114,42 @@
             <noscript><p><a href="assets/videos/cutera-excel-hr.mp4">Watch the Cutera video</a></p></noscript>
           </div>
           <div class="device-feature__body">
-            <p class="eyebrow">02 / Available at Soie Clinic</p>
-            <h2 id="cutera-title">Cutera<br /><em><bdi dir="ltr">excel HR.</bdi></em></h2>
-            <p class="device-intro">Two wavelengths. A personal approach.</p>
-            <p>Meet Cutera excel HR at Soie Clinic in Cairo. A dual-wavelength laser platform with 755 nm and 1064 nm options, supported by a medical assessment and a plan tailored to you.</p>
+            <p class="eyebrow">Available at Soie Clinic</p>
+            <h2>Cutera<br /><em><bdi dir="ltr">excel HR.</bdi></em></h2>
+            <p>Our Cutera excel HR device offers 755 nm and 1064 nm wavelength options. Our medical team reviews your skin and hair characteristics before recommending a suitable treatment.</p>
+            <p>A closer look at our Cutera device, from its wavelength selection to its treatment controls.</p>
             <div class="device-tags"><span>755 nm</span><span>1064 nm</span><span>Personalised laser care</span></div>
-            <a class="btn btn--gold" href="device-cutera.html">Discover Cutera <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18L18 6M6 6h12v12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+            <button class="btn btn--gold" data-open-booking>Ask about Cutera</button>
           </div>
-        </article>
+        </div>
+        <div class="device-topics">
+          <article><span class="eyebrow">01 / Hair</span><h2>Hair reduction</h2><p>Discuss unwanted facial or body hair with our team. The treatment area, timing and number of sessions are planned after assessment.</p></article>
+          <article><span class="eyebrow">02 / Skin</span><h2>Skin revitalisation</h2><p>Ask about the skin-revitalisation options available with our Cutera device. Our team will explain what is appropriate for your skin concern and what results to expect.</p></article>
+          <article><span class="eyebrow">03 / Your plan</span><h2>Assessment comes first</h2><p>Tell our team about recent sun exposure, medicines and previous procedures, so they can advise on preparation and aftercare.</p></article>
+        </div>
+        <section class="device-faq" aria-labelledby="cutera-faq-title">
+          <p class="eyebrow">Before your visit</p>
+          <h2 id="cutera-faq-title">Cutera, <em>explained.</em></h2>
+          <details><summary>Does Soie Clinic have a Cutera device?</summary><p>Yes. Cutera excel HR is available at Soie Clinic in Cairo, Egypt. Contact our team to confirm the branch and appointment availability before visiting.</p></details>
+          <details><summary>Which Cutera device is featured here?</summary><p>The device shown is Cutera excel HR, with 755 nm and 1064 nm wavelength options. The videos show the device at Soie Clinic.</p></details>
+          <details><summary>How many Cutera sessions will I need?</summary><p>The number and timing of sessions depend on your treatment area, skin and hair characteristics, and goals. Our medical team will recommend a plan after assessment; individual results vary.</p></details>
+          <details><summary>How do I book a Cutera consultation?</summary><p>Contact the Soie Clinic team to discuss your concern, confirm the branch offering your treatment and arrange a consultation.</p></details>
+        </section>
+        <aside class="device-source">
+          <h2>Explore the technology</h2>
+          <p>Explore Cutera’s overview of skin revitalisation and resurfacing, and ask our team which treatments are suitable for you at Soie Clinic.</p>
+          <a href="https://cutera.com/us-en/treatments/skin-revitalization-and-resurfacing-solutions/" target="_blank" rel="noopener noreferrer">Explore Cutera’s official treatment information ↗</a>
+        </aside>
       </div>
     </section>
+    <section class="section cta-band">
+      <div class="container">
+        <h2 class="cta-band__title">Your skin.<br /><em>Your consultation.</em></h2>
+        <p class="cta-band__sub">Ask our team about Cutera at Soie Clinic and confirm the right branch before your visit.</p>
+        <div class="cta-band__actions"><button class="btn btn--gold btn--lg" data-open-booking>Ask about Cutera</button></div>
+      </div>
+    </section>
+    </div>
   </main>
 
   <footer class="footer">

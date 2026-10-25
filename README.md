@@ -22,6 +22,14 @@ Shared assets: `style.css` (design tokens + all components), `script.js`
 (all behaviour, element-guarded so one file serves every page),
 `sitemap.xml`, `robots.txt`.
 
+`devices.html` uses accessible tabs: INDIBA is selected initially, and selecting
+Cutera swaps the complete details and video into the same place below the tabs.
+The selected tab stays highlighted, and videos pause when their tab is hidden.
+Unopened device videos load only when their tab is selected and approached.
+The URL fragment can restore a selected device without navigating to another page.
+The standalone device URLs remain available for existing links and search.
+When changing device copy, update its inline panel and standalone page together.
+
 ## English and Arabic
 
 English is the default. The header on every page offers **English / العربية**;

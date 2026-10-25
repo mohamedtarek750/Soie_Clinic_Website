@@ -1346,6 +1346,65 @@
   }
 
   /* =====================================================================
+     DEVICE TABS - complete inline panels, with one visible device at a time.
+     Replacing the URL fragment preserves sharing/reload without scrolling or
+     navigating away. Keyboard arrows follow the current LTR/RTL direction.
+     ===================================================================== */
+  function initDeviceTabs() {
+    var tablist = $('[data-device-tabs]');
+    if (!tablist) return;
+    var tabs = $$('[data-device-tab]', tablist);
+    var panels = tabs.map(function (tab) { return document.getElementById(tab.getAttribute('aria-controls')); });
+    if (!tabs.length || panels.some(function (panel) { return !panel; })) return;
+
+    function activate(index, focus, updateUrl) {
+      tabs.forEach(function (tab, i) {
+        var selected = i === index;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        panels[i].hidden = !selected;
+        if (!selected) $$('video', panels[i]).forEach(function (video) { video.pause(); });
+      });
+      if (focus) tabs[index].focus({ preventScroll: true });
+      if (updateUrl) {
+        try { window.history.replaceState(window.history.state, '', '#' + panels[index].id); }
+        catch (e) { /* Tabs still work when history changes are unavailable. */ }
+      }
+      document.dispatchEvent(new CustomEvent('soie:devicechange'));
+    }
+
+    function indexFromHash() {
+      var target;
+      try { target = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); }
+      catch (e) { return -1; }
+      var panel = target && target.closest('[data-device-panel]');
+      return panels.indexOf(panel);
+    }
+
+    tabs.forEach(function (tab, i) {
+      on(tab, 'click', function () { activate(i, false, true); });
+      on(tab, 'keydown', function (e) {
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+        var step = document.documentElement.dir === 'rtl' ? -1 : 1;
+        var next = i;
+        if (e.key === 'ArrowRight') next = (i + step + tabs.length) % tabs.length;
+        else if (e.key === 'ArrowLeft') next = (i - step + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        activate(next, true, true);
+      });
+    });
+    on(window, 'hashchange', function () {
+      var index = indexFromHash();
+      if (index !== -1) activate(index, false, false);
+    });
+    var initial = indexFromHash();
+    activate(initial === -1 ? 0 : initial, false, false);
+  }
+
+  /* =====================================================================
      16. FILMS - video[data-film] is a short, silent loop used as a page
      background or inline device video (its poster is the still it rests on). Nothing is
      fetched until the film is approached (its src lives in data-src; narrow screens
@@ -1410,7 +1469,7 @@
 
     // attach the source once, on first approach
     function load(s) {
-      if (s.loaded) return;
+      if (s.loaded || s.video.closest('[hidden]')) return;
       s.loaded = true;
       var v = s.video;
       var portrait = v.getAttribute('data-src-portrait');
@@ -1426,6 +1485,7 @@
     }
 
     function play(s) {
+      if (s.video.closest('[hidden]')) { pause(s); return; }
       if (s.userPaused || s.failed || !s.inView || document.hidden) return;
       load(s);
       if (s.failed) return;
@@ -1461,8 +1521,10 @@
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
         var s = stateOf(en.target);
-        if (s) load(s);
-        obs.unobserve(en.target);
+        if (s) {
+          load(s);
+          if (s.loaded) obs.unobserve(en.target);
+        }
       });
     }, { rootMargin: '400px 0px', threshold: 0 });
 
@@ -1473,7 +1535,7 @@
         var s = stateOf(en.target);
         if (!s) return;
         var vh = window.innerHeight || document.documentElement.clientHeight || 0;
-        var seen = en.isIntersecting && (en.intersectionRatio >= 0.35 ||
+        var seen = !s.video.closest('[hidden]') && en.isIntersecting && (en.intersectionRatio >= 0.35 ||
           (vh > 0 && en.intersectionRect && en.intersectionRect.height >= vh * 0.5));
         s.inView = !!seen;
         if (s.inView) play(s); else pause(s);
@@ -1482,13 +1544,32 @@
 
     // start watching only once the page itself has loaded, so a film in the
     // first screen never competes with the fonts, the CSS or its own poster
+    var started = false;
     function start() {
+      started = true;
       states.forEach(function (s) {
         approach.observe(s.video);
         watch.observe(s.video);
       });
     }
     if (document.readyState === 'complete') start(); else on(window, 'load', start);
+
+    on(document, 'soie:devicechange', function () {
+      states.forEach(function (s) {
+        if (s.video.closest('[hidden]')) {
+          s.inView = false;
+          pause(s);
+        } else if (started) {
+          // Re-observe so even a rapid hide/show in one frame resumes correctly.
+          watch.unobserve(s.video);
+          watch.observe(s.video);
+          if (!s.loaded) {
+            approach.unobserve(s.video);
+            approach.observe(s.video);
+          }
+        }
+      });
+    });
 
     // a hidden tab plays nothing; coming back resumes whatever is on screen
     on(document, 'visibilitychange', function () {
@@ -1592,6 +1673,7 @@
   }
   ready(function () {
     safe(initNav, 'nav');
+    safe(initDeviceTabs, 'device tabs');
     safe(initReveals, 'reveals');
     safe(initCounters, 'counters');
     safe(initHeroVideo, 'hero video');
