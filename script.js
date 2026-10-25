@@ -909,7 +909,7 @@
       var val = dateInput.value;
       if (!val) {
         slotsWrap.innerHTML = '<p class="slots__hint"></p>';
-        $('.slots__hint', slotsWrap).textContent = t('Choose a date first and the available times will appear here.');
+        $('.slots__hint', slotsWrap).textContent = t('Choose a date to see the available times.');
         update();
         return;
       }
@@ -941,7 +941,7 @@
       }
       if (!added) {
         slotsWrap.innerHTML = '<p class="slots__hint"></p>';
-        $('.slots__hint', slotsWrap).textContent = t('No more times today. Please pick the next day.');
+        $('.slots__hint', slotsWrap).textContent = t('No times are left today. Please choose another date.');
       }
       update();
     }
@@ -1137,11 +1137,11 @@
 
       // Online booking needs a phone so reception can call back; the WhatsApp
       // fallback keeps phone optional, since the chat carries the number.
-      if (submitLabel) submitLabel.textContent = t(online ? 'Confirm booking' : 'Confirm via WhatsApp');
-      if (waIcon) waIcon.style.display = online ? 'none' : '';   // no WhatsApp logo on 'Confirm booking'
+      if (submitLabel) submitLabel.textContent = t(online ? 'Send booking request' : 'Confirm via WhatsApp');
+      if (waIcon) waIcon.style.display = online ? 'none' : '';   // no WhatsApp logo on 'Send booking request'
       if (note) note.textContent = sending ? t('Sending your request...') : postFailed ? failureMessage() : online
-        ? t('We send your request straight to our {branch} reception, who call you back to confirm. Nothing is charged online.', { branch: t(branch) })
-        : t('Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.');
+        ? t('Your request goes to our {branch} reception. They will contact you to confirm availability. There is no online payment.', { branch: t(branch) })
+        : t('WhatsApp will open with your appointment details ready to send. Reception will reply to confirm availability. There is no online payment.');
 
       // whatever just changed, no shown message may still be lying
       easeErrors();
@@ -1210,7 +1210,7 @@
     }
 
     function failureMessage() {
-      return t('We could not reach our booking system just now, so nothing has been sent yet. Please check your connection and try again, or tap the button above to send the same details to our reception on WhatsApp.');
+      return t('We could not reach our booking system. Please try again, or use the WhatsApp button to send your details to reception.');
     }
 
     function sendFailed() {
@@ -1299,7 +1299,7 @@
       if (slotsWrap) slotsWrap.setAttribute('aria-label', t('Available times'));
       $$('.slot', slotsWrap).forEach(function (slot) { slot.textContent = displayTime(slot.getAttribute('data-time')); });
       var hint = $('.slots__hint', slotsWrap);
-      if (hint) hint.textContent = t(dateInput && dateInput.value ? 'No more times today. Please pick the next day.' : 'Choose a date first and the available times will appear here.');
+      if (hint) hint.textContent = t(dateInput && dateInput.value ? 'No times are left today. Please choose another date.' : 'Choose a date to see the available times.');
       if (nameErr && !nameErr.hidden) setFieldError(nameInput, nameErr, nameProblem());
       if (phoneErr && !phoneErr.hidden) setFieldError(phoneInput, phoneErr, phoneProblem());
       update();

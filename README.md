@@ -77,6 +77,12 @@ names are included in the public assets.
 
 ## Editing notes
 
+- Write in plain, welcoming English and Arabic. Explain the treatment, what a
+  visit involves and how to book. Avoid repeated slogans, absolute outcome
+  claims and decorative dashes in visitor copy. Rephrase words that would
+  otherwise need hyphens; preserve URLs, filenames and technical identifiers.
+- Keep page descriptions, structured data and Arabic translations in sync with
+  visible copy. FAQ answers in structured data must match the page answers.
 - Design tokens (palette, type, shadows, easing) live at the top of
   `style.css`; all pages inherit them.
 - Keep the website focused on Soie Clinic, its services, devices and branches.
