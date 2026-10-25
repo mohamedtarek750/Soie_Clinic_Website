@@ -84,6 +84,7 @@ names are included in the public assets.
 
 ## Editing notes
 
+- Preserve the homepage slogan **Unleash your beauty.** during general copy edits.
 - Write in plain, welcoming English and Arabic. Explain the treatment, what a
   visit involves and how to book. Avoid repeated slogans, absolute outcome
   claims and decorative dashes in visitor copy. Rephrase words that would
