@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"); try { if (localStorage.getItem("soie-language") === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } } catch (e) {}</script>
   <meta name="theme-color" content="#F3F3F3" />
 
   <title>Exosomes in New Cairo & Mohandseen | Soie Clinic</title>
@@ -27,6 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="i18n.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,7 +79,7 @@
 
   <!-- Custom cursor (desktop, pointer devices only - enhanced in JS) -->
   <div class="cursor" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" data-i18n-live aria-hidden="true"></div>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -101,7 +102,13 @@
         <a href="book.html" class="btn btn--gold nav__cta">Book Appointment</a>
       </nav>
 
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <div class="language-switch" role="group" aria-label="Website language" data-i18n-ignore>
+        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+      </div>
+
+      <button class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -302,6 +309,8 @@
     <a class="btn btn--gold bookbar__cta" href="book.html">Book this treatment</a>
   </div>
 
+  <script src="i18n-ar.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

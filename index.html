@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"); try { if (localStorage.getItem("soie-language") === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } } catch (e) {}</script>
   <meta name="theme-color" content="#F3F3F3" />
 
   <!-- ============ SEO ============ -->
@@ -31,6 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="i18n.css" />
 
   <!-- Structured data: LocalBusiness (helps search + trust) -->
   <script type="application/ld+json">
@@ -77,7 +78,7 @@
 
   <!-- Custom cursor (desktop, pointer devices only - enhanced in JS) -->
   <div class="cursor" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" data-i18n-live aria-hidden="true"></div>
 
   <!-- Skip link for accessibility -->
   <a href="#home" class="skip-link">Skip to content</a>
@@ -104,7 +105,13 @@
         <a href="book.html" class="btn btn--gold nav__cta">Book Appointment</a>
       </nav>
 
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <div class="language-switch" role="group" aria-label="Website language" data-i18n-ignore>
+        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+      </div>
+
+      <button class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -115,22 +122,7 @@
     <!-- ============================================================
          HERO
     ============================================================= -->
-    <section class="hero hero--video hero--media" id="home">
-      <div class="hero-bg" data-silk data-bg="home" aria-hidden="true">
-        <picture>
-          <source media="(max-width: 760px)" type="image/avif" srcset="assets/images/bg/home-portrait-1080.avif" />
-          <source media="(max-width: 760px)" type="image/webp" srcset="assets/images/bg/home-portrait-1080.webp" />
-          <source media="(max-width: 760px)" srcset="assets/images/bg/home-portrait-1080.jpg" />
-          <source type="image/avif" srcset="assets/images/bg/home-960.avif 960w, assets/images/bg/home-1920.avif 1920w, assets/images/bg/home-2560.avif 2560w" sizes="100vw" />
-          <source type="image/webp" srcset="assets/images/bg/home-960.webp 960w, assets/images/bg/home-1920.webp 1920w, assets/images/bg/home-2560.webp 2560w" sizes="100vw" />
-          <img class="hero-bg__media" src="assets/images/bg/home-1920.jpg" srcset="assets/images/bg/home-960.jpg 960w, assets/images/bg/home-1920.jpg 1920w, assets/images/bg/home-2560.jpg 2560w" sizes="100vw" alt="" width="1920" height="1200" decoding="async" fetchpriority="high" />
-        </picture>
-      </div>
-      <!-- ambient silk orbs on the brand sand/gold ground -->
-      <div class="hero__orb hero__orb--1" data-parallax="0.18" aria-hidden="true"></div>
-      <div class="hero__orb hero__orb--2" data-parallax="0.30" aria-hidden="true"></div>
-      <div class="hero__grain" aria-hidden="true"></div>
-
+    <section class="hero" id="home">
       <div class="hero__inner">
         <p class="eyebrow hero__eyebrow" data-reveal>
           <span class="eyebrow__dot"></span> Aesthetic Clinic · New Cairo &amp; Mohandseen
@@ -443,7 +435,7 @@
         </div>
 
         <div class="services__foot" data-reveal>
-          <p>The full collection holds eighteen real transformations.</p>
+          <p>The full collection holds fifteen real transformations.</p>
           <a class="btn btn--gold" href="before-after.html">View all Before &amp; After</a>
         </div>
       </div>
@@ -559,20 +551,20 @@
           </p>
           <div class="hours__status" id="openStatus" aria-live="polite">
             <span class="hours__dot"></span>
-            <span id="openStatusText">Open 7 days a week</span>
+            <span id="openStatusText" data-i18n-live>Open 7 days a week</span>
           </div>
           <a class="btn btn--gold" href="book.html">Reserve your slot</a>
         </div>
 
         <div class="hours__card" data-reveal>
           <!-- data-day = JS weekday index (0=Sun) to highlight "today" -->
-          <div class="hours__row" data-day="1"><span class="hours__day">Monday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
-          <div class="hours__row" data-day="2"><span class="hours__day">Tuesday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
-          <div class="hours__row" data-day="3"><span class="hours__day">Wednesday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
-          <div class="hours__row" data-day="4"><span class="hours__day">Thursday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
-          <div class="hours__row" data-day="5"><span class="hours__day">Friday</span><span class="hours__time">12:00 PM to 10:00 PM</span></div>
-          <div class="hours__row" data-day="6"><span class="hours__day">Saturday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
-          <div class="hours__row" data-day="0"><span class="hours__day">Sunday</span><span class="hours__time">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="1"><span class="hours__day">Monday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="2"><span class="hours__day">Tuesday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="3"><span class="hours__day">Wednesday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="4"><span class="hours__day">Thursday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="5"><span class="hours__day">Friday</span><span class="hours__time" data-hours="12:00 PM to 10:00 PM">12:00 PM to 10:00 PM</span></div>
+          <div class="hours__row" data-day="6"><span class="hours__day">Saturday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
+          <div class="hours__row" data-day="0"><span class="hours__day">Sunday</span><span class="hours__time" data-hours="10:00 AM to 11:00 PM">10:00 AM to 11:00 PM</span></div>
         </div>
       </div>
     </section>
@@ -775,12 +767,14 @@
     <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
     <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Previous">←</button>
     <figure class="lightbox__fig">
-      <img id="lbImg" src="" alt="" />
-      <figcaption id="lbCap"></figcaption>
+      <img id="lbImg" data-i18n-live src="" alt="" />
+      <figcaption id="lbCap" data-i18n-live></figcaption>
     </figure>
     <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Next">→</button>
   </div>
 
+  <script src="i18n-ar.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

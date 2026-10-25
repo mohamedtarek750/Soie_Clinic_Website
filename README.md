@@ -22,6 +22,29 @@ Shared assets: `style.css` (design tokens + all components), `script.js`
 (all behaviour, element-guarded so one file serves every page),
 `sitemap.xml`, `robots.txt`.
 
+## English and Arabic
+
+English is the default. The header on every page offers **English / العربية**;
+the choice is saved in local storage and Arabic uses right-to-left layout.
+Switching languages preserves the current booking form and selected time.
+
+- `i18n-ar.js` contains the Arabic copy, keyed by the English text with whitespace
+  collapsed. When editing HTML copy or adding a page, add its translation here,
+  including image descriptions, accessible labels and page metadata.
+- `i18n.js` translates text and labels without replacing links, controls, media or
+  their event handlers. The original English HTML remains readable without JS.
+- Dynamic UI in `script.js` uses `SoieI18n.t()` and updates on
+  `soie:languagechange`. Mark those elements `data-i18n-live` so the static
+  translator does not overwrite them. Keep patient input and booking API values
+  separate from translated display labels.
+- `i18n.css` contains the language control and Arabic typography/layout overrides.
+  Manufacturer PDFs and text embedded in original photographs remain unchanged.
+
+Serve the folder locally and check both languages at mobile and desktop sizes.
+Include menu and modal controls, FAQ, gallery filters, saved language on navigation,
+and switching languages with a partially completed booking. Intercept the Apps
+Script POST in browser tests; never submit test requests to reception.
+
 ## Booking
 
 `book.html` lets visitors choose **branch → contact details → treatment →

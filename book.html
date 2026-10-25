@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"); try { if (localStorage.getItem("soie-language") === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } } catch (e) {}</script>
   <meta name="theme-color" content="#F3F3F3" />
 
   <title>Book an Appointment | Soie Clinic · New Cairo &amp; Mohandseen</title>
@@ -27,12 +27,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="i18n.css" />
 </head>
 <body>
 
   <!-- Custom cursor (desktop, pointer devices only - enhanced in JS) -->
   <div class="cursor" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" data-i18n-live aria-hidden="true"></div>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -55,7 +56,13 @@
         <a href="book.html" class="btn btn--gold nav__cta">Book Appointment</a>
       </nav>
 
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <div class="language-switch" role="group" aria-label="Website language" data-i18n-ignore>
+        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+      </div>
+
+      <button class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -90,7 +97,7 @@
         <form class="bk__form" id="bkForm" novalidate autocomplete="off">
           <div class="bk__summary" id="bkSummary" tabindex="-1" hidden>
             <h3 class="bk__summary-title">Please complete these before we can book</h3>
-            <ul class="bk__summary-list" id="bkSummaryList"></ul>
+            <ul class="bk__summary-list" id="bkSummaryList" data-i18n-live></ul>
           </div>
 
           <div>
@@ -121,12 +128,12 @@
               <label class="bk__field">
                 <span class="bk__field-label">Full name <span class="bk__req">Required</span></span>
                 <input type="text" id="bkName" name="bkName" autocomplete="name" placeholder="Your name" aria-describedby="bkNameErr" />
-                <span class="bk__err" id="bkNameErr" hidden></span>
+                <span class="bk__err" id="bkNameErr" data-i18n-live hidden></span>
               </label>
               <label class="bk__field">
                 <span class="bk__field-label">Phone number <span class="bk__req">Required</span></span>
                 <input type="tel" id="bkPhone" name="bkPhone" autocomplete="tel" inputmode="tel" placeholder="e.g. 0100 000 0000" aria-describedby="bkPhoneErr" />
-                <span class="bk__err" id="bkPhoneErr" hidden></span>
+                <span class="bk__err" id="bkPhoneErr" data-i18n-live hidden></span>
               </label>
             </div>
           </div>
@@ -167,7 +174,7 @@
               <span class="bk__step-num">5</span>
               <h2 class="bk__step-title">Pick a time</h2>
             </div>
-            <div class="slots" id="bkSlots" role="group" aria-label="Available times">
+            <div class="slots" id="bkSlots" data-i18n-live role="group" aria-label="Available times">
               <p class="slots__hint">Choose a date first and the available times will appear here.</p>
             </div>
           </div>
@@ -177,17 +184,17 @@
           <div class="bk__card" data-reveal>
             <h2 class="bk__card-title">Your appointment</h2>
             <dl class="bk__rows">
-              <div class="bk__row"><dt>Branch</dt><dd id="sumBranch">New Cairo</dd></div>
-              <div class="bk__row"><dt>Name</dt><dd id="sumName">Not set</dd></div>
-              <div class="bk__row"><dt>Phone</dt><dd id="sumPhone">Not set</dd></div>
-              <div class="bk__row"><dt>Treatment</dt><dd id="sumService">Consultation</dd></div>
-              <div class="bk__row"><dt>Date</dt><dd id="sumDate">Not set</dd></div>
-              <div class="bk__row"><dt>Time</dt><dd id="sumTime">Not set</dd></div>
+              <div class="bk__row"><dt>Branch</dt><dd id="sumBranch" data-i18n-live>New Cairo</dd></div>
+              <div class="bk__row"><dt>Name</dt><dd id="sumName" data-i18n-live>Not set</dd></div>
+              <div class="bk__row"><dt>Phone</dt><dd id="sumPhone" data-i18n-live>Not set</dd></div>
+              <div class="bk__row"><dt>Treatment</dt><dd id="sumService" data-i18n-live>Consultation</dd></div>
+              <div class="bk__row"><dt>Date</dt><dd id="sumDate" data-i18n-live>Not set</dd></div>
+              <div class="bk__row"><dt>Time</dt><dd id="sumTime" data-i18n-live>Not set</dd></div>
             </dl>
             <a class="btn btn--gold btn--lg bk__submit" id="bkSubmit" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">
-              <svg id="bkWaIcon" viewBox="0 0 24 24" class="btn__wa-ico" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 7.8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.2.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4-.3-.2-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.8-.2-.3 0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.4-.4-.4-.6-.4z" fill="currentColor"/></svg> <span id="bkSubmitLabel">Confirm via WhatsApp</span>
+              <svg id="bkWaIcon" viewBox="0 0 24 24" class="btn__wa-ico" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 7.8c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.2.2 2 3.1 4.9 4.2 2.4.9 2.9.8 3.4.7.5 0 1.6-.6 1.9-1.3.2-.6.2-1.2.1-1.3-.1-.1-.3-.2-.6-.4-.3-.2-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.6.9-.8 1-.1.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.8-.2-.3 0-.4.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.4-.4-.4-.6-.4z" fill="currentColor"/></svg> <span id="bkSubmitLabel" data-i18n-live>Confirm via WhatsApp</span>
             </a>
-            <p class="bk__wa-note" id="bkNote">Your request opens in WhatsApp with every detail already filled in. Our team
+            <p class="bk__wa-note" id="bkNote" data-i18n-live>Your request opens in WhatsApp with every detail already filled in. Our team
             replies personally to confirm your slot; nothing is booked or charged automatically.</p>
             <div class="bk__done" id="bkDone" tabindex="-1" hidden>
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -278,6 +285,8 @@
     </div>
   </div>
 
+  <script src="i18n-ar.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+  <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"); try { if (localStorage.getItem("soie-language") === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } } catch (e) {}</script>
   <meta name="theme-color" content="#F3F3F3" />
 
   <title>Devices | INDIBA Deep Care at Soie Clinic, Cairo</title>
@@ -27,6 +27,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="i18n.css" />
   <link rel="stylesheet" href="devices.css" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Devices at Soie Clinic", "url": "https://soieclinic.com/devices.html", "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "INDIBA Deep Care at Soie Clinic", "url": "https://soieclinic.com/device-indiba.html"}]}}</script>
 </head>
@@ -34,7 +35,7 @@
 
   <!-- Custom cursor (desktop, pointer devices only - enhanced in JS) -->
   <div class="cursor" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" data-i18n-live aria-hidden="true"></div>
 
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -57,7 +58,13 @@
         <a href="book.html" class="btn btn--gold nav__cta">Book Appointment</a>
       </nav>
 
-      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <div class="language-switch" role="group" aria-label="Website language" data-i18n-ignore>
+        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+      </div>
+
+      <button class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -82,7 +89,7 @@
             <noscript><p><a href="assets/videos/indiba-session.mp4">Watch the INDIBA video</a></p></noscript>
           </div>
         </section>
-<div class="device-arabic" lang="ar" dir="rtl"><h2>جهاز إنديبا في عيادة سواي</h2><p>جهاز إنديبا INDIBA Deep Care متاح في عيادة Soie Clinic بالقاهرة. تقنية ترددات راديوية بتردد 448 كيلوهرتز، مع اختيار خطة الجلسات بعد تقييم الفريق الطبي. تواصل معنا لمعرفة الفرع المتاح وحجز استشارتك.</p><a href="device-indiba.html">اعرف أكثر عن جهاز إنديبا ←</a></div></div></section>
+<div class="device-callout"><h2>INDIBA at Soie Clinic</h2><p>INDIBA Deep Care is available at Soie Clinic in Cairo. This 448 kHz radiofrequency technology is offered with a personalised session plan following a medical assessment. Contact our team to confirm branch availability and book your consultation.</p><a href="device-indiba.html">Learn more about INDIBA →</a></div></div></section>
   </main>
 
   <footer class="footer">
@@ -164,6 +171,8 @@
     </div>
   </div>
 
+  <script src="i18n-ar.js"></script>
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

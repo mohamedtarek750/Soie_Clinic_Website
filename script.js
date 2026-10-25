@@ -27,6 +27,12 @@
     : function (fn) { return window.setTimeout(function () { fn(Date.now()); }, 16); };
 
   var on = function (el, evt, fn, opts) { if (el) el.addEventListener(evt, fn, opts || false); };
+  var t = function (value, variables) {
+    if (window.SoieI18n) return window.SoieI18n.t(value, variables);
+    return value.replace(/\{(\w+)\}/g, function (match, key) { return variables && variables[key] !== undefined ? variables[key] : match; });
+  };
+  var displayTime = function (value) { return window.SoieI18n ? window.SoieI18n.time(value) : value; };
+  var isArabic = function () { return document.documentElement.lang === 'ar'; };
 
   function ready(fn) {
     if (document.readyState === 'loading') {
@@ -102,7 +108,7 @@
       document.body.classList.remove('menu-open');
       if (burger) {
         burger.setAttribute('aria-expanded', 'false');
-        burger.setAttribute('aria-label', 'Open menu');
+        burger.setAttribute('aria-label', t('Open menu'));
       }
       onScroll(); // restore dark-hero logo state
     }
@@ -110,11 +116,16 @@
       var open = document.body.classList.toggle('menu-open');
       if (burger) {
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        burger.setAttribute('aria-label', t(open ? 'Close menu' : 'Open menu'));
       }
       onScroll(); // dark logo on the cream overlay, cream logo on the video
     }
     on(burger, 'click', toggleMenu);
+    function menuLabel() {
+      if (burger) burger.setAttribute('aria-label', t(document.body.classList.contains('menu-open') ? 'Close menu' : 'Open menu'));
+    }
+    on(document, 'soie:languagechange', menuLabel);
+    menuLabel();
     // close after tapping any link (mobile) and on Esc
     if (navLinks) {
       on(navLinks, 'click', function (e) {
@@ -349,8 +360,8 @@
        this whole module sits behind. */
     function labelFor(el) {
       if (!el || !el.closest) return '';
-      if (el.closest('.ba, .rv-shot')) return 'View';
-      if (el.closest('.cmp')) return 'Drag';
+      if (el.closest('.ba, .rv-shot')) return t('View');
+      if (el.closest('.cmp')) return t('Drag');
       return '';
     }
     function setLabel(word) {
@@ -362,6 +373,7 @@
     on(document, 'mouseout', function (e) {
       if (!e.relatedTarget) setLabel('');   // the pointer left the document
     });
+    on(document, 'soie:languagechange', function () { setLabel(''); });
   }
 
   /* =====================================================================
@@ -539,6 +551,10 @@
     on(closeBtn, 'click', close);
     on(prevBtn, 'click', function () { step(-1); });
     on(nextBtn, 'click', function () { step(1); });
+    on(document, 'soie:languagechange', function () {
+      var fig = visible()[current];
+      if (fig && box.classList.contains('is-open')) show(fig);
+    });
     on(box, 'click', function (e) { if (e.target === box) close(); }); // backdrop
     on(document, 'keydown', function (e) {
       if (!box.classList.contains('is-open')) return;
@@ -570,7 +586,7 @@
         var d = document.createElement('button');
         d.className = 'tst__dot';
         d.type = 'button';
-        d.setAttribute('aria-label', 'Go to review ' + (i + 1));
+        d.setAttribute('aria-label', t('Go to review {number}', { number: i + 1 }));
         on(d, 'click', function () { go(i); reset(); });
         dotsWrap.appendChild(d);
         dots.push(d);
@@ -595,6 +611,9 @@
 
     on(next, 'click', function () { nextSlide(); reset(); });
     on(prev, 'click', function () { prevSlide(); reset(); });
+    on(document, 'soie:languagechange', function () {
+      dots.forEach(function (dot, i) { dot.setAttribute('aria-label', t('Go to review {number}', { number: i + 1 })); });
+    });
 
     // pause on hover / focus
     var vp = $('.tst__viewport') || track.parentNode;
@@ -750,7 +769,7 @@
     if (todayRow) {
       var timeEl = $('.hours__time', todayRow);
       if (timeEl) {
-        var parts = timeEl.textContent.split(/\s+to\s+/); // "10:00 AM to 11:00 PM"
+        var parts = (timeEl.getAttribute('data-hours') || timeEl.textContent).split(/\s+to\s+/);
         if (parts.length === 2) {
           var start = parseTime(parts[0]);
           var end = parseTime(parts[1]);
@@ -765,7 +784,7 @@
     statusEl.classList.remove('is-open', 'is-closed');
     if (open) {
       statusEl.classList.add('is-open');
-      textEl.textContent = 'Open now';
+      textEl.textContent = t('Open now');
     } else {
       statusEl.classList.add('is-closed');
       if (opensAt !== null && mins < opensAt && todayRow) {
@@ -773,9 +792,9 @@
         var mm = opensAt % 60;
         var ampm = h12 >= 12 ? 'PM' : 'AM';
         var hh = h12 % 12; if (hh === 0) hh = 12;
-        textEl.textContent = 'Closed · opens ' + hh + ':' + (mm < 10 ? '0' + mm : mm) + ' ' + ampm;
+        textEl.textContent = t('Closed · opens {time}', { time: displayTime(hh + ':' + (mm < 10 ? '0' + mm : mm) + ' ' + ampm) });
       } else {
-        textEl.textContent = 'Closed now';
+        textEl.textContent = t('Closed now');
       }
     }
   }
@@ -873,10 +892,11 @@
       return el || null;
     }
 
-    function prettyDate(val) {
-      if (!val) return 'Not set';
+    function prettyDate(val, canonical) {
+      if (!val) return t('Not set');
       var parts = val.split('-');
       var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      if (isArabic() && !canonical) return d.toLocaleDateString('ar-EG', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
       var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
       var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
       return days[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
@@ -888,7 +908,8 @@
       slotsWrap.innerHTML = '';
       var val = dateInput.value;
       if (!val) {
-        slotsWrap.innerHTML = '<p class="slots__hint">Choose a date first and the available times will appear here.</p>';
+        slotsWrap.innerHTML = '<p class="slots__hint"></p>';
+        $('.slots__hint', slotsWrap).textContent = t('Choose a date first and the available times will appear here.');
         update();
         return;
       }
@@ -905,12 +926,13 @@
         var b = document.createElement('button');
         b.type = 'button';
         b.className = 'slot';
-        b.textContent = fmt12(h);
+        b.setAttribute('data-time', fmt12(h));
+        b.textContent = displayTime(fmt12(h));
         (function (btn) {
           on(btn, 'click', function () {
             $$('.slot', slotsWrap).forEach(function (s) { s.classList.remove('is-selected'); });
             btn.classList.add('is-selected');
-            selectedTime = btn.textContent;
+            selectedTime = btn.getAttribute('data-time');
             update();
           });
         })(b);
@@ -918,7 +940,8 @@
         added++;
       }
       if (!added) {
-        slotsWrap.innerHTML = '<p class="slots__hint">No more times today. Please pick the next day.</p>';
+        slotsWrap.innerHTML = '<p class="slots__hint"></p>';
+        $('.slots__hint', slotsWrap).textContent = t('No more times today. Please pick the next day.');
       }
       update();
     }
@@ -941,7 +964,13 @@
       if (reset) serviceSel.value = 'Consultation';
     }
 
-    function digits(s) { return (s || '').replace(/\D/g, ''); }
+    function normaliseDigits(s) {
+      return (s || '').replace(/[٠-٩۰-۹]/g, function (digit) {
+        var code = digit.charCodeAt(0);
+        return String(code >= 0x6F0 ? code - 0x6F0 : code - 0x660);
+      });
+    }
+    function digits(s) { return normaliseDigits(s).replace(/\D/g, ''); }
     function phoneValid() { return digits(phoneInput ? phoneInput.value : '').length >= 8; }
     function currentBranch() {
       var b = checked('bkBranch');
@@ -973,8 +1002,8 @@
 
     function nameProblem() {
       var v = nameInput ? nameInput.value.trim() : '';
-      if (!v) return 'Enter your full name.';
-      if (v.length < 2) return 'Enter your full name, at least two characters.';
+      if (!v) return t('Enter your full name.');
+      if (v.length < 2) return t('Enter your full name, at least two characters.');
       return '';
     }
 
@@ -983,23 +1012,23 @@
     function phoneProblem() {
       if (!useSystem()) return '';
       var v = phoneInput ? phoneInput.value.trim() : '';
-      if (!v) return 'Enter the phone number we should call you on.';
-      if (!phoneValid()) return 'Enter at least eight digits of your phone number.';
+      if (!v) return t('Enter the phone number we should call you on.');
+      if (!phoneValid()) return t('Enter at least eight digits of your phone number.');
       return '';
     }
 
     function dateProblem() {
       var v = dateInput ? dateInput.value : '';
-      if (!v) return 'Choose the date you would like to visit.';
-      if (v < todayStr()) return 'Choose today or a later date.';
-      if (!firstSlot()) return 'No times are left on that date. Choose another day.';
+      if (!v) return t('Choose the date you would like to visit.');
+      if (v < todayStr()) return t('Choose today or a later date.');
+      if (!firstSlot()) return t('No times are left on that date. Choose another day.');
       return '';
     }
 
     function timeProblem() {
       if (selectedTime) return '';
       if (dateProblem()) return '';   // the date is what to fix first
-      return 'Choose one of the times shown.';
+      return t('Choose one of the times shown.');
     }
 
     // an inline line under one input, tied to it by the aria-describedby
@@ -1090,7 +1119,6 @@
     }
 
     function update() {
-      if (sent) return;
       var branchEl = checked('bkBranch');
       var branch  = branchEl ? branchEl.value : 'New Cairo';
       var service = serviceSel ? serviceSel.value : 'Consultation';
@@ -1099,20 +1127,21 @@
       var phone   = phoneInput ? phoneInput.value.trim() : '';
       var online  = useSystem();   // this branch has its system endpoint wired
 
-      if (sum.branch)  sum.branch.textContent  = branch;
-      if (sum.name)    sum.name.textContent    = name  || 'Not set';
-      if (sum.phone)   sum.phone.textContent   = phone || 'Not set';
-      if (sum.service) sum.service.textContent = service;
+      if (sum.branch)  sum.branch.textContent  = t(branch);
+      if (sum.name)    sum.name.textContent    = name  || t('Not set');
+      if (sum.phone)   sum.phone.textContent   = phone || t('Not set');
+      if (sum.service) sum.service.textContent = t(service);
       if (sum.date)    sum.date.textContent    = prettyDate(dateVal);
-      if (sum.time)    sum.time.textContent    = selectedTime || 'Not set';
+      if (sum.time)    sum.time.textContent    = selectedTime ? displayTime(selectedTime) : t('Not set');
+      if (sent) return;
 
       // Online booking needs a phone so reception can call back; the WhatsApp
       // fallback keeps phone optional, since the chat carries the number.
-      if (submitLabel) submitLabel.textContent = online ? 'Confirm booking' : 'Confirm via WhatsApp';
+      if (submitLabel) submitLabel.textContent = t(online ? 'Confirm booking' : 'Confirm via WhatsApp');
       if (waIcon) waIcon.style.display = online ? 'none' : '';   // no WhatsApp logo on 'Confirm booking'
-      if (note) note.textContent = online
-        ? 'We send your request straight to our ' + branch + ' reception, who call you back to confirm. Nothing is charged online.'
-        : 'Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.';
+      if (note) note.textContent = sending ? t('Sending your request...') : postFailed ? failureMessage() : online
+        ? t('We send your request straight to our {branch} reception, who call you back to confirm. Nothing is charged online.', { branch: t(branch) })
+        : t('Your request opens in WhatsApp with every detail already filled in. Our team replies personally to confirm your slot; nothing is booked or charged automatically.');
 
       // whatever just changed, no shown message may still be lying
       easeErrors();
@@ -1128,13 +1157,13 @@
       if (ready && !online) {
         // WhatsApp handoff (New Cairo, or Mohandseen before the sheet is wired)
         var wa = branchEl ? branchEl.getAttribute('data-wa') : '201000033766';
-        var msg = 'Hello Soie Clinic! I would like to book an appointment.\n'
-                + '• Branch: ' + branch + '\n'
-                + (name  ? '• Name: '  + name  + '\n' : '')
-                + (phone ? '• Phone: ' + phone + '\n' : '')
-                + '• Treatment: ' + service + '\n'
-                + '• Date: ' + prettyDate(dateVal) + '\n'
-                + '• Time: ' + selectedTime;
+        var msg = t('Hello Soie Clinic! I would like to book an appointment.') + '\n'
+                + '• ' + t('Branch') + ': ' + t(branch) + '\n'
+                + (name  ? '• ' + t('Name') + ': ' + name + '\n' : '')
+                + (phone ? '• ' + t('Phone') + ': ' + phone + '\n' : '')
+                + '• ' + t('Treatment') + ': ' + t(service) + '\n'
+                + '• ' + t('Date') + ': ' + prettyDate(dateVal) + '\n'
+                + '• ' + t('Time') + ': ' + displayTime(selectedTime);
         submit.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg);
         submit.setAttribute('target', '_blank');
         // a real link again: the browser gives it focus and Enter for free
@@ -1180,6 +1209,10 @@
       }
     }
 
+    function failureMessage() {
+      return t('We could not reach our booking system just now, so nothing has been sent yet. Please check your connection and try again, or tap the button above to send the same details to our reception on WhatsApp.');
+    }
+
     function sendFailed() {
       if (sent) return;
       sending = false;
@@ -1189,10 +1222,7 @@
       update();                      // rebuilds the WhatsApp link, label and note
       if (note) {
         note.hidden = false;
-        note.textContent = 'We could not reach our booking system just now, so '
-          + 'nothing has been sent yet. Please check your connection and try '
-          + 'again, or tap the button above to send the same details to our '
-          + 'reception on WhatsApp.';
+        note.textContent = failureMessage();
         // the request state changed and nothing moved, so say so where the
         // patient is looking rather than repainting a paragraph in silence
         if (!note.hasAttribute('tabindex')) note.setAttribute('tabindex', '-1');
@@ -1206,10 +1236,10 @@
         action:      'saveWebBooking',
         branch:      currentBranch(),
         name:        nameInput ? nameInput.value.trim() : '',
-        phone:       phoneInput ? phoneInput.value.trim() : '',
+        phone:       phoneInput ? normaliseDigits(phoneInput.value.trim()) : '',
         service:     serviceSel ? serviceSel.value : 'Consultation',
         date:        dateInput ? dateInput.value : '',
-        dateText:    prettyDate(dateInput ? dateInput.value : ''),
+        dateText:    prettyDate(dateInput ? dateInput.value : '', true),
         time:        selectedTime,
         source:      'website',
         submittedAt: new Date().toISOString()
@@ -1219,7 +1249,7 @@
       function ok()   { if (settled) return; settled = true; confirmSent(); }
       function fail() { if (settled) return; settled = true; sendFailed(); }
 
-      if (note) { note.hidden = false; note.textContent = 'Sending your request...'; }
+      if (note) { note.hidden = false; note.textContent = t('Sending your request...'); }
 
       try {
         var post = fetch(branchEndpoint(), {
@@ -1265,6 +1295,16 @@
     on(dateInput, 'change', buildSlots);
     on(nameInput, 'input', update);
     on(phoneInput, 'input', update);
+    function localiseBooking() {
+      if (slotsWrap) slotsWrap.setAttribute('aria-label', t('Available times'));
+      $$('.slot', slotsWrap).forEach(function (slot) { slot.textContent = displayTime(slot.getAttribute('data-time')); });
+      var hint = $('.slots__hint', slotsWrap);
+      if (hint) hint.textContent = t(dateInput && dateInput.value ? 'No more times today. Please pick the next day.' : 'Choose a date first and the available times will appear here.');
+      if (nameErr && !nameErr.hidden) setFieldError(nameInput, nameErr, nameProblem());
+      if (phoneErr && !phoneErr.hidden) setFieldError(phoneInput, phoneErr, phoneProblem());
+      update();
+    }
+    on(document, 'soie:languagechange', localiseBooking);
 
     // Checked when the patient leaves the field, not on every keystroke and
     // not only at the end. Focus never moves on blur: they are on their way
@@ -1302,7 +1342,7 @@
       }
     });
 
-    update();
+    localiseBooking();
   }
 
   /* =====================================================================
@@ -1566,6 +1606,7 @@
     safe(initToTop, 'to-top');
     safe(initYear, 'year');
     safe(initHours, 'hours');
+    on(document, 'soie:languagechange', initHours);
     safe(initAccordion, 'accordion');
     safe(initBooking, 'booking');
     safe(initFilms, 'films');
