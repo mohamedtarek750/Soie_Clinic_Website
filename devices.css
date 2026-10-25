@@ -10,12 +10,14 @@
 .device-tags { display: flex; gap: .65rem; flex-wrap: wrap; margin: 1.6rem 0 2rem; }
 .device-tags span { border: 1px solid var(--line-strong); padding: .6rem .8rem; font-size: .75rem; }
 .device-note { font-size: .8rem; color: var(--muted); }
-.device-video { margin: clamp(3rem, 6vw, 5rem) auto; max-width: 960px; scroll-margin-top: calc(var(--nav-h) + 2rem); }
+.device-video { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: clamp(2rem, 6vw, 5rem); align-items: center; margin: clamp(3rem, 6vw, 5rem) auto; max-width: 960px; scroll-margin-top: calc(var(--nav-h) + 2rem); }
 .device-video h2 { font: 400 clamp(2rem, 4vw, 3.5rem)/1.15 var(--f-display); margin: 1rem 0 1.75rem; }
-.device-video__player { aspect-ratio: 16 / 9; width: 100%; background: #1a1a1a; border: 1px solid var(--line-strong); }
-.device-video__player iframe { display: block; width: 100%; height: 100%; border: 0; }
-.device-video__caption { margin-top: 1rem; font-size: .85rem; line-height: 1.6; }
-.device-video__caption a { text-decoration: underline; text-underline-offset: .25em; }
+.device-video__intro > p:last-child { max-width: 32ch; line-height: 1.8; }
+.device-video__player { position: relative; aspect-ratio: 9 / 16; width: 100%; max-width: 420px; margin-inline: auto; background: #1a1a1a; border: 1px solid var(--line-strong); }
+.device-video__media { display: block; width: 100%; height: 100%; object-fit: contain; }
+.device-video__player .film-toggle { right: 10px; bottom: 10px; }
+.device-video__player noscript p { position: absolute; inset: auto 0 0; margin: 0; padding: 1rem; background: #1a1a1a; color: #fff; text-align: center; }
+.device-video__player noscript a { text-decoration: underline; }
 .device-topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin: 5rem 0; border-top: 1px solid var(--line-strong); padding-top: 3rem; }
 .device-topics h2 { font: 400 2rem/1.15 var(--f-display); margin: 1rem 0; }
 .device-topics p, .device-arabic p, .device-source p, .device-faq p { line-height: 1.9; }
@@ -31,7 +33,7 @@
 .device-source h2 { font: 400 1.8rem var(--f-display); }
 .device-source p { margin: 1rem 0; }
 @media (max-width: 800px) {
- .device-feature, .device-topics { grid-template-columns: 1fr; }
+ .device-feature, .device-topics, .device-video { grid-template-columns: 1fr; }
  .device-feature__image { max-width: 600px; }
  .device-topics { margin: 3rem 0; gap: 2rem; }
 }

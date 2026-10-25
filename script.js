@@ -1306,8 +1306,8 @@
   }
 
   /* =====================================================================
-     16. FILMS - video[data-film] is a short, silent colour loop used as a
-     page header background (its poster is the still it rests on). Nothing is
+     16. FILMS - video[data-film] is a short, silent loop used as a page
+     background or inline device video (its poster is the still it rests on). Nothing is
      fetched until the film is approached (its src lives in data-src; narrow screens
      may get data-src-portrait), it plays only while it is on screen, and
      the [data-media-toggle] button that follows it lets anyone pause it.

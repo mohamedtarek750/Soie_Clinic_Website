@@ -18,3 +18,19 @@ large screens.
 To swap in a new clip, replace hero-loop.mp4 (and ideally the poster)
 with the same settings. A landscape 1920x1080 master, 10-20 s seamless
 loop, under 8 MB, would look even sharper on big desktop displays.
+
+INDIBA SESSION LOOP
+===================
+
+indiba-session.mp4 is the clinic-supplied six-second portrait clip, prepared
+for the Devices and INDIBA pages. The original MOV is kept outside the checkout.
+
+  - H.264 High, yuv420p, 720x1280, 30 fps, CRF 23, no audio
+  - HLG / BT.2020 converted to SDR / BT.709 for consistent browser colour
+  - MP4 faststart; approximately 1.7 MB (original: 17.1 MB)
+  - Poster: posters/indiba-session.jpg, taken from the same video
+
+The existing data-film / initFilms player loads the file on approach,
+automatically plays it muted and inline when visible, and loops it. It pauses
+offscreen or in a hidden tab, and includes a pause/resume control. Reduced-motion
+and Save-Data preferences show the poster instead. No Google Drive embed is used.
