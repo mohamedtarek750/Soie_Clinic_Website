@@ -1,0 +1,37 @@
+/* Devices: shared editorial styling, scoped to the new pages. */
+.device-section { padding-top: 1rem; }
+.device-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.device-feature__image { display: block; margin: 0; background: #e9e8e5; }
+.device-feature__image img { display: block; width: 100%; height: auto; }
+.device-feature__image figcaption { padding: 1rem; font-size: .75rem; line-height: 1.5; color: var(--muted); background: var(--linen); }
+.device-feature__body h2, .device-arabic h2, .device-faq h2 { font: 400 clamp(2.5rem, 5vw, 4.5rem)/1.08 var(--f-display); margin: 1.25rem 0; }
+.device-feature__body p { margin: 1.2rem 0; line-height: 1.8; }
+.device-feature__body .device-intro { font-size: 1.2rem; }
+.device-tags { display: flex; gap: .65rem; flex-wrap: wrap; margin: 1.6rem 0 2rem; }
+.device-tags span { border: 1px solid var(--line-strong); padding: .6rem .8rem; font-size: .75rem; }
+.device-note { font-size: .8rem; color: var(--muted); }
+.device-video { margin: clamp(3rem, 6vw, 5rem) auto; max-width: 960px; scroll-margin-top: calc(var(--nav-h) + 2rem); }
+.device-video h2 { font: 400 clamp(2rem, 4vw, 3.5rem)/1.15 var(--f-display); margin: 1rem 0 1.75rem; }
+.device-video__player { aspect-ratio: 16 / 9; width: 100%; background: #1a1a1a; border: 1px solid var(--line-strong); }
+.device-video__player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.device-video__caption { margin-top: 1rem; font-size: .85rem; line-height: 1.6; }
+.device-video__caption a { text-decoration: underline; text-underline-offset: .25em; }
+.device-topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin: 5rem 0; border-top: 1px solid var(--line-strong); padding-top: 3rem; }
+.device-topics h2 { font: 400 2rem/1.15 var(--f-display); margin: 1rem 0; }
+.device-topics p, .device-arabic p, .device-source p, .device-faq p { line-height: 1.9; }
+.device-arabic { border-block: 1px solid var(--line-strong); padding: clamp(1.5rem, 4vw, 3rem); margin: 4rem 0; background: #eae9e6; }
+.device-arabic h2 { font-family: Tahoma, Arial, sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.6; }
+.device-arabic p { max-width: 850px; margin: 1rem 0; }
+.device-arabic a, .device-source a { text-decoration: underline; text-underline-offset: .25em; }
+.device-faq { max-width: 850px; margin: 5rem auto; }
+.device-faq details { border-bottom: 1px solid var(--line-strong); padding: 1.4rem 0; }
+.device-faq summary { cursor: pointer; font-size: 1.08rem; line-height: 1.5; }
+.device-faq p { margin: 1rem 0 0; color: var(--muted); }
+.device-source { max-width: 850px; margin: 3rem auto 0; font-size: .9rem; }
+.device-source h2 { font: 400 1.8rem var(--f-display); }
+.device-source p { margin: 1rem 0; }
+@media (max-width: 800px) {
+ .device-feature, .device-topics { grid-template-columns: 1fr; }
+ .device-feature__image { max-width: 600px; }
+ .device-topics { margin: 3rem 0; gap: 2rem; }
+}
