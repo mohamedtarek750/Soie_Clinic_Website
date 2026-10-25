@@ -12,7 +12,7 @@ No build step — open `index.html` or serve the folder with any static server.
 | About | `about.html` |
 | Services | `services.html` → `service-<treatment>.html` (11 treatment pages) |
 | Products | `products.html` |
-| Devices | `devices.html` → `device-indiba.html`, `device-cutera.html` |
+| Devices | `devices.html` → `device-indiba.html`, `device-cutera.html`, `device-finexel.html` |
 | Before & After | `before-after.html` |
 | Book Appointment | `book.html` |
 | Contact | `contact.html` |
@@ -23,12 +23,19 @@ Shared assets: `style.css` (design tokens + all components), `script.js`
 `sitemap.xml`, `robots.txt`.
 
 `devices.html` uses accessible tabs: INDIBA is selected initially, and selecting
-Cutera swaps the complete details and video into the same place below the tabs.
+Cutera or FineXel swaps the complete details and video into the same place below the tabs.
 The selected tab stays highlighted, and videos pause when their tab is hidden.
 Unopened device videos load only when their tab is selected and approached.
 The URL fragment can restore a selected device without navigating to another page.
 The standalone device URLs remain available for existing links and search.
 When changing device copy, update its inline panel and standalone page together.
+
+FineXel's model name and CO2 laser type were checked against the supplied clinic
+video. Its copy explains fractional CO2 treatment in general. Manufacturer
+identity, numerical specifications and model specific performance claims still
+need primary documentation: external research was blocked by the environment's
+network gateway on 25 October 2026, including after network permission was granted.
+Do not add manufacturer claims or a manufacturer citation until a source is verified.
 
 ## English and Arabic
 

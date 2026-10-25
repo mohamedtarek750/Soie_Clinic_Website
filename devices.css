@@ -1,6 +1,6 @@
 /* Devices: shared editorial styling, scoped to the new pages. */
 .device-section { padding-top: 1rem; }
-.device-section[id], #cutera-video { scroll-margin-top: calc(var(--nav-h) + 2rem); }
+.device-section[id], .device-video__player[id] { scroll-margin-top: calc(var(--nav-h) + 2rem); }
 .device-directory { grid-column: 7 / -1; grid-row: 5; display: flex; gap: .5rem; margin-top: 1.5rem; }
 .device-directory [role="tab"] { flex: 1; min-width: 0; min-height: 48px; padding: .85rem 1rem; border: 1px solid var(--line-strong); background: transparent; color: var(--char); font: 500 .9rem/1.5 var(--f-body); cursor: pointer; }
 .device-directory [role="tab"]:hover { border-color: var(--char); }
@@ -47,6 +47,7 @@
  .device-directory { grid-column: 1 / -1; }
 }
 @media (max-width: 800px) {
+ .device-directory [role="tab"] { padding-inline: .5rem; }
  .device-feature, .device-topics, .device-video { grid-template-columns: 1fr; }
  .device-feature--film .device-feature__body, .device-panel .device-feature__body { order: -1; }
  .device-feature__image { max-width: 600px; }
