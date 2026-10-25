@@ -1,7 +1,7 @@
 /* =====================================================================
    Soie Clinic - style.css
-   "The White Cube, Warm" design system v1.0
-   Display: Instrument Serif (400 + italic) · Body/UI: Instrument Sans (400/500/600)
+   Signature design system
+   Display: Georgia / Times · Body/UI: Arial / Helvetica. Signature components: signature.css
    ---------------------------------------------------------------------
    CONTENTS
     1  Tokens (exact :root block from the spec)
@@ -47,26 +47,26 @@
 --------------------------------------------------------------- */
 :root {
   /* ===== SURFACES (legacy names kept, values re-tuned to warm neutrals) ===== */
-  --sand:          #F3F3F3;  /* page ground (body). services.html inline background:var(--sand) resolves here */
-  --sand-deep:     #ECEAE7;  /* warm plaster: #journey inline background, recessed panels, disabled fills */
-  --linen:         #FAFAFA;  /* paper: hero, page-hero, alternating sections, lattice cells, modal, nav when scrolled */
+  --sand: #f4f1eb;  /* page ground (body). services.html inline background:var(--sand) resolves here */
+  --sand-deep: #e8e3da;  /* warm plaster: #journey inline background, recessed panels, disabled fills */
+  --linen: #f4f1eb;  /* paper: hero, page-hero, alternating sections, lattice cells, modal, nav when scrolled */
   --ivory:         #FFFFFF;  /* exhibit mats only (.ba, .rv-shot) */
 
   /* ===== INK ===== */
-  --char:          #1A1A1A;  /* primary text, primary button, strong rules */
-  --char-soft:     #6B6B6B;  /* secondary copy + all small labels that are muted (min colour for text < 16px on light) */
-  --char-mute:     #A3A3A3;  /* secondary copy on dark bands */
-  --ink:           #161616;  /* dark rooms: .why, .cta-band, service aside booking block, lightbox */
-  --ink-2:         #1F1F1F;  /* footer */
+  --char: #292621;  /* primary text, primary button, strong rules */
+  --char-soft: #6b665e;  /* secondary copy + all small labels that are muted (min colour for text < 16px on light) */
+  --char-mute: #cbc2b7;  /* secondary copy on dark bands */
+  --ink: #292621;  /* dark rooms: .why, .cta-band, service aside booking block, lightbox */
+  --ink-2: #292621;  /* footer */
 
   /* ===== ACCENT (legacy names kept) ===== */
-  --gold:          #545454;  /* clinic gray: italic <em> words, eyebrows, icons, ticks, ghost numerals */
-  --gold-deep:     #333333;  /* primary-button hover; inline link colour (HTML inline styles reference this) */
-  --gold-soft:     #8C8C8C;  /* decorative only: ghost numerals >= 40px, marquee sep. NEVER text < 16px on light */
+  --gold: #79534f;  /* muted rose: italic words, eyebrows and accents */
+  --gold-deep: #65423f;  /* primary-button hover; inline link colour (HTML inline styles reference this) */
+  --gold-soft: #a78a80;  /* decorative only: ghost numerals >= 40px, marquee sep. NEVER text < 16px on light */
 
   /* ===== HAIRLINES ===== */
-  --line:          #E4E2DF;  /* rules/mats on #FAFAFA and #FFFFFF */
-  --line-strong:   #CFCCC7;  /* rules on #F3F3F3 and #ECEAE7 grounds; interactive rests (fields, filters, accordion) */
+  --line: #d5cec4;  /* rules/mats on #FAFAFA and #FFFFFF */
+  --line-strong: #c8bcae;  /* rules on #F3F3F3 and #ECEAE7 grounds; interactive rests (fields, filters, accordion) */
   --ink-line:      rgba(255,255,255,.14);  /* rules on dark bands */
   --ink-line-soft: rgba(255,255,255,.06);  /* .why__bg column grid */
   --whisper:       rgba(184,168,138,.45);  /* champagne: .footer__thread ONLY. Nowhere else. */
@@ -77,16 +77,16 @@
   --wa:            #25D366;  /* WhatsApp: .fab-wa, .btn__wa-ico, .modal__branch-wa, #bkWaIcon */
 
   /* ===== LEGACY GRADIENT + SHADOW TOKENS, FLATTENED (keep names so nothing breaks) ===== */
-  --grad-gold:      #1A1A1A;
-  --grad-gold-soft: #545454;
+  --grad-gold: #292621;
+  --grad-gold-soft: #79534f;
   --sh-sm:   none;
   --sh-md:   none;
   --sh-lg:   0 30px 80px -40px rgba(0,0,0,.35);  /* .modal__panel and .lightbox__fig ONLY */
   --sh-gold: none;
 
   /* ===== TYPE ===== */
-  --f-display: "Instrument Serif", "Iowan Old Style", "Times New Roman", Georgia, serif;
-  --f-body:    "Instrument Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-display: Georgia, 'Times New Roman', serif;
+  --f-body: Arial, Helvetica, sans-serif;
 
   --t-d1:     clamp(3.4rem, 10.5vw, 10rem);   /* .hero__title */
   --t-d2:     clamp(2.8rem, 7vw, 6rem);       /* .page-hero__title */
@@ -105,28 +105,28 @@
   --t-label:  .6875rem;    /* every other micro label: ONE size */
 
   /* ===== LAYOUT ===== */
-  --maxw:       1360px;
-  --gutter:     clamp(1rem, 5vw, 4.5rem);   /* exactly 16px at phone width */
+  --maxw: 1280px;
+  --gutter: clamp(21px, 5vw, 64px);   /* exactly 16px at phone width */
   --bleed:      max(var(--gutter), calc((100vw - var(--maxw)) / 2));  /* container edge -> viewport edge; grows past --maxw so bleeds always reach the edge */
   --gap:        clamp(1rem, 2vw, 2rem);     /* 12-column gutter */
-  --section-y:  clamp(5.5rem, 11vw, 10rem);
+  --section-y: clamp(56px, 7vw, 100px);
   --head-gap:   clamp(3rem, 6vw, 5rem);     /* .section__head -> content */
-  --nav-h:          88px;
-  --nav-h-scrolled: 64px;
+  --nav-h: 94px;
+  --nav-h-scrolled: 94px;
   --sticky-top: calc(var(--nav-h-scrolled) + 2rem);  /* every position:sticky top uses this */
   --mat:        12px;                        /* exhibit mat padding */
 
   /* ===== SHAPE ===== */
-  --radius:    0;
-  --radius-sm: 0;
+  --radius: 24px;
+  --radius-sm: 14px;
 
   /* ===== MOTION ===== */
   --ease:    cubic-bezier(0.22, 1, 0.36, 1);   /* everything that arrives */
   --ease-2:  cubic-bezier(0.65, 0, 0.35, 1);   /* exits, view-transition out */
   --d-micro:  240ms;   /* text-link colour, focus */
-  --d:        480ms;   /* borders, fills, underlines, arrow nudge, nav height */
-  --d-slow:   900ms;   /* loader fade, reveal opacity */
-  --d-reveal: 1100ms;  /* reveal translate */
+  --d: 350ms;   /* borders, fills, underlines, arrow nudge, nav height */
+  --d-slow: 750ms;   /* loader fade, reveal opacity */
+  --d-reveal: 950ms;  /* reveal translate */
   --d-image:  1600ms;  /* image settle 1.06 -> 1 */
   --d-draw:   2200ms;  /* SVG thread draw */
 
@@ -2074,7 +2074,7 @@ body.cursor-on:not(.menu-open):has(.hero--media:hover, .page-hero--media:hover, 
 /* ---------------------------------------------------------------
    33 · PAGE TRANSITIONS  (View Transitions API; opacity only)
 --------------------------------------------------------------- */
-@view-transition { navigation: auto; }
+@view-transition { navigation: none; }
 ::view-transition-old(root) { animation: vtOut 240ms var(--ease-2) both; }
 ::view-transition-new(root) { animation: vtIn 360ms var(--ease) both; }
 @keyframes vtOut { to { opacity: 0; } }

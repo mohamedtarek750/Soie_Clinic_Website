@@ -18,9 +18,32 @@ No build step — open `index.html` or serve the folder with any static server.
 | Contact | `contact.html` |
 | FAQ | `faq.html` |
 
-Shared assets: `style.css` (design tokens + all components), `script.js`
+Shared assets: `style.css` (design tokens + base components), `signature.css`
+(Signature layout and shared page styling), `script.js`
 (all behaviour, element-guarded so one file serves every page),
 `sitemap.xml`, `robots.txt`.
+
+## Signature design
+
+The homepage implements the approved Signature concept: warm ivory, espresso
+text, muted rose accents, a separate arched portrait, treatment links, inline
+device previews and branch information. The original client review images are
+retained. The background stays a solid colour and the headline remains
+**Unleash your beauty.**
+
+All pages share the same header, rounded controls, contained photographs,
+footer and accessible native booking dialog. The full navigation remains in
+the mobile menu and footer. The header shows the language visitors can switch
+to. The homepage booking shortcut appears after its hero leaves the viewport.
+
+System fonts keep the layout independent of external font requests. Scrolling
+and pointers use browser behaviour, with short reveals and tab transitions.
+Reduced motion disables these animations. Device videos retain their existing
+loading, looping and pause behaviour.
+
+For a local preview, run `python3 -m http.server 8000` from this directory.
+Check English and Arabic on a narrow phone and desktop, including device tabs,
+menu keyboard controls, dialog focus/close behaviour and the booking form.
 
 `devices.html` uses accessible tabs: INDIBA is selected initially, and selecting
 Cutera or FineXel swaps the complete details and video into the same place below the tabs.
@@ -39,7 +62,7 @@ Do not add manufacturer claims or a manufacturer citation until a source is veri
 
 ## English and Arabic
 
-English is the default. The header on every page offers **English / العربية**;
+English is the default. The header on every page offers the other language;
 the choice is saved in local storage and Arabic uses right-to-left layout.
 Switching languages preserves the current booking form and selected time.
 
@@ -73,10 +96,8 @@ Treatment pages deep-link with `book.html?service=<slug>`.
 - **Products** — `products.html` lists the Soie skincare selection; replace
   with the clinic's actual retail range (brand, product, price) when
   confirmed.
-- **Clinic statistics** — a commented-out block in the homepage stats
-  section is ready for verified figures (happy clients, years of
-  experience, treatments performed, patient satisfaction). Un-comment
-  and replace the `XX` placeholders only with confirmed numbers.
+- **Clinic statistics** — publish figures for clients, experience or results
+  only after the clinic has verified them.
 
 The homepage shows selected original client feedback about the Soie experience
 (`assets/images/reviews/`). Only screenshots without individual practitioner
@@ -92,7 +113,8 @@ names are included in the public assets.
 - Keep page descriptions, structured data and Arabic translations in sync with
   visible copy. FAQ answers in structured data must match the page answers.
 - Design tokens (palette, type, shadows, easing) live at the top of
-  `style.css`; all pages inherit them.
+  `style.css`; all pages inherit them. Load `signature.css` after the base,
+  device and language styles so the shared design stays consistent.
 - Keep the website focused on Soie Clinic, its services, devices and branches.
   Do not publish individual practitioner names, personal profiles or social links
   in copy, metadata, image text, captions, alt text or booking options. Check

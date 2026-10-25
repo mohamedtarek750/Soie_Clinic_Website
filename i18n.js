@@ -80,6 +80,12 @@
     try { localStorage.setItem('soie-language', value); } catch (e) { /* Preference lasts for this page. */ }
     render();
     document.dispatchEvent(new CustomEvent('soie:languagechange', { detail: { language: value } }));
+    // The header shows the other language. Keep keyboard focus on that control
+    // after the button used to switch becomes hidden.
+    if (document.activeElement && document.activeElement.hasAttribute('data-language')) {
+      var next = document.querySelector('[data-language="' + (language === 'en' ? 'ar' : 'en') + '"]');
+      if (next) next.focus({ preventScroll: true });
+    }
   }
   window.SoieI18n = {
     t: t, time: time,

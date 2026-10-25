@@ -110,6 +110,7 @@
         burger.setAttribute('aria-expanded', 'false');
         burger.setAttribute('aria-label', t('Open menu'));
       }
+      syncMenu();
       onScroll(); // restore dark-hero logo state
     }
     function toggleMenu() {
@@ -118,8 +119,19 @@
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
         burger.setAttribute('aria-label', t(open ? 'Close menu' : 'Open menu'));
       }
+      syncMenu();
       onScroll(); // dark logo on the cream overlay, cream logo on the video
     }
+    function syncMenu() {
+      var open = document.body.classList.contains('menu-open');
+      if (navLinks) navLinks.inert = mq('(max-width: 1160px)') && !open;
+      $$('main, footer').forEach(function (el) { el.inert = open; });
+    }
+    syncMenu();
+    on(window, 'resize', function () {
+      if (!mq('(max-width: 1160px)')) closeMenu();
+      else syncMenu();
+    });
     on(burger, 'click', toggleMenu);
     function menuLabel() {
       if (burger) burger.setAttribute('aria-label', t(document.body.classList.contains('menu-open') ? 'Close menu' : 'Open menu'));
@@ -133,7 +145,14 @@
       });
     }
     on(document, 'keydown', function (e) {
-      if (e.key === 'Escape' && document.body.classList.contains('menu-open')) closeMenu();
+      if (!document.body.classList.contains('menu-open')) return;
+      if (e.key === 'Escape') { closeMenu(); if (burger) burger.focus(); }
+      if (e.key === 'Tab' && nav) {
+        var focusable = $$('a, button', nav).filter(function (el) { return el.getClientRects().length > 0; });
+        var first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
     });
 
     /* scroll-spy: highlight the section currently in view */
@@ -198,7 +217,7 @@
         el.classList.add('is-in');
         obs.unobserve(el);
       });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px', threshold: 0.08 });
     revealEls.forEach(function (el) { io.observe(el); });
 
     var iot = new IntersectionObserver(function (entries, obs) {
@@ -383,20 +402,29 @@
     var modal = $('#bookingModal');
     if (!modal) return;
     var lastFocus = null;
+    var closeTimer;
 
     function openModal() {
-      lastFocus = document.activeElement;
-      modal.classList.add('is-open');
+      window.clearTimeout(closeTimer);
       modal.setAttribute('aria-hidden', 'false');
+      if (!modal.open) {
+        lastFocus = document.activeElement;
+        modal.showModal();
+      }
+      modal.classList.add('is-open');
       document.body.classList.add('modal-open');
       var focusable = modal.querySelector('a, button, [tabindex]');
       if (focusable) focusable.focus();
     }
     function closeModal() {
+      window.clearTimeout(closeTimer);
       modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('modal-open');
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
+      closeTimer = window.setTimeout(function () {
+        modal.close();
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocus && lastFocus.getClientRects().length) lastFocus.focus({ preventScroll: true });
+      }, reduceMotion ? 0 : 180);
     }
 
     $$('[data-open-booking]').forEach(function (btn) {
@@ -405,8 +433,9 @@
     $$('[data-close-booking]').forEach(function (btn) {
       on(btn, 'click', closeModal);
     });
-    on(document, 'keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    on(modal, 'cancel', function (e) {
+      e.preventDefault();
+      closeModal();
     });
 
     // simple focus trap while open
@@ -472,45 +501,6 @@
       img.setAttribute('alt', pic.getAttribute('alt') || '');
       if (cap) cap.textContent = name ? name.textContent : '';
     }
-    /* The morph. It is the same photograph in both places, so instead of a
-       new panel appearing over the page the picture that was clicked grows
-       into the exhibit and shrinks back into the wall. Only one element in
-       the document may carry a view-transition-name at a time, so the name
-       is handed from the thumbnail to the lightbox inside the callback (the
-       old snapshot is taken before it runs, the new one after) and dropped
-       again the moment the transition is over. Without the API, or under
-       reduced motion, every path below falls through to the plain open. */
-    var NAME = 'exhibit';
-    var named = null;
-
-    function dropName() {
-      if (named && named.style) named.style.removeProperty('view-transition-name');
-      named = null;
-    }
-    function takeName(el) {
-      dropName();
-      if (el && el.style) { el.style.setProperty('view-transition-name', NAME); named = el; }
-    }
-    function canMorph() {
-      return !reduceMotion && typeof document.startViewTransition === 'function';
-    }
-    function morph(from, to, change) {
-      if (!canMorph() || !from || !to) { change(); return; }
-      takeName(from);
-      var t;
-      try {
-        t = document.startViewTransition(function () { takeName(to); change(); });
-      } catch (e) { dropName(); change(); return; }
-      if (t && t.finished && t.finished.then) {
-        t.finished.then(function () { dropName(); }, function () { dropName(); });
-      } else { dropName(); }
-    }
-    function currentThumb() {
-      var list = visible();
-      var fig = (current >= 0 && current < list.length) ? list[current] : null;
-      return fig ? $('img', fig) : null;
-    }
-
     function doOpen(fig) {
       lastFocus = document.activeElement;
       var list = visible();
@@ -528,10 +518,10 @@
       if (lastFocus && lastFocus.focus) lastFocus.focus();
     }
     function openAt(fig) {
-      morph($('img', fig), img, function () { doOpen(fig); });
+      doOpen(fig);
     }
     function close() {
-      morph(img, currentThumb(), doClose);
+      doClose();
     }
     function step(dir) {
       var list = visible();
@@ -1644,12 +1634,34 @@
       var hero = $('.page-hero');
       if (hero && 'IntersectionObserver' in window) {
         new IntersectionObserver(function (entries) {
-          bar.classList.toggle('is-up', !entries[0].isIntersecting);
+          var shown = !entries[0].isIntersecting;
+          bar.classList.toggle('is-up', shown);
+          bar.inert = !shown;
+          bar.setAttribute('aria-hidden', String(!shown));
         }, { threshold: 0 }).observe(hero);
       } else {
         bar.classList.add('is-up');
       }
     }
+  }
+
+  /* The homepage booking shortcut appears only after the hero has passed. */
+  function initSignatureBookbar() {
+    var bar = $('[data-signature-bookbar]');
+    var hero = $('.sig-hero');
+    if (!bar || !hero) return;
+    bar.hidden = false;
+    function update() {
+      var shown = hero.getBoundingClientRect().bottom <= ($('#nav') ? $('#nav').offsetHeight : 0);
+      bar.classList.toggle('is-up', shown);
+      bar.inert = !shown;
+      bar.setAttribute('aria-hidden', String(!shown));
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(update, { rootMargin: '-' + ($('#nav') ? $('#nav').offsetHeight : 0) + 'px 0px 0px' }).observe(hero);
+    } else { on(window, 'scroll', update, { passive: true }); }
+    on(window, 'resize', update);
+    update();
   }
 
   /* =====================================================================
@@ -1677,8 +1689,6 @@
     safe(initReveals, 'reveals');
     safe(initCounters, 'counters');
     safe(initHeroVideo, 'hero video');
-    safe(initParallax, 'parallax');
-    safe(initCursor, 'cursor');
     safe(initModal, 'modal');
     safe(initGalleryFilter, 'gallery filter');
     safe(initLightbox, 'lightbox');
@@ -1693,5 +1703,6 @@
     safe(initBooking, 'booking');
     safe(initFilms, 'films');
     safe(initSilk, 'silk');
+    safe(initSignatureBookbar, 'home booking shortcut');
   });
 })();

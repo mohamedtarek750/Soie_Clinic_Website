@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js"); try { if (localStorage.getItem("soie-language") === "ar") { document.documentElement.lang = "ar"; document.documentElement.dir = "rtl"; } } catch (e) {}</script>
-  <meta name="theme-color" content="#F3F3F3" />
+  <meta name="theme-color" content="#f4f1eb" />
 
   <title>Book an Appointment | Soie Clinic · New Cairo &amp; Mohandseen</title>
   <meta name="description" content="Request an appointment at Soie Clinic in New Cairo or Mohandseen. Choose your treatment, date and time, and our reception team will confirm availability." />
@@ -22,60 +22,44 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="i18n.css" />
+  <link rel="stylesheet" href="signature.css" />
 </head>
-<body>
-
-  <!-- Custom cursor (desktop, pointer devices only - enhanced in JS) -->
-  <div class="cursor" id="cursorDot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" data-i18n-live aria-hidden="true"></div>
+<body class="signature-site">
 
   <a href="#main" class="skip-link">Skip to content</a>
 
   <header class="nav" id="nav">
     <div class="nav__wrap">
-      <a href="index.html" class="nav__logo" aria-label="Soie Clinic home">
-        <img src="assets/images/logo.png" alt="Soie Clinic" width="70" height="66" />
-        <span class="nav__logo-tag">CLINIC</span>
-      </a>
-
+      <a href="index.html" class="nav__logo" aria-label="Soie Clinic home"><img src="assets/images/logo.png" alt="Soie Clinic" width="68" height="64" /><span class="nav__logo-tag">CLINIC</span></a>
       <nav class="nav__links" id="navLinks" aria-label="Primary">
-        <a href="index.html" class="nav__link">Home</a>
-        <a href="about.html" class="nav__link">About</a>
+        <a href="index.html" class="nav__link nav__link--secondary">Home</a>
+        <a href="about.html" class="nav__link nav__link--secondary">About</a>
         <a href="services.html" class="nav__link">Services</a>
-        <a href="products.html" class="nav__link">Products</a>
+        <a href="products.html" class="nav__link nav__link--secondary">Products</a>
         <a href="devices.html" class="nav__link">Devices</a>
-        <a href="before-after.html" class="nav__link">Before & After</a>
-        <a href="faq.html" class="nav__link">FAQ</a>
-        <a href="contact.html" class="nav__link">Contact</a>
-        <a href="book.html" class="btn btn--gold nav__cta">Book Appointment</a>
+        <a href="before-after.html" class="nav__link">Before &amp; After</a>
+        <a href="faq.html" class="nav__link nav__link--secondary">FAQ</a>
+        <a href="contact.html" class="nav__link">Visit us</a>
+        <a href="book.html" class="btn btn--gold nav__menu-book">Book appointment</a>
       </nav>
-
       <div class="language-switch" role="group" aria-label="Website language" data-i18n-ignore>
-        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button>
-        <span aria-hidden="true">/</span>
-        <button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
+        <button type="button" data-language="en" lang="en" aria-pressed="true">English</button><span aria-hidden="true">/</span><button type="button" data-language="ar" lang="ar" aria-pressed="false">العربية</button>
       </div>
-
-      <button class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="book.html" class="nav__cta" data-open-booking>Book appointment</a>
+      <button type="button" class="nav__burger" id="burger" data-i18n-live aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </header>
 
   <main id="main">
 
-    <section class="page-hero page-hero--media">
-      <div class="hero-bg" data-silk data-bg="book" aria-hidden="true">
+    <section class="page-hero">
+      <div class="page-hero__art" data-bg="book" aria-hidden="true">
         <picture>
-          <source type="image/avif" srcset="assets/images/bg/book-960.avif 960w, assets/images/bg/book-1920.avif 1920w" sizes="100vw" />
-          <source type="image/webp" srcset="assets/images/bg/book-960.webp 960w, assets/images/bg/book-1920.webp 1920w" sizes="100vw" />
-          <img class="hero-bg__media" src="assets/images/bg/book-1920.jpg" srcset="assets/images/bg/book-960.jpg 960w, assets/images/bg/book-1920.jpg 1920w" sizes="100vw" alt="" width="1920" height="1080" decoding="async" fetchpriority="high" />
+          <source type="image/avif" srcset="assets/images/bg/book-960.avif 960w, assets/images/bg/book-1920.avif 1920w" sizes="(max-width: 780px) 90vw, 40vw" />
+          <source type="image/webp" srcset="assets/images/bg/book-960.webp 960w, assets/images/bg/book-1920.webp 1920w" sizes="(max-width: 780px) 90vw, 40vw" />
+          <img class="hero-bg__media" src="assets/images/bg/book-1920.jpg" srcset="assets/images/bg/book-960.jpg 960w, assets/images/bg/book-1920.jpg 1920w" sizes="(max-width: 780px) 90vw, 40vw" alt="" width="1920" height="1080" decoding="async" fetchpriority="high" />
         </picture>
       </div>
       <div class="container">
@@ -206,7 +190,8 @@
   </main>
 
   <footer class="footer">
-    <div class="footer__thread" aria-hidden="true"></div>
+    <div class="container signature-footer-cta"><h2>Your next step starts here.</h2><a class="btn btn--gold" href="book.html" data-open-booking>Book appointment <svg class="btn__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></a></div>
+
     <div class="container footer__grid">
       <div class="footer__brand">
         <img src="assets/images/logo-cream.png" alt="Soie Clinic" width="120" height="114" loading="lazy" />
@@ -255,11 +240,10 @@
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </button>
 
-  <div class="modal" id="bookingModal" aria-hidden="true">
+  <dialog class="modal" id="bookingModal" aria-hidden="true" aria-labelledby="modalTitle">
     <div class="modal__backdrop" data-close-booking></div>
-    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__panel">
       <button class="modal__close" data-close-booking aria-label="Close">×</button>
-      <img src="assets/images/logo.png" alt="" class="modal__logo" width="90" height="86" loading="lazy" />
       <p class="eyebrow modal__eyebrow"><span class="eyebrow__dot"></span> Book your appointment</p>
       <h3 class="modal__title" id="modalTitle">Choose your branch</h3>
       <p class="modal__sub">Message the branch you would like to visit. Our reception team will help you book.</p>
@@ -282,7 +266,7 @@
       </div>
       <p class="bk__wa-note">Want to choose a treatment, date and time? <a href="book.html" style="color:var(--gold-deep);font-weight:600">Go to the booking page →</a></p>
     </div>
-  </div>
+  </dialog>
 
   <script src="i18n-ar.js"></script>
   <script src="i18n.js"></script>
