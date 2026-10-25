@@ -12,7 +12,7 @@ No build step — open `index.html` or serve the folder with any static server.
 | About | `about.html` |
 | Services | `services.html` → `service-<treatment>.html` (11 treatment pages) |
 | Products | `products.html` |
-| Devices | `devices.html` → `device-indiba.html` |
+| Devices | `devices.html` → `device-indiba.html`, `device-cutera.html` |
 | Before & After | `before-after.html` |
 | Book Appointment | `book.html` |
 | Contact | `contact.html` |
