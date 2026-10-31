@@ -11,21 +11,22 @@
   <meta name="description" content="Visit Soie Clinic in New Cairo and Mohandseen for skin, laser, injectable and body treatments. Explore our services and devices, or book a consultation." />
   <meta name="keywords" content="Soie Clinic, aesthetic clinic Cairo, botox, filler, hydrafacial, skin boosters, laser, veneers, body contouring, INDIBA" />
   <meta name="author" content="Soie Clinic" />
-  <link rel="canonical" href="https://soieclinic.com/" />
+  <link rel="canonical" href="https://soie-clinic.vercel.app/" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Soie Clinic" />
   <meta property="og:title" content="Soie Clinic | Aesthetic Care in Cairo" />
   <meta property="og:description" content="Explore skin, laser, injectable and body treatments at Soie Clinic. Find us in New Cairo and Mohandseen." />
-  <meta property="og:url" content="https://soieclinic.com/" />
-  <meta property="og:image" content="https://soieclinic.com/assets/images/logo.png" />
+  <meta property="og:url" content="https://soie-clinic.vercel.app/" />
+  <meta property="og:image" content="https://soie-clinic.vercel.app/assets/images/logo.png" />
   <meta name="twitter:card" content="summary" />
 
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="apple-touch-icon" href="assets/images/favicon.png" />
 <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="i18n.css" />
+  <link rel="stylesheet" href="devices.css" />
   <link rel="stylesheet" href="signature.css" />
 
   <!-- Structured data: LocalBusiness (helps search + trust) -->
@@ -33,10 +34,11 @@
   {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": "https://soie-clinic.vercel.app/#clinic",
     "name": "Soie Clinic",
     "description": "Aesthetic clinic offering skin treatments, Botox, fillers, laser, body contouring and dental care.",
     "image": "assets/images/logo.png",
-    "url": "https://soieclinic.com/",
+    "url": "https://soie-clinic.vercel.app/",
     "department": [
       { "@type": "MedicalClinic", "name": "Soie Clinic, New Cairo", "address": "UMC 216, New Cairo, Egypt", "telephone": "+201000033766" },
       { "@type": "MedicalClinic", "name": "Soie Clinic, Mohandseen", "address": "41st Lebanon St, Mohandseen, Egypt", "telephone": "+201000057669" }
@@ -65,7 +67,7 @@
         <a href="index.html" class="nav__link nav__link--secondary is-active" aria-current="page">Home</a>
         <a href="about.html" class="nav__link nav__link--secondary">About</a>
         <a href="services.html" class="nav__link">Services</a>
-        <a href="devices.html" class="nav__link">Devices</a>
+        <a href="/devices" class="nav__link">Devices</a>
         <a href="before-after.html" class="nav__link">Before &amp; After</a>
         <a href="faq.html" class="nav__link nav__link--secondary">FAQ</a>
         <a href="contact.html" class="nav__link">Visit us</a>
@@ -87,24 +89,35 @@
 </section>
 <div class="sig-hero-foot sig-wrap sig-rule"><span>A considered approach. A personal experience.</span><a href="#care"><span>Discover Soie</span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div>
 <section class="sig-care sig-wrap sig-rule" id="care" aria-labelledby="care-title"><div data-reveal><p class="sig-eyebrow">01 / Our care</p><h2 class="sig-section-title" id="care-title">Find the care you need.</h2><p class="sig-section-copy">Start with what you would like to improve. We can help you understand the options and decide where to begin.</p><a class="sig-text-link" href="services.html"><span>All treatments</span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div><div class="sig-services-list" data-reveal style="--delay:100ms"><a class="sig-service" href="services.html"><span class="sig-service-no">01</span><span><span class="sig-service-title">Skin & injectables</span><span class="sig-service-sub">Facials, skin boosters, Botox and fillers</span></span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a><a class="sig-service" href="service-laser.html"><span class="sig-service-no">02</span><span><span class="sig-service-title">Laser & body</span><span class="sig-service-sub">Hair reduction, skin texture and body care</span></span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a><a class="sig-service" href="service-dentistry.html"><span class="sig-service-no">03</span><span><span class="sig-service-title">Dental care</span><span class="sig-service-sub">Whitening, veneers and smile design</span></span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div></section>
-<section class="sig-technology sig-wrap" id="technology" aria-labelledby="tech-title" data-reveal><div class="sig-tech-head"><div><p class="sig-eyebrow">02 / Our technology</p><h2 class="sig-section-title" id="tech-title">Meet our devices.</h2></div><p class="sig-section-copy">Learn what we use, how it works and what to ask at your consultation.</p></div><div class="sig-tech-tabs" role="tablist" aria-label="Explore our devices" data-device-tabs>
-<button type="button" id="home-tab-indiba" role="tab" aria-controls="home-indiba" aria-selected="true" tabindex="0" data-device-tab><bdi translate="no">INDIBA Deep Care</bdi></button>
-<button type="button" id="home-tab-cutera" role="tab" aria-controls="home-cutera" aria-selected="false" tabindex="-1" data-device-tab><bdi translate="no">Cutera excel HR</bdi></button>
-<button type="button" id="home-tab-finexel" role="tab" aria-controls="home-finexel" aria-selected="false" tabindex="-1" data-device-tab><bdi translate="no">FineXel CO2</bdi></button>
-</div>
-<div class="sig-tech-panel" id="home-indiba" role="tabpanel" tabindex="0" aria-labelledby="home-tab-indiba" data-device-panel>
-      <div class="sig-tech-photo"><img src="assets/images/indiba-deep-care.webp" alt="INDIBA Deep Care" width="1801" height="1683" loading="lazy" decoding="async" /></div>
-      <div class="sig-tech-detail"><span class="sig-tech-counter" aria-hidden="true">01 / 03</span><h3><bdi translate="no">INDIBA Deep Care</bdi></h3><p>448 kHz radiofrequency for face and body care. Our team assesses whether sessions suit your needs.</p><a class="sig-text-link" href="devices.html#indiba"><span>Explore the device</span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div>
-    </div>
-<div class="sig-tech-panel" id="home-cutera" role="tabpanel" tabindex="0" aria-labelledby="home-tab-cutera" data-device-panel hidden>
-      <div class="sig-tech-photo"><img src="assets/videos/posters/cutera-excel-hr.jpg" alt="Cutera excel HR" width="720" height="1280" loading="lazy" decoding="async" /></div>
-      <div class="sig-tech-detail"><span class="sig-tech-counter" aria-hidden="true">02 / 03</span><h3><bdi translate="no">Cutera excel HR</bdi></h3><p>A laser platform with 755 nm and 1064 nm wavelength options. Ask our team about the approach that suits your skin and hair.</p><a class="sig-text-link" href="devices.html#cutera"><span>Explore the device</span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div>
-    </div>
-<div class="sig-tech-panel" id="home-finexel" role="tabpanel" tabindex="0" aria-labelledby="home-tab-finexel" data-device-panel hidden>
-      <div class="sig-tech-photo"><img src="assets/videos/posters/finexel-fractional-co2.jpg" alt="FineXel CO2" width="720" height="1280" loading="lazy" decoding="async" /></div>
-      <div class="sig-tech-detail"><span class="sig-tech-counter" aria-hidden="true">03 / 03</span><h3><bdi translate="no">FineXel CO2</bdi></h3><p>Fractional CO2 resurfacing. Talk with our team about skin texture, acne scars and the recovery your skin may need.</p><a class="sig-text-link" href="devices.html#finexel"><span>Explore the device</span><svg class="sig-arrow" aria-hidden="true"><use href="#sig-arrow"/></svg></a></div>
-    </div>
-</section>
+<section class="sig-technology sig-wrap" id="technology" aria-labelledby="tech-title" data-reveal><div class="sig-tech-head"><div><p class="sig-eyebrow">02 / Our technology</p><h2 class="sig-section-title" id="tech-title">Meet our devices.</h2></div><p class="sig-section-copy">Learn what we use, how it works and what to ask at your consultation.</p></div><div class="device-grid">
+      <a class="device-card" href="/devices/indiba-deep-care" aria-labelledby="home-indiba-title">
+        <div class="device-card__image"><img src="/assets/images/indiba-deep-care.webp" alt="INDIBA Deep Care" width="1801" height="1683" loading="lazy" decoding="async" /></div>
+        <div class="device-card__body">
+          <p class="eyebrow">Radiofrequency care</p>
+          <h3 id="home-indiba-title">INDIBA Deep Care</h3>
+          <p class="device-card__summary">448 kHz radiofrequency for face and body care. Explore the technology, treatment considerations and a clinic session.</p>
+          <span class="device-card__link"><span>Learn more</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="device-card" href="/devices/cutera-excel-hr" aria-labelledby="home-cutera-title">
+        <div class="device-card__image"><img src="/assets/videos/posters/cutera-excel-hr.jpg" alt="Cutera excel HR" width="720" height="1280" loading="lazy" decoding="async" /></div>
+        <div class="device-card__body">
+          <p class="eyebrow">Laser hair removal</p>
+          <h3 id="home-cutera-title">Cutera excel HR</h3>
+          <p class="device-card__summary">Laser care with 755 nm and 1064 nm wavelength options. Learn about hair reduction and see the device at the clinic.</p>
+          <span class="device-card__link"><span>Learn more</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+      <a class="device-card" href="/devices/finexel-fractional-co2" aria-labelledby="home-finexel-title">
+        <div class="device-card__image"><img src="/assets/videos/posters/finexel-fractional-co2.jpg" alt="FineXel CO2" width="720" height="1280" loading="lazy" decoding="async" /></div>
+        <div class="device-card__body">
+          <p class="eyebrow">Fractional CO2 laser</p>
+          <h3 id="home-finexel-title">FineXel CO2</h3>
+          <p class="device-card__summary">Fractional CO2 skin resurfacing. Read about texture, acne scars and recovery, and watch the clinic video.</p>
+          <span class="device-card__link"><span>Learn more</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+      </a>
+    </div><a class="sig-text-link device-catalogue-link" href="/devices">Browse all devices</a></section>
 <section class="section testimonials sig-reviews" id="testimonials">
       <div class="container">
         <header class="section__head" style="margin-bottom: clamp(1.8rem, 4vw, 3rem)">
@@ -154,7 +167,7 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
-        <a href="devices.html">Devices</a>
+        <a href="/devices">Devices</a>
         <a href="before-after.html">Before &amp; After</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>

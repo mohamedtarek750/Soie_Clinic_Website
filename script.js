@@ -96,7 +96,7 @@
       nav.classList.toggle('is-scrolled', scrolled);
       if (darkHero && logoImg) {
         var wantCream = !scrolled && !document.body.classList.contains('menu-open');
-        var src = wantCream ? 'assets/images/logo-cream.png' : 'assets/images/logo.png';
+        var src = wantCream ? '/assets/images/logo-cream.png' : '/assets/images/logo.png';
         if (logoImg.getAttribute('src') !== src) logoImg.setAttribute('src', src);
       }
     }
@@ -1335,63 +1335,24 @@
     localiseBooking();
   }
 
-  /* =====================================================================
-     DEVICE TABS - complete inline panels, with one visible device at a time.
-     Replacing the URL fragment preserves sharing/reload without scrolling or
-     navigating away. Keyboard arrows follow the current LTR/RTL direction.
-     ===================================================================== */
-  function initDeviceTabs() {
-    var tablist = $('[data-device-tabs]');
-    if (!tablist) return;
-    var tabs = $$('[data-device-tab]', tablist);
-    var panels = tabs.map(function (tab) { return document.getElementById(tab.getAttribute('aria-controls')); });
-    if (!tabs.length || panels.some(function (panel) { return !panel; })) return;
-
-    function activate(index, focus, updateUrl) {
-      tabs.forEach(function (tab, i) {
-        var selected = i === index;
-        tab.setAttribute('aria-selected', String(selected));
-        tab.tabIndex = selected ? 0 : -1;
-        panels[i].hidden = !selected;
-        if (!selected) $$('video', panels[i]).forEach(function (video) { video.pause(); });
-      });
-      if (focus) tabs[index].focus({ preventScroll: true });
-      if (updateUrl) {
-        try { window.history.replaceState(window.history.state, '', '#' + panels[index].id); }
-        catch (e) { /* Tabs still work when history changes are unavailable. */ }
-      }
-      document.dispatchEvent(new CustomEvent('soie:devicechange'));
-    }
-
-    function indexFromHash() {
-      var target;
-      try { target = document.getElementById(decodeURIComponent(window.location.hash.slice(1))); }
-      catch (e) { return -1; }
-      var panel = target && target.closest('[data-device-panel]');
-      return panels.indexOf(panel);
-    }
-
-    tabs.forEach(function (tab, i) {
-      on(tab, 'click', function () { activate(i, false, true); });
-      on(tab, 'keydown', function (e) {
-        if (e.altKey || e.ctrlKey || e.metaKey) return;
-        var step = document.documentElement.dir === 'rtl' ? -1 : 1;
-        var next = i;
-        if (e.key === 'ArrowRight') next = (i + step + tabs.length) % tabs.length;
-        else if (e.key === 'ArrowLeft') next = (i - step + tabs.length) % tabs.length;
-        else if (e.key === 'Home') next = 0;
-        else if (e.key === 'End') next = tabs.length - 1;
-        else return;
-        e.preventDefault();
-        activate(next, true, true);
-      });
-    });
-    on(window, 'hashchange', function () {
-      var index = indexFromHash();
-      if (index !== -1) activate(index, false, false);
-    });
-    var initial = indexFromHash();
-    activate(initial === -1 ? 0 : initial, false, false);
+  /* Old device tab bookmarks now open the permanent device page.
+     Fragments never reach the server, so HTTP redirects cannot migrate them. */
+  function initLegacyDeviceLinks() {
+    var path = window.location.pathname;
+    var catalogue = /^\/devices(?:\/index\.html|\.html|\/)?$/.test(path);
+    var home = path === '/' || path === '/index.html';
+    var hash;
+    try { hash = decodeURIComponent(window.location.hash.slice(1)); }
+    catch (e) { return; }
+    if (home) {
+      if (hash.indexOf('home-') !== 0) return;
+      hash = hash.slice(5);
+    } else if (!catalogue) return;
+    var match = /^(indiba|cutera|finexel)(?:-(video|faq-title))?$/.exec(hash);
+    if (!match) return;
+    var routes = { indiba: '/devices/indiba-deep-care', cutera: '/devices/cutera-excel-hr', finexel: '/devices/finexel-fractional-co2' };
+    var fragment = match[2] === 'video' ? '#' + match[1] + '-video' : match[2] ? '#device-faq' : '';
+    window.location.replace(routes[match[1]] + window.location.search + fragment);
   }
 
   /* =====================================================================
@@ -1534,32 +1495,13 @@
 
     // start watching only once the page itself has loaded, so a film in the
     // first screen never competes with the fonts, the CSS or its own poster
-    var started = false;
     function start() {
-      started = true;
       states.forEach(function (s) {
         approach.observe(s.video);
         watch.observe(s.video);
       });
     }
     if (document.readyState === 'complete') start(); else on(window, 'load', start);
-
-    on(document, 'soie:devicechange', function () {
-      states.forEach(function (s) {
-        if (s.video.closest('[hidden]')) {
-          s.inView = false;
-          pause(s);
-        } else if (started) {
-          // Re-observe so even a rapid hide/show in one frame resumes correctly.
-          watch.unobserve(s.video);
-          watch.observe(s.video);
-          if (!s.loaded) {
-            approach.unobserve(s.video);
-            approach.observe(s.video);
-          }
-        }
-      });
-    });
 
     // a hidden tab plays nothing; coming back resumes whatever is on screen
     on(document, 'visibilitychange', function () {
@@ -1685,7 +1627,7 @@
   }
   ready(function () {
     safe(initNav, 'nav');
-    safe(initDeviceTabs, 'device tabs');
+    safe(initLegacyDeviceLinks, 'legacy device links');
     safe(initReveals, 'reveals');
     safe(initCounters, 'counters');
     safe(initHeroVideo, 'hero video');

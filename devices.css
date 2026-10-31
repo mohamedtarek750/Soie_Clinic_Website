@@ -1,17 +1,44 @@
-/* Devices: shared editorial styling, scoped to the new pages. */
+/* Device catalogue and individual treatment pages. */
+.device-catalogue { padding-top: clamp(32px, 5vw, 60px); }
+.device-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.device-card { display: flex; min-width: 0; flex-direction: column; background: var(--linen); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; transition: border-color 250ms, transform 350ms var(--ease); }
+.device-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.device-card:focus-visible { outline-offset: 5px; }
+.device-card__image { height: 280px; padding: 12px; background: #faf9f6; overflow: hidden; }
+.device-card__image img { width: 100%; height: 100%; object-fit: contain; }
+.device-card__body { display: flex; flex-direction: column; flex: 1; align-items: flex-start; padding: 24px; }
+.device-card__body :is(h2, h3) { margin: 14px 0; font: 400 clamp(26px, 2.4vw, 34px)/1.18 var(--f-display); letter-spacing: -.035em; }
+.device-card__summary { font-size: 14px; line-height: 1.8; color: var(--char-soft); margin-bottom: 24px; }
+.device-card__link { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; }
+.device-card__link svg, .device-related svg { width: 20px; height: 20px; flex: none; }
+.device-catalogue-link { margin-top: 24px; }
+.sig-technology .device-card__image { height: 240px; }
+.device-related { padding-block: 24px 60px; }
+.device-related h2 { font: 400 2rem/1.3 var(--f-display); margin-bottom: 20px; }
+.device-related__links { display: flex; align-items: center; gap: 20px 36px; flex-wrap: wrap; }
+.device-related__links a { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-size: 14px; border-bottom: 1px solid var(--line); }
+.device-related__links a:hover { border-color: var(--gold); }
+html[dir="rtl"] .device-card__link svg, html[dir="rtl"] .device-related svg { scale: -1 1; }
+html[lang="ar"] .device-card__body :is(h2, h3) { font-size: 25px; line-height: 1.5; letter-spacing: 0; }
+@media (max-width: 900px) {
+ .device-grid { grid-template-columns: 1fr; max-width: 620px; margin-inline: auto; }
+ .device-card { flex-direction: row; }
+ .device-card__image { flex: 0 0 42%; height: auto; min-height: 260px; }
+ .sig-technology .device-card__image { height: auto; }
+}
+@media (max-width: 600px) {
+ .device-card { flex-direction: column; }
+ .device-card__image, .sig-technology .device-card__image { flex: auto; min-height: 0; height: 240px; }
+ .device-card__body { padding: 22px; }
+ .device-related__links { flex-direction: column; align-items: stretch; }
+ .device-related__links a { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .device-card { transition: none; }
+ .device-card:hover { transform: none; }
+}
 .device-section { padding-top: 1rem; }
 .device-section[id], .device-video__player[id] { scroll-margin-top: calc(var(--nav-h) + 2rem); }
-.device-directory { grid-column: 7 / -1; grid-row: 5; display: flex; gap: .5rem; margin-top: 1.5rem; }
-.device-directory [role="tab"] { flex: 1; min-width: 0; min-height: 48px; padding: .85rem 1rem; border: 1px solid var(--line-strong); background: transparent; color: var(--char); font: 500 .9rem/1.5 var(--f-body); cursor: pointer; }
-.device-directory [role="tab"]:hover { border-color: var(--char); }
-.device-directory [role="tab"][aria-selected="true"] { background: var(--char); border-color: var(--char); color: var(--linen); }
-.device-directory [role="tab"]:focus-visible { outline: 2px solid var(--char); outline-offset: 3px; }
-.device-panel { overflow-anchor: none; }
-.device-panel .device-feature { align-items: start; }
-.device-panel > .device-section { padding-top: clamp(1.75rem, 4vw, 3rem); }
-.device-panel[hidden] { display: none; }
-.no-js .device-directory { display: none; }
-.no-js .device-panel[hidden] { display: block !important; }
 .device-feature { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
 .device-feature__image { display: block; margin: 0; background: #e9e8e5; }
 .device-feature__image img { display: block; width: 100%; height: auto; }
@@ -20,7 +47,7 @@
 .device-feature__body .device-intro { font-size: 1.2rem; }
 .device-tags { display: flex; gap: .65rem; flex-wrap: wrap; margin: 1.6rem 0 2rem; }
 .device-tags span { border: 1px solid var(--line-strong); padding: .6rem .8rem; font-size: .75rem; }
-.device-note { font-size: .8rem; color: var(--muted); }
+.device-note { font-size: .8rem; color: var(--char-soft); }
 .device-video { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: clamp(2rem, 6vw, 5rem); align-items: center; margin: clamp(3rem, 6vw, 5rem) auto; max-width: 960px; scroll-margin-top: calc(var(--nav-h) + 2rem); }
 .device-video h2 { font: 400 clamp(2rem, 4vw, 3.5rem)/1.15 var(--f-display); margin: 1rem 0 1.75rem; }
 .device-video__intro > p:last-child { max-width: 32ch; line-height: 1.8; }
@@ -39,17 +66,13 @@
 .device-faq { max-width: 850px; margin: 5rem auto; }
 .device-faq details { border-bottom: 1px solid var(--line-strong); padding: 1.4rem 0; }
 .device-faq summary { cursor: pointer; font-size: 1.08rem; line-height: 1.5; }
-.device-faq p { margin: 1rem 0 0; color: var(--muted); }
+.device-faq p { margin: 1rem 0 0; color: var(--char-soft); }
 .device-source { max-width: 850px; margin: 3rem auto 0; font-size: .9rem; }
 .device-source h2 { font: 400 1.8rem var(--f-display); }
 .device-source p { margin: 1rem 0; }
-@media (max-width: 980px) {
- .device-directory { grid-column: 1 / -1; }
-}
 @media (max-width: 800px) {
- .device-directory [role="tab"] { padding-inline: .5rem; }
  .device-feature, .device-topics, .device-video { grid-template-columns: 1fr; }
- .device-feature--film .device-feature__body, .device-panel .device-feature__body { order: -1; }
+ .device-feature--film .device-feature__body { order: -1; }
  .device-feature__image { max-width: 600px; }
  .device-topics { margin: 3rem 0; gap: 2rem; }
 }

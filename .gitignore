@@ -1,2 +1,6 @@
 # local editor/agent settings
 .claude/
+
+# Python preview and test caches
+__pycache__/
+*.py[cod]

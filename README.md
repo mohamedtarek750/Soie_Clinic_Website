@@ -2,7 +2,8 @@
 
 Luxury aesthetic clinic in New Cairo & Mohandseen. A fully static,
 dependency-free site: hand-crafted HTML + CSS + vanilla JavaScript.
-No build step — open `index.html` or serve the folder with any static server.
+No build step. Use the included preview server for the same device URLs and
+redirects configured for production.
 
 ## Site map
 
@@ -12,7 +13,10 @@ No build step — open `index.html` or serve the folder with any static server.
 | About | `about.html` |
 | Services | `services.html` → `service-<treatment>.html` (11 treatment pages) |
 | Products | `products.html` |
-| Devices | `devices.html` → `device-indiba.html`, `device-cutera.html`, `device-finexel.html` |
+| Device catalogue | `/devices` → `devices/index.html` |
+| INDIBA Deep Care | `/devices/indiba-deep-care` |
+| Cutera excel HR | `/devices/cutera-excel-hr` |
+| FineXel fractional CO2 | `/devices/finexel-fractional-co2` |
 | Before & After | `before-after.html` |
 | Book Appointment | `book.html` |
 | Contact | `contact.html` |
@@ -26,8 +30,8 @@ Shared assets: `style.css` (design tokens + base components), `signature.css`
 ## Signature design
 
 The homepage implements the approved Signature concept: warm ivory, espresso
-text, muted rose accents, a separate arched portrait, treatment links, inline
-device previews and branch information. The original client review images are
+text, muted rose accents, a separate arched portrait, treatment links, device
+cards and branch information. The original client review images are
 retained. The background stays a solid colour and the headline remains
 **Unleash your beauty.**
 
@@ -37,21 +41,45 @@ the mobile menu and footer. The header shows the language visitors can switch
 to. The homepage booking shortcut appears after its hero leaves the viewport.
 
 System fonts keep the layout independent of external font requests. Scrolling
-and pointers use browser behaviour, with short reveals and tab transitions.
+and pointers use browser behaviour, with short reveals.
 Reduced motion disables these animations. Device videos retain their existing
 loading, looping and pause behaviour.
 
-For a local preview, run `python3 -m http.server 8000` from this directory.
-Check English and Arabic on a narrow phone and desktop, including device tabs,
+For a local preview, run `python3 tools/serve.py --port 8000` from this directory.
+Check English and Arabic on a narrow phone and desktop, including device links,
 menu keyboard controls, dialog focus/close behaviour and the booking form.
 
-`devices.html` uses accessible tabs: INDIBA is selected initially, and selecting
-Cutera or FineXel swaps the complete details and video into the same place below the tabs.
-The selected tab stays highlighted, and videos pause when their tab is hidden.
-Unopened device videos load only when their tab is selected and approached.
-The URL fragment can restore a selected device without navigating to another page.
-The standalone device URLs remain available for existing links and search.
-When changing device copy, update its inline panel and standalone page together.
+## Device catalogue and SEO
+
+`/devices` contains concise image cards linking to a dedicated page for each
+device. The homepage links to those same pages. Full treatment copy, the original
+clinic video, FAQs and booking controls live in `devices/<slug>/index.html`.
+The catalogue loads no video files; detail videos load when approached and pause
+when offscreen. Reduced motion and data saving retain the poster.
+
+`vercel.json` serves the extensionless URLs and permanently redirects the old
+`devices.html` and `device-*.html` addresses. Explicit `index.html` URLs and
+trailing slashes resolve to the same canonical address. Old device tab fragments
+are forwarded by `initLegacyDeviceLinks()` because URL fragments do not reach
+the server. All internal links and the sitemap use the permanent URLs.
+
+Each detail page has its own title, description, H1, breadcrumbs, MedicalWebPage,
+MedicalDevice, MedicalProcedure, FAQPage and VideoObject data. The catalogue uses
+CollectionPage and ItemList. Keep FAQ schema identical to the visible questions
+and answers. Video dates reflect the original media publication commits.
+Prices, practitioner names, ratings and device result photos must not be invented.
+
+Canonical metadata, social URLs, structured data, robots.txt and sitemap.xml use
+`https://soie-clinic.vercel.app`, the published site used in this project. The
+previous `soieclinic.com` origin was not confirmed as connected. If a custom
+domain is connected later, migrate these references together and configure its
+domain redirect in Vercel. English remains the default, with the existing Arabic
+language switch; this change does not create separate Arabic URL versions.
+
+Run `python3 -m unittest discover -s tests -v` to check catalogue links,
+permanent redirects, nested page resources, canonical URLs, media references,
+and agreement between visible FAQs and structured data. These tests use only
+the Python standard library and a temporary local server.
 
 FineXel's model name and CO2 laser type were checked against the supplied clinic
 video. Its copy explains fractional CO2 treatment in general. Manufacturer

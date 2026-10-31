@@ -1,0 +1,64 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/devices.html",
+      "destination": "/devices",
+      "permanent": true
+    },
+    {
+      "source": "/device-indiba.html",
+      "destination": "/devices/indiba-deep-care",
+      "permanent": true
+    },
+    {
+      "source": "/device-cutera.html",
+      "destination": "/devices/cutera-excel-hr",
+      "permanent": true
+    },
+    {
+      "source": "/device-finexel.html",
+      "destination": "/devices/finexel-fractional-co2",
+      "permanent": true
+    },
+    {
+      "source": "/devices/index.html",
+      "destination": "/devices",
+      "permanent": true
+    },
+    {
+      "source": "/devices/indiba-deep-care/index.html",
+      "destination": "/devices/indiba-deep-care",
+      "permanent": true
+    },
+    {
+      "source": "/devices/cutera-excel-hr/index.html",
+      "destination": "/devices/cutera-excel-hr",
+      "permanent": true
+    },
+    {
+      "source": "/devices/finexel-fractional-co2/index.html",
+      "destination": "/devices/finexel-fractional-co2",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/devices",
+      "destination": "/devices/index.html"
+    },
+    {
+      "source": "/devices/indiba-deep-care",
+      "destination": "/devices/indiba-deep-care/index.html"
+    },
+    {
+      "source": "/devices/cutera-excel-hr",
+      "destination": "/devices/cutera-excel-hr/index.html"
+    },
+    {
+      "source": "/devices/finexel-fractional-co2",
+      "destination": "/devices/finexel-fractional-co2/index.html"
+    }
+  ]
+}
