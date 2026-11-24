@@ -1,0 +1,62 @@
+{
+  "path": "/devices/cutera-excel-hr",
+  "type": "device",
+  "title": "جهاز Cutera excel HR لإزالة الشعر في التجمع | {{brand}}",
+  "description": "تعرف على جهاز Cutera excel HR لإزالة الشعر بالليزر في التجمع الخامس وكيف يقيّم الفريق لون البشرة والشعر والمنطقة قبل اختيار إعدادات الجلسة وخطة العناية.",
+  "h1": "جهاز Cutera excel HR لإزالة الشعر في التجمع الخامس",
+  "updated": "2026-11-24",
+  "html": "<section class=\"page-hero\">\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\"><a href=\"/ar\">الرئيسية</a> · <a href=\"/ar/devices\">الأجهزة</a> · <span>Cutera</span></nav>\n        <p class=\"eyebrow\">Cutera في عيادات {{brand}} · القاهرة، مصر</p>\n        <h1 class=\"page-hero__title\">جهاز Cutera excel HR لإزالة الشعر في التجمع الخامس</h1>\n        <p class=\"page-hero__lede\">تعرّف على إزالة الشعر بليزر Cutera excel HR في عيادات {{brand}} بالقاهرة. شاهد الجهاز وتعرّف على دور نوع البشرة والشعر والمنطقة المعالَجة في تحديد خطة الجلسات.</p>\n      </div>\n    </section>\n    <section class=\"section device-section\">\n      <div class=\"container\">\n        <div class=\"device-feature device-feature--film\">\n          <div class=\"device-video__player\" id=\"cutera-video\">\n            <video class=\"film device-video__media\" muted loop playsinline preload=\"none\" poster=\"/assets/videos/posters/cutera-excel-hr.jpg\" data-film data-src=\"/assets/videos/cutera-excel-hr.mp4\" width=\"720\" height=\"1280\" aria-label=\"جهاز Cutera excel HR في عيادات {{brand}}\"></video>\n            <button class=\"film-toggle\" type=\"button\" data-media-toggle aria-label=\"إيقاف الفيديو مؤقتًا\" aria-pressed=\"false\"></button>\n            <noscript><p><a href=\"/assets/videos/cutera-excel-hr.mp4\">شاهد فيديو Cutera</a></p></noscript>\n          </div>\n          <div class=\"device-feature__body\">\n            <p class=\"eyebrow\">متاح في عيادات {{brand}}</p>\n            <h2>طولان موجيان.<br><em>نختار الأنسب لعلاجك.</em></h2>\n            <p>يعمل جهاز Cutera excel HR بخيارَي طول موجي 755 و1064 نانومتر. نقيّم البشرة والشعر والمنطقة المراد علاجها قبل اختيار الإعدادات.</p>\n            <p>شاهد المقاطع للتعرف على جهاز Cutera لدينا ولوحة التحكم في الجلسات.</p>\n            <div class=\"device-tags\"><span>755 نانومتر</span><span>1064 نانومتر</span><span>عناية بالليزر تناسبك</span></div>\n            <a class=\"btn btn--gold\" data-open-booking href=\"/ar/book\">اسأل عن Cutera</a>\n          </div>\n        </div>\n        <div class=\"device-topics\">\n          <article><span class=\"eyebrow\">٠١ / الشعر</span><h2>تقليل نمو الشعر</h2><p>اسأل عن تقليل شعر الوجه أو الجسم بالليزر. بعد تقييم البشرة والشعر، نناقش المنطقة والفواصل بين الجلسات وعدد الزيارات المتوقع.</p></article>\n          <article><span class=\"eyebrow\">٠٢ / البشرة</span><h2>تجديد نضارة البشرة</h2><p>تحدث مع فريقنا عما يشغلك في بشرتك. نوضح العلاجات المتاحة بهذا الجهاز، وما إذا كان أحدها يناسب احتياجاتك.</p></article>\n          <article><span class=\"eyebrow\">٠٣ / خطتك</span><h2>التقييم أولًا</h2><p>أخبرنا عن التعرض للشمس مؤخرًا والأدوية والعلاجات السابقة. يساعدنا ذلك في إرشادك للتحضير والتوقيت والعناية بعد الجلسة.</p></article>\n        </div>\n        <section class=\"device-faq\" id=\"device-faq\" aria-labelledby=\"cutera-faq-title\">\n          <p class=\"eyebrow\">قبل زيارتك</p>\n          <h2 id=\"cutera-faq-title\">Cutera، <em>إجابات تهمك.</em></h2>\n          <details><summary>هل تمتلك عيادات {{brand}} جهاز Cutera؟</summary><p>نعم، نمتلك جهاز Cutera excel HR في عيادات {{brand}} بالقاهرة. تواصل معنا قبل الزيارة لتأكيد الفرع والمواعيد المتاحة.</p></details>\n          <details><summary>ما موديل جهاز Cutera المعروض هنا؟</summary><p>هذا جهاز Cutera excel HR، بخيارَي طول موجي 755 و1064 نانومتر. صُوّر المقطعان في عيادات {{brand}}.</p></details>\n          <details><summary>كم جلسة Cutera سأحتاج؟</summary><p>يعتمد العدد على البشرة والشعر والمنطقة والهدف من العلاج. نقترح جدولًا بعد تقييم حالتك، ونتابع استجابتك للجلسات.</p></details>\n          <details><summary>كيف أحجز استشارة Cutera؟</summary><p>راسل فريقنا بالعلاج أو المشكلة التي ترغب في مناقشتها. نؤكد لك الفرع ونساعدك في ترتيب استشارة.</p></details>\n\n          <details><summary>ما سعر إزالة الشعر بليزر Cutera؟</summary><p>تعتمد التكلفة على المنطقة وخطة الجلسات المناسبة بعد التقييم. راسل الفرع على واتساب لطلب عرض سعر ومناقشة الخطة قبل الحجز.</p></details>\n        </section>\n        <aside class=\"device-source\">\n          <h2>استكشف التقنية</h2>\n          <p>اقرأ شرح Cutera لعلاجات تجديد البشرة وتحسين سطحها، واسأل فريقنا عن العلاجات المتاحة منها بالجهاز الموجود في عيادتنا.</p>\n          <a href=\"https://cutera.com/us-en/treatments/skin-revitalization-and-resurfacing-solutions/\" target=\"_blank\" rel=\"noopener noreferrer\">تعرّف على العلاجات من موقع Cutera الرسمي ↖</a>\n        </aside>\n      </div>\n    </section>\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\">تفكر في جلسات Cutera؟<br><em>تحدث مع فريقنا.</em></h2>\n        <p class=\"cta-band__sub\">تواصل معنا لمناقشة ما يشغلك في البشرة أو الشعر، وترتيب استشارة في الفرع المناسب.</p>\n        <div class=\"cta-band__actions\"><a class=\"btn btn--gold btn--lg\" data-open-booking href=\"/ar/book\">اسأل عن Cutera</a><a class=\"btn btn--ghost btn--lg\" href=\"/ar/devices\">استكشف أجهزتنا</a></div>\n      </div>\n    </section>\n<aside class=\"device-related container\" aria-labelledby=\"related-title\"><h2 id=\"related-title\">أجهزة أخرى في عيادات {{brand}}</h2><div class=\"device-related__links\"><a class=\"text-link\" href=\"/ar/devices/indiba-deep-care\">INDIBA Deep Care <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a><a class=\"text-link\" href=\"/ar/devices/finexel-fractional-co2\">FineXel CO2 <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a><a class=\"text-link\" href=\"/ar/devices\">تصفّح كل الأجهزة <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div></aside>\n  ",
+  "faqs": [
+    {
+      "q": "هل تمتلك عيادات {{brand}} جهاز Cutera؟",
+      "a": "نعم، نمتلك جهاز Cutera excel HR في عيادات {{brand}} بالقاهرة. تواصل معنا قبل الزيارة لتأكيد الفرع والمواعيد المتاحة."
+    },
+    {
+      "q": "ما موديل جهاز Cutera المعروض هنا؟",
+      "a": "هذا جهاز Cutera excel HR، بخيارَي طول موجي 755 و1064 نانومتر. صُوّر المقطعان في عيادات {{brand}}."
+    },
+    {
+      "q": "كم جلسة Cutera سأحتاج؟",
+      "a": "يعتمد العدد على البشرة والشعر والمنطقة والهدف من العلاج. نقترح جدولًا بعد تقييم حالتك، ونتابع استجابتك للجلسات."
+    },
+    {
+      "q": "كيف أحجز استشارة Cutera؟",
+      "a": "راسل فريقنا بالعلاج أو المشكلة التي ترغب في مناقشتها. نؤكد لك الفرع ونساعدك في ترتيب استشارة."
+    },
+    {
+      "q": "ما سعر إزالة الشعر بليزر Cutera؟",
+      "a": "تعتمد التكلفة على المنطقة وخطة الجلسات المناسبة بعد التقييم. راسل الفرع على واتساب لطلب عرض سعر ومناقشة الخطة قبل الحجز."
+    }
+  ],
+  "graph": [
+    {
+      "@type": "MedicalDevice",
+      "name": "Cutera excel HR",
+      "alternateName": "جهاز كيوتيرا",
+      "description": "جهاز ليزر بخيارَي طول موجي: 755 و1064 نانومتر.",
+      "@id": "{{origin}}/devices/cutera-excel-hr#device"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "{{origin}}/devices/cutera-excel-hr#procedure",
+      "name": "تقليل نمو الشعر بليزر Cutera excel HR",
+      "description": "يعمل جهاز Cutera excel HR بخيارَي طول موجي 755 و1064 نانومتر. نقيّم البشرة والشعر والمنطقة المراد علاجها قبل اختيار الإعدادات.",
+      "url": "{{origin}}/devices/cutera-excel-hr",
+      "image": "{{origin}}/assets/videos/posters/cutera-excel-hr.jpg"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "{{origin}}/devices/cutera-excel-hr#video",
+      "name": "جهاز Cutera excel HR في عيادات {{brand}}",
+      "description": "جهاز Cutera excel HR في عيادات {{brand}}",
+      "thumbnailUrl": "{{origin}}/assets/videos/posters/cutera-excel-hr.jpg",
+      "contentUrl": "{{origin}}/assets/videos/cutera-excel-hr.mp4",
+      "uploadDate": "2026-10-25T11:49:17Z",
+      "duration": "PT15.533333S",
+      "publisher": {
+        "@id": "{{origin}}/#organization"
+      }
+    }
+  ],
+  "reviewStatus": "pending-clinical-review"
+}

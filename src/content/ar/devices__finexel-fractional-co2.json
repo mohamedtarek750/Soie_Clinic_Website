@@ -1,0 +1,70 @@
+{
+  "path": "/devices/finexel-fractional-co2",
+  "type": "device",
+  "title": "ليزر FineXel فراكشنال لآثار الحبوب في القاهرة | {{brand}}",
+  "description": "اقرأ عن ليزر FineXel فراكشنال CO2 لملمس البشرة وآثار الحبوب في القاهرة، وكيف تناقش مع الفريق التحضير للجلسة واحتمالات التهيج ومدة التعافي قبل العلاج.",
+  "h1": "ليزر FineXel فراكشنال CO2 في القاهرة",
+  "updated": "2026-11-24",
+  "html": "<section class=\"page-hero\">\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\"><a href=\"/ar\">الرئيسية</a> · <a href=\"/ar/devices\">الأجهزة</a> · <span>FineXel</span></nav>\n        <p class=\"eyebrow\">FineXel في عيادات {{brand}} · القاهرة، مصر</p>\n        <h1 class=\"page-hero__title\">ليزر FineXel فراكشنال CO2 في القاهرة</h1>\n        <p class=\"page-hero__lede\">ليزر FineXel فراكشنال CO2 متاح في عيادات {{brand}} بالقاهرة. تعرّف على ما قد يقدمه تجديد سطح البشرة لملمس الجلد وندبات الحبوب، وشاهد جلسة وناقش فترة التعافي قبل الحجز.</p>\n      </div>\n    </section>\n    <section class=\"section device-section\">\n      <div class=\"container\">\n        <div class=\"device-feature device-feature--film\">\n          <div class=\"device-video__player\" id=\"finexel-video\">\n            <video class=\"film device-video__media\" muted loop playsinline preload=\"none\" poster=\"/assets/videos/posters/finexel-fractional-co2.jpg\" data-film data-src=\"/assets/videos/finexel-fractional-co2.mp4\" width=\"720\" height=\"1280\" aria-label=\"جلسة ليزر FineXel فراكشنال CO2 في عيادات {{brand}}\"></video>\n            <button class=\"film-toggle\" type=\"button\" data-media-toggle aria-label=\"إيقاف الفيديو مؤقتًا\" aria-pressed=\"false\"></button>\n            <noscript><p><a href=\"/assets/videos/finexel-fractional-co2.mp4\">شاهد فيديو FineXel</a></p></noscript>\n          </div>\n          <div class=\"device-feature__body\">\n            <p class=\"eyebrow\">متاح في عيادات {{brand}}</p>\n            <h2>FineXel<br><em>ليزر فراكشنال CO2.</em></h2>\n            <p>نستخدم جهاز FineXel لجلسات ليزر الفراكشنال CO2. يعالج الليزر نقاطًا صغيرة من الجلد، ويترك الجلد بينها دون معالجة. تُستخدم هذه الطريقة لتجديد سطح البشرة.</p>\n            <p>قبل الجلسة، نقيّم بشرتك ونناقش ما ترغب في تحسينه ونوضح فترة التعافي. شاهد الفيديو لتتعرف على الجهاز أثناء العلاج.</p>\n            <div class=\"device-tags\"><span>فراكشنال CO2</span><span>تجديد سطح البشرة</span><span>التقييم أولًا</span></div>\n            <a class=\"btn btn--gold\" data-open-booking href=\"/ar/book\">اسأل عن FineXel</a>\n          </div>\n        </div>\n        <div class=\"device-topics\">\n          <article><span class=\"eyebrow\">٠١ / الملمس</span><h2>الملمس والخطوط الدقيقة</h2><p>قد يساعد تجديد سطح البشرة بالفراكشنال CO2 في تحسين تفاوت الملمس وبعض الخطوط الدقيقة. تعتمد النتيجة والتعافي على بشرتك والمنطقة وإعدادات العلاج.</p></article>\n          <article><span class=\"eyebrow\">٠٢ / الندبات</span><h2>ندبات الحبوب</h2><p>يمكن علاج بعض ندبات الحبوب بليزر الفراكشنال CO2. نقيّم نوع الندبات وعمقها قبل مناقشة ملاءمة الليزر أو خيار آخر.</p></article>\n          <article><span class=\"eyebrow\">٠٣ / التعافي</span><h2>وقت للتعافي</h2><p>قد يحدث احمرار وتورم وتقشر بعد العلاج، وتختلف فترة العودة للأنشطة. نوضح التنظيف والترطيب والحماية من الشمس، ومتى تتواصل مع العيادة.</p></article>\n        </div>\n        <section class=\"device-faq\" id=\"device-faq\" aria-labelledby=\"finexel-faq-title\">\n          <p class=\"eyebrow\">قبل زيارتك</p>\n          <h2 id=\"finexel-faq-title\">FineXel، <em>إجابات تهمك.</em></h2>\n          <details><summary>هل يوجد جهاز FineXel في عيادات {{brand}}؟</summary><p>نعم. يعرض الفيديو جهاز FineXel فراكشنال CO2 الموجود في عيادات {{brand}}. تواصل معنا لتأكيد الفرع وترتيب استشارة.</p></details>\n<details><summary>ما هو ليزر الفراكشنال CO2؟</summary><p>هو علاج لتجديد سطح البشرة يوجه طاقة ليزر CO2 إلى نقاط صغيرة بنمط محدد، ويترك الجلد بينها دون معالجة. تُختار إعدادات الجلسة بعد التقييم الطبي.</p></details>\n<details><summary>ما المشكلات التي قد يساعد فيها الفراكشنال CO2؟</summary><p>يمكن مناقشته لبعض ندبات الحبوب وتفاوت الملمس والخطوط الدقيقة. تعتمد الملاءمة على المشكلة وبشرتك، وتختلف النتائج وقد تحتاج إلى أكثر من جلسة.</p></details>\n<details><summary>كم تستغرق فترة التعافي؟</summary><p>تعتمد فترة التعافي على عمق العلاج والمنطقة وبشرتك. قد يستمر الاحمرار والتورم والتقشر والحساسية عدة أيام، وقد يطول الاحمرار أحيانًا. نناقش التوقيت والعناية المطلوبة قبل الحجز.</p></details>\n<details><summary>هل يناسب ليزر الفراكشنال CO2 الجميع؟</summary><p>لا. نراجع لون البشرة وتاريخ التئام الجروح والأدوية والإجراءات الحديثة. أخبرنا بأي عدوى جلدية نشطة أو قرح برد أو حمل أو تسمير حديث. نوضح المخاطر المحتملة، ومنها تغير التصبغ والتندب، وما إذا كان علاج آخر أنسب لك.</p></details>\n<details><summary>كم جلسة FineXel سأحتاج؟</summary><p>لا توجد خطة واحدة تناسب الجميع. نقترح الخطة بعد تقييم بشرتك وهدفك، ثم نراجع الاستجابة قبل اقتراح جلسات إضافية.</p></details>\n\n          <details><summary>ما سعر جلسات ليزر فراكشنال CO2 في القاهرة؟</summary><p>تعتمد التكلفة على المنطقة وخطة الجلسات المناسبة بعد التقييم. راسل الفرع على واتساب لطلب عرض سعر ومناقشة الخطة قبل الحجز.</p></details>\n        </section>\n      </div>\n    </section>\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\">تفكر في جلسات الفراكشنال؟<br><em>تحدث مع فريقنا.</em></h2>\n        <p class=\"cta-band__sub\">أخبرنا بما يشغلك في بشرتك واسأل عن FineXel في عيادات {{brand}}. نساعدك في تأكيد الفرع وترتيب استشارة.</p>\n        <div class=\"cta-band__actions\"><a class=\"btn btn--gold btn--lg\" data-open-booking href=\"/ar/book\">اسأل عن FineXel</a><a class=\"btn btn--ghost btn--lg\" href=\"/ar/devices\">استكشف أجهزتنا</a></div>\n      </div>\n    </section>\n<aside class=\"device-related container\" aria-labelledby=\"related-title\"><h2 id=\"related-title\">أجهزة أخرى في عيادات {{brand}}</h2><div class=\"device-related__links\"><a class=\"text-link\" href=\"/ar/devices/indiba-deep-care\">INDIBA Deep Care <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a><a class=\"text-link\" href=\"/ar/devices/cutera-excel-hr\">Cutera excel HR <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a><a class=\"text-link\" href=\"/ar/devices\">تصفّح كل الأجهزة <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg></a></div></aside>\n  ",
+  "faqs": [
+    {
+      "q": "هل يوجد جهاز FineXel في عيادات {{brand}}؟",
+      "a": "نعم. يعرض الفيديو جهاز FineXel فراكشنال CO2 الموجود في عيادات {{brand}}. تواصل معنا لتأكيد الفرع وترتيب استشارة."
+    },
+    {
+      "q": "ما هو ليزر الفراكشنال CO2؟",
+      "a": "هو علاج لتجديد سطح البشرة يوجه طاقة ليزر CO2 إلى نقاط صغيرة بنمط محدد، ويترك الجلد بينها دون معالجة. تُختار إعدادات الجلسة بعد التقييم الطبي."
+    },
+    {
+      "q": "ما المشكلات التي قد يساعد فيها الفراكشنال CO2؟",
+      "a": "يمكن مناقشته لبعض ندبات الحبوب وتفاوت الملمس والخطوط الدقيقة. تعتمد الملاءمة على المشكلة وبشرتك، وتختلف النتائج وقد تحتاج إلى أكثر من جلسة."
+    },
+    {
+      "q": "كم تستغرق فترة التعافي؟",
+      "a": "تعتمد فترة التعافي على عمق العلاج والمنطقة وبشرتك. قد يستمر الاحمرار والتورم والتقشر والحساسية عدة أيام، وقد يطول الاحمرار أحيانًا. نناقش التوقيت والعناية المطلوبة قبل الحجز."
+    },
+    {
+      "q": "هل يناسب ليزر الفراكشنال CO2 الجميع؟",
+      "a": "لا. نراجع لون البشرة وتاريخ التئام الجروح والأدوية والإجراءات الحديثة. أخبرنا بأي عدوى جلدية نشطة أو قرح برد أو حمل أو تسمير حديث. نوضح المخاطر المحتملة، ومنها تغير التصبغ والتندب، وما إذا كان علاج آخر أنسب لك."
+    },
+    {
+      "q": "كم جلسة FineXel سأحتاج؟",
+      "a": "لا توجد خطة واحدة تناسب الجميع. نقترح الخطة بعد تقييم بشرتك وهدفك، ثم نراجع الاستجابة قبل اقتراح جلسات إضافية."
+    },
+    {
+      "q": "ما سعر جلسات ليزر فراكشنال CO2 في القاهرة؟",
+      "a": "تعتمد التكلفة على المنطقة وخطة الجلسات المناسبة بعد التقييم. راسل الفرع على واتساب لطلب عرض سعر ومناقشة الخطة قبل الحجز."
+    }
+  ],
+  "graph": [
+    {
+      "@type": "MedicalDevice",
+      "name": "ليزر FineXel فراكشنال CO2",
+      "alternateName": "جهاز فاينكسل فراكشنال CO2",
+      "description": "ليزر فراكشنال CO2 لتجديد سطح البشرة، بخطة علاج تُحدد بعد التقييم الطبي.",
+      "@id": "{{origin}}/devices/finexel-fractional-co2#device"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "@id": "{{origin}}/devices/finexel-fractional-co2#procedure",
+      "name": "تجديد سطح البشرة بليزر FineXel فراكشنال CO2",
+      "description": "نستخدم جهاز FineXel لجلسات ليزر الفراكشنال CO2. يعالج الليزر نقاطًا صغيرة من الجلد، ويترك الجلد بينها دون معالجة. تُستخدم هذه الطريقة لتجديد سطح البشرة.",
+      "url": "{{origin}}/devices/finexel-fractional-co2",
+      "image": "{{origin}}/assets/videos/posters/finexel-fractional-co2.jpg"
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "{{origin}}/devices/finexel-fractional-co2#video",
+      "name": "جلسة ليزر FineXel فراكشنال CO2 في عيادات {{brand}}",
+      "description": "جلسة ليزر FineXel فراكشنال CO2 في عيادات {{brand}}",
+      "thumbnailUrl": "{{origin}}/assets/videos/posters/finexel-fractional-co2.jpg",
+      "contentUrl": "{{origin}}/assets/videos/finexel-fractional-co2.mp4",
+      "uploadDate": "2026-10-25T15:37:27Z",
+      "duration": "PT10.666667S",
+      "publisher": {
+        "@id": "{{origin}}/#organization"
+      }
+    }
+  ],
+  "reviewStatus": "pending-clinical-review"
+}

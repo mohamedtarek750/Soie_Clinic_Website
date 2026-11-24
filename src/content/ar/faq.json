@@ -1,0 +1,51 @@
+{
+  "path": "/faq",
+  "type": "legacy",
+  "title": "أسئلة عن جلسات التجميل والحجز في القاهرة | {{brand}}",
+  "description": "إجابات عن أسئلة المرضى قبل الزيارة، من اختيار فرع التجمع الخامس أو المهندسين وحجز الموعد، إلى تقييم ملاءمة العلاج والعناية بالبشرة خلال فترة التعافي.",
+  "h1": "أسئلتك، وإجاباتنا .",
+  "updated": "2026-11-24",
+  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"faq\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/faq-960.avif 960w, /assets/images/bg/faq-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/faq-960.webp 960w, /assets/images/bg/faq-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/faq-1920.jpg\" srcset=\"/assets/images/bg/faq-960.jpg 960w, /assets/images/bg/faq-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\" data-reveal><a href=\"/ar\">الرئيسية</a> <span class=\"crumbs__sep\">·</span> <span>الأسئلة الشائعة</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> معلومات تهمك</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">أسئلتك،<br> <em>وإجاباتنا</em>.</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">هنا إجابات عن الأسئلة التي تصلنا كثيرًا عن زيارة عيادات {{brand}}. إذا احتجت إلى تفاصيل أخرى، راسلنا على واتساب.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container\">\n        <div class=\"acc\">\n          <details data-reveal>\n            <summary>هل أحتاج إلى استشارة قبل حجز العلاج؟</summary>\n            <div class=\"acc__a\">نعم، للحقن والعلاجات التي تحتاج إلى تقييم طبي. نراجع تاريخك الطبي ونناقش هدفك ونشرح الخيارات أولًا. يمكنك عادةً حجز جلسة تنظيف بشرة مباشرة، مع تقييم البشرة قبل البدء.</div>\n          </details>\n          <details data-reveal>\n            <summary>ما المعايير التي توجه الرعاية في عيادات {{brand}}؟</summary>\n            <div class=\"acc__a\">يقيّم فريقنا الطبي كل حالة قبل العلاج، ويتبع إجراءات النظافة والتحضير في العيادة. نشرح لك المنتجات أو الأجهزة المستخدمة، والآثار الجانبية المحتملة، والعناية المطلوبة بعد الجلسة.</div>\n          </details>\n          <details data-reveal>\n            <summary>هل ستبدو نتائجي طبيعية؟</summary>\n            <div class=\"acc__a\">نخطط للعلاج بما يناسب ملامحك، ونناقش مقدار التغيير الذي ترغب فيه. تعتمد النتيجة على نوع العلاج واستجابة حالتك، لذلك نوضح التوقعات الواقعية قبل البدء.</div>\n          </details>\n          <details data-reveal>\n            <summary>كيف أحجز موعدًا؟</summary>\n            <div class=\"acc__a\">اختر الفرع والعلاج والتاريخ والوقت من صفحة الحجز، ثم أدخل بيانات التواصل. سيتواصل معك الاستقبال لتأكيد توفر الموعد. ويمكنك أيضًا الحجز عبر واتساب أي من الفرعين.</div>\n          </details>\n          <details data-reveal>\n            <summary>أين فروعكم وما مواعيد العمل؟</summary>\n            <div class=\"acc__a\">فرع {{area:new-cairo}} في {{address:new-cairo}}، وفرع {{area:mohandessin}} في {{address:mohandessin}}. تواصل مع استقبال الفرع لتأكيد موعدك.</div>\n          </details>\n          <details data-reveal>\n            <summary>هل العلاجات مؤلمة؟</summary>\n            <div class=\"acc__a\">يختلف الإحساس حسب العلاج ومدى حساسيتك. نناقش معك وسائل الراحة المناسبة، مثل كريم التخدير أو التبريد. أخبر الفريق إذا كنت قلقًا من الألم، وأبلغنا بما تشعر به أثناء الجلسة.</div>\n          </details>\n          <details data-reveal>\n            <summary>كم تبلغ تكلفة العلاجات؟</summary>\n            <div class=\"acc__a\">تتأثر التكلفة بنوع العلاج والمنطقة والكمية أو عدد الجلسات في الخطة. راسل الفرع على واتساب لطلب عرض سعر بعد الاستشارة.</div>\n          </details>\n          <details data-reveal>\n            <summary>هل أحتاج إلى فترة تعافٍ بعد العلاج؟</summary>\n            <div class=\"acc__a\">تختلف فترة التعافي حسب العلاج وبشرتك. يمكنك العودة لروتينك بسرعة بعد بعض جلسات البشرة، بينما قد تسبب الحقن أو التقشير وغيرها احمرارًا أو تورمًا أو كدمات. نوضح لك فترة التعافي المتوقعة قبل الحجز.</div>\n          </details>\n          <details data-reveal>\n            <summary>هل يمكنني رؤية أمثلة لنتائجكم؟</summary>\n            <div class=\"acc__a\">نعم. تعرض صفحة قبل وبعد صورًا نُشرت بموافقة أصحابها. ويمكنك أيضًا طلب أمثلة مرتبطة بحالتك أثناء الاستشارة.</div>\n          </details>\n          <details data-reveal>\n            <summary>هل تقدمون العلاجات للنساء والرجال؟</summary>\n            <div class=\"acc__a\">نعم. نستقبل النساء والرجال، ونحدد العلاج وفقًا لاحتياجات كل شخص وتقييمه الطبي.</div>\n          </details>\n        </div>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>لديك سؤال آخر؟ <em>اسألنا.</em></h2>\n        <p class=\"cta-band__sub\" data-reveal>راسل أيًا من الفرعين على واتساب. فريقنا يساعدك في الاستفسار عن العلاجات والأسعار والمواعيد.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/ar/book\" class=\"btn btn--gold btn--lg\">احجز موعدك\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/ar/book\">حجز سريع عبر واتساب</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "faqs": [
+    {
+      "q": "هل أحتاج إلى استشارة قبل حجز العلاج؟",
+      "a": "نعم، للحقن والعلاجات التي تحتاج إلى تقييم طبي. نراجع تاريخك الطبي ونناقش هدفك ونشرح الخيارات أولًا. يمكنك عادةً حجز جلسة تنظيف بشرة مباشرة، مع تقييم البشرة قبل البدء."
+    },
+    {
+      "q": "ما المعايير التي توجه الرعاية في عيادات {{brand}}؟",
+      "a": "يقيّم فريقنا الطبي كل حالة قبل العلاج، ويتبع إجراءات النظافة والتحضير في العيادة. نشرح لك المنتجات أو الأجهزة المستخدمة، والآثار الجانبية المحتملة، والعناية المطلوبة بعد الجلسة."
+    },
+    {
+      "q": "هل ستبدو نتائجي طبيعية؟",
+      "a": "نخطط للعلاج بما يناسب ملامحك، ونناقش مقدار التغيير الذي ترغب فيه. تعتمد النتيجة على نوع العلاج واستجابة حالتك، لذلك نوضح التوقعات الواقعية قبل البدء."
+    },
+    {
+      "q": "كيف أحجز موعدًا؟",
+      "a": "اختر الفرع والعلاج والتاريخ والوقت من صفحة الحجز، ثم أدخل بيانات التواصل. سيتواصل معك الاستقبال لتأكيد توفر الموعد. ويمكنك أيضًا الحجز عبر واتساب أي من الفرعين."
+    },
+    {
+      "q": "أين فروعكم وما مواعيد العمل؟",
+      "a": "فرع {{area:new-cairo}} في {{address:new-cairo}}، وفرع {{area:mohandessin}} في {{address:mohandessin}}. تواصل مع استقبال الفرع لتأكيد موعدك."
+    },
+    {
+      "q": "هل العلاجات مؤلمة؟",
+      "a": "يختلف الإحساس حسب العلاج ومدى حساسيتك. نناقش معك وسائل الراحة المناسبة، مثل كريم التخدير أو التبريد. أخبر الفريق إذا كنت قلقًا من الألم، وأبلغنا بما تشعر به أثناء الجلسة."
+    },
+    {
+      "q": "كم تبلغ تكلفة العلاجات؟",
+      "a": "تتأثر التكلفة بنوع العلاج والمنطقة والكمية أو عدد الجلسات في الخطة. راسل الفرع على واتساب لطلب عرض سعر بعد الاستشارة."
+    },
+    {
+      "q": "هل أحتاج إلى فترة تعافٍ بعد العلاج؟",
+      "a": "تختلف فترة التعافي حسب العلاج وبشرتك. يمكنك العودة لروتينك بسرعة بعد بعض جلسات البشرة، بينما قد تسبب الحقن أو التقشير وغيرها احمرارًا أو تورمًا أو كدمات. نوضح لك فترة التعافي المتوقعة قبل الحجز."
+    },
+    {
+      "q": "هل يمكنني رؤية أمثلة لنتائجكم؟",
+      "a": "نعم. تعرض صفحة قبل وبعد صورًا نُشرت بموافقة أصحابها. ويمكنك أيضًا طلب أمثلة مرتبطة بحالتك أثناء الاستشارة."
+    },
+    {
+      "q": "هل تقدمون العلاجات للنساء والرجال؟",
+      "a": "نعم. نستقبل النساء والرجال، ونحدد العلاج وفقًا لاحتياجات كل شخص وتقييمه الطبي."
+    }
+  ]
+}

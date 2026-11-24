@@ -1,26 +1,25 @@
 /* A visible language choice on every page, including the mobile header. */
-.no-js .language-switch { display: none; }
 .nav__wrap { gap: 1rem; }
 .nav__links { gap: clamp(.7rem, 1.3vw, 1.6rem); }
 .language-switch { display: flex; align-items: center; gap: .15rem; flex: none; position: relative; z-index: 1100; direction: ltr; }
-.language-switch button { min-height: 44px; padding: .4rem .45rem; background: transparent; border: 0; color: var(--char-soft); font: 500 .8rem/1.4 Arial, sans-serif; cursor: pointer; text-underline-offset: .3em; }
-.language-switch button[aria-pressed="true"] { color: var(--char); text-decoration: underline; text-decoration-thickness: 1px; }
-.language-switch button:hover { color: var(--char); }
+.language-switch { min-height: 44px; padding: .4rem .45rem; background: transparent; border: 0; color: var(--char-soft); font: 500 .8rem/1.4 Arial, sans-serif; cursor: pointer; text-underline-offset: .3em; }
+.language-switch[aria-pressed="true"] { color: var(--char); text-decoration: underline; text-decoration-thickness: 1px; }
+.language-switch:hover { color: var(--char); }
 .language-switch span { color: var(--line-strong); }
-.nav--dark-hero:not(.is-scrolled) .language-switch button { color: var(--linen); }
-body.menu-open .nav--dark-hero .language-switch button { color: var(--char); }
+.nav--dark-hero:not(.is-scrolled) .language-switch { color: var(--linen); }
+body.menu-open .nav--dark-hero .language-switch { color: var(--char); }
 
 /* Arabic uses a connected, readable Arabic font; Latin tracking and italics
    from the editorial English design must not split or crowd Arabic letters. */
-html[lang="ar"] { --f-body: Tahoma, Arial, sans-serif; --f-display: Tahoma, Arial, sans-serif; }
-html[lang="ar"] body { line-height: 1.9; }
-html[lang="ar"] :is(h1, h2, h3, h4, p, a, button, span, dt, dd, label, summary) { letter-spacing: normal; }
-html[lang="ar"] :is(h1, h2, h3, h4, .section__title, .hero__title, .page-hero__title, .cta-band__title, .modal__title) { line-height: 1.4; }
-html[lang="ar"] :is(em, .hero__title-em) { font-style: normal; }
-html[lang="ar"] :is(.about__lede, .hours__day, .info-card__text) { font-style: normal; }
-html[lang="ar"] .hero__title { font-size: clamp(3rem, 8vw, 7rem); }
-html[lang="ar"] .page-hero__title { font-size: clamp(2.5rem, 6vw, 5rem); }
-html[lang="ar"] .nav__link { line-height: 1.6; }
+html:lang(ar) { --f-body: Tahoma, Arial, sans-serif; --f-display: Tahoma, Arial, sans-serif; }
+html:lang(ar) body { line-height: 1.9; }
+html:lang(ar) :is(h1, h2, h3, h4, p, a, button, span, dt, dd, label, summary) { letter-spacing: normal; }
+html:lang(ar) :is(h1, h2, h3, h4, .section__title, .hero__title, .page-hero__title, .cta-band__title, .modal__title) { line-height: 1.4; }
+html:lang(ar) :is(em, .hero__title-em) { font-style: normal; }
+html:lang(ar) :is(.about__lede, .hours__day, .info-card__text) { font-style: normal; }
+html:lang(ar) .hero__title { font-size: clamp(3rem, 8vw, 7rem); }
+html:lang(ar) .page-hero__title { font-size: clamp(2.5rem, 6vw, 5rem); }
+html:lang(ar) .nav__link { line-height: 1.6; }
 html[dir="rtl"] .nav__logo-tag { padding-left: 0; border-left: 0; padding-right: .75rem; border-right: 1px solid var(--line-strong); }
 html[dir="rtl"] .hero__actions .btn + .btn { margin-left: 0; margin-right: -1px; }
 html[dir="rtl"] .hero__scroll { left: auto; right: max(var(--gutter), calc((100% - var(--maxw)) / 2)); }
@@ -40,7 +39,7 @@ html[dir="rtl"] .select-wrap::after { right: auto; left: 2px; }
 html[dir="rtl"] .select-wrap select { padding-left: 2rem; padding-right: 0; }
 html[dir="rtl"] .bk__row dd { text-align: left; }
 html[dir="rtl"] .bk__req { margin-left: 0; margin-right: .55rem; }
-html[lang="ar"] .bk__field { grid-template-rows: auto auto minmax(2.5rem, auto); }
+html:lang(ar) .bk__field { grid-template-rows: auto auto minmax(2.5rem, auto); }
 html[dir="rtl"] .hours__row.is-today .hours__day::after { content: "اليوم"; }
 html[dir="rtl"] .hours__time { direction: rtl; }
 html[dir="rtl"] :is(input[type="tel"], input[type="date"], a[href^="tel:"], #sumPhone) { direction: ltr; unicode-bidi: isolate; }
@@ -51,15 +50,15 @@ html[dir="rtl"] :is(.tst__card, .cmp-feature__cap) { direction: rtl; }
 @media (max-width: 1160px) {
   .language-switch { margin-inline-start: auto; }
   .nav__links { gap: 0; }
-  html[lang="ar"] .nav__link { font-size: clamp(1.35rem, 4.5vw, 2rem); line-height: 1.5; }
+  html:lang(ar) .nav__link { font-size: clamp(1.35rem, 4.5vw, 2rem); line-height: 1.5; }
 }
 @media (max-width: 600px) {
   .nav__wrap { gap: .4rem; }
-  .language-switch button { padding-inline: .3rem; font-size: .75rem; }
+  .language-switch { padding-inline: .3rem; font-size: .75rem; }
   .nav__logo-tag { display: none; }
   html[dir="rtl"] .hero__actions .btn + .btn { margin-right: 0; }
-  html[lang="ar"] .hero__title { font-size: clamp(2.8rem, 11vw, 4.5rem); }
-  html[lang="ar"] .section__title { font-size: clamp(2rem, 7.5vw, 3.5rem); }
+  html:lang(ar) .hero__title { font-size: clamp(2.8rem, 11vw, 4.5rem); }
+  html:lang(ar) .section__title { font-size: clamp(2rem, 7.5vw, 3.5rem); }
 }
 
 html[dir="rtl"] .hours__row.is-today .hours__day::after { letter-spacing: normal; margin-left: 0; margin-right: .75rem; }
@@ -79,3 +78,8 @@ html[dir="rtl"] .footer__social a + a { margin-left: 0; margin-right: -1px; }
 @media (max-width: 600px) {
   html[dir="rtl"] .acc__a { padding-left: 0; }
 }
+
+.footer .footer__social-text { flex-wrap: wrap; gap: 10px; }
+.footer .footer__social-text a { width: auto; height: auto; border: 0; border-radius: 0; text-decoration: underline; }
+.modal__phone { display: inline-block; padding-block: .5rem; }
+.no-js .bk__form, .no-js .bk__summary { display: none; }

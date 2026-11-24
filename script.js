@@ -12,6 +12,7 @@
    ===================================================================== */
 (function () {
   'use strict';
+  document.documentElement.classList.replace('no-js','js');
 
   /* ---------- tiny helpers ---------- */
   var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
@@ -27,13 +28,88 @@
     : function (fn) { return window.setTimeout(function () { fn(Date.now()); }, 16); };
 
   var on = function (el, evt, fn, opts) { if (el) el.addEventListener(evt, fn, opts || false); };
+  var dynamicArabic = {
+    "Open menu": "فتح القائمة",
+    "Monday": "الإثنين",
+    "Tuesday": "الثلاثاء",
+    "Wednesday": "الأربعاء",
+    "Thursday": "الخميس",
+    "Friday": "الجمعة",
+    "Saturday": "السبت",
+    "Sunday": "الأحد",
+    "New Cairo": "القاهرة الجديدة",
+    "Mohandseen": "المهندسين",
+    "Treatment": "العلاج",
+    "Available times": "الأوقات المتاحة",
+    "Choose a date to see the available times.": "اختر التاريخ لتظهر لك المواعيد المتاحة.",
+    "Branch": "الفرع",
+    "Name": "الاسم",
+    "Not set": "لم يُحدد",
+    "Phone": "الهاتف",
+    "Consultation": "استشارة",
+    "Date": "التاريخ",
+    "Time": "الوقت",
+    "Confirm via WhatsApp": "تأكيد عبر واتساب",
+    "WhatsApp will open with your appointment details ready to send. Reception will reply to confirm availability. There is no online payment.": "سيفتح واتساب وبيانات موعدك جاهزة للإرسال. سيرد فريق الاستقبال لتأكيد توفر الموعد. لا يوجد دفع عبر الموقع.",
+    "silk": "الحرير",
+    "Close menu": "إغلاق القائمة",
+    "View": "عرض",
+    "Drag": "اسحب",
+    "Go to review {number}": "انتقل إلى الرأي {number}",
+    "Open now": "مفتوح الآن",
+    "Closed now": "مغلق الآن",
+    "Closed · opens {time}": "مغلق · يفتح الساعة {time}",
+    "No times are left today. Please choose another date.": "لا توجد مواعيد متبقية اليوم. اختر تاريخًا آخر.",
+    "Enter your full name.": "أدخل اسمك بالكامل.",
+    "Enter your full name, at least two characters.": "أدخل اسمك بالكامل، حرفين على الأقل.",
+    "Enter the phone number we should call you on.": "أدخل رقم الهاتف الذي يمكننا التواصل معك عليه.",
+    "Enter at least eight digits of your phone number.": "أدخل ثمانية أرقام على الأقل من رقم هاتفك.",
+    "Choose the date you would like to visit.": "اختر تاريخ الزيارة المناسب لك.",
+    "Choose today or a later date.": "اختر اليوم أو تاريخًا لاحقًا.",
+    "No times are left on that date. Choose another day.": "لا توجد أوقات متبقية في هذا التاريخ. اختر يومًا آخر.",
+    "Choose one of the times shown.": "اختر أحد الأوقات الظاهرة.",
+    "Send booking request": "إرسال طلب الحجز",
+    "Your request goes to our {branch} reception. They will contact you to confirm availability. There is no online payment.": "يصل طلبك إلى استقبال فرع {branch}. سيتواصلون معك لتأكيد توفر الموعد. لا يوجد دفع عبر الموقع.",
+    "We could not reach our booking system. Please try again, or use the WhatsApp button to send your details to reception.": "تعذر الاتصال بنظام الحجز. حاول مرة أخرى، أو استخدم زر واتساب لإرسال بياناتك إلى الاستقبال.",
+    "Sending your request...": "جارٍ إرسال طلبك...",
+    "Reception will confirm the time.": "سيؤكد الاستقبال الوقت.",
+    "Hello! I would like to book an appointment.": "مرحبًا، أود حجز موعد."
+};
+  var isArabic = function () { return document.documentElement.lang.startsWith('ar'); };
   var t = function (value, variables) {
-    if (window.SoieI18n) return window.SoieI18n.t(value, variables);
-    return value.replace(/\{(\w+)\}/g, function (match, key) { return variables && variables[key] !== undefined ? variables[key] : match; });
+    var translated = isArabic() ? dynamicArabic[value] || value : value;
+    return translated.replace(/\{(\w+)\}/g, function (match, key) {
+      return variables && variables[key] !== undefined ? variables[key] : match;
+    });
   };
-  var displayTime = function (value) { return window.SoieI18n ? window.SoieI18n.time(value) : value; };
-  var isArabic = function () { return document.documentElement.lang === 'ar'; };
-
+  var displayTime = function (value) {
+    if (value === 'Reception will confirm the time.') return t(value);
+    return isArabic() ? value.replace(/AM/g, 'صباحًا').replace(/PM/g, 'مساءً') : value;
+  };
+  function measure(event, branch, treatment) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: event, branch: branch || '', treatment: treatment || '' });
+  }
+  on(document, 'click', function (e) {
+    var action = e.target.closest('a[href], button[data-event]');
+    if (!action) return;
+    var href = action.getAttribute('href') || '';
+    var event = action.dataset.event;
+    if (!event) {
+      if (href.startsWith('https://wa.me/')) event = 'whatsapp_click';
+      else if (href.startsWith('tel:')) event = 'call_click';
+      else if (/^https:\/\/(maps\.app\.goo\.gl|(?:www\.)?google\.[^/]+\/maps|maps\.google\.)/.test(href)) event = 'map_click';
+    }
+    if (!event) return;
+    var page = document.body.dataset.page || '';
+    var branch = action.closest('[data-branch]')?.dataset.branch || (page.startsWith('/branches/') ? page.split('/').pop() : '');
+    var treatment = action.dataset.treatment || (/^\/(?:treatments|dentistry)\//.test(page) ? page.split('/').pop() : '');
+    if (action.id === 'bkSubmit') {
+      branch = document.querySelector('input[name=bkBranch]:checked')?.dataset.branch;
+      treatment = document.querySelector('#bkService option:checked')?.dataset.slug;
+    }
+    measure(event, branch, treatment);
+  });
   function ready(fn) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', fn);
@@ -136,7 +212,7 @@
     function menuLabel() {
       if (burger) burger.setAttribute('aria-label', t(document.body.classList.contains('menu-open') ? 'Close menu' : 'Open menu'));
     }
-    on(document, 'soie:languagechange', menuLabel);
+
     menuLabel();
     // close after tapping any link (mobile) and on Esc
     if (navLinks) {
@@ -392,7 +468,7 @@
     on(document, 'mouseout', function (e) {
       if (!e.relatedTarget) setLabel('');   // the pointer left the document
     });
-    on(document, 'soie:languagechange', function () { setLabel(''); });
+
   }
 
   /* =====================================================================
@@ -541,10 +617,6 @@
     on(closeBtn, 'click', close);
     on(prevBtn, 'click', function () { step(-1); });
     on(nextBtn, 'click', function () { step(1); });
-    on(document, 'soie:languagechange', function () {
-      var fig = visible()[current];
-      if (fig && box.classList.contains('is-open')) show(fig);
-    });
     on(box, 'click', function (e) { if (e.target === box) close(); }); // backdrop
     on(document, 'keydown', function (e) {
       if (!box.classList.contains('is-open')) return;
@@ -601,9 +673,6 @@
 
     on(next, 'click', function () { nextSlide(); reset(); });
     on(prev, 'click', function () { prevSlide(); reset(); });
-    on(document, 'soie:languagechange', function () {
-      dots.forEach(function (dot, i) { dot.setAttribute('aria-label', t('Go to review {number}', { number: i + 1 })); });
-    });
 
     // pause on hover / focus
     var vp = $('.tst__viewport') || track.parentNode;
@@ -905,9 +974,20 @@
       }
       var parts = val.split('-');
       var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-      var friday = d.getDay() === 5;
-      var open = friday ? 12 : 10;
-      var close = friday ? 22 : 23;
+      var hours = JSON.parse(checked('bkBranch').dataset.hours);
+      if (!hours.length) {
+        selectedTime = 'Reception will confirm the time.';
+        var hint = document.createElement('p');
+        hint.className = 'slots__hint';
+        hint.textContent = t(selectedTime);
+        slotsWrap.appendChild(hint);
+        update();
+        return;
+      }
+      var day = ['Su','Mo','Tu','We','Th','Fr','Sa'][d.getDay()];
+      var schedule = hours.find(function (entry) { return entry.days.includes(day); });
+      var open = schedule ? Number(schedule.opens.split(':')[0]) : 0;
+      var close = schedule ? Number(schedule.closes.split(':')[0]) : 0;
       var now = new Date();
       var isToday = d.toDateString() === now.toDateString();
       var added = 0;
@@ -1011,7 +1091,7 @@
       var v = dateInput ? dateInput.value : '';
       if (!v) return t('Choose the date you would like to visit.');
       if (v < todayStr()) return t('Choose today or a later date.');
-      if (!firstSlot()) return t('No times are left on that date. Choose another day.');
+      if (!firstSlot() && !selectedTime) return t('No times are left on that date. Choose another day.');
       return '';
     }
 
@@ -1110,17 +1190,17 @@
 
     function update() {
       var branchEl = checked('bkBranch');
-      var branch  = branchEl ? branchEl.value : 'New Cairo';
-      var service = serviceSel ? serviceSel.value : 'Consultation';
+      var branch  = branchEl.dataset.name;
+      var service = serviceSel.selectedOptions[0].textContent;
       var dateVal = dateInput ? dateInput.value : '';
       var name    = nameInput ? nameInput.value.trim() : '';
       var phone   = phoneInput ? phoneInput.value.trim() : '';
       var online  = useSystem();   // this branch has its system endpoint wired
 
-      if (sum.branch)  sum.branch.textContent  = t(branch);
+      if (sum.branch)  sum.branch.textContent  = branch;
       if (sum.name)    sum.name.textContent    = name  || t('Not set');
       if (sum.phone)   sum.phone.textContent   = phone || t('Not set');
-      if (sum.service) sum.service.textContent = t(service);
+      if (sum.service) sum.service.textContent = service;
       if (sum.date)    sum.date.textContent    = prettyDate(dateVal);
       if (sum.time)    sum.time.textContent    = selectedTime ? displayTime(selectedTime) : t('Not set');
       if (sent) return;
@@ -1130,7 +1210,7 @@
       if (submitLabel) submitLabel.textContent = t(online ? 'Send booking request' : 'Confirm via WhatsApp');
       if (waIcon) waIcon.style.display = online ? 'none' : '';   // no WhatsApp logo on 'Send booking request'
       if (note) note.textContent = sending ? t('Sending your request...') : postFailed ? failureMessage() : online
-        ? t('Your request goes to our {branch} reception. They will contact you to confirm availability. There is no online payment.', { branch: t(branch) })
+        ? t('Your request goes to our {branch} reception. They will contact you to confirm availability. There is no online payment.', { branch: branch })
         : t('WhatsApp will open with your appointment details ready to send. Reception will reply to confirm availability. There is no online payment.');
 
       // whatever just changed, no shown message may still be lying
@@ -1146,12 +1226,12 @@
 
       if (ready && !online) {
         // WhatsApp handoff (New Cairo, or Mohandseen before the sheet is wired)
-        var wa = branchEl ? branchEl.getAttribute('data-wa') : '201000033766';
-        var msg = t('Hello Soie Clinic! I would like to book an appointment.') + '\n'
-                + '• ' + t('Branch') + ': ' + t(branch) + '\n'
+        var wa = branchEl.dataset.wa;
+        var msg = t('Hello! I would like to book an appointment.') + '\n'
+                + '• ' + t('Branch') + ': ' + branch + '\n'
                 + (name  ? '• ' + t('Name') + ': ' + name + '\n' : '')
                 + (phone ? '• ' + t('Phone') + ': ' + phone + '\n' : '')
-                + '• ' + t('Treatment') + ': ' + t(service) + '\n'
+                + '• ' + t('Treatment') + ': ' + service + '\n'
                 + '• ' + t('Date') + ': ' + prettyDate(dateVal) + '\n'
                 + '• ' + t('Time') + ': ' + displayTime(selectedTime);
         submit.href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent(msg);
@@ -1262,9 +1342,12 @@
     // treatment (e.g. ?service=veneers) also switches the branch to match.
     try {
       var params = new URLSearchParams(window.location.search);
+      var branchParam = params.get('branch');
+      var branchInput = $$('input[name=bkBranch]', form).find(function (r) { return r.dataset.branch === branchParam; });
+      if (branchInput) branchInput.checked = true;
       var svcSlug = params.get('service');
       if (svcSlug && serviceSel) {
-        var opt = serviceSel.querySelector('option[data-slug="' + svcSlug + '"]');
+        var opt = Array.from(serviceSel.options).find(function (option) { return option.dataset.slug === svcSlug; });
         if (opt) {
           var branchOnly = opt.getAttribute('data-branch');
           if (branchOnly) {
@@ -1279,23 +1362,12 @@
     syncServiceOptions();
 
     $$('input[name="bkBranch"]', form).forEach(function (r) {
-      on(r, 'change', function () { syncServiceOptions(); update(); });
+      on(r, 'change', function () { syncServiceOptions(); buildSlots(); });
     });
     on(serviceSel, 'change', update);
     on(dateInput, 'change', buildSlots);
     on(nameInput, 'input', update);
     on(phoneInput, 'input', update);
-    function localiseBooking() {
-      if (slotsWrap) slotsWrap.setAttribute('aria-label', t('Available times'));
-      $$('.slot', slotsWrap).forEach(function (slot) { slot.textContent = displayTime(slot.getAttribute('data-time')); });
-      var hint = $('.slots__hint', slotsWrap);
-      if (hint) hint.textContent = t(dateInput && dateInput.value ? 'No times are left today. Please choose another date.' : 'Choose a date to see the available times.');
-      if (nameErr && !nameErr.hidden) setFieldError(nameInput, nameErr, nameProblem());
-      if (phoneErr && !phoneErr.hidden) setFieldError(phoneInput, phoneErr, phoneProblem());
-      update();
-    }
-    on(document, 'soie:languagechange', localiseBooking);
-
     // Checked when the patient leaves the field, not on every keystroke and
     // not only at the end. Focus never moves on blur: they are on their way
     // to the next field and we do not pull them back.
@@ -1314,11 +1386,13 @@
         reportBlocked();
         return;
       }
-      if (useSystem()) {          // Mohandseen → website booking to the sheet
+      if (sent || sending) { e.preventDefault(); return; }
+      measure('booking_submit', checked('bkBranch').dataset.branch, serviceSel.selectedOptions[0].dataset.slug || 'consultation');
+      if (useSystem()) {
         e.preventDefault();
         sendToReception();
       }
-      // otherwise the <a href="/wa.me/…"> opens WhatsApp as before
+      // otherwise the <a href="wa.me/…"> opens WhatsApp as before
     }
 
     on(submit, 'click', activate);
@@ -1332,15 +1406,45 @@
       }
     });
 
-    localiseBooking();
+    var alternate = $('[data-language-link]');
+    if (alternate) {
+      alternate.search = window.location.search;
+      var storageKey = 'soie-booking-handoff';
+      try {
+        var saved = JSON.parse(sessionStorage.getItem(storageKey));
+        sessionStorage.removeItem(storageKey);
+        if (saved && saved.path === location.pathname && Date.now() - saved.created < 30000) {
+          var radio = $$('input[name=bkBranch]', form).find(function (r) { return r.value === saved.branch; });
+          if (radio) radio.checked = true;
+          syncServiceOptions();
+          serviceSel.value = saved.service;
+          nameInput.value = saved.name;
+          phoneInput.value = saved.phone;
+          dateInput.value = saved.date;
+          buildSlots();
+          var slot = $$('.slot', slotsWrap).find(function (s) { return s.dataset.time === saved.time; });
+          if (slot) slot.click();
+        }
+      } catch (_) { /* Storage may be disabled. */ }
+      on(alternate, 'click', function (event) {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || sent || sending) return;
+        try {
+          sessionStorage.setItem(storageKey, JSON.stringify({
+            path: alternate.pathname, created: Date.now(), branch: currentBranch(), service: serviceSel.value,
+            name: nameInput.value, phone: phoneInput.value, date: dateInput.value, time: selectedTime
+          }));
+        } catch (_) { /* Navigation works independently of storage. */ }
+      });
+    }
+    update();
   }
 
   /* Old device tab bookmarks now open the permanent device page.
      Fragments never reach the server, so HTTP redirects cannot migrate them. */
   function initLegacyDeviceLinks() {
-    var path = window.location.pathname;
+    var path = window.location.pathname.replace(/^\/ar(?=\/|$)/, '') || '/';
     var catalogue = /^\/devices(?:\/index\.html|\.html|\/)?$/.test(path);
-    var home = path === '/' || path === '/';
+    var home = path === '/' || path === '/index.html';
     var hash;
     try { hash = decodeURIComponent(window.location.hash.slice(1)); }
     catch (e) { return; }
@@ -1352,7 +1456,7 @@
     if (!match) return;
     var routes = { indiba: '/devices/indiba-deep-care', cutera: '/devices/cutera-excel-hr', finexel: '/devices/finexel-fractional-co2' };
     var fragment = match[2] === 'video' ? '#' + match[1] + '-video' : match[2] ? '#device-faq' : '';
-    window.location.replace(routes[match[1]] + window.location.search + fragment);
+    window.location.replace((isArabic() ? '/ar' : '') + routes[match[1]] + window.location.search + fragment);
   }
 
   /* =====================================================================
@@ -1640,7 +1744,7 @@
     safe(initToTop, 'to-top');
     safe(initYear, 'year');
     safe(initHours, 'hours');
-    on(document, 'soie:languagechange', initHours);
+
     safe(initAccordion, 'accordion');
     safe(initBooking, 'booking');
     safe(initFilms, 'films');
