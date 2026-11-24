@@ -1,0 +1,35 @@
+{
+  "path": "/guides/botox-or-filler",
+  "type": "article",
+  "title": "Botox or filler? How the treatments differ",
+  "description": "Compare what Botox and dermal fillers address, how assessment guides the choice, and which risks, recovery and alternatives to discuss before injections.",
+  "h1": "What is the difference between Botox and filler?",
+  "answer": "Botox temporarily reduces the activity of selected muscles. Dermal fillers add volume or support to selected areas. The appearance of a line alone does not tell you which treatment is suitable. At your consultation, the team assesses facial movement, skin and underlying structure and discusses whether either option would meet your goals.",
+  "updated": "2026-11-24",
+  "faqs": [],
+  "reviewStatus": "pending-clinical-review",
+  "treatmentPaths": [
+    "/treatments/botox",
+    "/treatments/dermal-filler"
+  ],
+  "sections": [
+    {
+      "heading": "When does movement matter?",
+      "paragraphs": [
+        "Forehead lines can become more visible when you raise your eyebrows. Botox may soften some movement-related lines. The assessment includes how your face moves at rest and in expression so you can discuss the changes you would and would not want."
+      ]
+    },
+    {
+      "heading": "When is filler considered?",
+      "paragraphs": [
+        "Filler may be considered when loss of volume or a change in contour is the concern. The choice of product, area and amount depends on anatomy and the treatment plan. A fold may have several causes and may remain visible after treatment."
+      ]
+    },
+    {
+      "heading": "What should I know about recovery and risks?",
+      "paragraphs": [
+        "Both treatments can cause bruising and swelling. Muscle weakening may affect expression after Botox. Filler can occasionally block a blood vessel, which requires urgent assessment. Ask whom to contact after treatment and seek urgent care for changes in vision, severe pain or unusual skin colour after filler."
+      ]
+    }
+  ]
+}

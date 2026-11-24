@@ -1,0 +1,34 @@
+{
+  "path": "/guides/first-nutrition-consultation",
+  "type": "article",
+  "title": "How to prepare for a first nutrition consultation",
+  "description": "Prepare for a nutrition visit in New Cairo or Mohandessin. Learn what to bring, how to describe your usual meals and what to ask when planning follow-up.",
+  "h1": "Preparing for your first nutrition consultation",
+  "answer": "For a first nutrition consultation, bring a list of medicines and supplements, any recent test results you already have and an idea of a typical day’s meals. You can book in New Cairo or Mohandessin. The visit is a chance to discuss your health, eating habits and priorities before deciding on a practical plan.",
+  "updated": "2026-11-24",
+  "faqs": [],
+  "reviewStatus": "pending-clinical-review",
+  "treatmentPaths": [
+    "/treatments/nutrition-and-weight-management"
+  ],
+  "sections": [
+    {
+      "heading": "Describe an ordinary day",
+      "paragraphs": [
+        "Think about meals at home and at work, drinks, snacks and the times you tend to eat. Note any food allergies or restrictions, sleep patterns and activity. Describing an ordinary day helps the team suggest changes that fit your routine."
+      ]
+    },
+    {
+      "heading": "Bring the information you already have",
+      "paragraphs": [
+        "Bring previous plans if you want to discuss what worked and what was difficult. If you have an existing condition, mention any guidance your treating team has given. Ask reception before the visit if you have questions about preparation."
+      ]
+    },
+    {
+      "heading": "Agree how to follow up",
+      "paragraphs": [
+        "Explain whether your goal is managing weight, changing an eating habit or finding a routine around a health condition. Ask which first step to try, what to record and when to review your progress. Do not change prescribed medication to prepare for a nutrition visit."
+      ]
+    }
+  ]
+}

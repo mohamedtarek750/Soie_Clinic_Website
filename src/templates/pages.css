@@ -1,0 +1,15 @@
+.editorial-section > .section__title { margin-block-end: 1.4rem; }
+.editorial-section > p, .editorial-note p { max-width: 70ch; margin-block: .8em; line-height: 1.75; }
+.editorial-section a:not(.btn), .editorial-note a { text-decoration: underline; text-underline-offset: .18em; }
+.editorial-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-block: 1em; }
+.editorial-facts { display: grid; grid-template-columns: minmax(7rem, max-content) minmax(0,1fr); gap: .55rem 1.5rem; max-width: 60rem; }
+.editorial-facts dt { font-weight: 600; }
+.editorial-facts dd { margin: 0; }
+.editorial-map { display: inline-grid; max-width: 36rem; gap: .5rem; }
+.editorial-map svg { width: 100%; height: auto; border-radius: 1rem; }
+.editorial-links { display: grid; gap: .7rem 2rem; grid-template-columns: repeat(auto-fit,minmax(min(22rem,100%),1fr)); padding-inline-start: 1.25rem; }
+.editorial-note { padding-block: 1.5rem 3rem; }
+@media (max-width: 37rem) { .editorial-facts { display: block; } .editorial-facts dd { margin-block-end: 1rem; } }
+.editorial-map-frame { display: block; width: min(100%, 36rem); border: 0; border-radius: 1rem; margin-block-end: .7rem; }
+
+.cat-card__img img { display: block; width: 100%; height: 100%; object-fit: cover; }

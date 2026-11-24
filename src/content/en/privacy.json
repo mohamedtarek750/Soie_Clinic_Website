@@ -1,0 +1,45 @@
+{
+  "path": "/privacy",
+  "type": "legal",
+  "title": "Booking privacy policy | {{brand}}",
+  "description": "Find out which details the {{brand}} booking form sends to branch reception, how WhatsApp booking works and how to request deletion of an enquiry.",
+  "h1": "Privacy when booking an appointment",
+  "answer": "When you request an appointment, {{brand}} uses the details you provide to contact you, check availability and manage that request with the selected branch.",
+  "updated": "2026-11-24",
+  "faqs": [],
+  "reviewStatus": "pending-owner-review",
+  "sections": [
+    {
+      "heading": "What the booking form sends",
+      "paragraphs": [
+        "The form sends your name, telephone number, chosen branch, service, preferred date and time, the time of submission and an indication that the request came from the website."
+      ]
+    },
+    {
+      "heading": "Who receives the request?",
+      "paragraphs": [
+        "The website sends it to the selected branch’s reception through its Google Apps Script booking endpoint. Reception uses it to check the requested appointment and contact you.",
+        "Your request is intended for the branch booking system. Reception may also receive an email notification about it."
+      ]
+    },
+    {
+      "heading": "Booking on WhatsApp",
+      "paragraphs": [
+        "If you choose WhatsApp, a chat with the branch opens. You can check and edit the prepared booking message before you send it. WhatsApp processes messages under its own privacy terms."
+      ]
+    },
+    {
+      "heading": "Changing language or opening a map",
+      "paragraphs": [
+        "When you switch languages while completing the booking form, the website uses temporary storage in your browser tab to carry your current entries across. The booking page reads and clears that copy when it opens. Switching language does not send the booking request.",
+        "Opening a branch’s interactive map connects your browser to Google Maps. You can use the address and call the branch without opening the map."
+      ]
+    },
+    {
+      "heading": "How to ask for deletion",
+      "paragraphs": [
+        "Call or message the branch that received your booking. Give the name and phone number you used and say which request you would like deleted. Reception can identify the request and explain what it can remove. Do not send medical records to identify a booking."
+      ]
+    }
+  ]
+}

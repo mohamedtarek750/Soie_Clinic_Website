@@ -1,11 +1,29 @@
 {
   "path": "/treatments/body-contouring",
-  "type": "legacy",
-  "title": "Body Contouring in New Cairo & Mohandessin | {{brand}}",
-  "description": "Ask about INDIBA body contouring at {{brand}} in Cairo. Learn how sessions work, what results may be possible and how your treatment plan is chosen.",
-  "h1": "Body Contouring",
+  "type": "treatment",
+  "title": "INDIBA body contouring in Cairo",
+  "description": "Discuss INDIBA radiofrequency body contouring in Cairo for local firmness or cellulite. Learn about warmth, suitability, recovery and follow-up.",
+  "h1": "INDIBA body contouring in Cairo",
+  "answer": "INDIBA body contouring uses radiofrequency to warm selected tissue and may suit adults concerned about local firmness, texture or cellulite. {{brand}} in New Cairo and Mohandessin assesses the area and your medical history before agreeing goals. The treatment targets local concerns and does not replace a weight-management plan.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"body-contouring\" aria-hidden=\"true\">\n        <video class=\"film hero-bg__media\" muted loop playsinline preload=\"none\" poster=\"/assets/videos/posters/bg-body-contouring.jpg\" data-film data-src=\"/assets/videos/bg-body-contouring.mp4\" data-src-portrait=\"/assets/videos/bg-body-contouring-portrait.mp4\" aria-hidden=\"true\" tabindex=\"-1\" width=\"1600\" height=\"900\"></video>\n      </div>\n      <button class=\"film-toggle film-toggle--hero\" type=\"button\" data-media-toggle aria-label=\"Pause video\" aria-pressed=\"false\"></button>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"Breadcrumb\" data-reveal><a href=\"/\">Home</a> <span class=\"crumbs__sep\">·</span> <a href=\"/treatments\">Services</a> <span class=\"crumbs__sep\">·</span> <span>Body Contouring</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> Treatment</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">Body Contouring</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">INDIBA radiofrequency sessions for body care, with a plan based on your assessment.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>About the treatment</h2>\n          <p data-reveal>We use INDIBA radiofrequency for body contouring at {{brand}}. The device delivers energy that warms the treatment area. Before starting, we assess your concerns and explain whether this approach is suitable.</p>\n          <p data-reveal>You may be looking to improve firmness, skin texture or the appearance of cellulite. We will discuss what sessions could offer, the limits of treatment and how we will review your progress.</p>\n\n          <h2>At a glance</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Treatment without needles or surgery</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>A plan focused on firmness and skin texture</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Radiofrequency delivered to the selected area</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Warmth during the session, with settings adjusted to you</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Advice on care between sessions</span></li>\n          </ul>\n\n          <h2>The treatment process</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>Consultation and assessment.</strong> We assess the area you want to treat and check whether INDIBA is suitable for you.</li>\n            <li><strong>A personal plan.</strong> We explain the treatment options, likely results, possible side effects and cost before you decide.</li>\n            <li><strong>The treatment itself.</strong> We talk you through the session and check how you feel as we go.</li>\n            <li><strong>Aftercare and follow up.</strong> We explain how to care for the treated area and when to contact us or return for a review.</li>\n          </ol>\n\n          <h2>Expected results</h2>\n          <p data-reveal>Changes in firmness or texture vary by person and treatment area. We will agree on goals at your consultation and review your response before recommending more sessions.</p>\n\n          <h2>Recovery &amp; downtime</h2>\n          <p data-reveal>You may notice temporary warmth or redness after a session. Our team will explain what to expect and whether you need to adjust your routine afterwards.</p>\n\n          <h2>Who is it for?</h2>\n          <p data-reveal>It may be considered for concerns about local firmness, skin texture or cellulite. A medical assessment is needed to check suitability, especially if you have implants, take medicines or have had a recent procedure.</p>\n\n          <h2>Frequently asked questions</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>Does INDIBA hurt?</summary>\n              <div class=\"acc__a\">You will usually feel warmth in the treated area. Tell the team if it feels too hot or uncomfortable so they can adjust the session.</div>\n            </details>\n            <details data-reveal>\n              <summary>Is this a treatment for weight loss?</summary>\n              <div class=\"acc__a\">No. Body contouring focuses on a selected area and is not a substitute for weight management. If weight loss is your goal, ask about our nutrition support.</div>\n            </details>\n            <details data-reveal>\n              <summary>How many sessions will I need?</summary>\n              <div class=\"acc__a\">There is no single schedule for everyone. We will recommend the number and spacing of sessions after assessing the area and your goals.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Session time</span>\n            <span class=\"info-card__value\">30 to 60 minutes</span>\n            <p class=\"info-card__text\">per treated area</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Results</span>\n            <span class=\"info-card__value\">Progressive</span>\n            <p class=\"info-card__text\">visible across the course</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Course</span>\n            <span class=\"info-card__value\">Based on assessment</span>\n            <p class=\"info-card__text\">reviewed as treatment progresses</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">A consultation gives you time to ask questions before deciding on treatment.</p>\n            <a href=\"/book?service=body-contouring\" class=\"btn btn--gold\" style=\"width:100%\">Book Body Contouring</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>Considering <em>Body Contouring</em>?</h2>\n        <p class=\"cta-band__sub\" data-reveal>Talk to our team about your concerns. We will assess the options and explain what treatment involves so you can decide.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/book\" class=\"btn btn--gold btn--lg\">Book your appointment\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/book\">Quick WhatsApp booking</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Body and nutrition",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "selected body areas",
+  "product": "INDIBA Deep Care",
+  "related": [
+    "/devices/indiba-deep-care",
+    "/treatments/nutrition-and-weight-management",
+    "/treatments/fat-dissolving-injections"
+  ],
+  "preparation": "We assess the area you want to treat and check whether INDIBA is suitable for you.",
+  "howPerformed": "We use INDIBA radiofrequency for body contouring at {{brand}}. The device delivers energy that warms the treatment area. Before starting, we assess your concerns and explain whether this approach is suitable.",
+  "followup": "You may notice temporary warmth or redness after a session. Our team will explain what to expect and whether you need to adjust your routine afterwards.",
+  "suitability": "It may be considered for concerns about local firmness, skin texture or cellulite. A medical assessment is needed to check suitability, especially if you have implants, take medicines or have had a recent procedure.",
+  "outlook": "Changes in firmness or texture vary by person and treatment area. We will agree on goals at your consultation and review your response before recommending more sessions.",
   "faqs": [
     {
       "q": "Does INDIBA hurt?",
@@ -18,6 +36,52 @@
     {
       "q": "How many sessions will I need?",
       "a": "There is no single schedule for everyone. We will recommend the number and spacing of sessions after assessing the area and your goals."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Based on assessment (reviewed as treatment progresses)"
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "You may notice temporary warmth or redness after a session. Our team will explain what to expect and whether you need to adjust your routine afterwards."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "Session time",
+      "30 to 60 minutes (per treated area)"
+    ],
+    [
+      "Results",
+      "Progressive (visible across the course)"
+    ],
+    [
+      "Course",
+      "Based on assessment (reviewed as treatment progresses)"
+    ],
+    [
+      "Recovery",
+      "You may notice temporary warmth or redness after a session."
+    ],
+    [
+      "Treatment family",
+      "INDIBA Deep Care"
+    ]
+  ],
+  "risks": "Excessive heat can damage the skin. Implants, devices or impaired sensation may affect suitability; tell the team immediately if the area feels too hot.",
+  "heroPhoto": "services",
+  "heroVideo": "body-contouring",
+  "name": "INDIBA body contouring"
 }

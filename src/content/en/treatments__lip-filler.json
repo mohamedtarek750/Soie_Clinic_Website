@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/lip-filler",
+  "type": "treatment",
+  "title": "Lip filler in Cairo",
+  "description": "Explore lip filler and hydration in Cairo, including assessment of lip shape, early swelling, signs that need urgent care and how to ask for a personal quote.",
+  "h1": "Lip filler in Cairo",
+  "answer": "Lip filler places a gel in selected parts of the lips to adjust their outline or volume. It may suit adults looking for a subtle change in proportion. At {{brand}} in New Cairo and Mohandessin, the consultation covers lip hydration, previous filler and how swelling may affect the early result.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Injectables",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "lips",
+  "product": "Hyaluronic acid",
+  "related": [
+    "/treatments/dermal-filler",
+    "/treatments/skin-boosters"
+  ],
+  "preparation": "Tell us about cold sores, previous lip injections and any current swelling. An active infection needs assessment before treatment.",
+  "howPerformed": "The team examines the lip border and movement, discusses hydration or volume, and places the chosen gel if appropriate.",
+  "followup": "Swelling and bruising can disguise the initial shape. Review once these settle. Severe pain, pale or mottled skin or changes in vision need urgent medical attention.",
+  "risks": "Bleeding, lumps and infection can occur. Rare interruption of blood flow can damage tissue or affect vision.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "A needle may pinch, and lips can feel tender afterwards."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Swelling and bruising can disguise the initial shape. Review once these settle. Severe pain, pale or mottled skin or changes in vision need urgent medical attention."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The chosen gel, amount and follow-up plan affect the quote. Message the branch on WhatsApp to discuss lip hydration or volume."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Volume may be visible early; reassess after swelling settles."
+    ],
+    [
+      "Recovery",
+      "Swelling and bruising can disguise the initial shape."
+    ],
+    [
+      "Treatment family",
+      "Hyaluronic acid"
+    ]
+  ],
+  "outlook": "Volume may be visible early; reassess after swelling settles.",
+  "suitability": "Adults seeking definition or hydration can discuss filler if the lip tissue is healthy. It may be unsuitable with active cold sores, infection or unresolved swelling from earlier injections.",
+  "heroPhoto": "dermal-filler",
+  "name": "Lip filler"
+}

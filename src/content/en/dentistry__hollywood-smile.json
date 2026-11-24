@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/hollywood-smile",
+  "type": "treatment",
+  "title": "Hollywood smile design in Mohandessin",
+  "description": "Explore Hollywood smile design in Mohandessin, comparing whitening, bonding and porcelain veneers with attention to enamel, tooth shape and future care.",
+  "h1": "Hollywood smile design in Mohandessin",
+  "answer": "Hollywood smile is a common name for planning changes in the shade, shape and proportions of visible teeth. At {{brand}} in Mohandessin, adults can compare cleaning, whitening, bonding or veneers after an oral health check. The proposed design depends on healthy enamel, the bite and the amount of change desired.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "visible teeth and bite",
+  "product": "Smile design",
+  "related": [
+    "/dentistry/veneers",
+    "/dentistry/teeth-whitening"
+  ],
+  "preparation": "Bring concerns about colour or shape and previous dental work. Treat gum disease and decay before planning cosmetic changes.",
+  "howPerformed": "We assess the smile and bite, discuss a proposed design and explain how much tooth preparation each option requires.",
+  "followup": "Recovery depends on the chosen approach. Sensitivity may follow preparation or whitening; arrange review if chewing feels uncomfortable.",
+  "risks": "Removing enamel cannot be reversed. Bonding or veneers can chip and restorations may eventually need repair or replacement.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "An assessment does not involve preparing teeth. Comfort during treatment depends on whether whitening, bonding or veneers are chosen."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Recovery depends on the chosen approach. Sensitivity may follow preparation or whitening; arrange review if chewing feels uncomfortable."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the teeth involved, materials and number of visits. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "Changes can be assessed after the agreed stages are complete."
+    ],
+    [
+      "Recovery",
+      "Recovery depends on the chosen approach."
+    ],
+    [
+      "Treatment family",
+      "Smile design"
+    ]
+  ],
+  "outlook": "Changes can be assessed after the agreed stages are complete.",
+  "suitability": "Adults can discuss an aesthetic plan after oral health is checked. Untreated decay, gum disease or grinding may need attention before cosmetic changes.",
+  "heroPhoto": "dentistry",
+  "name": "Hollywood smile design"
+}

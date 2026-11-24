@@ -141,6 +141,7 @@ export function graph(p, ctx) {
   if (p.reviewStatus === 'reviewed') {
     if (!p.lastReviewed) throw new Error('Missing clinical review date for ' + p.path);
     page.lastReviewed = p.lastReviewed;
+    page.dateModified = [p.updated, p.lastReviewed].sort().at(-1);
     page.reviewedBy = page.publisher;
   }
   if (p.type === 'branch') page.mainEntity = ref(clinicId(site, p.path.split('/').pop()));

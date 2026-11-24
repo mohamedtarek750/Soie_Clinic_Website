@@ -1,0 +1,106 @@
+{
+  "path": "/plastic-surgery",
+  "type": "surgery",
+  "category": "Plastic surgery",
+  "branches": [],
+  "title": "Plastic surgery consultations in Greater Cairo",
+  "description": "{{brand}} arranges consultations with partner plastic surgeons in Greater Cairo. Read about procedures, anaesthesia, recovery and questions to ask.",
+  "h1": "Plastic surgery consultations in Greater Cairo",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "heroPhoto": "services",
+  "answer": "{{brand}} arranges consultations and care with partner consultant plastic surgeons in Greater Cairo. Adults considering a change to the face, breasts or body can discuss surgical and non-surgical options, anaesthesia, recovery and risks. A partner surgical consultation determines whether an operation is suitable and how care would be planned.",
+  "preparation": "Bring your medical and surgical history, medicines, allergies and any relevant reports. Discuss smoking, clotting history and the support you would have during recovery.",
+  "howPerformed": "Reception arranges a partner consultation. The partner examines the area, discusses alternatives including no operation and, if appropriate, explains the surgical and anaesthetic plan before consent.",
+  "suitability": "An operation may be considered for a specific concern after examination. Active infection, uncontrolled health conditions, nicotine use or difficulty following aftercare may make it better to wait or choose another option.",
+  "followup": "Before consenting, ask who will provide follow-up, how to care for wounds and when to resume work and exercise. Seek emergency care for breathing difficulty, chest pain or sudden severe swelling.",
+  "outlook": "Swelling can obscure changes during healing. The time to assess a result depends on the operation and your recovery.",
+  "risks": "Surgery can cause bleeding, infection, scarring, altered sensation, asymmetry, blood clots and complications of anaesthesia. Some complications need further surgery. Individual risks must be discussed before any decision.",
+  "facts": [
+    [
+      "Care arrangement",
+      "Consultations and care with partner consultant plastic surgeons."
+    ],
+    [
+      "Anaesthesia",
+      "The surgical and anaesthetic teams discuss the appropriate approach for the individual operation."
+    ],
+    [
+      "Recovery",
+      "Allow for wound care, follow-up and activity restrictions specific to the operation."
+    ]
+  ],
+  "procedures": [
+    {
+      "name": "Rhinoplasty",
+      "text": "Rhinoplasty changes selected parts of the nasal framework and may suit adults concerned about shape or function. At consultation, discuss breathing, the limits of reshaping and the anaesthetic plan. Bruising and swelling can take time to settle; persistent obstruction, bleeding or a need for further surgery are possible."
+    },
+    {
+      "name": "Facelift",
+      "text": "A facelift repositions selected facial tissues for people with laxity in the lower face. It involves anaesthesia and time away from usual activities while swelling settles. Scarring, bleeding and facial nerve injury are among the risks to review alongside possible alternatives at the surgical consultation."
+    },
+    {
+      "name": "Eyelid surgery (blepharoplasty)",
+      "text": "Eyelid surgery removes or repositions selected tissue when excess skin or fullness affects the eyelids. The consultation checks eye health and discusses anaesthesia and recovery. Temporary bruising or dryness may occur. Bleeding around the eye and changes in vision require urgent attention."
+    },
+    {
+      "name": "Liposuction",
+      "text": "Liposuction removes localised deposits through small incisions and may suit adults with relatively stable weight. Anaesthesia and the extent of treatment determine recovery and activity limits. Discuss fluid shifts, contour irregularity, infection and blood clots when weighing surgery at consultation."
+    },
+    {
+      "name": "Tummy tuck (abdominoplasty)",
+      "text": "A tummy tuck removes excess abdominal skin and may address the abdominal wall in selected patients. It requires anaesthesia, wound care and restriction of lifting while healing. The consultation covers future weight or pregnancy plans, scars, fluid collections, clots and the risk of delayed healing."
+    },
+    {
+      "name": "Breast augmentation and reduction",
+      "text": "Augmentation aims to increase volume, while reduction removes tissue to reduce size or symptoms. Assessment covers breast health, anaesthesia and the implications for sensation and future feeding. Recovery needs time and wound care. Scarring, asymmetry and further surgery are possible; implants have additional follow-up needs."
+    },
+    {
+      "name": "Gynecomastia surgery",
+      "text": "Surgery can remove glandular tissue or fat in selected men with persistent breast enlargement. Its cause needs assessment first. The consultation covers anaesthesia, swelling during recovery and the risks of bleeding, contour changes or altered nipple sensation."
+    },
+    {
+      "name": "Brazilian butt lift",
+      "text": "A Brazilian butt lift transfers fat to the buttocks. People considering a change in contour need a detailed surgical risk assessment. This operation involves anaesthesia and specific activity limits during recovery. Fat entering the bloodstream can cause a fatal embolism; ask about alternatives and whether surgery is appropriate."
+    },
+    {
+      "name": "Fat transfer",
+      "text": "Fat transfer uses tissue from one area to change volume in another. Suitability, anaesthesia and recovery depend on both the donor and receiving sites. Discuss resorption, unevenness, infection and rare serious complications before agreeing on surgery. Monitoring includes care of both areas."
+    },
+    {
+      "name": "Arm lift and thigh lift",
+      "text": "These operations remove excess skin from the upper arms or thighs, often after weight change. A consultation examines skin quality, scars and movement goals. Anaesthesia, wound care and time away from strenuous activity are needed. Risks include prominent scars, fluid collections and slow wound healing."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Will I feel pain during or after surgery?",
+      "a": "The anaesthetic plan depends on the operation and your health. Discuss pain relief, expected discomfort afterwards and when to seek urgent help."
+    },
+    {
+      "q": "How many appointments will I need?",
+      "a": "Expect a surgical assessment and follow-up. Preoperative checks and the number of reviews depend on the procedure and healing."
+    },
+    {
+      "q": "When can I go back to work?",
+      "a": "Ask for advice based on the operation and your job, including lifting, driving and standing. Healing and complications can change the timing."
+    },
+    {
+      "q": "How might my skin heal or scar?",
+      "a": "Scar appearance varies with the incision, skin, past scarring and healing. Show the partner surgeon any raised or dark scars at consultation."
+    },
+    {
+      "q": "Can men arrange a consultation?",
+      "a": "Yes. Consultations can cover concerns such as persistent breast enlargement or body contour. The cause, health and surgical risks are considered first."
+    },
+    {
+      "q": "How do I get a surgical quote?",
+      "a": "The quote depends on the operation, anaesthesia, investigations and follow-up in the agreed plan. Message reception on WhatsApp to arrange an individual consultation."
+    }
+  ],
+  "related": [
+    "/treatments/body-contouring",
+    "/treatments/nutrition-and-weight-management"
+  ],
+  "name": "Partner plastic surgery consultation"
+}

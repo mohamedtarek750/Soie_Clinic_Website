@@ -26,6 +26,15 @@ class SiteHandler(SimpleHTTPRequestHandler):
     def send_head(self):
         request = urlsplit(self.path)
         path = unquote(request.path)
+        # The migration rule takes precedence when the request carries the old host.
+        hostname = self.headers.get("Host", "").partition(":")[0].lower()
+        for rule in CONFIG["redirects"]:
+            conditions = rule.get("has", [])
+            if (rule["source"] == "/:path*" and len(conditions) == 1
+                    and conditions[0].get("type") == "host" and conditions[0].get("value") == hostname):
+                location = rule["destination"].replace("/:path*", request.path)
+                return self.send_redirect(location, request.query)
+
         destination = REDIRECTS.get(path)
         if not destination and path.rstrip("/").endswith(("/index", "/index.html")):
             destination = path.rstrip("/").rsplit("/", 1)[0] or "/"
@@ -34,12 +43,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
         if not destination and path.endswith(".html"):
             destination = path[:-5]
         if destination:
-            self.send_response(308)
-            # Keep the query verbatim, including legacy booking selections.
-            self.send_header("Location", quote(destination, safe="/-._~") + ("?" + request.query if request.query else ""))
-            self.send_header("Content-Length", "0")
-            self.end_headers()
-            return None
+            return self.send_redirect(quote(destination, safe="/-._~"), request.query)
 
         root = Path(self.directory).resolve()
         candidate = root / ("index.html" if path == "/" else path.lstrip("/"))
@@ -51,13 +55,21 @@ class SiteHandler(SimpleHTTPRequestHandler):
         self.path = "/" + quote(candidate.relative_to(root).as_posix())
         return super().send_head()
 
+    def send_redirect(self, location, query):
+        self.send_response(308)
+        # Keep the query verbatim, including legacy booking selections.
+        self.send_header("Location", location + ("?" + query if query else ""))
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+        return None
+
     def end_headers(self):
         # Mirror static deployment headers so the local browser checks exercise the CSP.
         path = urlsplit(self.path).path
         headers = {}
         for rule in CONFIG.get("headers", []):
             pattern = rule["source"]
-            if pattern == "/(.*)" or (pattern.startswith(("/assets/", "/static/"))
+            if pattern == "/(.*)" or (pattern.startswith(("/assets/", "/static/", "/api/"))
                                       and path.startswith(pattern.split(":")[0])):
                 headers.update({item["key"]: item["value"] for item in rule["headers"]})
         for key, value in headers.items():

@@ -33,7 +33,7 @@ export function footer(page, ctx) {
   return `<footer class="footer"><div class="container signature-footer-cta"><h2>${ar ? 'خطوتك القادمة تبدأ هنا.' : 'Your next step starts here.'}</h2><a class="btn btn--gold" href="${url('/book')}" data-open-booking>${ar ? 'احجز موعدًا' : 'Book appointment'} →</a></div>
 <div class="container footer__grid"><div class="footer__brand"><img src="/assets/images/logo-cream.png" alt="${brand}" width="120" height="114" loading="lazy"><p class="footer__tag">${ar ? 'عناية تجميلية في' : 'Aesthetic care at'} ${brand}.</p>
 <div class="footer__social footer__social-text">${social}</div></div>
-<nav class="footer__nav" aria-label="${ar ? 'تذييل الصفحة' : 'Footer'}"><h4>${ar ? 'استكشف' : 'Explore'}</h4>${links}</nav>
-<div class="footer__contact"><h4>${ar ? 'الفروع' : 'Branches'}</h4>${branches}</div></div>
+<nav class="footer__nav" aria-label="${ar ? 'تذييل الصفحة' : 'Footer'}"><h3>${ar ? 'استكشف' : 'Explore'}</h3>${links}</nav>
+<div class="footer__contact"><h3>${ar ? 'الفروع' : 'Branches'}</h3>${branches}</div></div>
 <div class="footer__bottom"><div class="container footer__bottom-in"><p>© ${brand}. ${ar ? 'جميع الحقوق محفوظة.' : 'All rights reserved.'}</p></div></div></footer>`;
 }

@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/acne-treatment",
+  "type": "treatment",
+  "title": "Acne treatment consultations in Cairo",
+  "description": "Discuss active acne and lingering marks in Cairo, including how inflammation and skin tone guide treatment, daily care and the timing of procedures.",
+  "h1": "Acne treatment consultations in Cairo",
+  "answer": "Acne treatment begins by separating active spots from the marks or scars they leave. At {{brand}} in New Cairo and Mohandessin, people with persistent breakouts can discuss skin care, medical options and whether a procedure would help. The plan depends on inflammation, skin sensitivity and previous treatment.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "face or body",
+  "product": "Acne care plan",
+  "related": [
+    "/treatments/peeling",
+    "/treatments/fractional-co2-laser"
+  ],
+  "preparation": "Bring the names of medicines and skincare products you use. Deep painful spots or rapidly forming scars warrant early assessment.",
+  "howPerformed": "We assess the distribution and severity, discuss daily care and agree how to follow active lesions separately from marks.",
+  "followup": "Use the agreed routine and avoid picking. Ask about persistent dryness or irritation before adding another product or session.",
+  "risks": "Some treatments can irritate skin or leave pigment changes. Procedures over active inflammation may worsen symptoms.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "A visual assessment involves no injections. Some treatments sting or cause dryness, so describe any sensitivity."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Use the agreed routine and avoid picking. Ask about persistent dryness or irritation before adding another product or session."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Active acne and residual marks respond on different time scales."
+    ],
+    [
+      "Recovery",
+      "Use the agreed routine and avoid picking."
+    ],
+    [
+      "Treatment family",
+      "Acne care plan"
+    ]
+  ],
+  "outlook": "Active acne and residual marks respond on different time scales.",
+  "suitability": "Anyone troubled by persistent spots can seek assessment. Active inflammation or nodular acne may need medical treatment before a peel or resurfacing procedure.",
+  "heroPhoto": "facial",
+  "name": "Acne treatment consultations"
+}

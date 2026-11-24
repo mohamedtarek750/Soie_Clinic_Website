@@ -1,11 +1,30 @@
 {
   "path": "/treatments/dermal-filler",
-  "type": "legacy",
-  "title": "الفيلر بالقاهرة الجديدة والمهندسين | عيادات {{brand}}",
-  "description": "الفيلر في عيادات {{brand}} بالقاهرة الجديدة والمهندسين. تعرّف على علاج فقدان الامتلاء وتحديد الملامح والتعافي وما تناقشه قبل الجلسة.",
-  "h1": "الفيلر",
+  "type": "treatment",
+  "title": "حقن الفيلر في القاهرة",
+  "description": "دليل حقن الفيلر في القاهرة للخدين أو الفك أو تحت العين، من تقييم الوجه والفيلر السابق إلى التعافي ومخاطر الحقن ومتى تحتاج إلى مراجعة عاجلة.",
+  "h1": "حقن الفيلر في القاهرة",
+  "answer": "يضيف فيلر حمض الهيالورونيك حجماً في مناطق معينة من الوجه أو يعدّل تحديدها. في فرعي {{brand}} بالتجمع الخامس والمهندسين نقيّم تناسق الملامح ونناقش فيلر الفك والخدين أو الشفاه للبالغين. يحتاج فيلر تحت العين إلى فحص دقيق لأن الهالات والتورم وفقدان الحجم مشكلات تختلف في علاجها.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"dermal-filler\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/dermal-filler-960.avif 960w, /assets/images/bg/dermal-filler-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/dermal-filler-960.webp 960w, /assets/images/bg/dermal-filler-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/dermal-filler-1920.jpg\" srcset=\"/assets/images/bg/dermal-filler-960.jpg 960w, /assets/images/bg/dermal-filler-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\" data-reveal><a href=\"/ar\">الرئيسية</a> <span class=\"crumbs__sep\">·</span> <a href=\"/ar/treatments\">الخدمات</a> <span class=\"crumbs__sep\">·</span> <span>الفيلر</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> العلاج</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">الفيلر</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">فيلر حمض الهيالورونيك للامتلاء وتحديد الملامح في مناطق مثل الشفاه والخدين وخط الفك.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>عن العلاج</h2>\n          <p data-reveal>فيلر حمض الهيالورونيك جل يوضع تحت الجلد لإضافة الامتلاء أو تعديل الملامح. قد تشمل المناطق الشفاه والخدين والذقن والفك والطيات بجانب الفم وتجويف تحت العين. تختلف الملاءمة حسب المنطقة وتركيب الوجه.</p>\n          <p data-reveal>نبدأ بمناقشة ما ترغب في تحسينه وتقييم تناسب ملامح وجهك. ثم نشرح المنتج والكمية والطريقة المقترحة، إلى جانب حدود العلاج ومخاطره.</p>\n\n          <h2>باختصار</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>يمكن ملاحظة تغير الامتلاء بعد العلاج بفترة قصيرة</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>اختيار المنتج حسب المنطقة المعالجة</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>يمكن إذابة فيلر الهيالورونيك عند وجود داعٍ طبي مناسب</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>مراجعة النتيجة بعد هدوء التورم</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>خطة تراعي تناسب ملامحك</span></li>\n          </ul>\n\n          <h2>خطوات العلاج</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>الاستشارة والتقييم.</strong> نقيّم المنطقة، ونراجع تاريخك الطبي، ونسأل عن أي فيلر سابق.</li>\n            <li><strong>خطة خاصة بك.</strong> نوضح خيارات العلاج والنتائج المتوقعة والآثار الجانبية المحتملة والتكلفة قبل أن تقرر.</li>\n            <li><strong>جلسة العلاج.</strong> نشرح لك خطوات الجلسة ونتابع شعورك أثناءها.</li>\n            <li><strong>العناية اللاحقة والمتابعة.</strong> نوضح العناية بالمنطقة المعالجة، ومتى تتواصل معنا أو تعود للمتابعة.</li>\n          </ol>\n\n          <h2>النتائج المتوقعة</h2>\n          <p data-reveal>قد تلاحظ تغيرًا مباشرةً، لكن التورم يؤثر في النتيجة المبكرة. نراجعها عادةً بعد هدوئه، وغالبًا بعد نحو أسبوعين. قد تستمر النتيجة من ستة إلى ثمانية عشر شهرًا حسب المنتج والمنطقة والاستجابة.</p>\n\n          <h2>التعافي والعودة للأنشطة</h2>\n          <p data-reveal>قد يستمر التورم أو الألم الخفيف أو الكدمات عدة أيام، خاصةً حول الشفاه. نوضح العناية المطلوبة والأعراض التي تستدعي تقييمًا طبيًا سريعًا. تواصل معنا إذا كان لديك أي قلق أثناء التعافي.</p>\n\n          <h2>لمن يناسب هذا العلاج؟</h2>\n          <p data-reveal>قد يناسب الفيلر البالغين الراغبين في علاج فقدان الامتلاء أو تعديل أحد ملامح الوجه. تساعد الاستشارة على تحديد ملاءمته ومناقشة خيارات أخرى عند الحاجة.</p>\n\n          <h2>الأسئلة الشائعة</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>هل سيبدو وجهي أو شفاهي مبالغًا فيهما؟</summary>\n              <div class=\"acc__a\">أخبرنا بمقدار التغيير الذي تريده. نحدد الكمية بما يناسب ملامحك، ويمكننا اتباع خطة تدريجية ومراجعة النتيجة قبل التفكير في المزيد.</div>\n            </details>\n            <details data-reveal>\n              <summary>هل الفيلر آمن؟</summary>\n              <div class=\"acc__a\">للفيلر مخاطر تشمل التورم والكدمات، ونادرًا انسداد الأوعية الدموية الذي قد يسبب ضررًا خطيرًا. نناقشها قبل العلاج ونوضح التصرف عند ظهور أعراض. يمكن إذابة بعض أنواع فيلر الهيالورونيك، لكن ذلك لا يلغي جميع مخاطر العلاج.</div>\n            </details>\n            <details data-reveal>\n              <summary>ما الفرق بين البوتوكس والفيلر؟</summary>\n              <div class=\"acc__a\">يرخي البوتوكس العضلات التي تسبب خطوط التعبير، بينما يضيف الفيلر الامتلاء أو يعدل الملامح. نوضح لك مدى ملاءمة أي منهما لما ترغب في تحسينه.</div>\n            </details>\n          </div>\n          <h2>نتائج حقيقية</h2>\n          <div class=\"gallery__grid\" style=\"grid-template-columns:repeat(auto-fill,minmax(min(180px,100%),1fr))\">\n            <figure class=\"ba\">\n              <img src=\"/assets/images/ba-lip-filler.jpg\" alt=\"نتيجة فيلر الشفاه قبل وبعد في عيادات {{brand}}\" loading=\"lazy\" decoding=\"async\" width=\"880\" height=\"1358\" srcset=\"/assets/images/ba-lip-filler-320.jpg 320w, /assets/images/ba-lip-filler-560.jpg 560w, /assets/images/ba-lip-filler.jpg 880w\" sizes=\"(max-width: 600px) 90vw, 32vw\">\n              <figcaption class=\"ba__cap\"><span class=\"ba__tag\">قبل وبعد</span><span class=\"ba__name\">فيلر الشفاه</span></figcaption>\n            </figure>\n            <figure class=\"ba\">\n              <img src=\"/assets/images/ba-jawline-filler.jpg\" alt=\"نتيجة فيلر الفك قبل وبعد في عيادات {{brand}}\" loading=\"lazy\" decoding=\"async\" width=\"880\" height=\"1443\" srcset=\"/assets/images/ba-jawline-filler-320.jpg 320w, /assets/images/ba-jawline-filler-560.jpg 560w, /assets/images/ba-jawline-filler.jpg 880w\" sizes=\"(max-width: 600px) 90vw, 32vw\">\n              <figcaption class=\"ba__cap\"><span class=\"ba__tag\">قبل وبعد</span><span class=\"ba__name\">فيلر الفك</span></figcaption>\n            </figure>\n            <figure class=\"ba\">\n              <img src=\"/assets/images/ba-nose-filler.jpg\" alt=\"نتيجة فيلر الأنف قبل وبعد في عيادات {{brand}}\" loading=\"lazy\" decoding=\"async\" width=\"880\" height=\"1449\" srcset=\"/assets/images/ba-nose-filler-320.jpg 320w, /assets/images/ba-nose-filler-560.jpg 560w, /assets/images/ba-nose-filler.jpg 880w\" sizes=\"(max-width: 600px) 90vw, 32vw\">\n              <figcaption class=\"ba__cap\"><span class=\"ba__tag\">قبل وبعد</span><span class=\"ba__name\">فيلر الأنف</span></figcaption>\n            </figure>\n          </div>\n          <p data-reveal style=\"margin-top:1rem\"><a href=\"/ar/results\" style=\"color:var(--gold-deep);font-weight:600\">شاهد المجموعة الكاملة لنتائج قبل وبعد ←</a></p>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> مدة الجلسة</span>\n            <span class=\"info-card__value\">من ٣٠ إلى ٤٥ دقيقة</span>\n            <p class=\"info-card__text\">تشمل كريم التخدير</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> النتائج</span>\n            <span class=\"info-card__value\">فورية</span>\n            <p class=\"info-card__text\">تستقر النتيجة خلال أسبوعين</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> مدة استمرار النتيجة</span>\n            <span class=\"info-card__value\">من ٦ إلى ١٨ شهرًا</span>\n            <p class=\"info-card__text\">حسب المنطقة والمنتج</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">تمنحك الاستشارة وقتًا لطرح الأسئلة قبل اتخاذ قرار العلاج.</p>\n            <a href=\"/ar/book?service=dermal-filler\" class=\"btn btn--gold\" style=\"width:100%\">احجز الفيلر</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>تفكر في <em>الفيلر</em>؟</h2>\n        <p class=\"cta-band__sub\" data-reveal>تحدث مع فريقنا عما يشغلك. نقيّم الخيارات ونشرح تفاصيل العلاج لتتمكن من اتخاذ قرارك.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/ar/book\" class=\"btn btn--gold btn--lg\">احجز موعدك\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/ar/book\">حجز سريع عبر واتساب</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Injectables",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "الوجه",
+  "product": "فيلر حمض الهيالورونيك",
+  "related": [
+    "/treatments/lip-filler",
+    "/treatments/botox",
+    "/treatments/radiesse",
+    "/guides/botox-or-filler"
+  ],
+  "preparation": "نقيّم المنطقة، ونراجع تاريخك الطبي، ونسأل عن أي فيلر سابق.",
+  "howPerformed": "فيلر حمض الهيالورونيك جل يوضع تحت الجلد لإضافة الامتلاء أو تعديل الملامح. قد تشمل المناطق الشفاه والخدين والذقن والفك والطيات بجانب الفم وتجويف تحت العين. تختلف الملاءمة حسب المنطقة وتركيب الوجه.",
+  "followup": "قد يستمر التورم أو الألم الخفيف أو الكدمات عدة أيام، خاصةً حول الشفاه. نوضح العناية المطلوبة والأعراض التي تستدعي تقييمًا طبيًا سريعًا. تواصل معنا إذا كان لديك أي قلق أثناء التعافي.",
+  "suitability": "قد يناسب الفيلر البالغين الراغبين في علاج فقدان الامتلاء أو تعديل أحد ملامح الوجه. تساعد الاستشارة على تحديد ملاءمته ومناقشة خيارات أخرى عند الحاجة.",
+  "outlook": "قد تلاحظ تغيرًا مباشرةً، لكن التورم يؤثر في النتيجة المبكرة. نراجعها عادةً بعد هدوئه، وغالبًا بعد نحو أسبوعين. قد تستمر النتيجة من ستة إلى ثمانية عشر شهرًا حسب المنتج والمنطقة والاستجابة.",
   "faqs": [
     {
       "q": "هل سيبدو وجهي أو شفاهي مبالغًا فيهما؟",
@@ -18,6 +37,59 @@
     {
       "q": "ما الفرق بين البوتوكس والفيلر؟",
       "a": "يرخي البوتوكس العضلات التي تسبب خطوط التعبير، بينما يضيف الفيلر الامتلاء أو يعدل الملامح. نوضح لك مدى ملاءمة أي منهما لما ترغب في تحسينه."
+    },
+    {
+      "q": "هل أشعر بألم أثناء الزيارة؟",
+      "a": "يختلف الانزعاج بحسب المنطقة والطريقة. اذكر أي حساسية سابقة لمناقشة الوسائل المناسبة للتخفيف وإمكانية التوقف أثناء الجلسة."
+    },
+    {
+      "q": "كم زيارة قد أحتاج؟",
+      "a": "نراجع الاستجابة للخطة الأولى قبل الاتفاق على جلسات إضافية."
+    },
+    {
+      "q": "متى أعود إلى نشاطي المعتاد؟",
+      "a": "قد يستمر التورم أو الألم الخفيف أو الكدمات عدة أيام، خاصةً حول الشفاه. نوضح العناية المطلوبة والأعراض التي تستدعي تقييمًا طبيًا سريعًا. تواصل معنا إذا كان لديك أي قلق أثناء التعافي."
+    },
+    {
+      "q": "هل يناسبني العلاج إذا كانت بشرتي تتصبغ بسهولة؟",
+      "a": "قد يؤثر التهيج المطول أو التصبغ السابق في الخطة. اذكر كيف التأم الجلد بعد إجراءات سابقة حتى نقيّم الطريقة والتوقيت المناسبين."
+    },
+    {
+      "q": "هل يمكن للرجال حجز استشارة؟",
+      "a": "نعم. يعتمد التقييم على التاريخ الصحي والهدف من الزيارة والحالة التي تريد مناقشتها."
+    },
+    {
+      "q": "كيف أعرف تكلفة العلاج؟",
+      "a": "تتحدد التكلفة بحسب المنطقة والطريقة وعدد الجلسات، ومع الحقن يؤثر أيضاً نوع المادة وكميتها. تواصل مع الفرع عبر واتساب لطلب تقدير يناسب خطتك."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "مدة الجلسة",
+      "من ٣٠ إلى ٤٥ دقيقة (تشمل كريم التخدير)"
+    ],
+    [
+      "النتائج",
+      "فورية (تستقر النتيجة خلال أسبوعين)"
+    ],
+    [
+      "مدة استمرار النتيجة",
+      "من ٦ إلى ١٨ شهرًا (حسب المنطقة والمنتج)"
+    ],
+    [
+      "عدد الزيارات",
+      "نراجع الاستجابة للخطة الأولى قبل الاتفاق على جلسات إضافية."
+    ],
+    [
+      "التعافي",
+      "قد يستمر التورم أو الألم الخفيف أو الكدمات عدة أيام، خاصةً حول الشفاه."
+    ],
+    [
+      "فئة العلاج",
+      "فيلر حمض الهيالورونيك"
+    ]
+  ],
+  "risks": "قد يؤدي انسداد وعاء دموي إلى تلف الأنسجة أو فقدان البصر. اطلب رعاية فورية عند ألم شديد أو شحوب أو تبقع الجلد أو تغير الرؤية بعد الحقن.",
+  "heroPhoto": "dermal-filler",
+  "name": "حقن الفيلر"
 }

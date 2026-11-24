@@ -1,0 +1,76 @@
+{
+  "path": "/treatments/skin-tag-removal",
+  "type": "treatment",
+  "title": "Skin tag assessment and removal in Cairo",
+  "description": "Explore skin tag assessment and removal in Cairo, including why changing growths need diagnosis, how healing is managed and which symptoms need review.",
+  "h1": "Skin tag assessment and removal in Cairo",
+  "answer": "Skin tags are soft growths often noticed where skin rubs. At {{brand}} in New Cairo and Mohandessin, adults can have a growth assessed before considering removal for irritation or appearance. A changing, bleeding or uncertain lesion needs diagnosis and may require further examination before any cosmetic procedure.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "skin folds",
+  "product": "Lesion assessment",
+  "related": [
+    "/treatments/acne-treatment"
+  ],
+  "preparation": "Mention changes in size or colour, bleeding and medicines that affect clotting. Avoid cutting or tying growths at home.",
+  "howPerformed": "The lesion is examined first. If it is suitable for removal, the team discusses the method, pain relief and whether further testing is needed.",
+  "followup": "Protect the healing site from friction and follow dressing advice. Spreading redness, drainage or persistent bleeding needs assessment.",
+  "risks": "Possible effects include bleeding, infection, a small scar or a lighter or darker spot after healing.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Discomfort depends on the removal method; local anaesthetic can briefly sting."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Protect the healing site from friction and follow dressing advice. Spreading redness, drainage or persistent bleeding needs assessment."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Appearance can be assessed once the site has healed."
+    ],
+    [
+      "Recovery",
+      "Protect the healing site from friction and follow dressing advice."
+    ],
+    [
+      "Treatment family",
+      "Lesion assessment"
+    ]
+  ],
+  "outlook": "Appearance can be assessed once the site has healed.",
+  "suitability": "Removal may be discussed for a diagnosed tag that catches on clothing. A bleeding or changing growth should be examined before choosing a cosmetic method.",
+  "heroPhoto": "facial",
+  "name": "Skin tag assessment and removal"
+}

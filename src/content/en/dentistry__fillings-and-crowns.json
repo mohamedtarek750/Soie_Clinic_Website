@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/fillings-and-crowns",
+  "type": "treatment",
+  "title": "Dental fillings and crowns in Mohandessin",
+  "description": "Compare composite fillings and dental crowns in Mohandessin for decay or fractured teeth. Learn how remaining tooth, bite and sensitivity guide the plan.",
+  "h1": "Dental fillings and crowns in Mohandessin",
+  "answer": "Composite fillings repair selected defects, while crowns cover a tooth that needs more support. {{brand}} in Mohandessin assesses people with decay, a broken tooth or a failing restoration. The amount of sound tooth remaining, bite forces and gum health guide the choice and the number of visits.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "damaged teeth",
+  "product": "Composite filling or crown",
+  "related": [
+    "/dentistry/root-canal",
+    "/dentistry"
+  ],
+  "preparation": "Tell us about biting pain, clenching and recent fractures. Deep decay or nerve symptoms may need other treatment first.",
+  "howPerformed": "We examine the tooth and remove decay where indicated. A filling is shaped directly, or a tooth is prepared and measured for a crown.",
+  "followup": "Wait for numbness to settle before chewing. A high bite, persistent sensitivity or a loose temporary crown needs review.",
+  "risks": "Possible problems include sensitivity, fractures and later decay at a restoration edge. A damaged nerve may need root canal treatment.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Tell the team about sensitivity so anaesthesia and pauses can be discussed. Some tenderness can follow preparation."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Wait for numbness to settle before chewing. A high bite, persistent sensitivity or a loose temporary crown needs review."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the teeth involved, materials and number of visits. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "The restoration is present after fitting; comfort and bite may need a review."
+    ],
+    [
+      "Recovery",
+      "Wait for numbness to settle before chewing."
+    ],
+    [
+      "Treatment family",
+      "Composite filling or crown"
+    ]
+  ],
+  "outlook": "The restoration is present after fitting; comfort and bite may need a review.",
+  "suitability": "Localised decay or fractures may be restored when sufficient sound tooth remains. A severely cracked tooth or active gum disease may require another plan.",
+  "heroPhoto": "dentistry",
+  "name": "Dental fillings and crowns"
+}

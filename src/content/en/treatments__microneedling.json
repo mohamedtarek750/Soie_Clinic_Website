@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/microneedling",
+  "type": "treatment",
+  "title": "Microneedling for skin texture in Cairo",
+  "description": "Learn about microneedling in Cairo for uneven skin texture and selected acne scars, including who should wait, healing and the risk of pigment changes.",
+  "h1": "Microneedling for skin texture in Cairo",
+  "answer": "Microneedling uses a pen with fine needles to create controlled punctures in the skin. It may suit adults with uneven texture or selected acne scars. {{brand}} in New Cairo and Mohandessin assesses scar type, active breakouts and pigmentation risk before recommending a session or another approach.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "skin",
+  "product": "Microneedling pen",
+  "related": [
+    "/treatments/fractional-co2-laser",
+    "/treatments/acne-treatment"
+  ],
+  "preparation": "Tell us about active acne, cold sores, medicines and a tendency to raised scars. Treatment may need to wait while inflammation is active.",
+  "howPerformed": "The skin is examined and cleaned. If suitable, the team treats selected areas with the pen at a depth appropriate to the concern.",
+  "followup": "Redness, sensitivity and light flaking are possible. Use gentle cleansing and sun protection, and check when to resume active skincare.",
+  "risks": "Infection, pigment changes and scarring are possible. Seek assessment if pain or swelling worsens.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "The pen can sting and skin can feel tight afterwards. Ask about comfort measures."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Redness, sensitivity and light flaking are possible. Use gentle cleansing and sun protection, and check when to resume active skincare."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Texture changes may develop gradually after healing."
+    ],
+    [
+      "Recovery",
+      "Redness, sensitivity and light flaking are possible."
+    ],
+    [
+      "Treatment family",
+      "Microneedling pen"
+    ]
+  ],
+  "outlook": "Texture changes may develop gradually after healing.",
+  "suitability": "It may suit selected shallow scars or uneven texture. Inflamed acne, infection or a tendency to raised scars can make needling inappropriate.",
+  "heroPhoto": "facial",
+  "name": "Microneedling for skin texture"
+}

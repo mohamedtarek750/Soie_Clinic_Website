@@ -1,11 +1,28 @@
 {
   "path": "/treatments/exosomes",
-  "type": "legacy",
-  "title": "Exosomes in New Cairo & Mohandessin | {{brand}}",
-  "description": "Ask about exosome treatments at {{brand}} in Cairo. Learn what they involve, the limits of current evidence and what to discuss before deciding.",
-  "h1": "Exosomes",
+  "type": "treatment",
+  "title": "Exosome consultations for skin and hair in Cairo",
+  "description": "Learn what is known about exosomes for skin and hair in Cairo, why the product and application method matter and which questions to bring to a consultation.",
+  "h1": "Exosome consultations for skin and hair in Cairo",
+  "answer": "Exosomes are particles released by cells and are under study for aesthetic skin and hair concerns. At {{brand}} in New Cairo and Mohandessin, adults can ask about the specific preparation, evidence and alternatives for their condition. Products and application methods vary, and a benefit for any individual is uncertain.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"exosomes\" aria-hidden=\"true\">\n        <video class=\"film hero-bg__media\" muted loop playsinline preload=\"none\" poster=\"/assets/videos/posters/bg-exosomes.jpg\" data-film data-src=\"/assets/videos/bg-exosomes.mp4\" data-src-portrait=\"/assets/videos/bg-exosomes-portrait.mp4\" aria-hidden=\"true\" tabindex=\"-1\" width=\"1600\" height=\"900\"></video>\n      </div>\n      <button class=\"film-toggle film-toggle--hero\" type=\"button\" data-media-toggle aria-label=\"Pause video\" aria-pressed=\"false\"></button>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"Breadcrumb\" data-reveal><a href=\"/\">Home</a> <span class=\"crumbs__sep\">·</span> <a href=\"/treatments\">Services</a> <span class=\"crumbs__sep\">·</span> <span>Exosomes</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> Treatment</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">Exosomes</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">Explore exosome treatments for skin and hair concerns with our medical team.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>About the treatment</h2>\n          <p data-reveal>Exosomes are tiny particles released by cells that carry signals between them. Their use in skin and hair treatments is still being studied, and the evidence varies by product and method.</p>\n          <p data-reveal>At your consultation, ask which product would be used, how it is applied and what evidence supports it for your concern. We will discuss expected benefits, uncertainties and other treatment options before you decide.</p>\n\n          <h2>At a glance</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Assessment of your skin or hair concern</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Discussion of the proposed product and method</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Clear advice on possible side effects and recovery</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Review of other treatments you are considering</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>A plan to monitor your response</span></li>\n          </ul>\n\n          <h2>The treatment process</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>Consultation and assessment.</strong> We assess your concern, review your medical history and discuss the evidence for the proposed approach.</li>\n            <li><strong>A personal plan.</strong> We explain the treatment options, likely results, possible side effects and cost before you decide.</li>\n            <li><strong>The treatment itself.</strong> We talk you through the session and check how you feel as we go.</li>\n            <li><strong>Aftercare and follow up.</strong> We explain how to care for the treated area and when to contact us or return for a review.</li>\n          </ol>\n\n          <h2>Expected results</h2>\n          <p data-reveal>Changes, if any, can take time and vary with the product, method and individual response. We will agree on what to monitor and when to review the result.</p>\n\n          <h2>Recovery &amp; downtime</h2>\n          <p data-reveal>Recovery depends on how the product is applied and any procedure used alongside it. If microneedling is involved, temporary redness and sensitivity may occur. We will give you instructions for cleansing, sun protection and when to resume your usual products.</p>\n\n          <h2>Who is it for?</h2>\n          <p data-reveal>A consultation is needed for skin texture or hair thinning concerns. We first assess the likely cause, then discuss whether the proposed treatment is appropriate and what alternatives are available.</p>\n\n          <h2>Frequently asked questions</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>What exactly are exosomes?</summary>\n              <div class=\"acc__a\">Exosomes are tiny particles that help cells communicate. Products used in aesthetic treatments can differ in their source and contents, so ask about the specific product and evidence for its use.</div>\n            </details>\n            <details data-reveal>\n              <summary>Is it the same as PRP?</summary>\n              <div class=\"acc__a\">No. PRP is prepared from a sample of your own blood. Exosome products are different preparations, and their contents and evidence vary. We can explain both approaches at your consultation.</div>\n            </details>\n            <details data-reveal>\n              <summary>When do results appear?</summary>\n              <div class=\"acc__a\">There is no reliable timeline that applies to everyone. We will explain what is known about the proposed product and set a review date to assess your response.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Session time</span>\n            <span class=\"info-card__value\">45 to 60 minutes</span>\n            <p class=\"info-card__text\">with microneedling</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Results</span>\n            <span class=\"info-card__value\">Varies</span>\n            <p class=\"info-card__text\">reviewed after treatment</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Course</span>\n            <span class=\"info-card__value\">Plan discussed first</span>\n            <p class=\"info-card__text\">based on the proposed method</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">A consultation gives you time to ask questions before deciding on treatment.</p>\n            <a href=\"/book?service=exosomes\" class=\"btn btn--gold\" style=\"width:100%\">Book Exosomes</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>Considering <em>Exosomes</em>?</h2>\n        <p class=\"cta-band__sub\" data-reveal>Talk to our team about your concerns. We will assess the options and explain what treatment involves so you can decide.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/book\" class=\"btn btn--gold btn--lg\">Book your appointment\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/book\">Quick WhatsApp booking</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "skin or scalp",
+  "product": "Exosome preparation",
+  "related": [
+    "/treatments/prp",
+    "/treatments/hair-and-scalp"
+  ],
+  "preparation": "We assess your concern, review your medical history and discuss the evidence for the proposed approach.",
+  "howPerformed": "Exosomes are tiny particles released by cells that carry signals between them. Their use in skin and hair treatments is still being studied, and the evidence varies by product and method.",
+  "followup": "Recovery depends on how the product is applied and any procedure used alongside it. If microneedling is involved, temporary redness and sensitivity may occur. We will give you instructions for cleansing, sun protection and when to resume your usual products.",
+  "suitability": "A consultation is needed for skin texture or hair thinning concerns. We first assess the likely cause, then discuss whether the proposed treatment is appropriate and what alternatives are available.",
+  "outlook": "Changes, if any, can take time and vary with the product, method and individual response. We will agree on what to monitor and when to review the result.",
   "faqs": [
     {
       "q": "What exactly are exosomes?",
@@ -18,6 +35,56 @@
     {
       "q": "When do results appear?",
       "a": "There is no reliable timeline that applies to everyone. We will explain what is known about the proposed product and set a review date to assess your response."
+    },
+    {
+      "q": "Will the visit hurt?",
+      "a": "Discomfort varies with the area and method. Describe any previous sensitivity so that suitable comfort measures and pauses can be discussed."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Plan discussed first (based on the proposed method)"
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Recovery depends on how the product is applied and any procedure used alongside it. If microneedling is involved, temporary redness and sensitivity may occur. We will give you instructions for cleansing, sun protection and when to resume your usual products."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "Product source, application method and any accompanying procedure change the cost. Ask the branch on WhatsApp what a proposed plan includes."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "Session time",
+      "45 to 60 minutes (with microneedling)"
+    ],
+    [
+      "Results",
+      "Varies (reviewed after treatment)"
+    ],
+    [
+      "Course",
+      "Plan discussed first (based on the proposed method)"
+    ],
+    [
+      "Recovery",
+      "Recovery depends on how the product is applied and any procedure used alongside it."
+    ],
+    [
+      "Treatment family",
+      "Exosome preparation"
+    ]
+  ],
+  "risks": "Safety depends on the product source and route of application. Irritation and infection are possible, particularly where skin is punctured.",
+  "heroPhoto": "facial",
+  "heroVideo": "exosomes",
+  "name": "Exosome consultations for skin and hair"
 }

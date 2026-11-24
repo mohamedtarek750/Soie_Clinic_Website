@@ -1,0 +1,78 @@
+{
+  "path": "/treatments/nutrition-and-weight-management",
+  "type": "treatment",
+  "title": "Nutrition and weight management in Greater Cairo",
+  "description": "Book a nutrition consultation in New Cairo or Mohandessin. Learn what to bring, how to build a practical meal plan and how follow-up supports weight goals.",
+  "h1": "Nutrition and weight management in Greater Cairo",
+  "answer": "Nutrition consultations at {{brand}} in New Cairo and Mohandessin help people plan meals around their health, routine and weight goals. The visit reviews eating patterns, medicines and previous diets before agreeing on practical changes. Follow-up considers how the plan feels in daily life and whether it needs adjustment.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Body and nutrition",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "diet and eating patterns",
+  "product": "Personal nutrition plan",
+  "related": [
+    "/treatments/body-contouring",
+    "/guides/first-nutrition-consultation"
+  ],
+  "schemaType": "MedicalTherapy",
+  "preparation": "Bring a typical day's meals, your medicines and available test results. An unexplained change in weight or eating disorder symptoms need medical assessment.",
+  "howPerformed": "The team discusses goals and practical barriers, agrees realistic meal changes with you and arranges a follow-up to review progress.",
+  "followup": "A dietary consultation involves no procedure or healing period. Track how the adjustments affect appetite, energy and daily routines.",
+  "risks": "Restrictive diets can lead to nutritional gaps. Diabetes medicines, pregnancy and other medical needs affect how a plan should be adapted.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "The visit is a discussion about meals, health and goals. No injection or cosmetic procedure is part of the dietary assessment."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "A dietary consultation involves no procedure or healing period. Track how the adjustments affect appetite, energy and daily routines."
+    },
+    {
+      "q": "Does my medical history affect suitability?",
+      "a": "Bring a typical day's meals, your medicines and available test results. An unexplained change in weight or eating disorder symptoms need medical assessment."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the initial consultation and the follow-up visits in your agreed plan. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Agree on realistic markers and review them over time."
+    ],
+    [
+      "Recovery",
+      "A dietary consultation involves no procedure or healing period."
+    ],
+    [
+      "Treatment family",
+      "Personal nutrition plan"
+    ]
+  ],
+  "outlook": "Agree on realistic markers and review them over time.",
+  "suitability": "People seeking a sustainable meal plan may benefit from a consultation. Unintentional weight loss, disordered eating or complex medical needs can require additional care.",
+  "heroPhoto": "services",
+  "name": "Nutrition and weight management"
+}

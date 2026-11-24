@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/radiesse",
+  "type": "treatment",
+  "title": "Radiesse calcium-based filler in Cairo",
+  "description": "Discuss Radiesse in Cairo for selected facial contours, including the role of calcium-based filler, why the area matters and what recovery may involve.",
+  "h1": "Radiesse calcium-based filler in Cairo",
+  "answer": "Radiesse is a calcium-based injectable used for selected contour or volume concerns. Adults considering facial filler can discuss it at {{brand}} in New Cairo and Mohandessin. The consultation looks at the area, tissue thickness and any previous filler, including whether another option would be easier to adjust later.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Injectables",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "selected facial areas",
+  "product": "Calcium hydroxylapatite",
+  "related": [
+    "/treatments/dermal-filler",
+    "/treatments/sculptra"
+  ],
+  "preparation": "Tell us what was injected previously and where. This filler has different uses from lip fillers and cannot be dissolved like hyaluronic acid.",
+  "howPerformed": "The team examines the area, agrees a contour goal and explains how the calcium-based product will be placed before proceeding.",
+  "followup": "Recovery may include swelling, tenderness or bruising. Wait for swelling to settle before judging contour; report lumps or worsening pain.",
+  "risks": "Infection, uneven contour and vascular blockage are possible. Severe pain, unusual pallor or a change in vision require immediate medical attention.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Pressure or a stinging sensation is possible during placement."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Recovery may include swelling, tenderness or bruising. Wait for swelling to settle before judging contour; report lumps or worsening pain."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The area and amount of Radiesse needed for the agreed contour influence cost. Ask the branch on WhatsApp about an assessment and quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Assess contour after bruising and swelling settle."
+    ],
+    [
+      "Recovery",
+      "Recovery may include swelling, tenderness or bruising."
+    ],
+    [
+      "Treatment family",
+      "Calcium hydroxylapatite"
+    ]
+  ],
+  "outlook": "Assess contour after bruising and swelling settle.",
+  "suitability": "A calcium-based filler may suit selected contour changes in adults. Thin tissue or poorly defined prior injections can make another approach more appropriate.",
+  "heroPhoto": "dermal-filler",
+  "name": "Radiesse calcium-based filler"
+}

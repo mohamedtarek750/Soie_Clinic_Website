@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/dental-implants",
+  "type": "treatment",
+  "title": "Dental implants in Mohandessin",
+  "description": "Explore dental implants in Mohandessin, from assessing bone and gum health to placement, healing and the final tooth. Compare options before booking.",
+  "h1": "Dental implants in Mohandessin",
+  "answer": "Dental implants can support a replacement tooth or bridge after tooth loss. At {{brand}} in Mohandessin, adults can discuss implant options alongside removable or fixed alternatives. The consultation assesses gum health, bone support, medical history and the space for the final restoration before estimating the stages and recovery.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "jaw and missing teeth",
+  "product": "Implant-supported restoration",
+  "related": [
+    "/dentistry",
+    "/dentistry/fillings-and-crowns"
+  ],
+  "preparation": "Bring available dental images and a list of medicines, including bone treatments. Active gum disease, smoking or certain conditions can affect healing.",
+  "howPerformed": "Assessment and imaging guide the plan. When appropriate, the implant is placed, healing is monitored and the final restoration is fitted when support is adequate.",
+  "followup": "Swelling and tenderness can follow placement. Follow cleaning and eating advice and keep reviews even after the final tooth is fitted.",
+  "risks": "Risks include infection, injury to nearby structures, healing failure or later inflammation around the implant.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Discuss local anaesthesia and postoperative discomfort. Swelling and tenderness can last beyond the placement visit."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Swelling and tenderness can follow placement. Follow cleaning and eating advice and keep reviews even after the final tooth is fitted."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The number of missing teeth, bone support, implant plan and final restoration affect the quote. Ask the Mohandessin branch on WhatsApp after examination."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "The final tooth is fitted when healing and stability allow."
+    ],
+    [
+      "Recovery",
+      "Swelling and tenderness can follow placement."
+    ],
+    [
+      "Treatment family",
+      "Implant-supported restoration"
+    ]
+  ],
+  "outlook": "The final tooth is fitted when healing and stability allow.",
+  "suitability": "Adults with missing teeth and suitable bone and gum support can discuss implants. Active disease or conditions affecting healing can change the plan.",
+  "heroPhoto": "dentistry",
+  "name": "Dental implants"
+}

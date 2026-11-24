@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/prp",
+  "type": "treatment",
+  "title": "PRP for skin and hair in Cairo",
+  "description": "Considering PRP in Cairo for hair or skin? Learn why diagnosis comes first, how platelet-rich plasma is prepared and how the treated area is followed up.",
+  "h1": "PRP for skin and hair in Cairo",
+  "answer": "Platelet-rich plasma, or PRP, uses a preparation from a patient's own blood for selected scalp or skin concerns. At {{brand}} in New Cairo and Mohandessin, adults can discuss what PRP might offer for their particular diagnosis. Hair thinning and skin changes may need a different treatment or further investigation.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "skin or scalp",
+  "product": "Platelet-rich plasma",
+  "related": [
+    "/treatments/hair-and-scalp",
+    "/treatments/microneedling"
+  ],
+  "preparation": "Mention blood disorders, anticoagulants and scalp infection. Do not stop prescribed medicines on your own.",
+  "howPerformed": "If suitable, the team takes a blood sample, prepares the platelet-rich portion and treats the assessed area.",
+  "followup": "Expect possible soreness at the blood draw and treatment sites. Follow advice on washing the skin or scalp and when to review any change.",
+  "risks": "Bruising, bleeding and infection can occur. Improvement is uncertain and depends on the underlying cause.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Both the blood draw and the skin or scalp injections can sting."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Expect possible soreness at the blood draw and treatment sites. Follow advice on washing the skin or scalp and when to review any change."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The area, preparation and number of PRP visits influence the quote. Ask the branch on WhatsApp about your skin or scalp plan."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Assess scalp or skin response over time using the agreed review plan."
+    ],
+    [
+      "Recovery",
+      "Expect possible soreness at the blood draw and treatment sites."
+    ],
+    [
+      "Treatment family",
+      "Platelet-rich plasma"
+    ]
+  ],
+  "outlook": "Assess scalp or skin response over time using the agreed review plan.",
+  "suitability": "Some causes of thinning may warrant discussion of PRP. Active scalp infection, blood disorders or medicines affecting clotting can alter suitability.",
+  "heroPhoto": "facial",
+  "name": "PRP for skin and hair"
+}

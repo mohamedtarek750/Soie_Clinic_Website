@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/profhilo",
+  "type": "treatment",
+  "title": "Profhilo and Profhilo Structura in Cairo",
+  "description": "Compare Profhilo and Profhilo Structura in Cairo. Learn why skin quality and facial support are assessed separately and what to ask before an injection.",
+  "h1": "Profhilo and Profhilo Structura in Cairo",
+  "answer": "Profhilo and Profhilo Structura are injectable hyaluronic acid options with different intended uses. Adults concerned about changes in skin quality or facial tissue may discuss them at {{brand}} in New Cairo and Mohandessin. A consultation distinguishes hydration concerns from loss of support and checks whether either product fits the goal.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Injectables",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "face",
+  "product": "Hyaluronic acid",
+  "related": [
+    "/treatments/skin-boosters",
+    "/treatments/sculptra"
+  ],
+  "preparation": "Bring the names of any previous injectables. An infection in the area or an unexplained reaction to a previous product needs assessment first.",
+  "howPerformed": "After examining the skin and facial tissues, the team explains which product it proposes, the areas to treat and the follow-up plan.",
+  "followup": "Small bumps, bruising or puffiness can appear after injections. Follow the agreed skin care and return for review once swelling has settled.",
+  "risks": "Injections carry risks of infection and impaired blood supply. Seek urgent care for severe pain, unusual colour change or visual symptoms.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "The injection points may sting briefly and feel raised afterwards."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Small bumps, bruising or puffiness can appear after injections. Follow the agreed skin care and return for review once swelling has settled."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on which preparation is suitable, the area and the course agreed after examination. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Changes in skin quality, if any, develop gradually."
+    ],
+    [
+      "Recovery",
+      "Small bumps, bruising or puffiness can appear after injections."
+    ],
+    [
+      "Treatment family",
+      "Hyaluronic acid"
+    ]
+  ],
+  "outlook": "Changes in skin quality, if any, develop gradually.",
+  "suitability": "Skin dryness and changes in tissue support have different causes. These products may suit selected adults after examination; an active infection needs treatment first.",
+  "heroPhoto": "dermal-filler",
+  "name": "Profhilo and Profhilo Structura"
+}

@@ -1,11 +1,28 @@
 {
   "path": "/treatments/laser",
-  "type": "legacy",
-  "title": "Laser in New Cairo & Mohandessin | {{brand}}",
-  "description": "Laser treatments at {{brand}} in New Cairo and Mohandessin. Ask about hair reduction and skin concerns, session planning, preparation and aftercare.",
-  "h1": "Laser",
+  "type": "treatment",
+  "title": "Laser treatment consultations in {{laserLocations}}",
+  "description": "Compare laser treatments in {{laserLocations}} for hair reduction and skin texture. Learn why the device, your skin tone and sun exposure matter.",
+  "h1": "Laser treatment consultations in {{laserLocations}}",
+  "answer": "Laser treatments use focused light for specific skin or hair concerns. At {{brand}} in {{laserLocations}}, patients can discuss hair reduction or have uneven texture and pigmentation assessed. Hair reduction and resurfacing use different devices. Skin tone, tanning and the diagnosis guide whether a procedure is appropriate.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"laser\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/laser-960.avif 960w, /assets/images/bg/laser-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/laser-960.webp 960w, /assets/images/bg/laser-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/laser-1920.jpg\" srcset=\"/assets/images/bg/laser-960.jpg 960w, /assets/images/bg/laser-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"Breadcrumb\" data-reveal><a href=\"/\">Home</a> <span class=\"crumbs__sep\">·</span> <a href=\"/treatments\">Services</a> <span class=\"crumbs__sep\">·</span> <span>Laser</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> Treatment</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">Laser</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">Laser treatments for hair reduction and selected skin concerns, planned after assessment.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>About the treatment</h2>\n          <p data-reveal>Laser devices use focused light to target structures such as hair follicles or pigment. Different concerns need different devices and settings, so the first step is to assess your skin and the area you want to treat.</p>\n          <p data-reveal>Tell us about recent tanning, medicines and previous laser treatments. We will explain which options are available for hair reduction or your skin concern, along with the likely course and recovery.</p>\n\n          <h2>At a glance</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Hair reduction on suitable face and body areas</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Assessment of pigmentation concerns</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Discussion of options for skin texture and tone</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Settings chosen for your skin and treatment area</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Preparation and aftercare explained before treatment</span></li>\n          </ul>\n\n          <h2>The treatment process</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>Consultation and assessment.</strong> We check your skin tone, hair or pigment concern, medical history and recent sun exposure.</li>\n            <li><strong>A personal plan.</strong> We explain the treatment options, likely results, possible side effects and cost before you decide.</li>\n            <li><strong>The treatment itself.</strong> We talk you through the session and check how you feel as we go.</li>\n            <li><strong>Aftercare and follow up.</strong> We explain how to care for the treated area and when to contact us or return for a review.</li>\n          </ol>\n\n          <h2>Expected results</h2>\n          <p data-reveal>Hair reduction usually develops over several sessions because hair grows in cycles. Skin treatment results depend on the concern and device used. We will review your response before adjusting the plan.</p>\n\n          <h2>Recovery &amp; downtime</h2>\n          <p data-reveal>Redness, warmth or sensitivity may occur after laser treatment. Recovery depends on the device, settings and area. We will explain sun protection, which skincare products to pause and when you can resume your usual activities.</p>\n\n          <h2>Who is it for?</h2>\n          <p data-reveal>Hair colour, skin tone, recent tanning and medical history affect suitability. Pigmentation also needs assessment before treatment. We will explain the options and whether a test area is needed.</p>\n\n          <h2>Frequently asked questions</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>Does laser hair removal hurt?</summary>\n              <div class=\"acc__a\">You may feel brief heat or a snapping sensation. Cooling can help, but sensitivity varies by area and person. Tell the team how it feels so they can check your comfort throughout.</div>\n            </details>\n            <details data-reveal>\n              <summary>Is laser safe for darker skin tones?</summary>\n              <div class=\"acc__a\">Some laser devices and settings can suit darker skin tones, but assessment is essential. We will consider your skin type, tanning and the risks of burns or pigment changes before recommending treatment.</div>\n            </details>\n            <details data-reveal>\n              <summary>Why do I need multiple sessions?</summary>\n              <div class=\"acc__a\">Hair grows in cycles, and laser works best on follicles in an active growth phase. Several sessions are usually needed. The number and spacing depend on the area, hair characteristics and your response.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Session time</span>\n            <span class=\"info-card__value\">15 to 60 minutes</span>\n            <p class=\"info-card__text\">by area treated</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Results</span>\n            <span class=\"info-card__value\">Progressive</span>\n            <p class=\"info-card__text\">visible from the first sessions</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Course</span>\n            <span class=\"info-card__value\">6 to 8 sessions</span>\n            <p class=\"info-card__text\">with the plan reviewed as you go</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">A consultation gives you time to ask questions before deciding on treatment.</p>\n            <a href=\"/book?service=laser\" class=\"btn btn--gold\" style=\"width:100%\">Book Laser</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>Considering <em>Laser</em>?</h2>\n        <p class=\"cta-band__sub\" data-reveal>Talk to our team about your concerns. We will assess the options and explain what treatment involves so you can decide.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/book\" class=\"btn btn--gold btn--lg\">Book your appointment\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/book\">Quick WhatsApp booking</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Laser",
+  "branches": [
+    "new-cairo"
+  ],
+  "bodyLocation": "face and body",
+  "product": "Medical laser",
+  "related": [
+    "/devices/cutera-excel-hr",
+    "/treatments/laser-hair-removal",
+    "/treatments/fractional-co2-laser"
+  ],
+  "preparation": "We check your skin tone, hair or pigment concern, medical history and recent sun exposure.",
+  "howPerformed": "Laser devices use focused light to target structures such as hair follicles or pigment. Different concerns need different devices and settings, so the first step is to assess your skin and the area you want to treat.",
+  "followup": "Redness, warmth or sensitivity may occur after laser treatment. Recovery depends on the device, settings and area. We will explain sun protection, which skincare products to pause and when you can resume your usual activities.",
+  "suitability": "Hair colour, skin tone, recent tanning and medical history affect suitability. Pigmentation also needs assessment before treatment. We will explain the options and whether a test area is needed.",
+  "outlook": "Hair reduction usually develops over several sessions because hair grows in cycles. Skin treatment results depend on the concern and device used. We will review your response before adjusting the plan.",
   "faqs": [
     {
       "q": "Does laser hair removal hurt?",
@@ -17,7 +34,52 @@
     },
     {
       "q": "Why do I need multiple sessions?",
-      "a": "Hair grows in cycles, and laser works best on follicles in an active growth phase. Several sessions are usually needed. The number and spacing depend on the area, hair characteristics and your response."
+      "a": "Hair grows in cycles, and actively growing hairs tend to respond more readily. Several sessions are usually needed. The number and spacing depend on the area, hair characteristics and your response."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "6 to 8 sessions (with the plan reviewed as you go)"
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Redness, warmth or sensitivity may occur after laser treatment. Recovery depends on the device, settings and area. We will explain sun protection, which skincare products to pause and when you can resume your usual activities."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "Session time",
+      "15 to 60 minutes (by area treated)"
+    ],
+    [
+      "Results",
+      "Progressive (visible from the first sessions)"
+    ],
+    [
+      "Course",
+      "6 to 8 sessions (with the plan reviewed as you go)"
+    ],
+    [
+      "Recovery",
+      "Redness, warmth or sensitivity may occur after laser treatment."
+    ],
+    [
+      "Treatment family",
+      "Medical laser"
+    ]
+  ],
+  "risks": "Burns, pigment changes and scarring can follow laser treatment. Settings and aftercare must suit your skin and the purpose of the procedure.",
+  "heroPhoto": "laser",
+  "name": "Laser treatment consultations"
 }

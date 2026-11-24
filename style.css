@@ -1049,7 +1049,7 @@ html.js .thread-divider path { stroke-dasharray: 2600; stroke-dashoffset: 2600; 
 .footer__social a svg { width: 18px; height: 18px; }
 .footer__social a:hover { color: var(--linen); border-color: rgba(255,255,255,.5); background: none; transform: none; }
 
-.footer h4 { font: 500 var(--t-label)/1.4 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--char-mute); margin-bottom: .75rem; }
+.footer h3 { font: 500 var(--t-label)/1.4 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--char-mute); margin-bottom: .75rem; }
 .footer__nav { grid-column: 6 / 9; display: grid; gap: .6rem; align-content: start; }
 .footer__nav a {
   font-size: var(--t-small); line-height: 1.4; color: var(--linen); opacity: .85; width: fit-content;

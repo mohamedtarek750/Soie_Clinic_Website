@@ -1,11 +1,28 @@
 {
   "path": "/treatments/hydrafacial",
-  "type": "legacy",
-  "title": "هيدرافيشل بالقاهرة الجديدة والمهندسين | عيادات {{brand}}",
-  "description": "الهيدرافيشل في عيادات {{brand}} بالقاهرة الجديدة والمهندسين. تعرّف على التنظيف وإزالة الشوائب والترطيب، والإحساس أثناء الجلسة وما بعدها.",
-  "h1": "هيدرافيشل",
+  "type": "treatment",
+  "title": "جلسة هيدرافيشيال لتنظيف البشرة في القاهرة",
+  "description": "دليل جلسة هيدرافيشيال لتنظيف البشرة العميق في القاهرة، يشمل التقشير والشفط والترطيب، ومتى تؤجل الجلسة وكيف تعتني بالبشرة الحساسة بعد الزيارة.",
+  "h1": "جلسة هيدرافيشيال لتنظيف البشرة في القاهرة",
+  "answer": "تجمع جلسة هيدرافيشيال بين تنظيف البشرة العميق وتقشير سطحي وشفط لطيف وترطيب باستخدام جهاز Hydrafacial. في فرعي {{brand}} بالتجمع الخامس والمهندسين يمكن مناقشة هذا الخيار عند البهتان أو انسداد المسام أو الجفاف. نفحص البشرة ونحدد الخطوات المناسبة وننظر في تأجيلها عند وجود طفح أو تهيج نشط.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"hydrafacial\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/hydrafacial-960.avif 960w, /assets/images/bg/hydrafacial-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/hydrafacial-960.webp 960w, /assets/images/bg/hydrafacial-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/hydrafacial-1920.jpg\" srcset=\"/assets/images/bg/hydrafacial-960.jpg 960w, /assets/images/bg/hydrafacial-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\" data-reveal><a href=\"/ar\">الرئيسية</a> <span class=\"crumbs__sep\">·</span> <a href=\"/ar/treatments\">الخدمات</a> <span class=\"crumbs__sep\">·</span> <span>هيدرافيشل</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> العلاج</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">هيدرافيشل</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">تنظيف وتقشير لطيف وترطيب في جلسة هيدرافيشل واحدة.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>عن العلاج</h2>\n          <p data-reveal>يجمع الهيدرافيشل بين التنظيف والتقشير وإزالة الشوائب بالشفط وسيرومات الترطيب. نقيّم بشرتك أولًا ونختار الخطوات والمنتجات المناسبة لحالتها.</p>\n          <p data-reveal>تهتم الجلسة بالشوائب السطحية وانسداد المسام ونقص الترطيب. أخبرنا بالحساسية أو التهيج الحالي أو العلاجات الحديثة لنقرر ملاءمة الجلسة أو تعديلها.</p>\n\n          <h2>باختصار</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>قد تبدو البشرة أكثر نضارة بعد الجلسة</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>استخدام الشفط للتنظيف وإزالة الشوائب</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>سيرومات مختارة للترطيب</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>عناية بالبهتان وتفاوت الملمس</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>تقييم أولًا، بما يشمل البشرة الحساسة</span></li>\n          </ul>\n\n          <h2>خطوات العلاج</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>الاستشارة والتقييم.</strong> نقيّم بشرتك ونتحقق من التهيج أو الحساسية قبل اختيار خطوات العلاج.</li>\n            <li><strong>خطة خاصة بك.</strong> نوضح خيارات العلاج والنتائج المتوقعة والآثار الجانبية المحتملة والتكلفة قبل أن تقرر.</li>\n            <li><strong>جلسة العلاج.</strong> نشرح لك خطوات الجلسة ونتابع شعورك أثناءها.</li>\n            <li><strong>العناية اللاحقة والمتابعة.</strong> نوضح العناية بالمنطقة المعالجة، ومتى تتواصل معنا أو تعود للمتابعة.</li>\n          </ol>\n\n          <h2>النتائج المتوقعة</h2>\n          <p data-reveal>قد تلاحظ بشرة أنعم وأكثر ترطيبًا بعد الجلسة. تختلف النتائج حسب حالة البشرة قبل العلاج وروتين العناية المنزلي.</p>\n\n          <h2>التعافي والعودة للأنشطة</h2>\n          <p data-reveal>يعود كثيرون إلى روتينهم بعد الجلسة بفترة قصيرة. قد يحدث احمرار أو حساسية مؤقتان. اتبع إرشادات الفريق بشأن المكياج وواقي الشمس وموعد العودة للمكونات النشطة في روتينك.</p>\n\n          <h2>لمن يناسب هذا العلاج؟</h2>\n          <p data-reveal>قد يناسب البهتان أو انسداد المسام أو نقص الترطيب. تحتاج البشرة الحساسة أو المتهيجة إلى تقييم دقيق، وقد نقترح الانتظار أو اختيار طريقة أخرى.</p>\n\n          <h2>الأسئلة الشائعة</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>هل الهيدرافيشل مؤلم؟</summary>\n              <div class=\"acc__a\">قد تشعر بشفط وضغط خفيف مع حركة الجهاز على البشرة. أخبرنا بأي إحساس غير مريح لنضبط الجلسة.</div>\n            </details>\n            <details data-reveal>\n              <summary>متى سأرى النتائج؟</summary>\n              <div class=\"acc__a\">يلاحظ بعض الأشخاص نضارة وملمسًا أنعم بعد الجلسة مباشرةً. يختلف مقدار التحسن ومدة استمراره حسب نوع البشرة والمنتجات المستخدمة.</div>\n            </details>\n            <details data-reveal>\n              <summary>كم مرة أحتاج إلى الجلسة؟</summary>\n              <div class=\"acc__a\">نناقش غالبًا فاصلًا من أربعة إلى ستة أسابيع، لكن استجابة بشرتك وروتينك أهم من الالتزام بجدول ثابت. يمكننا إرشادك بعد الزيارة الأولى.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> مدة الجلسة</span>\n            <span class=\"info-card__value\">من ٤٠ إلى ٦٠ دقيقة</span>\n            <p class=\"info-card__text\">للجلسة الكاملة</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> النتائج</span>\n            <span class=\"info-card__value\">فورية</span>\n            <p class=\"info-card__text\">تختلف حسب بشرتك</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> التكرار</span>\n            <span class=\"info-card__value\">كل ٤ إلى ٦ أسابيع</span>\n            <p class=\"info-card__text\">للحفاظ على النتائج</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">تمنحك الاستشارة وقتًا لطرح الأسئلة قبل اتخاذ قرار العلاج.</p>\n            <a href=\"/ar/book?service=hydrafacial\" class=\"btn btn--gold\" style=\"width:100%\">احجز الهيدرافيشل</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>تفكر في <em>هيدرافيشل</em>؟</h2>\n        <p class=\"cta-band__sub\" data-reveal>تحدث مع فريقنا عما يشغلك. نقيّم الخيارات ونشرح تفاصيل العلاج لتتمكن من اتخاذ قرارك.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/ar/book\" class=\"btn btn--gold btn--lg\">احجز موعدك\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/ar/book\">حجز سريع عبر واتساب</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "الوجه",
+  "product": "Hydrafacial",
+  "related": [
+    "/treatments/facial",
+    "/treatments/oxygeneo"
+  ],
+  "preparation": "نقيّم بشرتك ونتحقق من التهيج أو الحساسية قبل اختيار خطوات العلاج.",
+  "howPerformed": "يجمع الهيدرافيشل بين التنظيف والتقشير وإزالة الشوائب بالشفط وسيرومات الترطيب. نقيّم بشرتك أولًا ونختار الخطوات والمنتجات المناسبة لحالتها.",
+  "followup": "يعود كثيرون إلى روتينهم بعد الجلسة بفترة قصيرة. قد يحدث احمرار أو حساسية مؤقتان. اتبع إرشادات الفريق بشأن المكياج وواقي الشمس وموعد العودة للمكونات النشطة في روتينك.",
+  "suitability": "قد يناسب البهتان أو انسداد المسام أو نقص الترطيب. تحتاج البشرة الحساسة أو المتهيجة إلى تقييم دقيق، وقد نقترح الانتظار أو اختيار طريقة أخرى.",
+  "outlook": "قد تلاحظ بشرة أنعم وأكثر ترطيبًا بعد الجلسة. تختلف النتائج حسب حالة البشرة قبل العلاج وروتين العناية المنزلي.",
   "faqs": [
     {
       "q": "هل الهيدرافيشل مؤلم؟",
@@ -18,6 +35,51 @@
     {
       "q": "كم مرة أحتاج إلى الجلسة؟",
       "a": "نناقش غالبًا فاصلًا من أربعة إلى ستة أسابيع، لكن استجابة بشرتك وروتينك أهم من الالتزام بجدول ثابت. يمكننا إرشادك بعد الزيارة الأولى."
+    },
+    {
+      "q": "كم زيارة قد أحتاج؟",
+      "a": "كل ٤ إلى ٦ أسابيع (للحفاظ على النتائج)"
+    },
+    {
+      "q": "متى أعود إلى نشاطي المعتاد؟",
+      "a": "يعود كثيرون إلى روتينهم بعد الجلسة بفترة قصيرة. قد يحدث احمرار أو حساسية مؤقتان. اتبع إرشادات الفريق بشأن المكياج وواقي الشمس وموعد العودة للمكونات النشطة في روتينك."
+    },
+    {
+      "q": "هل يناسبني العلاج إذا كانت بشرتي تتصبغ بسهولة؟",
+      "a": "قد يؤثر التهيج المطول أو التصبغ السابق في الخطة. اذكر كيف التأم الجلد بعد إجراءات سابقة حتى نقيّم الطريقة والتوقيت المناسبين."
+    },
+    {
+      "q": "هل يمكن للرجال حجز استشارة؟",
+      "a": "نعم. يعتمد التقييم على التاريخ الصحي والهدف من الزيارة والحالة التي تريد مناقشتها."
+    },
+    {
+      "q": "كيف أعرف تكلفة العلاج؟",
+      "a": "تتحدد التكلفة بحسب المناطق وطريقة العلاج وعدد الزيارات التي نتفق عليها بعد التقييم. تواصل مع الفرع عبر واتساب لطلب تقدير يناسب خطتك."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "مدة الجلسة",
+      "من ٤٠ إلى ٦٠ دقيقة (للجلسة الكاملة)"
+    ],
+    [
+      "النتائج",
+      "فورية (تختلف حسب بشرتك)"
+    ],
+    [
+      "التكرار",
+      "كل ٤ إلى ٦ أسابيع (للحفاظ على النتائج)"
+    ],
+    [
+      "التعافي",
+      "يعود كثيرون إلى روتينهم بعد الجلسة بفترة قصيرة."
+    ],
+    [
+      "فئة العلاج",
+      "Hydrafacial"
+    ]
+  ],
+  "risks": "قد يسبب الشفط أو مكونات المستحضرات احمراراً مؤقتاً أو ألماً عند اللمس أو بقعة متهيجة. راجع الفرع إذا استمرت الأعراض.",
+  "heroPhoto": "hydrafacial",
+  "name": "جلسة هيدرافيشيال لتنظيف البشرة"
 }

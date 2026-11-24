@@ -1,0 +1,545 @@
+[
+  {
+    "id": "dental-veneers",
+    "image": "/assets/images/ba-dental-veneers.jpg",
+    "width": 1000,
+    "height": 1446,
+    "variants": [
+      {
+        "src": "/assets/images/ba-dental-veneers-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-dental-veneers-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "dental",
+    "treatment": {
+      "en": "Hollywood Smile",
+      "ar": "هوليوود سمايل"
+    },
+    "treatmentPath": "/dentistry/hollywood-smile",
+    "alt": {
+      "en": "Two views of the same smile showing a change in tooth colour and alignment",
+      "ar": "صورتان لابتسامة الشخص نفسه توضحان اختلاف لون الأسنان وانتظامها"
+    },
+    "caption": {
+      "en": "A smile photographed before and after dental smile design.",
+      "ar": "الابتسامة قبل وبعد إجراء تجميل الأسنان."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "dental-smile",
+    "image": "/assets/images/ba-dental-smile.jpg",
+    "width": 1000,
+    "height": 1467,
+    "variants": [
+      {
+        "src": "/assets/images/ba-dental-smile-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-dental-smile-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "dental",
+    "treatment": {
+      "en": "Veneers",
+      "ar": "فينير الأسنان"
+    },
+    "treatmentPath": "/dentistry/veneers",
+    "alt": {
+      "en": "Patient smiling after veneers, with the upper teeth visible",
+      "ar": "ابتسامة بعد تركيب الفينير تظهر فيها الأسنان العلوية"
+    },
+    "caption": {
+      "en": "Smile after treatment with dental veneers.",
+      "ar": "الابتسامة بعد تركيب فينير الأسنان."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "botox-forehead",
+    "image": "/assets/images/ba-botox-forehead.jpg",
+    "width": 1000,
+    "height": 1466,
+    "variants": [
+      {
+        "src": "/assets/images/ba-botox-forehead-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-botox-forehead-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "botox",
+    "treatment": {
+      "en": "Forehead Botox",
+      "ar": "بوتوكس الجبهة"
+    },
+    "treatmentPath": "/treatments/botox",
+    "alt": {
+      "en": "Two close-ups of horizontal forehead lines before and after Botox",
+      "ar": "صورتان مقرّبتان للخطوط الأفقية بالجبهة قبل البوتوكس وبعده"
+    },
+    "caption": {
+      "en": "Forehead lines photographed before and after Botox.",
+      "ar": "خطوط الجبهة قبل وبعد حقن Botox."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true,
+    "comparison": {
+      "before": {
+        "src": "/assets/images/ba-slider-before.jpg",
+        "alt": {
+          "en": "Forehead lines before Botox",
+          "ar": "خطوط الجبهة قبل البوتوكس"
+        }
+      },
+      "after": {
+        "src": "/assets/images/ba-slider-after.jpg",
+        "alt": {
+          "en": "Forehead lines after Botox",
+          "ar": "خطوط الجبهة بعد البوتوكس"
+        }
+      },
+      "width": 1400,
+      "height": 660
+    }
+  },
+  {
+    "id": "lip-filler",
+    "image": "/assets/images/ba-lip-filler.jpg",
+    "width": 880,
+    "height": 1358,
+    "variants": [
+      {
+        "src": "/assets/images/ba-lip-filler-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-lip-filler-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "lips",
+    "treatment": {
+      "en": "Lip filler",
+      "ar": "فيلر الشفايف"
+    },
+    "treatmentPath": "/treatments/lip-filler",
+    "alt": {
+      "en": "Side view of the upper and lower lip before and after filler",
+      "ar": "الشفتان العلوية والسفلية من الجانب قبل حقن الفيلر وبعده"
+    },
+    "caption": {
+      "en": "Lip profile before and after filler.",
+      "ar": "شكل الشفتين من الجانب قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "botox",
+    "image": "/assets/images/ba-botox.jpg",
+    "width": 880,
+    "height": 1453,
+    "variants": [
+      {
+        "src": "/assets/images/ba-botox-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-botox-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "botox",
+    "treatment": {
+      "en": "Botox",
+      "ar": "البوتوكس"
+    },
+    "treatmentPath": "/treatments/botox",
+    "alt": {
+      "en": "Paired forehead photographs focused on the space between the eyebrows",
+      "ar": "صورتان للجبهة تركزان على المنطقة بين الحاجبين"
+    },
+    "caption": {
+      "en": "Lines between the brows before and after Botox.",
+      "ar": "الخطوط بين الحاجبين قبل البوتوكس وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "nose-filler",
+    "image": "/assets/images/ba-nose-filler.jpg",
+    "width": 880,
+    "height": 1449,
+    "variants": [
+      {
+        "src": "/assets/images/ba-nose-filler-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-nose-filler-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "contour",
+    "treatment": {
+      "en": "Nose filler",
+      "ar": "فيلر الأنف"
+    },
+    "treatmentPath": "/treatments/dermal-filler",
+    "alt": {
+      "en": "Side profile showing the bridge of the nose in both photographs",
+      "ar": "جسر الأنف كما يبدو من الجانب في الصورتين"
+    },
+    "caption": {
+      "en": "Nose profile before and after filler.",
+      "ar": "مظهر الأنف من الجانب قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "jawline-filler",
+    "image": "/assets/images/ba-jawline-filler.jpg",
+    "width": 880,
+    "height": 1443,
+    "variants": [
+      {
+        "src": "/assets/images/ba-jawline-filler-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-jawline-filler-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "contour",
+    "treatment": {
+      "en": "Jawline filler",
+      "ar": "فيلر الفك"
+    },
+    "treatmentPath": "/treatments/dermal-filler",
+    "alt": {
+      "en": "Paired profile views of the chin and jaw after and before treatment",
+      "ar": "صورتان جانبيتان للذقن وخط الفك قبل العلاج وبعده"
+    },
+    "caption": {
+      "en": "Jawline filler, photographed from the side.",
+      "ar": "فيلر تحديد الفك كما يظهر من الجانب."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "lip-filler-2",
+    "image": "/assets/images/ba-lip-filler-2.jpg",
+    "width": 880,
+    "height": 1437,
+    "variants": [
+      {
+        "src": "/assets/images/ba-lip-filler-2-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-lip-filler-2-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "lips",
+    "treatment": {
+      "en": "Lip filler",
+      "ar": "فيلر الشفايف"
+    },
+    "treatmentPath": "/treatments/lip-filler",
+    "alt": {
+      "en": "Lips viewed from the front in two close-up photographs",
+      "ar": "صورتان مقرّبتان للشفتين من الأمام"
+    },
+    "caption": {
+      "en": "Front view of the lips before and after filler.",
+      "ar": "صورة أمامية للشفتين قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "nasolabial-folds",
+    "image": "/assets/images/ba-nasolabial-folds.jpg",
+    "width": 880,
+    "height": 1447,
+    "variants": [
+      {
+        "src": "/assets/images/ba-nasolabial-folds-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-nasolabial-folds-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "contour",
+    "treatment": {
+      "en": "Nasolabial fold filler",
+      "ar": "فيلر الثنيات الأنفية الشفوية"
+    },
+    "treatmentPath": "/treatments/dermal-filler",
+    "alt": {
+      "en": "Side views of the fold next to the nose, marked with an arrow in the first photo",
+      "ar": "الثنية بجوار الأنف من الجانب مع سهم يحدد مكانها في الصورة الأولى"
+    },
+    "caption": {
+      "en": "The fold between the nose and mouth before and after filler.",
+      "ar": "الثنية الممتدة من الأنف إلى الفم قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "hair-facial",
+    "image": "/assets/images/ba-hair-facial.jpg",
+    "width": 880,
+    "height": 1453,
+    "variants": [
+      {
+        "src": "/assets/images/ba-hair-facial-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-hair-facial-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "skinhair",
+    "treatment": {
+      "en": "Hair and scalp care",
+      "ar": "العناية بالشعر وفروة الرأس"
+    },
+    "treatmentPath": "/treatments/hair-and-scalp",
+    "alt": {
+      "en": "Top views of the parting and scalp before and after treatment",
+      "ar": "فرق الشعر وفروة الرأس من الأعلى قبل العناية وبعدها"
+    },
+    "caption": {
+      "en": "Scalp care case photographed along the hair parting.",
+      "ar": "حالة عناية بفروة الرأس مع تصوير فرق الشعر."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "jawline-enhancement",
+    "image": "/assets/images/ba-jawline-enhancement.jpg",
+    "width": 880,
+    "height": 1362,
+    "variants": [
+      {
+        "src": "/assets/images/ba-jawline-enhancement-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-jawline-enhancement-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "contour",
+    "treatment": {
+      "en": "Jawline enhancement",
+      "ar": "تحديد الفك"
+    },
+    "treatmentPath": "/treatments/dermal-filler",
+    "alt": {
+      "en": "Lower cheek and jaw contour in two three-quarter profile views",
+      "ar": "محيط الخد السفلي والفك في صورتين بزاوية جانبية"
+    },
+    "caption": {
+      "en": "Chin and lower face contour before and after treatment.",
+      "ar": "محيط الذقن وأسفل الوجه قبل العلاج وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "lip-filler-3",
+    "image": "/assets/images/ba-lip-filler-3.jpg",
+    "width": 880,
+    "height": 1382,
+    "variants": [
+      {
+        "src": "/assets/images/ba-lip-filler-3-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-lip-filler-3-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "lips",
+    "treatment": {
+      "en": "Lip filler",
+      "ar": "فيلر الشفايف"
+    },
+    "treatmentPath": "/treatments/lip-filler",
+    "alt": {
+      "en": "Paired angled close-ups showing the lip border and shape",
+      "ar": "صورتان مائلتان عن قرب تظهران حدود الشفتين وشكلهما"
+    },
+    "caption": {
+      "en": "Lip border and volume before and after filler.",
+      "ar": "حدود الشفتين وحجمهما قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "lip-filler-4",
+    "image": "/assets/images/ba-lip-filler-4.jpg",
+    "width": 880,
+    "height": 1439,
+    "variants": [
+      {
+        "src": "/assets/images/ba-lip-filler-4-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-lip-filler-4-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "lips",
+    "treatment": {
+      "en": "Lip filler",
+      "ar": "فيلر الشفايف"
+    },
+    "treatmentPath": "/treatments/lip-filler",
+    "alt": {
+      "en": "Three-quarter view of the mouth with before and after labels at the side",
+      "ar": "منطقة الفم بزاوية جانبية وتظهر بجوارها علامتا قبل وبعد"
+    },
+    "caption": {
+      "en": "Lip shape in a further before-and-after case.",
+      "ar": "شكل الشفتين في حالة أخرى قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "undereye-filler-2",
+    "image": "/assets/images/ba-undereye-filler-2.jpg",
+    "width": 880,
+    "height": 1332,
+    "variants": [
+      {
+        "src": "/assets/images/ba-undereye-filler-2-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-undereye-filler-2-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "eyes",
+    "treatment": {
+      "en": "Under-eye filler",
+      "ar": "فيلر تحت العين"
+    },
+    "treatmentPath": "/treatments/dermal-filler",
+    "alt": {
+      "en": "Front views of both eyes and the upper cheeks with eyes open",
+      "ar": "صورتان من الأمام للعينين مفتوحتين وأعلى الخدين"
+    },
+    "caption": {
+      "en": "Under-eye area before and after filler.",
+      "ar": "منطقة تحت العين قبل الفيلر وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  },
+  {
+    "id": "undereye-treatment",
+    "image": "/assets/images/ba-undereye-treatment.jpg",
+    "width": 880,
+    "height": 1274,
+    "variants": [
+      {
+        "src": "/assets/images/ba-undereye-treatment-320.jpg",
+        "width": 320
+      },
+      {
+        "src": "/assets/images/ba-undereye-treatment-560.jpg",
+        "width": 560
+      }
+    ],
+    "category": "eyes",
+    "treatment": {
+      "en": "Under-eye treatment",
+      "ar": "علاج تحت العين"
+    },
+    "treatmentPath": null,
+    "alt": {
+      "en": "Front views of the under-eye area with the eyelids closed",
+      "ar": "المنطقة أسفل العينين مع الجفنين مغلقين في الصورتين"
+    },
+    "caption": {
+      "en": "Under-eye area before and after treatment.",
+      "ar": "منطقة تحت العين قبل العلاج وبعده."
+    },
+    "productFamily": null,
+    "sessions": null,
+    "interval": null,
+    "branch": null,
+    "consent": true
+  }
+]

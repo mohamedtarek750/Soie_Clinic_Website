@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/root-canal",
+  "type": "treatment",
+  "title": "Root canal and retreatment in Mohandessin",
+  "description": "Discuss root canal treatment and retreatment in Mohandessin for a painful or previously treated tooth, including symptoms, restoration options and aftercare.",
+  "h1": "Root canal and retreatment in Mohandessin",
+  "answer": "Root canal treatment removes inflamed or infected tissue inside a tooth that may still be restorable. {{brand}} in Mohandessin assesses toothache and previously treated teeth to decide whether treatment, retreatment or another option is appropriate. An examination and dental images help determine the cause and the restoration needed afterwards.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "tooth roots",
+  "product": "Root canal treatment",
+  "related": [
+    "/dentistry/fillings-and-crowns",
+    "/dentistry"
+  ],
+  "preparation": "Mention swelling, fever or previous root treatment. Spreading facial swelling or difficulty swallowing or breathing needs urgent care.",
+  "howPerformed": "Following assessment and local anaesthesia, the canals are cleaned and sealed. A filling or crown may then be needed to protect the tooth.",
+  "followup": "Tenderness on biting may follow. Avoid heavy biting on a temporary restoration and attend the appointment for final protection.",
+  "risks": "Symptoms may persist or infection can recur. Cracks and limited remaining tooth structure can affect whether a tooth can be saved.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Local anaesthesia is usually used. Tell the team if you feel pain during treatment or if biting pain persists afterwards."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Tenderness on biting may follow. Avoid heavy biting on a temporary restoration and attend the appointment for final protection."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The tooth, number and shape of its canals, any previous treatment and the final restoration affect cost. Ask the dental branch on WhatsApp for a quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "Pain may improve before the tissues around the root have fully healed."
+    ],
+    [
+      "Recovery",
+      "Tenderness on biting may follow."
+    ],
+    [
+      "Treatment family",
+      "Root canal treatment"
+    ]
+  ],
+  "outlook": "Pain may improve before the tissues around the root have fully healed.",
+  "suitability": "An infected or inflamed tooth may be treated if it can be restored. A deep crack or very little remaining tooth structure may rule out a root treatment.",
+  "heroPhoto": "dentistry",
+  "name": "Root canal and retreatment"
+}

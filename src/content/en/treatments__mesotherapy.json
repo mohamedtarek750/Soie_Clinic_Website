@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/mesotherapy",
+  "type": "treatment",
+  "title": "Skin mesotherapy in Cairo",
+  "description": "Find out what skin mesotherapy involves in Cairo, how the ingredients influence its purpose and risks, and what to discuss before a course of injections.",
+  "h1": "Skin mesotherapy in Cairo",
+  "answer": "Skin mesotherapy involves small injections of a chosen preparation into selected areas. Adults asking about uneven texture or hydration can discuss the ingredients and alternatives at {{brand}} in New Cairo and Mohandessin. Suitability and the evidence for benefit depend on the product, skin condition and reason for treatment.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "skin",
+  "product": "Mesotherapy preparation",
+  "related": [
+    "/treatments/skin-boosters",
+    "/treatments/microneedling"
+  ],
+  "preparation": "Share allergies, medicines and recent reactions to skin products. Avoid injection into irritated or infected skin.",
+  "howPerformed": "The team reviews the ingredients and their intended purpose, then treats suitable areas after your agreement.",
+  "followup": "Temporary bumps and redness may follow. Use the skin care advised and contact the clinic if redness spreads or swelling increases.",
+  "risks": "Risks vary with the ingredients and include allergy, inflammation, pigment change and infection.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Multiple small injections can sting; comfort depends on the area."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Temporary bumps and redness may follow. Use the skin care advised and contact the clinic if redness spreads or swelling increases."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The ingredients, area and number of planned visits affect cost. Ask the branch on WhatsApp about the proposed preparation and quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Timing and the chance of a change depend on the ingredients and concern."
+    ],
+    [
+      "Recovery",
+      "Temporary bumps and redness may follow."
+    ],
+    [
+      "Treatment family",
+      "Mesotherapy preparation"
+    ]
+  ],
+  "outlook": "Timing and the chance of a change depend on the ingredients and concern.",
+  "suitability": "Adults considering injections for skin quality should know the ingredients and their evidence. An allergy or active rash can make treatment inappropriate.",
+  "heroPhoto": "facial",
+  "name": "Skin mesotherapy"
+}

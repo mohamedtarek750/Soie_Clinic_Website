@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/hair-and-scalp",
+  "type": "treatment",
+  "title": "Hair and scalp consultations in Cairo",
+  "description": "Explore hair and scalp care in Cairo, including hair mesotherapy and growth factor options, when shedding needs investigation and how response is monitored.",
+  "h1": "Hair and scalp consultations in Cairo",
+  "answer": "Hair loss has several causes, and a scalp examination helps decide whether a procedure is appropriate. Adults can discuss hair mesotherapy, growth factor preparations and scalp care at {{brand}} in New Cairo and Mohandessin. The team reviews the pattern of thinning, symptoms and evidence for each option before suggesting a plan.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "scalp",
+  "product": "Scalp treatment or mesotherapy",
+  "related": [
+    "/treatments/prp",
+    "/treatments/exosomes"
+  ],
+  "preparation": "Bring a list of medicines and a history of when shedding started. Sudden, patchy or painful hair loss needs prompt diagnosis.",
+  "howPerformed": "We examine the scalp, discuss whether investigations are needed and explain the proposed product and method before any treatment.",
+  "followup": "Follow the washing instructions for your procedure. Compare the same areas over time and return if shedding or irritation accelerates.",
+  "risks": "Injections can cause tenderness, bruising, allergy or infection. Product evidence varies and hair regrowth is uncertain.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Examination alone usually causes little discomfort. Scalp injections can sting."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Follow the washing instructions for your procedure. Compare the same areas over time and return if shedding or irritation accelerates."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "A scalp assessment helps determine whether investigations, a product or repeat visits are needed. Ask reception on WhatsApp for a quote based on that plan."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Response depends on the cause of hair loss and the selected treatment."
+    ],
+    [
+      "Recovery",
+      "Follow the washing instructions for your procedure."
+    ],
+    [
+      "Treatment family",
+      "Scalp treatment or mesotherapy"
+    ]
+  ],
+  "outlook": "Response depends on the cause of hair loss and the selected treatment.",
+  "suitability": "Gradual thinning may warrant a planned assessment. Sudden or patchy loss, sores or a painful scalp need diagnosis before a cosmetic scalp session.",
+  "heroPhoto": "facial",
+  "name": "Hair and scalp consultations"
+}

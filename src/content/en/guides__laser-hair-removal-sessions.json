@@ -1,0 +1,35 @@
+{
+  "path": "/guides/laser-hair-removal-sessions",
+  "type": "article",
+  "title": "How many laser hair removal sessions will I need?",
+  "description": "Learn why laser hair removal takes several visits, what affects the interval between appointments and what to discuss at your assessment in New Cairo.",
+  "h1": "How many laser hair removal sessions will I need?",
+  "answer": "There is no single session count for laser hair removal. Hair grows in cycles and a session can only affect some follicles. Your treatment area, skin tone, hair colour and growth pattern all influence the plan. At the New Cairo consultation, ask how the team will assess your response before recommending another visit.",
+  "updated": "2026-11-24",
+  "faqs": [],
+  "reviewStatus": "pending-clinical-review",
+  "treatmentPaths": [
+    "/treatments/laser-hair-removal",
+    "/devices/cutera-excel-hr"
+  ],
+  "sections": [
+    {
+      "heading": "Why is one visit usually insufficient?",
+      "paragraphs": [
+        "At any visit, hairs in the same area can be in different growth stages. A laser targets pigment in the hair, and follicles in active growth are generally more responsive. The next session is timed to the area and its regrowth."
+      ]
+    },
+    {
+      "heading": "What changes the plan?",
+      "paragraphs": [
+        "Hair thickness and colour, the area you want treated, recent tanning and medicines can affect suitability. Tell the team about changes in hair growth or a history of irritation. Some people need maintenance visits as new hair appears."
+      ]
+    },
+    {
+      "heading": "What should I ask before starting?",
+      "paragraphs": [
+        "Ask what reduction is realistic for your hair and skin, how to prepare the area, how to care for it afterwards and when to seek advice. Agree when to review progress before committing to a course."
+      ]
+    }
+  ]
+}

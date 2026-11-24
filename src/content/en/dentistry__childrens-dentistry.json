@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/childrens-dentistry",
+  "type": "treatment",
+  "title": "Children’s dentistry in Mohandessin",
+  "description": "Plan a children's dental visit in Mohandessin for a check-up, toothache or brushing advice, including how caregivers can prepare and when to seek urgent help.",
+  "h1": "Children’s dentistry in Mohandessin",
+  "answer": "Children’s dental visits focus on comfort, early decay and habits that protect developing teeth. Families can book an assessment at {{brand}} in Mohandessin for a check-up, toothache or concerns about cleaning. The team explains possible steps to the child and caregiver and considers age, cooperation and clinical need.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "children’s teeth and gums",
+  "product": "Paediatric dental care",
+  "related": [
+    "/dentistry",
+    "/dentistry/fillings-and-crowns"
+  ],
+  "preparation": "Bring the child's medicines, allergy history and any previous dental records. Let us know about anxiety or additional support needs.",
+  "howPerformed": "We discuss symptoms with the caregiver, examine the teeth and explain prevention or treatment options in age-appropriate language.",
+  "followup": "After an examination children can usually resume normal activity. After a procedure follow specific advice on food, brushing and numb lips.",
+  "risks": "Risks depend on the procedure. Seek prompt help for swelling, fever, trauma or a child unable to drink because of pain.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "A first examination may only involve looking at the teeth. Pain relief for treatment is discussed with the caregiver and child."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "After an examination children can usually resume normal activity. After a procedure follow specific advice on food, brushing and numb lips."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can boys and girls have a check-up?",
+      "a": "Yes. The care plan is based on age, development, symptoms and the child’s ability to participate."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the examination, whether a procedure is needed and the number of visits suited to the child. A caregiver can ask reception on WhatsApp."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "Depends on whether the visit is for prevention, discomfort or a restoration."
+    ],
+    [
+      "Recovery",
+      "After an examination children can usually resume normal activity."
+    ],
+    [
+      "Treatment family",
+      "Paediatric dental care"
+    ]
+  ],
+  "outlook": "Depends on whether the visit is for prevention, discomfort or a restoration.",
+  "suitability": "Children can attend for prevention or symptoms. Facial swelling, fever, injury or trouble drinking should prompt timely assessment instead of waiting for a routine visit.",
+  "heroPhoto": "dentistry",
+  "name": "Children’s dentistry"
+}

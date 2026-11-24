@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/sculptra",
+  "type": "treatment",
+  "title": "Sculptra collagen stimulation in Cairo",
+  "description": "Read about Sculptra in Cairo, including how gradual collagen stimulation differs from immediate volume, how recovery is monitored and when to report lumps.",
+  "h1": "Sculptra collagen stimulation in Cairo",
+  "answer": "Sculptra is an injectable collagen stimulator considered for some changes in facial volume. Its effect develops gradually and varies between people. At {{brand}} in New Cairo and Mohandessin, adults can discuss whether their anatomy, health and expectations make this approach suitable and how it differs from a gel filler.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Injectables",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "face",
+  "product": "Poly-L-lactic acid",
+  "related": [
+    "/treatments/radiesse",
+    "/treatments/dermal-filler"
+  ],
+  "preparation": "Discuss previous fillers, scarring and unexplained facial lumps. Active inflammation or an unclear diagnosis is a reason to postpone injection.",
+  "howPerformed": "The consultation maps the areas of volume change. If agreed, the team places the product and arranges a review before considering further treatment.",
+  "followup": "Early fullness may reflect swelling. Follow the aftercare for this product and report persistent lumps, redness or discomfort.",
+  "risks": "Bruising and swelling are possible. Nodules may develop later. Severe pain, skin colour changes or visual symptoms require urgent assessment.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Injections can cause a brief pinch or pressure followed by soreness."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Early fullness may reflect swelling. Follow the aftercare for this product and report persistent lumps, redness or discomfort."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The amount of product, areas assessed and staged visits affect the quote. Contact the branch on WhatsApp to ask about the proposed course."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Collagen-related changes take time; early swelling is not the final result."
+    ],
+    [
+      "Recovery",
+      "Early fullness may reflect swelling."
+    ],
+    [
+      "Treatment family",
+      "Poly-L-lactic acid"
+    ]
+  ],
+  "outlook": "Collagen-related changes take time; early swelling is not the final result.",
+  "suitability": "Gradual change may appeal to adults who can attend follow-up. It is unsuitable over inflamed skin, and unexplained lumps or prior reactions need assessment first.",
+  "heroPhoto": "dermal-filler",
+  "name": "Sculptra collagen stimulation"
+}

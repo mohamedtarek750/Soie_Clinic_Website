@@ -19,7 +19,7 @@ export function header(page, ctx) {
   const book = ar ? 'احجز موعدًا' : 'Book appointment';
   return `<a href="#main" class="skip-link">${ar ? 'انتقل إلى المحتوى' : 'Skip to content'}</a>
 <header class="nav" id="nav"><div class="nav__wrap">
-<a href="${url('/')}" class="nav__logo" aria-label="${ar ? 'الصفحة الرئيسية' : brand + ' home'}"><img src="/assets/images/logo.png" alt="${brand}" width="68" height="64"><span class="nav__logo-tag">CLINICS</span></a>
+<a href="${url('/')}" class="nav__logo" aria-label="${ar ? 'الصفحة الرئيسية · ' + brand : brand + ' home'}"><img src="/assets/images/logo.png" alt="${brand}" width="68" height="64"><span class="nav__logo-tag">CLINICS</span></a>
 <nav class="nav__links" id="navLinks" aria-label="${ar ? 'التنقل الرئيسي' : 'Primary'}">${nav}<a href="${url('/book')}" class="btn btn--gold nav__menu-book">${book}</a></nav>
 ${langSwitch}<a href="${url('/book')}" class="nav__cta" data-open-booking>${book}</a>
 <button type="button" class="nav__burger" id="burger" aria-label="${ar ? 'افتح القائمة' : 'Open menu'}" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>

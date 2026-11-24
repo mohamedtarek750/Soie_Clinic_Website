@@ -1,0 +1,78 @@
+{
+  "path": "/treatments/fractional-co2-laser",
+  "type": "treatment",
+  "title": "Fractional CO2 laser resurfacing in Cairo",
+  "description": "Read about FineXel fractional CO2 resurfacing in Cairo for selected scars or stretch marks, including suitability, healing, pigmentation risks and aftercare.",
+  "h1": "Fractional CO2 laser resurfacing in Cairo",
+  "answer": "Fractional CO2 laser treats small columns of skin during resurfacing. Adults with selected scars, uneven texture or stretch marks can discuss FineXel at {{brand}} in New Cairo and Mohandessin. Suitability depends on scar type, skin tone and healing history, and the procedure needs time for recovery and sun protection.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Laser",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "selected skin areas",
+  "product": "FineXel fractional CO2",
+  "related": [
+    "/devices/finexel-fractional-co2",
+    "/treatments/microneedling",
+    "/treatments/acne-treatment"
+  ],
+  "preparation": "Discuss cold sores, scarring, tanning and recent medicines. An active infection or poor healing may make treatment inappropriate.",
+  "howPerformed": "The team examines the texture and skin tone, agrees settings and comfort measures, then treats selected areas with eye protection.",
+  "followup": "Redness, swelling and crusting can interrupt usual activities. Follow the wound care plan and avoid picking while the skin heals.",
+  "risks": "Infection, prolonged redness, scarring or pigment changes can occur. Seek advice for worsening pain or areas that fail to heal.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Heat and stinging are possible. Ask about anaesthetic options and discomfort during healing."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Redness, swelling and crusting can interrupt usual activities. Follow the wound care plan and avoid picking while the skin heals."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Reassess skin texture after healing and as remodelling progresses."
+    ],
+    [
+      "Recovery",
+      "Redness, swelling and crusting can interrupt usual activities."
+    ],
+    [
+      "Treatment family",
+      "FineXel fractional CO2"
+    ]
+  ],
+  "outlook": "Reassess skin texture after healing and as remodelling progresses.",
+  "suitability": "Some scars or textural changes may suit resurfacing. Pigment history, active infection and impaired healing can alter the balance of benefit and risk.",
+  "heroPhoto": "laser",
+  "name": "Fractional CO2 laser resurfacing"
+}

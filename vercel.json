@@ -1,7 +1,105 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/treatments",
+      "permanent": true
+    },
+    {
+      "source": "/before-after.html",
+      "destination": "/results",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/book.html",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/products.html",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/service-body-contouring.html",
+      "destination": "/treatments/body-contouring",
+      "permanent": true
+    },
+    {
+      "source": "/service-botox.html",
+      "destination": "/treatments/botox",
+      "permanent": true
+    },
+    {
+      "source": "/service-dentistry.html",
+      "destination": "/dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/service-dermal-filler.html",
+      "destination": "/treatments/dermal-filler",
+      "permanent": true
+    },
+    {
+      "source": "/service-exosomes.html",
+      "destination": "/treatments/exosomes",
+      "permanent": true
+    },
+    {
+      "source": "/service-facial.html",
+      "destination": "/treatments/facial",
+      "permanent": true
+    },
+    {
+      "source": "/service-hydrafacial.html",
+      "destination": "/treatments/hydrafacial",
+      "permanent": true
+    },
+    {
+      "source": "/service-laser.html",
+      "destination": "/treatments/laser",
+      "permanent": true
+    },
+    {
+      "source": "/service-peeling.html",
+      "destination": "/treatments/peeling",
+      "permanent": true
+    },
+    {
+      "source": "/service-skin-boosters.html",
+      "destination": "/treatments/skin-boosters",
+      "permanent": true
+    },
+    {
+      "source": "/service-veneers.html",
+      "destination": "/dentistry/veneers",
+      "permanent": true
+    },
     {
       "source": "/devices.html",
       "destination": "/devices",
@@ -43,102 +141,91 @@
       "permanent": true
     },
     {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/services.html",
+      "source": "/services",
       "destination": "/treatments",
       "permanent": true
     },
     {
-      "source": "/before-after.html",
+      "source": "/before-after",
       "destination": "/results",
       "permanent": true
     },
     {
-      "source": "/service-dentistry.html",
-      "destination": "/dentistry",
-      "permanent": true
-    },
-    {
-      "source": "/service-veneers.html",
-      "destination": "/dentistry/veneers",
-      "permanent": true
-    },
-    {
-      "source": "/about.html",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/faq.html",
-      "destination": "/faq",
-      "permanent": true
-    },
-    {
-      "source": "/products.html",
-      "destination": "/products",
-      "permanent": true
-    },
-    {
-      "source": "/service-exosomes.html",
-      "destination": "/treatments/exosomes",
-      "permanent": true
-    },
-    {
-      "source": "/service-body-contouring.html",
+      "source": "/service-body-contouring",
       "destination": "/treatments/body-contouring",
       "permanent": true
     },
     {
-      "source": "/service-laser.html",
-      "destination": "/treatments/laser",
-      "permanent": true
-    },
-    {
-      "source": "/service-hydrafacial.html",
-      "destination": "/treatments/hydrafacial",
-      "permanent": true
-    },
-    {
-      "source": "/book.html",
-      "destination": "/book",
-      "permanent": true
-    },
-    {
-      "source": "/service-botox.html",
+      "source": "/service-botox",
       "destination": "/treatments/botox",
       "permanent": true
     },
     {
-      "source": "/service-dermal-filler.html",
+      "source": "/service-dentistry",
+      "destination": "/dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/service-dermal-filler",
       "destination": "/treatments/dermal-filler",
       "permanent": true
     },
     {
-      "source": "/service-skin-boosters.html",
-      "destination": "/treatments/skin-boosters",
+      "source": "/service-exosomes",
+      "destination": "/treatments/exosomes",
       "permanent": true
     },
     {
-      "source": "/contact.html",
-      "destination": "/contact",
+      "source": "/service-facial",
+      "destination": "/treatments/facial",
       "permanent": true
     },
     {
-      "source": "/service-peeling.html",
+      "source": "/service-hydrafacial",
+      "destination": "/treatments/hydrafacial",
+      "permanent": true
+    },
+    {
+      "source": "/service-laser",
+      "destination": "/treatments/laser",
+      "permanent": true
+    },
+    {
+      "source": "/service-peeling",
       "destination": "/treatments/peeling",
       "permanent": true
     },
     {
-      "source": "/service-facial.html",
-      "destination": "/treatments/facial",
+      "source": "/service-skin-boosters",
+      "destination": "/treatments/skin-boosters",
+      "permanent": true
+    },
+    {
+      "source": "/service-veneers",
+      "destination": "/dentistry/veneers",
+      "permanent": true
+    },
+    {
+      "source": "/device-indiba",
+      "destination": "/devices/indiba-deep-care",
+      "permanent": true
+    },
+    {
+      "source": "/device-cutera",
+      "destination": "/devices/cutera-excel-hr",
+      "permanent": true
+    },
+    {
+      "source": "/device-finexel",
+      "destination": "/devices/finexel-fractional-co2",
       "permanent": true
     }
   ],
-  "buildCommand": "node build.mjs",
-  "outputDirectory": "dist",
-  "cleanUrls": true
+  "rewrites": [
+    {
+      "source": "/ar/:missing*",
+      "destination": "/ar/404",
+      "statusCode": 404
+    }
+  ]
 }

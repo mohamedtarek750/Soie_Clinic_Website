@@ -1,11 +1,29 @@
 {
   "path": "/treatments/body-contouring",
-  "type": "legacy",
-  "title": "نحت الجسم بالقاهرة الجديدة والمهندسين | عيادات {{brand}}",
-  "description": "اسأل عن تنسيق القوام بINDIBA في عيادات {{brand}} بالقاهرة. تعرّف على طريقة الجلسات والنتائج المحتملة وكيفية تحديد خطتك العلاجية.",
-  "h1": "نحت الجسم",
+  "type": "treatment",
+  "title": "جلسات INDIBA لشد الجسم في القاهرة",
+  "description": "دليل جلسات انديبا INDIBA لشد الجسم وتحسين مظهر السيلوليت في القاهرة، يشمل تقييم الملاءمة والإحساس بالحرارة والمتابعة والفرق عن خطط إنقاص الوزن.",
+  "h1": "جلسات INDIBA لشد الجسم في القاهرة",
+  "answer": "تستخدم جلسات انديبا INDIBA الترددات الراديوية لتدفئة أنسجة محددة، وقد تناسب البالغين الذين يسألون عن شد الجسم أو علاج السيلوليت وتحسين الملمس. في فرعي {{brand}} بالتجمع الخامس والمهندسين نفحص المنطقة والتاريخ الصحي قبل تحديد هدف واقعي. تستهدف الجلسات مناطق محددة ولا تغني عن خطة لإدارة الوزن.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"body-contouring\" aria-hidden=\"true\">\n        <video class=\"film hero-bg__media\" muted loop playsinline preload=\"none\" poster=\"/assets/videos/posters/bg-body-contouring.jpg\" data-film data-src=\"/assets/videos/bg-body-contouring.mp4\" data-src-portrait=\"/assets/videos/bg-body-contouring-portrait.mp4\" aria-hidden=\"true\" tabindex=\"-1\" width=\"1600\" height=\"900\"></video>\n      </div>\n      <button class=\"film-toggle film-toggle--hero\" type=\"button\" data-media-toggle aria-label=\"إيقاف الفيديو مؤقتًا\" aria-pressed=\"false\"></button>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"مسار التصفح\" data-reveal><a href=\"/ar\">الرئيسية</a> <span class=\"crumbs__sep\">·</span> <a href=\"/ar/treatments\">الخدمات</a> <span class=\"crumbs__sep\">·</span> <span>نحت الجسم</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> العلاج</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">نحت الجسم</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">جلسات INDIBA بالترددات الراديوية للعناية بالجسم، بخطة تناسب تقييم حالتك.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>عن العلاج</h2>\n          <p data-reveal>نستخدم الترددات الراديوية بجهاز INDIBA لتنسيق القوام في عيادات {{brand}}. ينقل الجهاز طاقة تولد الدفء في المنطقة المعالجة. نقيّم ما ترغب في تحسينه ونوضح مدى ملاءمة الجلسات لك قبل البدء.</p>\n          <p data-reveal>قد يكون هدفك تحسين التماسك أو ملمس الجلد أو مظهر السيلوليت. نناقش معك ما قد تقدمه الجلسات، وحدود العلاج، وكيف نتابع تطور النتيجة.</p>\n\n          <h2>باختصار</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>علاج دون إبر أو جراحة</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>خطة تهتم بالتماسك وملمس الجلد</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>ترددات راديوية موجهة للمنطقة المختارة</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>إحساس بالدفء أثناء الجلسة مع ضبط الإعدادات لحالتك</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>نصائح للعناية بين الجلسات</span></li>\n          </ul>\n\n          <h2>خطوات العلاج</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>الاستشارة والتقييم.</strong> نقيّم المنطقة التي ترغب في علاجها، ونتحقق من ملاءمة INDIBA لك.</li>\n            <li><strong>خطة خاصة بك.</strong> نوضح خيارات العلاج والنتائج المتوقعة والآثار الجانبية المحتملة والتكلفة قبل أن تقرر.</li>\n            <li><strong>جلسة العلاج.</strong> نشرح لك خطوات الجلسة ونتابع شعورك أثناءها.</li>\n            <li><strong>العناية اللاحقة والمتابعة.</strong> نوضح العناية بالمنطقة المعالجة، ومتى تتواصل معنا أو تعود للمتابعة.</li>\n          </ol>\n\n          <h2>النتائج المتوقعة</h2>\n          <p data-reveal>تختلف التغيرات في التماسك أو الملمس حسب الشخص والمنطقة. نتفق على أهداف واقعية في الاستشارة، ونراجع استجابتك قبل اقتراح جلسات إضافية.</p>\n\n          <h2>التعافي والعودة للأنشطة</h2>\n          <p data-reveal>قد تشعر بدفء أو تلاحظ احمرارًا مؤقتًا بعد الجلسة. يوضح فريقنا ما يمكن توقعه، وما إذا كنت تحتاج إلى تعديل روتينك بعدها.</p>\n\n          <h2>لمن يناسب هذا العلاج؟</h2>\n          <p data-reveal>يمكن مناقشته عند الرغبة في تحسين تماسك منطقة محددة أو ملمس الجلد أو مظهر السيلوليت. يلزم تقييم طبي للتأكد من الملاءمة، خاصةً مع وجود غرسات أو تناول أدوية أو إجراء علاجات حديثة.</p>\n\n          <h2>الأسئلة الشائعة</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>هل جلسات INDIBA مؤلمة؟</summary>\n              <div class=\"acc__a\">تشعر عادةً بدفء في المنطقة المعالجة. أخبر الفريق إذا كانت الحرارة مرتفعة أو غير مريحة ليضبط الجلسة.</div>\n            </details>\n            <details data-reveal>\n              <summary>هل هذا علاج لإنقاص الوزن؟</summary>\n              <div class=\"acc__a\">لا. يركز تنسيق القوام على منطقة محددة، ولا يحل محل خطة تنظيم الوزن. إذا كان هدفك إنقاص الوزن، اسأل عن خدمات التغذية لدينا.</div>\n            </details>\n            <details data-reveal>\n              <summary>كم جلسة سأحتاج؟</summary>\n              <div class=\"acc__a\">لا يوجد جدول واحد يناسب الجميع. نقترح عدد الجلسات والفواصل بينها بعد تقييم المنطقة وهدفك من العلاج.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> مدة الجلسة</span>\n            <span class=\"info-card__value\">من ٣٠ إلى ٦٠ دقيقة</span>\n            <p class=\"info-card__text\">لكل منطقة معالجة</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> النتائج</span>\n            <span class=\"info-card__value\">تدريجية</span>\n            <p class=\"info-card__text\">تظهر مع تتابع الجلسات</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> خطة الجلسات</span>\n            <span class=\"info-card__value\">حسب التقييم</span>\n            <p class=\"info-card__text\">تُراجع الخطة مع تقدم الجلسات</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">تمنحك الاستشارة وقتًا لطرح الأسئلة قبل اتخاذ قرار العلاج.</p>\n            <a href=\"/ar/book?service=body-contouring\" class=\"btn btn--gold\" style=\"width:100%\">احجز نحت الجسم</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>تفكر في <em>نحت الجسم</em>؟</h2>\n        <p class=\"cta-band__sub\" data-reveal>تحدث مع فريقنا عما يشغلك. نقيّم الخيارات ونشرح تفاصيل العلاج لتتمكن من اتخاذ قرارك.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/ar/book\" class=\"btn btn--gold btn--lg\">احجز موعدك\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/ar/book\">حجز سريع عبر واتساب</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Body and nutrition",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "مناطق مختارة من الجسم",
+  "product": "INDIBA Deep Care",
+  "related": [
+    "/devices/indiba-deep-care",
+    "/treatments/nutrition-and-weight-management",
+    "/treatments/fat-dissolving-injections"
+  ],
+  "preparation": "نقيّم المنطقة التي ترغب في علاجها، ونتحقق من ملاءمة INDIBA لك.",
+  "howPerformed": "نستخدم الترددات الراديوية بجهاز INDIBA لتنسيق القوام في {{brand}}. ينقل الجهاز طاقة تولد الدفء في المنطقة المعالجة. نقيّم ما ترغب في تحسينه ونوضح مدى ملاءمة الجلسات لك قبل البدء.",
+  "followup": "قد تشعر بدفء أو تلاحظ احمرارًا مؤقتًا بعد الجلسة. يوضح فريقنا ما يمكن توقعه، وما إذا كنت تحتاج إلى تعديل روتينك بعدها.",
+  "suitability": "يمكن مناقشته عند الرغبة في تحسين تماسك منطقة محددة أو ملمس الجلد أو مظهر السيلوليت. يلزم تقييم طبي للتأكد من الملاءمة، خاصةً مع وجود غرسات أو تناول أدوية أو إجراء علاجات حديثة.",
+  "outlook": "تختلف التغيرات في التماسك أو الملمس حسب الشخص والمنطقة. نتفق على أهداف واقعية في الاستشارة، ونراجع استجابتك قبل اقتراح جلسات إضافية.",
   "faqs": [
     {
       "q": "هل جلسات INDIBA مؤلمة؟",
@@ -18,6 +36,56 @@
     {
       "q": "كم جلسة سأحتاج؟",
       "a": "لا يوجد جدول واحد يناسب الجميع. نقترح عدد الجلسات والفواصل بينها بعد تقييم المنطقة وهدفك من العلاج."
+    },
+    {
+      "q": "كم زيارة قد أحتاج؟",
+      "a": "نراجع الاستجابة للخطة الأولى قبل الاتفاق على جلسات إضافية."
+    },
+    {
+      "q": "متى أعود إلى نشاطي المعتاد؟",
+      "a": "قد تشعر بدفء أو تلاحظ احمرارًا مؤقتًا بعد الجلسة. يوضح فريقنا ما يمكن توقعه، وما إذا كنت تحتاج إلى تعديل روتينك بعدها."
+    },
+    {
+      "q": "هل يناسبني العلاج إذا كانت بشرتي تتصبغ بسهولة؟",
+      "a": "قد يؤثر التهيج المطول أو التصبغ السابق في الخطة. اذكر كيف التأم الجلد بعد إجراءات سابقة حتى نقيّم الطريقة والتوقيت المناسبين."
+    },
+    {
+      "q": "هل يمكن للرجال حجز استشارة؟",
+      "a": "نعم. يعتمد التقييم على التاريخ الصحي والهدف من الزيارة والحالة التي تريد مناقشتها."
+    },
+    {
+      "q": "كيف أعرف تكلفة العلاج؟",
+      "a": "تتحدد التكلفة بحسب المناطق وطريقة العلاج وعدد الزيارات التي نتفق عليها بعد التقييم. تواصل مع الفرع عبر واتساب لطلب تقدير يناسب خطتك."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "مدة الجلسة",
+      "من ٣٠ إلى ٦٠ دقيقة (لكل منطقة معالجة)"
+    ],
+    [
+      "النتائج",
+      "تدريجية (تظهر مع تتابع الجلسات)"
+    ],
+    [
+      "خطة الجلسات",
+      "حسب التقييم (تُراجع الخطة مع تقدم الجلسات)"
+    ],
+    [
+      "عدد الزيارات",
+      "نراجع الاستجابة للخطة الأولى قبل الاتفاق على جلسات إضافية."
+    ],
+    [
+      "التعافي",
+      "قد تشعر بدفء أو تلاحظ احمرارًا مؤقتًا بعد الجلسة."
+    ],
+    [
+      "فئة العلاج",
+      "INDIBA Deep Care"
+    ]
+  ],
+  "risks": "قد تضر الحرارة الزائدة بالجلد. قد تؤثر الأجهزة المزروعة أو ضعف الإحساس في الملاءمة، فأبلغ الفريق فوراً إذا شعرت بسخونة زائدة.",
+  "heroPhoto": "services",
+  "heroVideo": "body-contouring",
+  "name": "جلسات INDIBA لشد الجسم"
 }

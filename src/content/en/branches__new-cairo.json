@@ -1,0 +1,11 @@
+{
+  "path": "/branches/new-cairo",
+  "type": "branch",
+  "title": "{{brand}} New Cairo | Fifth Settlement branch",
+  "description": "Find {{brand}} in the Fifth Settlement for laser hair removal, skin care and nutrition. See the address, opening hours and ways to book a consultation.",
+  "h1": "{{brand}} in New Cairo’s Fifth Settlement",
+  "answer": "The New Cairo branch of {{brand}} is at {{address:new-cairo}} in the Fifth Settlement. You can arrange an assessment for skin care, injectables, laser hair removal or nutrition. Contact branch reception to discuss a concern, ask about preparation and confirm an appointment before travelling.",
+  "updated": "2026-11-24",
+  "faqs": [],
+  "branchId": "new-cairo"
+}

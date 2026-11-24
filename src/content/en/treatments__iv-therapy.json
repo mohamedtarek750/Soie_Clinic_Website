@@ -1,0 +1,76 @@
+{
+  "path": "/treatments/iv-therapy",
+  "type": "treatment",
+  "title": "IV therapy and NAD+ consultation in Cairo",
+  "description": "Explore IV therapy and NAD+ consultations in Cairo. Learn about indications, oral alternatives, infusion risks and the limits of evidence for wellness claims.",
+  "h1": "IV therapy and NAD+ consultation in Cairo",
+  "answer": "An IV infusion delivers fluid and selected substances into a vein. {{brand}} in New Cairo and Mohandessin offers consultations for adults considering drips, including NAD+. A medical assessment looks for an indication, checks medicines and considers oral alternatives. Evidence for general wellness benefits from NAD+ infusions remains limited.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Body and nutrition",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "vein",
+  "product": "IV infusion",
+  "related": [
+    "/treatments/nutrition-and-weight-management"
+  ],
+  "preparation": "Mention kidney or heart disease, pregnancy, medicines and allergies. Tiredness may need investigation before considering a drip.",
+  "howPerformed": "The team assesses the indication, explains the contents and monitors the infusion and the intravenous site if treatment proceeds.",
+  "followup": "The arm can be tender afterwards. Get urgent help for breathing difficulty, chest discomfort or rapidly spreading swelling.",
+  "risks": "Possible harms include vein irritation, infection, allergy and excess fluid, especially with certain heart or kidney conditions.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "The needle can sting on insertion. New burning, pain or swelling during an infusion should be reported at once."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "The arm can be tender afterwards. Get urgent help for breathing difficulty, chest discomfort or rapidly spreading swelling."
+    },
+    {
+      "q": "Does my medical history affect suitability?",
+      "a": "Mention kidney or heart disease, pregnancy, medicines and allergies. Tiredness may need investigation before considering a drip."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The assessment, substance prescribed, infusion time and monitoring determine the quote. Contact reception on WhatsApp to discuss the consultation."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Depends on the medical indication; wellness effects are uncertain."
+    ],
+    [
+      "Recovery",
+      "The arm can be tender afterwards."
+    ],
+    [
+      "Treatment family",
+      "IV infusion"
+    ]
+  ],
+  "outlook": "Depends on the medical indication; wellness effects are uncertain.",
+  "suitability": "An infusion needs an individual medical indication. People seeking treatment for fatigue may need investigation. Heart or kidney conditions can make extra fluid unsafe.",
+  "heroPhoto": "services",
+  "name": "IV therapy and NAD+ consultation"
+}

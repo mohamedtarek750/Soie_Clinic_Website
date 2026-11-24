@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/laser-hair-removal",
+  "type": "treatment",
+  "title": "Laser hair removal in {{laserLocations}}",
+  "description": "Plan laser hair removal in {{laserLocations}} with Cutera excel HR. Explore face and body areas, pulse packages, skin assessment and aftercare.",
+  "h1": "Laser hair removal in {{laserLocations}}",
+  "answer": "Laser hair removal uses pulses of light to reduce regrowth in suitable face or body areas. At {{brand}} in {{laserLocations}}, women and men can discuss individual areas, full-body treatment and pulse packages. Skin tone, hair colour and recent tanning help determine whether Cutera excel HR is appropriate.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Laser",
+  "branches": [
+    "new-cairo"
+  ],
+  "bodyLocation": "face and body",
+  "product": "Cutera excel HR",
+  "related": [
+    "/devices/cutera-excel-hr",
+    "/treatments/laser",
+    "/guides/laser-hair-removal-sessions"
+  ],
+  "preparation": "Mention tanning, medications and previous reactions to laser. Ask how to prepare the area; light or grey hair may respond poorly.",
+  "howPerformed": "After skin and hair assessment, suitable settings and eye protection are selected. The handpiece delivers pulses to the agreed area; a test area may be advised.",
+  "followup": "Warmth or redness may follow. Protect the area from sun and contact the branch about blisters or lasting discomfort.",
+  "risks": "Burns, irritation and darker or lighter patches can occur, especially after tanning or with unsuitable settings.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Pulses can feel hot or like a brief snap. Comfort varies by area."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "A course is usually discussed because hair grows in cycles. Six to eight sessions may be discussed, with the plan reviewed for each area and response."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Warmth or redness may follow. Protect the area from sun and contact the branch about blisters or lasting discomfort."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Often 15–60 minutes, depending on the area."
+    ],
+    [
+      "Number of visits",
+      "A course is usually discussed because hair grows in cycles. Six to eight sessions may be discussed, with the plan reviewed for each area and response."
+    ],
+    [
+      "When to assess the result",
+      "Hair reduction develops over growth cycles; later maintenance may be needed."
+    ],
+    [
+      "Recovery",
+      "Warmth or redness may follow."
+    ],
+    [
+      "Treatment family",
+      "Cutera excel HR"
+    ]
+  ],
+  "outlook": "Hair reduction develops over growth cycles; later maintenance may be needed.",
+  "suitability": "Hair colour, skin tone and tanning matter more than gender. Very light hair can respond poorly; irritated or recently tanned skin may need time before treatment.",
+  "heroPhoto": "laser",
+  "name": "Laser hair removal"
+}

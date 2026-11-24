@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/oxygeneo",
+  "type": "treatment",
+  "title": "OxyGeneo facial in Cairo",
+  "description": "Find out about OxyGeneo facials in Cairo for surface dullness and rough texture, from checking ingredient sensitivity to exfoliation and aftercare.",
+  "h1": "OxyGeneo facial in Cairo",
+  "answer": "An OxyGeneo facial combines surface exfoliation with the application of skincare ingredients. Adults with dullness or rough surface texture can ask about this option at {{brand}} in New Cairo and Mohandessin. The team checks sensitivity and existing products first, as irritated skin may need gentler care or a delay.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "face",
+  "product": "OxyGeneo",
+  "related": [
+    "/treatments/facial",
+    "/treatments/hydrafacial"
+  ],
+  "preparation": "Mention recent peels, retinoid use and sensitive areas. Avoid treating broken skin or an active rash.",
+  "howPerformed": "The team cleanses the skin, checks the chosen preparation and applies the exfoliating and skincare steps suited to the area.",
+  "followup": "The skin may feel softer but can be red or sensitive initially. Check when to resume scrubs or active products.",
+  "risks": "Surface irritation or a reaction to ingredients can occur. Stop using irritating home products and seek advice if symptoms persist.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Exfoliation can feel rough or tingly. Report burning rather than trying to tolerate it."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "The skin may feel softer but can be red or sensitive initially. Check when to resume scrubs or active products."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Surface smoothness may be noticeable after the visit and can be short-lived."
+    ],
+    [
+      "Recovery",
+      "The skin may feel softer but can be red or sensitive initially."
+    ],
+    [
+      "Treatment family",
+      "OxyGeneo"
+    ]
+  ],
+  "outlook": "Surface smoothness may be noticeable after the visit and can be short-lived.",
+  "suitability": "A surface facial may suit dullness or mild roughness. Open wounds, active dermatitis or a reaction to the ingredients are reasons to wait.",
+  "heroPhoto": "facial",
+  "name": "OxyGeneo facial"
+}

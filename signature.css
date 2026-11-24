@@ -197,7 +197,7 @@ html[dir="rtl"] #modalTitle { font-size: 30px; line-height: 1.4; }
   .no-js .nav { height: auto; position: relative; }
   .no-js .nav__wrap { flex-wrap: wrap; padding-block: 12px; }
   .no-js .nav__links { position: static; flex-direction: row; flex-wrap: wrap; width: 100%; height: auto; padding: 0; opacity: 1; visibility: visible; transform: none; gap: 10px; }
-  .no-js .nav__links .nav__link { font: 14px/1.4 var(--f-body); }
+  .no-js .nav__links .nav__link { opacity: 1; transform: none; font: 14px/1.4 var(--f-body); }
   .no-js .nav__burger { display: none; }
 }
 @media (max-width: 1100px) and (min-width: 781px) {
@@ -283,3 +283,5 @@ html[dir="rtl"] #modalTitle { font-size: 30px; line-height: 1.4; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js [data-reveal] { opacity: 1; transform: none; }
 }
+
+.info-card .info-card__label { color: var(--linen); }

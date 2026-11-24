@@ -1,0 +1,77 @@
+{
+  "path": "/treatments/fat-dissolving-injections",
+  "type": "treatment",
+  "title": "Fat-dissolving injections in Cairo",
+  "description": "Read about fat-dissolving injections and mesolipolysis in Cairo, including assessment of localised fat, swelling and risks specific to each treatment area.",
+  "h1": "Fat-dissolving injections in Cairo",
+  "answer": "Fat-dissolving injections and mesolipolysis are discussed for selected small areas of localised fat. They do not treat obesity. Adults can ask about the planned substance, its evidence for the area and alternatives at {{brand}} in New Cairo and Mohandessin. An examination distinguishes fat from loose skin or another swelling.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Body and nutrition",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "localised fat deposits",
+  "product": "Lipolytic preparation",
+  "related": [
+    "/treatments/body-contouring",
+    "/treatments/nutrition-and-weight-management"
+  ],
+  "preparation": "Any new lump, previous operation or infection in the area needs evaluation first. Ask about suitability for the precise site.",
+  "howPerformed": "The team examines the area and explains the substance, site-specific risks and alternatives before any injection.",
+  "followup": "Swelling, firmness and tenderness can affect daily activities. Arrange review for persistent numbness, pain or skin changes.",
+  "risks": "Fat-dissolving agents can damage skin and nearby structures, including nerves. Evidence and risks depend on substance and site.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Stinging, swelling and soreness are possible, including after the visit."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Review the response to the initial plan before booking further sessions."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Swelling, firmness and tenderness can affect daily activities. Arrange review for persistent numbness, pain or skin changes."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The substance, treatment areas, amount used and number of reviews influence the quote. Ask the branch on WhatsApp for a plan after assessment."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "Review the response to the initial plan before booking further sessions."
+    ],
+    [
+      "When to assess the result",
+      "Review the area after swelling has subsided."
+    ],
+    [
+      "Recovery",
+      "Swelling, firmness and tenderness can affect daily activities."
+    ],
+    [
+      "Treatment family",
+      "Lipolytic preparation"
+    ]
+  ],
+  "outlook": "Review the area after swelling has subsided.",
+  "suitability": "A small local deposit needs examination. General weight change, loose skin and unexplained swelling have other causes and may call for different care.",
+  "heroPhoto": "services",
+  "name": "Fat-dissolving injections"
+}

@@ -1,0 +1,76 @@
+{
+  "path": "/dentistry/teeth-whitening",
+  "type": "treatment",
+  "title": "Teeth whitening and cleaning in Mohandessin",
+  "description": "Compare teeth whitening, scaling and polishing in Mohandessin. Learn which stains can change, how restorations affect shade and how to manage sensitivity.",
+  "h1": "Teeth whitening and cleaning in Mohandessin",
+  "answer": "Scaling and polishing remove deposits and surface stains, while whitening aims to lighten natural tooth colour. At {{brand}} in Mohandessin, adults concerned about tooth shade can discuss which approach fits their teeth and gums. Existing crowns and fillings do not whiten and may influence your choice.",
+  "updated": "2026-11-24",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "teeth and gums",
+  "product": "Scaling, polishing and whitening",
+  "related": [
+    "/dentistry",
+    "/dentistry/hollywood-smile"
+  ],
+  "preparation": "Tell us about sensitivity, exposed roots and front tooth restorations. Decay or inflamed gums may need attention before whitening.",
+  "howPerformed": "We assess the source of staining, remove deposits if indicated and discuss whether a separate whitening step is appropriate.",
+  "followup": "Sensitivity or gum tenderness can follow treatment. Ask about cleaning products and review persistent pain before repeating whitening.",
+  "risks": "Whitening may irritate gums or increase sensitivity, and the shade can differ between natural teeth and restorations.",
+  "faqs": [
+    {
+      "q": "Will the visit hurt?",
+      "a": "Scaling may feel sensitive and whitening can cause brief sharp sensitivity in some teeth."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "The number of visits depends on the stages needed and healing between them."
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Sensitivity or gum tenderness can follow treatment. Ask about cleaning products and review persistent pain before repeating whitening."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the teeth involved, materials and number of visits. Ask the branch on WhatsApp for a personal quote."
+    }
+  ],
+  "facts": [
+    [
+      "Visit length",
+      "Depends on the examination and the steps agreed for the visit."
+    ],
+    [
+      "Number of visits",
+      "The number of visits depends on the stages needed and healing between them."
+    ],
+    [
+      "When to assess the result",
+      "Whitening can change shade after a visit; stain removal alone changes surface appearance."
+    ],
+    [
+      "Recovery",
+      "Sensitivity or gum tenderness can follow treatment."
+    ],
+    [
+      "Treatment family",
+      "Scaling, polishing and whitening"
+    ]
+  ],
+  "outlook": "Whitening can change shade after a visit; stain removal alone changes surface appearance.",
+  "suitability": "Cleaning can help with deposits and surface staining. Whitening suits some natural teeth; decay, inflamed gums or marked sensitivity need attention first.",
+  "heroPhoto": "dentistry",
+  "name": "Teeth whitening and cleaning"
+}

@@ -1,15 +1,32 @@
 {
   "path": "/treatments/facial",
-  "type": "legacy",
-  "title": "Medical Facials in New Cairo & Mohandessin | {{brand}}",
-  "description": "Medical facials at {{brand}} in New Cairo and Mohandessin. Explore cleansing, exfoliation and hydration, with a facial chosen for your skin's needs.",
-  "h1": "Medical Facials",
+  "type": "treatment",
+  "title": "Medical facials in Cairo",
+  "description": "Find out how a medical facial in Cairo is tailored to dry, dull or congested skin, what cleansing and extraction involve and when irritation needs a review.",
+  "h1": "Medical facials in Cairo",
+  "answer": "Medical facials combine selected cleansing and skincare steps to address surface buildup, dryness or dullness. At {{brand}} in New Cairo and Mohandessin, each visit begins by reviewing sensitivity, recent treatments and the products used at home. The steps can be adjusted, or a facial postponed if the skin is inflamed.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"facial\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/facial-960.avif 960w, /assets/images/bg/facial-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/facial-960.webp 960w, /assets/images/bg/facial-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/facial-1920.jpg\" srcset=\"/assets/images/bg/facial-960.jpg 960w, /assets/images/bg/facial-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"Breadcrumb\" data-reveal><a href=\"/\">Home</a> <span class=\"crumbs__sep\">·</span> <a href=\"/treatments\">Services</a> <span class=\"crumbs__sep\">·</span> <span>Medical Facials</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> Treatment</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">Medical Facials</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">Cleansing, exfoliation and hydration chosen for your skin on the day.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>About the treatment</h2>\n          <p data-reveal>A medical facial starts with a skin assessment. Depending on your needs, it may include cleansing, exfoliation, extraction, massage and selected skincare products.</p>\n          <p data-reveal>Tell us about sensitivity, breakouts and the products you use at home. We can also discuss options such as Dermapen or OxyGeneo, including whether they suit you and how recovery differs.</p>\n\n          <h2>At a glance</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Help with surface buildup and dullness</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Cleansing and extraction where appropriate</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Products selected for your skin</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Separate assessment for Dermapen or OxyGeneo</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Time to discuss your home routine</span></li>\n          </ul>\n\n          <h2>The treatment process</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>Consultation and assessment.</strong> We check your skin's condition and sensitivity, and ask what you use at home.</li>\n            <li><strong>A personal plan.</strong> We explain the treatment options, likely results, possible side effects and cost before you decide.</li>\n            <li><strong>The treatment itself.</strong> We talk you through the session and check how you feel as we go.</li>\n            <li><strong>Aftercare and follow up.</strong> We explain how to care for the treated area and when to contact us or return for a review.</li>\n          </ol>\n\n          <h2>Expected results</h2>\n          <p data-reveal>Skin may feel cleaner, softer and more hydrated after a facial. The visible change and how long it lasts depend on your skin and the steps included.</p>\n\n          <h2>Recovery &amp; downtime</h2>\n          <p data-reveal>A simple facial may need little recovery time, though temporary redness can occur. Microneedling and other added procedures can need longer. We will explain aftercare for the session you choose.</p>\n\n          <h2>Who is it for?</h2>\n          <p data-reveal>A facial may help with dryness, congestion or dullness, but the steps need to suit your skin. Tell us about active irritation, allergies or recent treatments before booking.</p>\n\n          <h2>Frequently asked questions</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>How is this different from a spa facial?</summary>\n              <div class=\"acc__a\">At Soie, the session starts with an assessment of your skin and medical history. The products and steps are chosen around that assessment, with advice on aftercare and your home routine.</div>\n            </details>\n            <details data-reveal>\n              <summary>Can I have a facial before a big event?</summary>\n              <div class=\"acc__a\">Tell us your event date and whether you have had the treatment before. We can suggest timing that allows for possible redness or sensitivity, especially if the session includes extraction or microneedling.</div>\n            </details>\n            <details data-reveal>\n              <summary>What is OxyGeneo?</summary>\n              <div class=\"acc__a\">OxyGeneo is a facial treatment that combines exfoliation with the application of skincare ingredients. Ask our team which option is available and whether it suits your skin.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Session time</span>\n            <span class=\"info-card__value\">45 to 75 minutes</span>\n            <p class=\"info-card__text\">protocol dependent</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Results</span>\n            <span class=\"info-card__value\">Immediate</span>\n            <p class=\"info-card__text\">may be noticed after one visit</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Frequency</span>\n            <span class=\"info-card__value\">Every 4 to 6 weeks</span>\n            <p class=\"info-card__text\">adjusted to your skin's needs</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">A consultation gives you time to ask questions before deciding on treatment.</p>\n            <a href=\"/book?service=facial\" class=\"btn btn--gold\" style=\"width:100%\">Book Medical Facials</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>Considering <em>Medical Facials</em>?</h2>\n        <p class=\"cta-band__sub\" data-reveal>Talk to our team about your concerns. We will assess the options and explain what treatment involves so you can decide.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/book\" class=\"btn btn--gold btn--lg\">Book your appointment\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/book\">Quick WhatsApp booking</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Skin and hair",
+  "branches": [
+    "new-cairo",
+    "mohandessin"
+  ],
+  "bodyLocation": "face",
+  "product": "Facial skincare",
+  "related": [
+    "/treatments/oxygeneo",
+    "/treatments/hydrafacial"
+  ],
+  "preparation": "We check your skin's condition and sensitivity, and ask what you use at home.",
+  "howPerformed": "A medical facial starts with a skin assessment. Depending on your needs, it may include cleansing, exfoliation, extraction, massage and selected skincare products.",
+  "followup": "A simple facial may need little recovery time, though temporary redness can occur. Microneedling and other added procedures can need longer. We will explain aftercare for the session you choose.",
+  "suitability": "A facial may help with dryness, congestion or dullness, but the steps need to suit your skin. Tell us about active irritation, allergies or recent treatments before booking.",
+  "outlook": "Skin may feel cleaner, softer and more hydrated after a facial. The visible change and how long it lasts depend on your skin and the steps included.",
   "faqs": [
     {
       "q": "How is this different from a spa facial?",
-      "a": "At Soie, the session starts with an assessment of your skin and medical history. The products and steps are chosen around that assessment, with advice on aftercare and your home routine."
+      "a": "At {{brand}}, the session starts with an assessment of your skin and medical history. The products and steps are chosen around that assessment, with advice on aftercare and your home routine."
     },
     {
       "q": "Can I have a facial before a big event?",
@@ -18,6 +35,55 @@
     {
       "q": "What is OxyGeneo?",
       "a": "OxyGeneo is a facial treatment that combines exfoliation with the application of skincare ingredients. Ask our team which option is available and whether it suits your skin."
+    },
+    {
+      "q": "Will the visit hurt?",
+      "a": "Discomfort varies with the area and method. Describe any previous sensitivity so that suitable comfort measures and pauses can be discussed."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "Every 4 to 6 weeks (adjusted to your skin's needs)"
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "A simple facial may need little recovery time, though temporary redness can occur. Microneedling and other added procedures can need longer. We will explain aftercare for the session you choose."
+    },
+    {
+      "q": "Can I have treatment if my skin marks easily?",
+      "a": "A history of prolonged irritation or dark marks affects planning. Tell the team how your skin healed after previous procedures so the method and timing can be assessed."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your medical history, goals and the area of concern."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the areas, treatment method and number of visits agreed after assessment. Ask the branch on WhatsApp for a personal quote."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "Session time",
+      "45 to 75 minutes (protocol dependent)"
+    ],
+    [
+      "Results",
+      "Immediate (may be noticed after one visit)"
+    ],
+    [
+      "Frequency",
+      "Every 4 to 6 weeks (adjusted to your skin's needs)"
+    ],
+    [
+      "Recovery",
+      "A simple facial may need little recovery time, though temporary redness can occur."
+    ],
+    [
+      "Treatment family",
+      "Facial skincare"
+    ]
+  ],
+  "risks": "Extraction may irritate sensitive skin and products can cause a reaction. Tell the team if burning or discomfort develops.",
+  "heroPhoto": "facial",
+  "name": "Medical facials"
 }

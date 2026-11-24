@@ -1,11 +1,27 @@
 {
   "path": "/dentistry/veneers",
-  "type": "legacy",
-  "title": "Veneers in Mohandessin | {{brand}}",
-  "description": "Porcelain veneers at {{brand}} in Mohandessin. Learn about smile design, tooth preparation, fitting and care before arranging a dental consultation.",
-  "h1": "Veneers",
+  "type": "treatment",
+  "title": "Dental veneers in Mohandessin",
+  "description": "Explore porcelain veneers in Mohandessin, including tooth preparation, shade selection, alternatives and the long-term care to discuss before treatment.",
+  "h1": "Dental veneers in Mohandessin",
+  "answer": "Veneers are thin porcelain shells bonded to the front of selected teeth to change their shade or shape. At {{brand}} in Mohandessin, adults with healthy teeth and gums can discuss veneers, including their role in a Hollywood smile design. Enamel, bite and future maintenance all affect suitability.",
   "updated": "2026-11-24",
-  "html": "<section class=\"page-hero\">\n      <div class=\"page-hero__art\" data-bg=\"veneers\" aria-hidden=\"true\">\n        <picture>\n          <source type=\"image/avif\" srcset=\"/assets/images/bg/veneers-960.avif 960w, /assets/images/bg/veneers-1920.avif 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <source type=\"image/webp\" srcset=\"/assets/images/bg/veneers-960.webp 960w, /assets/images/bg/veneers-1920.webp 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\"></source>\n          <img class=\"hero-bg__media\" src=\"/assets/images/bg/veneers-1920.jpg\" srcset=\"/assets/images/bg/veneers-960.jpg 960w, /assets/images/bg/veneers-1920.jpg 1920w\" sizes=\"(max-width: 780px) 90vw, 40vw\" alt=\"\" width=\"1920\" height=\"1080\" decoding=\"async\" fetchpriority=\"high\">\n        </picture>\n      </div>\n      <div class=\"container\">\n        <nav class=\"crumbs\" aria-label=\"Breadcrumb\" data-reveal><a href=\"/\">Home</a> <span class=\"crumbs__sep\">·</span> <a href=\"/treatments\">Services</a> <span class=\"crumbs__sep\">·</span> <span>Veneers</span></nav>\n        <p class=\"eyebrow\" data-reveal style=\"margin-top:1.6rem\"><span class=\"eyebrow__dot\"></span> Treatment</p>\n        <h1 class=\"page-hero__title\" data-reveal data-reveal-delay=\"1\">Veneers</h1>\n        <p class=\"page-hero__lede\" data-reveal data-reveal-delay=\"2\">Porcelain veneers with a shape and shade chosen for your smile.</p>\n        <svg class=\"page-hero__thread\" viewBox=\"0 0 420 20\" preserveAspectRatio=\"none\" aria-hidden=\"true\" data-reveal data-reveal-delay=\"3\">\n          <path d=\"M4 12 C 120 -4, 300 22, 416 8\" fill=\"none\" stroke=\"url(#lgph)\" stroke-width=\"1.6\" stroke-linecap=\"round\"></path>\n          <defs><linearGradient id=\"lgph\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\">\n            <stop offset=\"0\" stop-color=\"#8C8C8C\"></stop><stop offset=\"0.5\" stop-color=\"#545454\"></stop><stop offset=\"1\" stop-color=\"#333333\"></stop>\n          </linearGradient></defs>\n        </svg>\n      </div>\n    </section>\n\n    <section class=\"section\" style=\"padding-top:clamp(2.5rem,5vw,4rem)\">\n      <div class=\"container svc\">\n        <div class=\"svc__body\">\n          <h2>About the treatment</h2>\n          <p data-reveal>Veneers are thin porcelain shells bonded to the front of teeth to change their colour, shape or appearance. We assess your teeth and gums first and explain whether veneers suit your concerns.</p>\n          <p data-reveal>We discuss the shade, tooth proportions and amount of change you want, then show you the proposed design. Before you agree, we explain how much preparation your teeth may need and what future care involves.</p>\n\n          <h2>At a glance</h2>\n          <ul class=\"ticks\">\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Changes to tooth colour and shape</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Shade and proportions chosen with you</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Porcelain that resists staining, with regular care</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>Preparation explained before treatment</span></li>\n            <li data-reveal><span class=\"tick\" aria-hidden=\"true\"></span> <span>A chance to review your proposed smile design</span></li>\n          </ul>\n\n          <h2>The treatment process</h2>\n          <ol class=\"mini-steps\" data-reveal>\n            <li><strong>Consultation and assessment.</strong> We check your teeth, gums and bite, and discuss the changes you would like to make.</li>\n            <li><strong>A personal plan.</strong> We explain the treatment options, likely results, possible side effects and cost before you decide.</li>\n            <li><strong>The treatment itself.</strong> We talk you through the session and check how you feel as we go.</li>\n            <li><strong>Aftercare and follow up.</strong> We explain how to care for the treated area and when to contact us or return for a review.</li>\n          </ol>\n\n          <h2>Expected results</h2>\n          <p data-reveal>The change is visible once the veneers are fitted. How long they last depends on your bite, habits and care. We will explain how to protect them and when to return for dental reviews.</p>\n\n          <h2>Recovery &amp; downtime</h2>\n          <p data-reveal>Temporary sensitivity can follow preparation and fitting. We will explain cleaning, eating and what to do if your bite feels uncomfortable. Regular dental reviews remain important.</p>\n\n          <h2>Who is it for?</h2>\n          <p data-reveal>Veneers may suit adults with healthy teeth and gums who want to address colour, chips, gaps or shape. Grinding, bite problems and the amount of healthy enamel affect suitability. We also discuss alternatives.</p>\n\n          <h2>Frequently asked questions</h2>\n          <div class=\"acc\">\n            <details data-reveal>\n              <summary>Will veneers look fake?</summary>\n              <div class=\"acc__a\">The shade, shape and proportions all affect the look. We discuss your preferences and review the proposed design with you before fitting, aiming for a result that fits your smile.</div>\n            </details>\n            <details data-reveal>\n              <summary>Do veneers ruin your teeth?</summary>\n              <div class=\"acc__a\">Veneers often require removing some enamel, which cannot grow back. The amount depends on your teeth and the design. We explain this before you decide, along with alternatives and the possibility of future repair or replacement.</div>\n            </details>\n            <details data-reveal>\n              <summary>How long do they last?</summary>\n              <div class=\"acc__a\">Porcelain veneers may last ten to fifteen years, but this is not guaranteed. Oral hygiene, regular dental reviews and managing tooth grinding all matter. Individual veneers may need repair or replacement sooner.</div>\n            </details>\n          </div>\n        </div>\n\n        <aside class=\"svc__aside\">\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Visits</span>\n            <span class=\"info-card__value\">2 to 3 visits</span>\n            <p class=\"info-card__text\">design, prep and fitting</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Results</span>\n            <span class=\"info-card__value\">Immediate</span>\n            <p class=\"info-card__text\">on final fitting day</p>\n          </div>\n          <div class=\"info-card\" data-reveal>\n            <span class=\"info-card__label\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"></circle><path d=\"M12 7v5l3.5 2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\"></path></svg> Lasts</span>\n            <span class=\"info-card__value\">10 to 15 years</span>\n            <p class=\"info-card__text\">with good care</p>\n          </div>\n\n          <div class=\"info-card\" data-reveal style=\"text-align:center\">\n            <p class=\"info-card__text\" style=\"margin:0 0 1rem\">A consultation gives you time to ask questions before deciding on treatment.</p>\n            <a href=\"/book?service=veneers\" class=\"btn btn--gold\" style=\"width:100%\">Book Veneers</a>\n          </div>\n        </aside>\n      </div>\n    </section>\n\n    <section class=\"section cta-band\">\n      <div class=\"container\">\n        <h2 class=\"cta-band__title\" data-reveal>Considering <em>Veneers</em>?</h2>\n        <p class=\"cta-band__sub\" data-reveal>Talk to our team about your concerns. We will assess the options and explain what treatment involves so you can decide.</p>\n        <div class=\"cta-band__actions\" data-reveal>\n          <a href=\"/book\" class=\"btn btn--gold btn--lg\">Book your appointment\n            <svg viewBox=\"0 0 24 24\" class=\"btn__arrow\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>\n          </a>\n          <a class=\"btn btn--ghost btn--lg\" data-open-booking href=\"/book\">Quick WhatsApp booking</a>\n        </div>\n      </div>\n    </section>\n\n  ",
+  "reviewStatus": "pending-clinical-review",
+  "category": "Dentistry",
+  "branches": [
+    "mohandessin"
+  ],
+  "bodyLocation": "front of teeth",
+  "product": "Porcelain veneers",
+  "related": [
+    "/dentistry/hollywood-smile",
+    "/dentistry/teeth-whitening"
+  ],
+  "preparation": "We check your teeth, gums and bite, and discuss the changes you would like to make.",
+  "howPerformed": "Veneers are thin porcelain shells bonded to the front of teeth to change their colour, shape or appearance. We assess your teeth and gums first and explain whether veneers suit your concerns.",
+  "followup": "Temporary sensitivity can follow preparation and fitting. We will explain cleaning, eating and what to do if your bite feels uncomfortable. Regular dental reviews remain important.",
+  "suitability": "Veneers may suit adults with healthy teeth and gums who want to address colour, chips, gaps or shape. Grinding, bite problems and the amount of healthy enamel affect suitability. We also discuss alternatives.",
+  "outlook": "The change is visible once the veneers are fitted. How long they last depends on your bite, habits and care. We will explain how to protect them and when to return for dental reviews.",
   "faqs": [
     {
       "q": "Will veneers look fake?",
@@ -17,7 +33,56 @@
     },
     {
       "q": "How long do they last?",
-      "a": "Porcelain veneers may last ten to fifteen years, but this is not guaranteed. Oral hygiene, regular dental reviews and managing tooth grinding all matter. Individual veneers may need repair or replacement sooner."
+      "a": "Porcelain veneers may last ten to fifteen years, although lifespan varies. Oral hygiene, regular dental reviews and managing tooth grinding all matter. Individual veneers may need repair or replacement sooner."
+    },
+    {
+      "q": "Will the visit hurt?",
+      "a": "Tell the team about dental sensitivity. The examination helps decide whether local anaesthesia or other comfort measures are appropriate."
+    },
+    {
+      "q": "How many visits might I need?",
+      "a": "2 to 3 visits (design, prep and fitting)"
+    },
+    {
+      "q": "Can I go back to my usual routine afterwards?",
+      "a": "Temporary sensitivity can follow preparation and fitting. We will explain cleaning, eating and what to do if your bite feels uncomfortable. Regular dental reviews remain important."
+    },
+    {
+      "q": "Can I have treatment with sensitive teeth or gums?",
+      "a": "Sensitivity can come from decay, exposed roots or gum problems. The oral assessment identifies what needs care before a procedure."
+    },
+    {
+      "q": "Can men book a consultation?",
+      "a": "Yes. The assessment is individual and takes account of your oral health, bite and existing restorations."
+    },
+    {
+      "q": "How much does treatment cost?",
+      "a": "The quote depends on the teeth involved, materials and number of visits. Ask the branch on WhatsApp for a personal quote."
     }
-  ]
+  ],
+  "facts": [
+    [
+      "Visits",
+      "2 to 3 visits (design, prep and fitting)"
+    ],
+    [
+      "Results",
+      "Immediate (on final fitting day)"
+    ],
+    [
+      "Lasts",
+      "10 to 15 years (with good care)"
+    ],
+    [
+      "Recovery",
+      "Temporary sensitivity can follow preparation and fitting."
+    ],
+    [
+      "Treatment family",
+      "Porcelain veneers"
+    ]
+  ],
+  "risks": "Enamel removed during preparation does not grow back. Sensitivity, chipping or loosening can occur and veneers may need replacement.",
+  "heroPhoto": "veneers",
+  "name": "Dental veneers"
 }

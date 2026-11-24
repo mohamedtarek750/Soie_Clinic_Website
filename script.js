@@ -72,7 +72,7 @@
     "Your request goes to our {branch} reception. They will contact you to confirm availability. There is no online payment.": "يصل طلبك إلى استقبال فرع {branch}. سيتواصلون معك لتأكيد توفر الموعد. لا يوجد دفع عبر الموقع.",
     "We could not reach our booking system. Please try again, or use the WhatsApp button to send your details to reception.": "تعذر الاتصال بنظام الحجز. حاول مرة أخرى، أو استخدم زر واتساب لإرسال بياناتك إلى الاستقبال.",
     "Sending your request...": "جارٍ إرسال طلبك...",
-    "Reception will confirm the time.": "سيؤكد الاستقبال الوقت.",
+    "Enter your preferred time. Reception will confirm availability.": "أدخل الوقت الذي يناسبك. سيؤكد فريق الاستقبال توفر الموعد.",
     "Hello! I would like to book an appointment.": "مرحبًا، أود حجز موعد."
 };
   var isArabic = function () { return document.documentElement.lang.startsWith('ar'); };
@@ -83,12 +83,13 @@
     });
   };
   var displayTime = function (value) {
-    if (value === 'Reception will confirm the time.') return t(value);
     return isArabic() ? value.replace(/AM/g, 'صباحًا').replace(/PM/g, 'مساءً') : value;
   };
   function measure(event, branch, treatment) {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: event, branch: branch || '', treatment: treatment || '' });
+    var context = { branch: branch || '', treatment: treatment || '' };
+    window.dataLayer.push({ event: event, branch: context.branch, treatment: context.treatment });
+    if (typeof window.gtag === 'function') window.gtag('event', event, context);
   }
   on(document, 'click', function (e) {
     var action = e.target.closest('a[href], button[data-event]');
@@ -103,7 +104,8 @@
     if (!event) return;
     var page = document.body.dataset.page || '';
     var branch = action.closest('[data-branch]')?.dataset.branch || (page.startsWith('/branches/') ? page.split('/').pop() : '');
-    var treatment = action.dataset.treatment || (/^\/(?:treatments|dentistry)\//.test(page) ? page.split('/').pop() : '');
+    var treatmentPage = /^\/(?:treatments\/|dentistry(?:\/|$)|plastic-surgery$)/.test(page);
+    var treatment = action.dataset.treatment || (treatmentPage ? page.split('/').pop() : '');
     if (action.id === 'bkSubmit') {
       branch = document.querySelector('input[name=bkBranch]:checked')?.dataset.branch;
       treatment = document.querySelector('#bkService option:checked')?.dataset.slug;
@@ -932,10 +934,10 @@
     var postFailed = false;   // the request never left the device
 
     function pad(n) { return n < 10 ? '0' + n : String(n); }
-    function fmt12(h) {
+    function fmt12(h, minute) {
       var ampm = h >= 12 ? 'PM' : 'AM';
       var hh = h % 12; if (hh === 0) hh = 12;
-      return hh + ':00 ' + ampm;
+      return hh + ':' + (minute || '00') + ' ' + ampm;
     }
 
     // limit the calendar to today → +60 days
@@ -976,11 +978,24 @@
       var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
       var hours = JSON.parse(checked('bkBranch').dataset.hours);
       if (!hours.length) {
-        selectedTime = 'Reception will confirm the time.';
-        var hint = document.createElement('p');
-        hint.className = 'slots__hint';
-        hint.textContent = t(selectedTime);
-        slotsWrap.appendChild(hint);
+        var prompt = t('Enter your preferred time. Reception will confirm availability.');
+        var label = document.createElement('label');
+        label.className = 'bk__field';
+        label.textContent = prompt;
+        var preferred = document.createElement('input');
+        preferred.type = 'time';
+        preferred.id = 'bkPreferredTime';
+        if (val === todayStr()) {
+          var current = new Date();
+          preferred.min = pad(current.getHours()) + ':' + pad(current.getMinutes());
+        }
+        label.appendChild(preferred);
+        slotsWrap.appendChild(label);
+        on(preferred, 'input', function () {
+          var time = preferred.value.split(':');
+          selectedTime = preferred.value && preferred.validity.valid ? fmt12(Number(time[0]), time[1]) : '';
+          update();
+        });
         update();
         return;
       }
@@ -1051,7 +1066,10 @@
     // post has already failed to leave this device, the online route is not
     // working for this visitor, so the form falls back to WhatsApp for the
     // rest of the visit rather than swallowing a second booking.
-    function useSystem() { return !postFailed && !!branchEndpoint(); }
+    function useSystem() {
+      // Partner surgery consultations are arranged by reception on WhatsApp.
+      return serviceSel.value !== 'plastic-surgery' && !postFailed && !!branchEndpoint();
+    }
 
     /* ── What is missing, and how we say so ───────────────────────────────
        One validator per field. Each returns '' when the field is fine, or
@@ -1067,7 +1085,7 @@
 
     // the first time a patient can still pick on the chosen date
     function firstSlot() {
-      return slotsWrap ? slotsWrap.querySelector('button.slot:not([disabled])') : null;
+      return slotsWrap ? slotsWrap.querySelector('#bkPreferredTime, button.slot:not([disabled])') : null;
     }
 
     function nameProblem() {
@@ -1098,7 +1116,7 @@
     function timeProblem() {
       if (selectedTime) return '';
       if (dateProblem()) return '';   // the date is what to fix first
-      return t('Choose one of the times shown.');
+      return $('#bkPreferredTime', slotsWrap) ? t('Enter your preferred time. Reception will confirm availability.') : t('Choose one of the times shown.');
     }
 
     // an inline line under one input, tied to it by the aria-describedby
@@ -1218,6 +1236,15 @@
       refreshSummary();
 
       if (!submit) return;
+      var contactPhone = $('#bkPhoneLink');
+      if (contactPhone) {
+        contactPhone.hidden = online;
+        var direct = $('a', contactPhone);
+        direct.href = 'tel:' + branchEl.dataset.phone;
+        direct.dataset.branch = branchEl.dataset.branch;
+        direct.dataset.treatment = serviceSel.selectedOptions[0].dataset.slug || 'consultation';
+        direct.textContent = (isArabic() ? 'اتصل بالاستقبال ' : 'Call reception ') + branchEl.dataset.phone;
+      }
       // The form marks the name Required and the summary asks for it, so the
       // gate has to agree: a booking with no name is not one reception can act
       // on, and promising a rule we do not enforce is worse than not asking.
@@ -1424,6 +1451,11 @@
           buildSlots();
           var slot = $$('.slot', slotsWrap).find(function (s) { return s.dataset.time === saved.time; });
           if (slot) slot.click();
+          var preferred = $('#bkPreferredTime', slotsWrap);
+          if (preferred && saved.preferred) {
+            preferred.value = saved.preferred;
+            preferred.dispatchEvent(new Event('input'));
+          }
         }
       } catch (_) { /* Storage may be disabled. */ }
       on(alternate, 'click', function (event) {
@@ -1431,7 +1463,8 @@
         try {
           sessionStorage.setItem(storageKey, JSON.stringify({
             path: alternate.pathname, created: Date.now(), branch: currentBranch(), service: serviceSel.value,
-            name: nameInput.value, phone: phoneInput.value, date: dateInput.value, time: selectedTime
+            name: nameInput.value, phone: phoneInput.value, date: dateInput.value, time: selectedTime,
+            preferred: $('#bkPreferredTime', slotsWrap)?.value || ''
           }));
         } catch (_) { /* Navigation works independently of storage. */ }
       });
