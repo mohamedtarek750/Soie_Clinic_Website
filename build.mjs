@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { head } from './src/templates/head.mjs';
 import { layout, localizeFacts, legacyMain } from './src/templates/layout.mjs';
-import { graph } from './src/templates/device-graph.mjs';
+import { graph } from './src/templates/schema.mjs';
 import { robots, sitemap, llms } from './src/discovery.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
