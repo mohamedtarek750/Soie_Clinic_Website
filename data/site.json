@@ -1,0 +1,62 @@
+{
+  "origin": "https://soie-clinc.vercel.app",
+  "brand": {
+    "nameEn": "Soie Clinics",
+    "nameAr": null,
+    "alternateNames": ["Soie Clinic", "SOIE CLINICS"],
+    "slogan": "Unleash your beauty.",
+    "meaning": "Soie means silk in French.",
+    "foundingYear": null,
+    "sameAs": ["https://www.instagram.com/soieclinic/", "https://www.threads.com/@soieclinic"],
+    "facebookUrl": null,
+    "legacyFacebookUrl": "https://www.facebook.com/share/1LuwqRbLPB/?mibextid=wwXIfr"
+  },
+  "branches": [
+    {
+      "id": "new-cairo",
+      "nameEn": "Soie Clinics New Cairo",
+      "areaEn": "New Cairo (Fifth Settlement)",
+      "areaAr": "التجمع الخامس، القاهرة الجديدة",
+      "streetAddressEn": "United Medical Centre (UMC), 2nd Floor, Clinics 216-217",
+      "localityEn": "New Cairo",
+      "regionEn": "Cairo Governorate",
+      "postalCode": "11865",
+      "country": "EG",
+      "telephone": "+201000033766",
+      "whatsapp": "https://wa.me/201000033766",
+      "geo": { "lat": 30.0296127, "lng": 31.4279476 },
+      "mapUrl": "https://maps.app.goo.gl/N7cUNHKMz3ZwnkaB7",
+      "googlePlaceId": null,
+      "hours": [
+        { "days": ["Sa","Su","Mo","Tu","We","Th"], "opens": "10:00", "closes": "23:00" },
+        { "days": ["Fr"], "opens": "12:00", "closes": "22:00" }
+      ],
+      "licenceNumber": null,
+      "services": { "dental": false, "laserHairRemoval": true }
+    },
+    {
+      "id": "mohandessin",
+      "nameEn": "Soie Clinics Mohandessin",
+      "areaEn": "Mohandessin",
+      "areaAr": "المهندسين",
+      "streetAddressEn": "41 Lebanon Street",
+      "floor": null,
+      "localityEn": "Mohandessin",
+      "regionEn": "Giza Governorate",
+      "postalCode": null,
+      "country": "EG",
+      "telephone": "+201000057669",
+      "whatsapp": "https://wa.me/201000057669",
+      "geo": { "lat": 30.0577381, "lng": 31.1955734 },
+      "mapUrl": null,
+      "googlePlaceId": null,
+      "hours": null,
+      "licenceNumber": null,
+      "services": { "dental": true, "laserHairRemoval": null }
+    }
+  ],
+  "plasticSurgery": { "offered": true, "model": "partner-consultant-surgeons", "facility": null },
+  "reviews": { "curated": [] },
+  "verification": { "google": null, "bing": null },
+  "analytics": { "ga4": null }
+}

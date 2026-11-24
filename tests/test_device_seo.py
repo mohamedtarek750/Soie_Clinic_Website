@@ -17,7 +17,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from serve import SiteHandler  # noqa: E402
 
-ORIGIN = "https://soie-clinic.vercel.app"
+ORIGIN = json.loads((ROOT / "data/site.json").read_text())["origin"]
+DIST = ROOT / "dist"
 DEVICES = {
     "indiba-deep-care": ("indiba", "INDIBA", "indiba-session.mp4"),
     "cutera-excel-hr": ("cutera", "Cutera", "cutera-excel-hr.mp4"),
@@ -78,7 +79,7 @@ class QuietHandler(SiteHandler):
 class DeviceSEOTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(ROOT)))
+        cls.server = ThreadingHTTPServer(("127.0.0.1", 0), partial(QuietHandler, directory=str(DIST)))
         cls.thread = threading.Thread(target=cls.server.serve_forever, daemon=True)
         cls.thread.start()
         cls.base = "http://127.0.0.1:" + str(cls.server.server_port)
@@ -164,13 +165,16 @@ class DeviceSEOTests(unittest.TestCase):
         self.assertEqual(result.exception.code, 404)
 
     def test_sitemap_canonicals_and_internal_device_links_agree(self):
-        sitemap = (ROOT / "sitemap.xml").read_text()
-        self.assertIn(ORIGIN + "/sitemap.xml", (ROOT / "robots.txt").read_text())
-        for page in ROOT.rglob("*.html"):
+        sitemap = (DIST / "sitemap.xml").read_text()
+        self.assertIn(ORIGIN + "/sitemap.xml", (DIST / "robots.txt").read_text())
+        for page in DIST.rglob("*.html"):
             doc = Document(page.read_text())
             canonical = next(a["href"] for a in doc.find("link") if a.get("rel") == "canonical")
             self.assertTrue(canonical.startswith(ORIGIN + "/"), page)
-            self.assertIn("<loc>" + canonical + "</loc>", sitemap)
+            if canonical.endswith("/products") or page.name == "404.html":
+                self.assertNotIn("<loc>" + canonical + "</loc>", sitemap)
+            else:
+                self.assertIn("<loc>" + canonical + "</loc>", sitemap)
             self.assertNotIn("https://soieclinic.com", doc.source)
             ids = [a["id"] for _, a in doc.elements if "id" in a]
             self.assertEqual(len(ids), len(set(ids)), page)

@@ -4,3 +4,6 @@
 # Python preview and test caches
 __pycache__/
 *.py[cod]
+
+# Generated deployment
+dist/

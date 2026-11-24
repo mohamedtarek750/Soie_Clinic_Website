@@ -11,7 +11,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / "vercel.json").read_text())
 REDIRECTS = {rule["source"]: rule["destination"] for rule in CONFIG["redirects"]}
-REWRITES = {rule["source"]: rule["destination"] for rule in CONFIG["rewrites"]}
+REWRITES = {rule["source"]: rule["destination"] for rule in CONFIG.get("rewrites",[])}
 
 
 class SiteHandler(SimpleHTTPRequestHandler):
@@ -26,7 +26,7 @@ class SiteHandler(SimpleHTTPRequestHandler):
     def redirect(self):
         parsed = urlsplit(self.path)
         destination = REDIRECTS.get(parsed.path)
-        if parsed.path.endswith("/") and parsed.path.rstrip("/") in REWRITES:
+        if parsed.path != "/" and parsed.path.endswith("/"):
             destination = parsed.path.rstrip("/")
         if not destination:
             return False
@@ -40,7 +40,9 @@ class SiteHandler(SimpleHTTPRequestHandler):
 
     def translate_path(self, path):
         path = urlsplit(path).path
-        return super().translate_path(REWRITES.get(path, path))
+        resolved = Path(super().translate_path(path))
+        clean = Path(str(resolved) + ".html")
+        return str(clean if clean.is_file() else resolved)
 
     def copyfile(self, source, outputfile):
         try:
@@ -55,7 +57,7 @@ if __name__ == "__main__":
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--bind", default="127.0.0.1")
     args = parser.parse_args()
-    server = ThreadingHTTPServer((args.bind, args.port), partial(SiteHandler, directory=str(ROOT)))
+    server = ThreadingHTTPServer((args.bind, args.port), partial(SiteHandler, directory=str(ROOT / "dist")))
     print(f"Soie preview: http://{args.bind}:{args.port}", flush=True)
     try:
         server.serve_forever()

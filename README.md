@@ -2,7 +2,7 @@
 
 Luxury aesthetic clinic in New Cairo & Mohandseen. A fully static,
 dependency-free site: hand-crafted HTML + CSS + vanilla JavaScript.
-No build step. Use the included preview server for the same device URLs and
+Run `node build.mjs` to generate the static site in dist/. Use the included preview server for the same device URLs and
 redirects configured for production.
 
 ## Site map
@@ -70,7 +70,7 @@ and answers. Video dates reflect the original media publication commits.
 Prices, practitioner names, ratings and device result photos must not be invented.
 
 Canonical metadata, social URLs, structured data, robots.txt and sitemap.xml use
-`https://soie-clinic.vercel.app`, the published site used in this project. The
+`the origin in data/site.json`, the published site used in this project. The
 previous `soieclinic.com` origin was not confirmed as connected. If a custom
 domain is connected later, migrate these references together and configure its
 domain redirect in Vercel. English remains the default, with the existing Arabic

@@ -41,24 +41,104 @@
       "source": "/devices/finexel-fractional-co2/index.html",
       "destination": "/devices/finexel-fractional-co2",
       "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/treatments",
+      "permanent": true
+    },
+    {
+      "source": "/before-after.html",
+      "destination": "/results",
+      "permanent": true
+    },
+    {
+      "source": "/service-dentistry.html",
+      "destination": "/dentistry",
+      "permanent": true
+    },
+    {
+      "source": "/service-veneers.html",
+      "destination": "/dentistry/veneers",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/products.html",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/service-exosomes.html",
+      "destination": "/treatments/exosomes",
+      "permanent": true
+    },
+    {
+      "source": "/service-body-contouring.html",
+      "destination": "/treatments/body-contouring",
+      "permanent": true
+    },
+    {
+      "source": "/service-laser.html",
+      "destination": "/treatments/laser",
+      "permanent": true
+    },
+    {
+      "source": "/service-hydrafacial.html",
+      "destination": "/treatments/hydrafacial",
+      "permanent": true
+    },
+    {
+      "source": "/book.html",
+      "destination": "/book",
+      "permanent": true
+    },
+    {
+      "source": "/service-botox.html",
+      "destination": "/treatments/botox",
+      "permanent": true
+    },
+    {
+      "source": "/service-dermal-filler.html",
+      "destination": "/treatments/dermal-filler",
+      "permanent": true
+    },
+    {
+      "source": "/service-skin-boosters.html",
+      "destination": "/treatments/skin-boosters",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/service-peeling.html",
+      "destination": "/treatments/peeling",
+      "permanent": true
+    },
+    {
+      "source": "/service-facial.html",
+      "destination": "/treatments/facial",
+      "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/devices",
-      "destination": "/devices/index.html"
-    },
-    {
-      "source": "/devices/indiba-deep-care",
-      "destination": "/devices/indiba-deep-care/index.html"
-    },
-    {
-      "source": "/devices/cutera-excel-hr",
-      "destination": "/devices/cutera-excel-hr/index.html"
-    },
-    {
-      "source": "/devices/finexel-fractional-co2",
-      "destination": "/devices/finexel-fractional-co2/index.html"
-    }
-  ]
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "dist",
+  "cleanUrls": true
 }

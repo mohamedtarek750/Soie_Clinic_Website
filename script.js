@@ -1318,7 +1318,7 @@
         e.preventDefault();
         sendToReception();
       }
-      // otherwise the <a href="wa.me/…"> opens WhatsApp as before
+      // otherwise the <a href="/wa.me/…"> opens WhatsApp as before
     }
 
     on(submit, 'click', activate);
@@ -1340,7 +1340,7 @@
   function initLegacyDeviceLinks() {
     var path = window.location.pathname;
     var catalogue = /^\/devices(?:\/index\.html|\.html|\/)?$/.test(path);
-    var home = path === '/' || path === '/index.html';
+    var home = path === '/' || path === '/';
     var hash;
     try { hash = decodeURIComponent(window.location.hash.slice(1)); }
     catch (e) { return; }
