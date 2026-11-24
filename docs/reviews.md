@@ -14,7 +14,9 @@ The HTML shows a reviews link when the owner has supplied the branch's Google Ma
 
 The owner controls the Google Cloud project, billing and credentials. Enable Places API (New) and restrict the key to that API. Store it as `GOOGLE_MAPS_API_KEY` in Vercel server-side environment settings. Use an environment or secret manager for local testing. Keep keys and Places review responses out of source control, build output, logs and public configuration.
 
-Before enabling the automatic feed, verify Google's current Places API policies and Maps service terms for the account. Confirm the correct Place ID and address for each branch through Places Text Search (New) with the owner-supplied coordinates and persist only the confirmed Place ID. Do not use a geographical search or reviews for a different branch as the fallback.
+The current release renders the curated list and confirmed Maps links. The automatic feed and Place ID resolver are pending implementation because the setup environment returned HTTP 403 for the official policy pages.
+
+Before implementing the automatic feed, verify Google's current Places API policies and Maps service terms for the account. Confirm the correct Place ID and address for each branch through Places Text Search (New) with the owner-supplied coordinates and persist only the confirmed Place ID. Do not use a geographical search or reviews for a different branch as the fallback.
 
 - [Places API policies and attribution](https://developers.google.com/maps/documentation/places/web-service/policies)
 - [Google Maps Platform service-specific terms](https://cloud.google.com/maps-platform/terms/maps-service-terms)

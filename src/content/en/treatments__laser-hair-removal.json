@@ -18,8 +18,8 @@
     "/treatments/laser",
     "/guides/laser-hair-removal-sessions"
   ],
-  "preparation": "Mention tanning, medications and previous reactions to laser. Ask how to prepare the area; light or grey hair may respond poorly.",
-  "howPerformed": "After skin and hair assessment, suitable settings and eye protection are selected. The handpiece delivers pulses to the agreed area; a test area may be advised.",
+  "preparation": "Mention tanning, medications and previous reactions to laser. Ask how to prepare the area. Light or grey hair may respond poorly.",
+  "howPerformed": "After skin and hair assessment, suitable settings and eye protection are selected. The handpiece delivers pulses to the agreed area. A test area may be advised.",
   "followup": "Warmth or redness may follow. Protect the area from sun and contact the branch about blisters or lasting discomfort.",
   "risks": "Burns, irritation and darker or lighter patches can occur, especially after tanning or with unsuitable settings.",
   "faqs": [
@@ -59,7 +59,7 @@
     ],
     [
       "When to assess the result",
-      "Hair reduction develops over growth cycles; later maintenance may be needed."
+      "Hair reduction develops over growth cycles. Later maintenance may be needed."
     ],
     [
       "Recovery",
@@ -70,8 +70,8 @@
       "Cutera excel HR"
     ]
   ],
-  "outlook": "Hair reduction develops over growth cycles; later maintenance may be needed.",
-  "suitability": "Hair colour, skin tone and tanning matter more than gender. Very light hair can respond poorly; irritated or recently tanned skin may need time before treatment.",
+  "outlook": "Hair reduction develops over growth cycles. Later maintenance may be needed.",
+  "suitability": "Hair colour, skin tone and tanning matter more than gender. Very light hair can respond poorly. Irritated or recently tanned skin may need time before treatment.",
   "heroPhoto": "laser",
   "name": "Laser hair removal"
 }

@@ -1,5 +1,6 @@
 export function head(p, ctx, schema, image) {
   const {ar, site, esc, url, hasAlternate} = ctx;
+  const indexableAlternate = hasAlternate && !p.noindex;
   const en = site.origin + p.path;
   const alternate = site.origin + '/ar' + (p.path === '/' ? '' : p.path);
   const canonical = site.origin + url(p.path);
@@ -8,8 +9,8 @@ export function head(p, ctx, schema, image) {
   const social = site.origin + image;
   return [
     '<title>'+esc(p.title)+'</title>', tag('description', p.description), link('canonical',canonical),
-    hasAlternate && link('alternate',en,'en'), hasAlternate && link('alternate',alternate,'ar'),
-    hasAlternate && link('alternate',en,'x-default'),
+    indexableAlternate && link('alternate',en,'en'), indexableAlternate && link('alternate',alternate,'ar'),
+    indexableAlternate && link('alternate',en,'x-default'),
     p.noindex && tag('robots','noindex,follow'),
     tag('og:site_name',site.brand.nameEn), tag('og:type',p.type === 'article' ? 'article' : 'website'),
     tag('og:title',p.title), tag('og:description',p.description), tag('og:url',canonical),

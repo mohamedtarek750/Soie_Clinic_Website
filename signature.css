@@ -194,6 +194,8 @@ html[dir="rtl"] #modalTitle { font-size: 30px; line-height: 1.4; }
   .language-switch { margin-inline-start: auto; }
   .nav__burger { display: flex; }
   .nav__logo-tag { display: inline; }
+}
+@media (max-width: 1160px) and (scripting: none) {
   .no-js .nav { height: auto; position: relative; }
   .no-js .nav__wrap { flex-wrap: wrap; padding-block: 12px; }
   .no-js .nav__links { position: static; flex-direction: row; flex-wrap: wrap; width: 100%; height: auto; padding: 0; opacity: 1; visibility: visible; transform: none; gap: 10px; }

@@ -58,7 +58,7 @@
     ],
     [
       "When to assess the result",
-      "Depends on the medical indication; wellness effects are uncertain."
+      "Depends on the medical indication. Wellness effects are uncertain."
     ],
     [
       "Recovery",
@@ -69,7 +69,7 @@
       "IV infusion"
     ]
   ],
-  "outlook": "Depends on the medical indication; wellness effects are uncertain.",
+  "outlook": "Depends on the medical indication. Wellness effects are uncertain.",
   "suitability": "An infusion needs an individual medical indication. People seeking treatment for fatigue may need investigation. Heart or kidney conditions can make extra fluid unsafe.",
   "heroPhoto": "services",
   "name": "IV therapy and NAD+ consultation"

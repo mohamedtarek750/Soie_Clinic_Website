@@ -18,7 +18,7 @@ Open the local server and try the English home, `/ar`, a nested device page and 
 
 - `data/site.json` holds the origin, brand, branch names, addresses, contacts, hours, service availability, review sources and optional verification and analytics values. Omit unconfirmed facts from the rendered page using JSON null in the data. Enter credentials only in server-side environment settings.
 - `src/content/en/` and `src/content/ar/` each hold one JSON file per page. Both language files use the same English `path`. The Arabic route has an `/ar` prefix. Products is English-only and excluded from indexing.
-- `src/templates/` holds the shared layout, navigation, footer, booking dialog, medical and editorial templates, reviews and JSON-LD. The copy, FAQ answers, links and branch contacts appear in the delivered HTML. JavaScript enhances booking and other interactive controls.
+- `src/templates/` holds the shared layout, navigation, footer, booking dialog, medical and editorial templates, reviews and JSON-LD. The copy, FAQ answers, links and branch contacts appear in the delivered HTML. JavaScript enhances booking and other interactive controls. The booking bundle loads only on the two booking pages.
 - `build.mjs` renders every page, writes discovery files and fingerprints stylesheets and scripts. Change source files and rebuild. The source of truth for a page's editorial update is its `updated` field. The sitemap also takes the content file's Git history into account.
 
 ### Add a treatment
@@ -43,5 +43,7 @@ Place owner-approved photographs in `assets/images/` and append one case to `dat
 - Preserve the two Apps Script URLs in `BOOKING_ENDPOINTS`. Automated browser checks must intercept the POST and any WhatsApp navigation before interacting with submit. Confirm the booking form in both languages with mocked responses.
 
 ## Deployment and discovery
+
+The [launch URL map](docs/url-map.md) lists the English and Arabic routes.
 
 Review [OWNER_TODO.md](OWNER_TODO.md) for approvals, search-engine verification and business profile updates. The [domain migration runbook](docs/domain-migration.md) covers DNS, Vercel, Search Console, Bing and the IndexNow submission command. IndexNow runs manually after deployment. Ensure both branch profiles link to their own canonical branch page.

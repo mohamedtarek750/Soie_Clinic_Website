@@ -1,44 +1,9 @@
-# Mohandseen online booking → Soie System
+# Reception booking integration
 
-When a patient books on the website and picks the **Mohandseen** branch, the
-booking is sent to the **Soie System (Mohandseen)** — the reception Apps Script
-web app — where it shows up in a new **Requests** tab with the patient's phone,
-and reception also gets an email. New Cairo still hands off to WhatsApp.
+The website sends ordinary online booking requests to the selected branch's Google Apps Script URL in `BOOKING_ENDPOINTS` in `src/booking.js`. The public name is Mohandessin. The existing backend branch value is `Mohandseen` and must be preserved for compatibility.
 
-- Website side: `script.js` posts the booking (with `action: "saveWebBooking"`)
-  to the system's web app URL, held in `BOOKING_ENDPOINT`.
-- System side: the reception app repo
-  (`Soie_System_Mohandeseen`) gained a small, self-contained intake:
-  - `App.gs`: `saveWebBooking` / `markWebBooking` / `webBookings` actions that
-    write to a `WebBookings` tab (with a **Phone** column) and email reception.
-  - `index.html`: a **Requests** dashboard tab (with a count badge) to read the
-    requests, call the phone, and mark each one done.
+The booking action is `saveWebBooking`. Reception receives the branch, patient name and phone, treatment, preferred date and time. The branch checks availability and confirms the appointment. The Apps Script response is opaque to the browser, so reception's own records establish whether a request was stored.
 
-## Going live (one time)
+The WhatsApp fallback prepares a message that the visitor can inspect before sending. Partner plastic surgery consultations use that handoff. They are outside the clinic management system.
 
-The website already points at the system's current web app URL. You just need
-to publish the system's new code:
-
-1. Open the **Soie System (Mohandseen)** Apps Script project.
-2. Update **`App.gs`** and **`index.html`** with the new versions from the
-   `Soie_System_Mohandeseen` repo (copy-paste, or pull the repo).
-3. **Deploy → Manage deployments → (edit the existing deployment) →
-   Version: New version → Deploy.** Editing the existing deployment keeps the
-   **same `/exec` URL**, so the website keeps working with no further change.
-   (If you ever create a *new* deployment instead, its URL changes — send me
-   the new URL and I'll update `BOOKING_ENDPOINT`.)
-4. Test: book on the site as Mohandseen. The row appears in the **Requests**
-   tab and an email arrives.
-
-## Notes
-
-- **Notification email** goes to the Google account that owns the script by
-  default. To send it elsewhere, set `WEB_BOOKING_EMAIL` at the top of the
-  Website-requests section in `App.gs`.
-- The on-page "Thank you" is optimistic (Apps Script web apps answer without
-  CORS headers, so the browser can't read the reply). The **Requests tab and
-  the email are the record of truth**.
-- Until the system is redeployed with the new code, Mohandseen bookings safely
-  fall back to WhatsApp only if `BOOKING_ENDPOINT` is blank. It is currently
-  set, so **redeploy the system before relying on it** — otherwise a booking
-  shows the thank-you but is not stored.
+For browser tests, intercept the Apps Script POST and WhatsApp navigation before interacting with the form. Exercise validation, branch selection, keyboard submission, success and failure without sending patient or test details to reception. Changes to the external reception system are managed separately from the static Vercel website.

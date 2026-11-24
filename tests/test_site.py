@@ -130,6 +130,7 @@ class StaticPublishingTests(SiteTest):
                 robots = ",".join(m["content"] for m in doc.attrs("meta", name="robots"))
                 if "noindex" in robots.lower() or path.endswith("/404"):
                     self.assertNotIn(doc.canonical, entries)
+                    self.assertFalse(doc.alternates, "Error and noindex pages are outside the alternate index")
                     continue
                 self.assertNotEqual(path, "/products", "Products must remain noindex")
                 self.assertFalse(path.startswith("/ar/products"))
@@ -209,6 +210,60 @@ class StaticPublishingTests(SiteTest):
             self.assertTrue({prefix + "/treatments", prefix + "/book"} <= links)
             self.assertTrue(any(h and h.startswith(prefix + "/branches") for h in links))
 
+    def test_deployment_headers_scripts_and_social_images(self):
+        from struct import unpack
+
+        def jpeg_size(path):
+            # Read the start-of-frame marker rather than trusting OG declarations.
+            with path.open("rb") as stream:
+                self.assertEqual(stream.read(2), b"\xff\xd8", path)
+                while stream.read(1) == b"\xff":
+                    marker = stream.read(1)
+                    while marker == b"\xff":
+                        marker = stream.read(1)
+                    length = unpack(">H", stream.read(2))[0]
+                    if marker in (b"\xc0", b"\xc1", b"\xc2"):
+                        depth, height, width = unpack(">BHH", stream.read(5))
+                        return width, height
+                    stream.seek(length - 2, 1)
+            self.fail(f"No recognizable JPEG frame in {path}")
+
+        images = set()
+        for path, doc in self.docs.items():
+            with self.subTest(path=path):
+                social = doc.meta("property", "og:image")
+                self.assertEqual(doc.meta("name", "twitter:image"), social)
+                self.assertNotIn(social, images)
+                images.add(social)
+                img_file = DIST / urlsplit(social).path.lstrip("/")
+                self.assertEqual(jpeg_size(img_file), (1200, 630))
+                booking_scripts = [script for script in doc.attrs("script")
+                                   if script.get("src", "").startswith("/static/booking.")]
+                self.assertEqual(len(booking_scripts), int(path in ("/book", "/ar/book")))
+                for script in doc.attrs("script"):
+                    if script.get("type") == "application/ld+json":
+                        continue
+                    self.assertIn("src", script)
+                    self.assertIn("defer", script)
+                    self.assertNotIn("i18n-ar", script["src"])
+        response, headers, _ = self.http("/", "HEAD")
+        self.assertEqual(response, 200)
+        self.assertIn("must-revalidate", headers["Cache-Control"])
+        self.assertEqual(headers["X-Content-Type-Options"], "nosniff")
+        self.assertEqual(headers["Referrer-Policy"], "strict-origin-when-cross-origin")
+        self.assertIn("frame-ancestors 'self'", headers["Content-Security-Policy"])
+        self.assertTrue(headers["Permissions-Policy"])
+        local_assets = {s["src"] for s in self.docs["/"].attrs("script") if s.get("src", "").startswith("/")}
+        local_assets.update(link["href"] for link in self.docs["/"].attrs("link", rel="stylesheet"))
+        self.assertTrue(local_assets)
+        for asset in local_assets:
+            self.assertRegex(asset, r"[.-][a-f0-9]{8,}\.(?:css|js)$")
+            self.assertIn("immutable", self.http(asset, "HEAD")[1]["Cache-Control"])
+        for path in ("/", "/ar"):
+            doc = self.docs[path]
+            self.assertTrue(any(e.get("imagesrcset") for e in doc.attrs("link", rel="preload", **{"as":"image"})))
+            self.assertTrue(doc.attrs("img", fetchpriority="high"))
+            self.assertNotIn("data-reveal", doc.attrs("h1")[0])
 
     def test_structured_data_matches_the_page_and_all_entity_references_resolve(self):
         defined, referred = set(), set()

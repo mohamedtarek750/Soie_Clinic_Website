@@ -18,7 +18,7 @@ export function footer(page, ctx) {
     ['/treatments','Treatments','العلاجات'], ['/devices','Devices','الأجهزة'],
     ['/results','Before & After','قبل وبعد'], ['/guides','Patient guides','أدلة المرضى'],
     ['/faq','FAQ','أسئلة شائعة'], ['/contact','Contact','تواصل معنا'],
-    ['/book','Book appointment','احجز موعدًا'], ['/privacy','Privacy','الخصوصية']
+    ['/book','Book appointment','احجز موعدًا'], ['/products','Products',''], ['/privacy','Privacy','الخصوصية']
   ];
   const links = nav.filter(([path])=>pages.some(p=>p.path===path)).map(([path,en,arabic])=>`<a href="${url(path)}">${e(ar ? arabic : en)}</a>`).join('');
   const brand = e(site.brand.nameEn);

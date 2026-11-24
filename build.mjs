@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, unlinkSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync, unlinkSync } from 'node:fs';
 import { basename, dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -39,8 +39,12 @@ function fingerprint(name, content) {
 }
 function asset(file) { return fingerprint(basename(file), readFileSync(file)); }
 const branchMap = asset('src/templates/branch-map.js');
+const bookingScript = asset('src/booking.js');
+// Preserve the Signature cascade while serving it in a single request.
+const stylesheet = ['style.css','devices.css','i18n.css','signature.css','src/templates/pages.css']
+  .map(file => readFileSync(file,'utf8')).join('\n');
 const assets = {
-  css: ['style.css','devices.css','i18n.css','signature.css','src/templates/pages.css'].map(asset),
+  css: [fingerprint('site.css', stylesheet)],
   js: ['script.js'].map(asset)
 };
 if (site.analytics.ga4) {
@@ -61,7 +65,9 @@ cpSync('assets', join(out,'assets'), {
   recursive: true,
   filter(source) {
     const file = relative(root, resolve(source));
-    return !withdrawn.has('/' + file);
+    if (withdrawn.has('/' + file)) return false;
+    if (statSync(source).isFile()) generated.add(file);
+    return true;
   }
 });
 for (const path of withdrawn) {
@@ -93,6 +99,7 @@ for (const [lang,pages] of Object.entries(languages)) {
     if (!p.noindex && !hasAlternate) throw new Error('Missing translation: '+p.path);
     const ctx = {ar,site,url,esc,pages,results,resultCaption,assets,hasAlternate};
     ctx.reviewBlock = (ids,compact) => reviewBlock(ids,compact,ctx);
+    if (p.path === '/book') ctx.assets = {...assets, js:[...assets.js,bookingScript]};
     if (p.type === 'branch') ctx.assets = {...assets, js:[...assets.js,branchMap]};
     let main;
     if (p.type === '404') main = errorPage(p,ctx);
