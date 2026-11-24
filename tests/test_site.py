@@ -328,3 +328,41 @@ class StaticPublishingTests(SiteTest):
             if file.is_file() and retired in file.read_bytes():
                 self.fail(f"Retired hostname found in {file.relative_to(ROOT)}")
 
+    def test_origin_change_and_keyless_reviews_in_isolated_build(self):
+        with tempfile.TemporaryDirectory() as temp:
+            here = Path(temp)
+            site = dict(self.site)
+            site["origin"] = "https://" + uuid.uuid4().hex + ".invalid"
+            site["reviews"] = {"curated": []}
+            site["verification"] = {"google": "test-google-verification", "bing": "test-bing-verification"}
+            config = here / "site.json"
+            config.write_text(json.dumps(site))
+            out = here / "output"
+            env = dict(os.environ)
+            env.pop("GOOGLE_MAPS_API_KEY", None)
+            subprocess.run(["node", "build.mjs", "--site", str(config), "--out", str(out)], cwd=ROOT, env=env, check=True)
+            for file in out.rglob("*"):
+                if file.is_file() and self.origin.encode() in file.read_bytes():
+                    self.fail(f"Old origin leaked into {file.relative_to(out)}")
+            pages = read_pages(out)
+            self.assertEqual(pages.keys(), self.docs.keys())
+            for path, doc in pages.items():
+                with self.subTest(path=path):
+                    self.assertEqual(doc.canonical, site["origin"] + path)
+                    self.assertTrue(all(u.startswith(site["origin"] + "/") for u in doc.alternates.values()))
+                    self.assertEqual(doc.meta("property", "og:url"), doc.canonical)
+                    self.assertTrue(doc.meta("property", "og:image").startswith(site["origin"] + "/"))
+                    check_schema_urls(self, doc.graph, site)
+                    self.assertEqual(doc.meta("name", "google-site-verification"), site["verification"]["google"])
+                    self.assertEqual(doc.meta("name", "msvalidate.01"), site["verification"]["bing"])
+                    self.assertNotRegex(doc.tags("body")[0].text, CURRENCY_RATING)
+                    self.assertFalse(any("clinic-review" in e.attrs.get("class", "").split() for e in doc.elements))
+            for branch in site["branches"]:
+                if branch["mapUrl"]:
+                    for prefix in ("", "/ar"):
+                        doc = pages[prefix + "/branches/" + branch["id"]]
+                        self.assertTrue(any(el.attrs.get("data-reviews-branch") == branch["id"] for el in doc.elements))
+                        self.assertTrue(any(a.get("href") == branch["mapUrl"] and a.get("data-event") == "map_click"
+                                            for a in doc.attrs("a")))
+            for name in ("sitemap.xml", "robots.txt", "llms.txt"):
+                self.assertIn(site["origin"], (out / name).read_text())

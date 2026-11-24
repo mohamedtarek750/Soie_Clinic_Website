@@ -12,7 +12,7 @@ import { pagesContent, pageFaqs, resultCaption } from './src/templates/pages.mjs
 import { treatment } from './src/templates/treatment.mjs';
 import { socialImage } from './src/templates/social.mjs';
 import { reviewBlock } from './src/templates/reviews.mjs';
-import { robots, sitemap } from './src/discovery.mjs';
+import { robots, sitemap, llms } from './src/discovery.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const {values} = parseArgs({options:{site:{type:'string',default:join(root,'data/site.json')},out:{type:'string',default:join(root,'dist')}}});
@@ -110,6 +110,9 @@ for (const [lang,pages] of Object.entries(languages)) {
 }
 write('sitemap.xml',sitemap(entries,esc));
 write('robots.txt',robots(site.origin));
+write('llms.txt',llms(site,entries,languages.en));
+const key = readFileSync('data/indexnow-key.txt','utf8').trim();
+write(key+'.txt',key+'\n');
 // Only retire files the previous build recorded (removed translations and old fingerprints).
 const manifest = join(out,'.soie-build.json');
 if (existsSync(manifest)) for (const file of json(manifest)) {
